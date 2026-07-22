@@ -14,12 +14,17 @@ RESULTS = ROOT / "benchmark" / "results"
 
 
 def load_jsonl(path: Path) -> list[dict[str, object]]:
-    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    return [
+        json.loads(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
 
 
 def main() -> int:
     manifest = json.loads((CORPUS / "manifest.json").read_text(encoding="utf-8"))
     vocabulary = json.loads((CORPUS / "type-vocabulary.json").read_text(encoding="utf-8"))
+    registry = load_jsonl(CORPUS / "entity-registry.jsonl")
     failures: list[str] = []
     counts: dict[str, int] = {}
 
@@ -27,6 +32,21 @@ def main() -> int:
         failures.append(
             f"version mismatch: corpus={manifest['eat_inline_version']} implementation={VERSION}"
         )
+
+    allowed_types = set(vocabulary["types"])
+    registry_by_typed_key: dict[tuple[str, str], str] = {}
+    registry_ids: set[str] = set()
+    for item in registry:
+        typed_key = (str(item["type"]), str(item["key"]))
+        canonical_id = str(item["canonical_id"])
+        if typed_key in registry_by_typed_key:
+            failures.append(f"duplicate registry typed key: {typed_key}")
+        if canonical_id in registry_ids:
+            failures.append(f"duplicate canonical id: {canonical_id}")
+        if item["type"] not in allowed_types:
+            failures.append(f"registry contains unknown benchmark type {item['type']!r}")
+        registry_by_typed_key[typed_key] = canonical_id
+        registry_ids.add(canonical_id)
 
     syntax = load_jsonl(CORPUS / "syntax.jsonl")
     counts["syntax"] = len(syntax)
@@ -47,7 +67,6 @@ def main() -> int:
 
     typing = load_jsonl(CORPUS / "typing.jsonl")
     counts["typing"] = len(typing)
-    allowed_types = set(vocabulary["types"])
     for case in typing:
         if case["expected_type"] not in allowed_types:
             failures.append(f"{case['id']}: unknown benchmark type {case['expected_type']!r}")
@@ -65,12 +84,32 @@ def main() -> int:
             (item["type"], item["key"]) for item in expected
         ]:
             failures.append(f"{case['id']}: parsed references do not match gold references")
+        for item in expected:
+            typed_key = (str(item["type"]), str(item["key"]))
+            if registry_by_typed_key.get(typed_key) != item["canonical_id"]:
+                failures.append(f"{case['id']}: registry mismatch for {typed_key}")
 
     generation = load_jsonl(CORPUS / "generation.jsonl")
     counts["generation"] = len(generation)
     for case in generation:
         if not parse_references(str(case["expected"])):
             failures.append(f"{case['id']}: expected output contains no valid reference")
+
+    comparison = load_jsonl(CORPUS / "comparison.jsonl")
+    counts["comparison"] = len(comparison)
+    for case in comparison:
+        parsed = parse_references(str(case["eat_text"]))
+        resolved_ids: list[str] = []
+        for item in parsed:
+            canonical_id = registry_by_typed_key.get((item.type, item.key))
+            if canonical_id is None:
+                failures.append(f"{case['id']}: EAT reference is absent from registry: {item.raw}")
+            else:
+                resolved_ids.append(canonical_id)
+        if set(resolved_ids) != set(str(value) for value in case["gold_ids"]):
+            failures.append(f"{case['id']}: resolved EAT IDs do not match gold IDs")
+        if not str(case["plain_text"]).strip():
+            failures.append(f"{case['id']}: empty plain-text condition")
 
     declared = {item["task"]: item["records"] for item in manifest["files"]}
     if counts != declared:
@@ -89,6 +128,7 @@ def main() -> int:
         "records": counts,
         "records_total": total,
         "benchmark_types": len(allowed_types),
+        "registry_entities": len(registry),
         "failures": failures,
         "status": "pass" if not failures else "fail",
     }
