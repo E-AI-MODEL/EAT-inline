@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the seed benchmark corpus and produce a machine-readable summary."""
+"""Validate the benchmark corpus and produce a machine-readable summary."""
 
 from __future__ import annotations
 
@@ -19,6 +19,35 @@ def load_jsonl(path: Path) -> list[dict[str, object]]:
         for line in path.read_text(encoding="utf-8").splitlines()
         if line.strip()
     ]
+
+
+def diagnose_syntax(value: str) -> tuple[bool, str]:
+    """Return validity and a diagnostic derived from the candidate itself."""
+    if value.startswith("@@EAT "):
+        if not value.endswith("@@"):
+            return False, "missing_closing_marker"
+        return validate_reference(value)
+
+    if value.endswith("@@"):
+        return False, "incomplete_opening_marker"
+
+    references = parse_references(value)
+    if references:
+        return True, "valid"
+
+    return False, "invalid_reference"
+
+
+def reference_pairs(value: str) -> list[tuple[str, str]]:
+    return [(item.type, item.key) for item in parse_references(value)]
+
+
+def has_unparsed_eat_markup(value: str) -> bool:
+    """Detect EAT-like markup left after all valid references are removed."""
+    remainder = value
+    for item in parse_references(value):
+        remainder = remainder.replace(item.raw, "", 1)
+    return "@@EAT" in remainder or "@@" in remainder
 
 
 def main() -> int:
@@ -52,18 +81,27 @@ def main() -> int:
     counts["syntax"] = len(syntax)
     for case in syntax:
         value = str(case["input"])
-        if value.startswith("@@EAT ") and value.endswith("@@"):
-            actual_valid, actual_result = validate_reference(value)
+        actual_valid, actual_result = diagnose_syntax(value)
+        expected_valid = bool(case["valid"])
+
+        if actual_valid != expected_valid:
+            failures.append(
+                f"{case['id']}: expected valid={expected_valid} got {actual_valid}"
+            )
+
+        if expected_valid:
+            expected_pairs = [(str(case["type"]), str(case["key"]))]
+            actual_pairs = reference_pairs(value)
+            if actual_pairs != expected_pairs:
+                failures.append(
+                    f"{case['id']}: expected references {expected_pairs!r} got {actual_pairs!r}"
+                )
         else:
-            references = parse_references(value)
-            actual_valid = bool(references)
-            actual_result = "valid" if actual_valid else str(case.get("error", "invalid"))
-        if actual_valid != bool(case["valid"]):
-            failures.append(f"{case['id']}: expected valid={case['valid']} got {actual_valid}")
-        if not case["valid"] and value.startswith("@@EAT ") and value.endswith("@@"):
-            expected_error = case.get("error")
-            if expected_error and actual_result != expected_error:
-                failures.append(f"{case['id']}: expected {expected_error!r} got {actual_result!r}")
+            expected_error = str(case["error"])
+            if actual_result != expected_error:
+                failures.append(
+                    f"{case['id']}: expected {expected_error!r} got {actual_result!r}"
+                )
 
     typing = load_jsonl(CORPUS / "typing.jsonl")
     counts["typing"] = len(typing)
@@ -92,8 +130,32 @@ def main() -> int:
     generation = load_jsonl(CORPUS / "generation.jsonl")
     counts["generation"] = len(generation)
     for case in generation:
-        if not parse_references(str(case["expected"])):
-            failures.append(f"{case['id']}: expected output contains no valid reference")
+        expected_output = str(case["expected"])
+        expected_pairs = [
+            (str(item["type"]), str(item["key"]))
+            for item in case["expected_references"]
+        ]
+        actual_pairs = reference_pairs(expected_output)
+
+        if actual_pairs != expected_pairs:
+            failures.append(
+                f"{case['id']}: expected references {expected_pairs!r} got {actual_pairs!r}"
+            )
+
+        if has_unparsed_eat_markup(expected_output):
+            failures.append(f"{case['id']}: expected output contains malformed EAT markup")
+
+        for type_name, key in expected_pairs:
+            if type_name not in allowed_types:
+                failures.append(
+                    f"{case['id']}: unknown benchmark type in generation gold {type_name!r}"
+                )
+            candidate = f"@@EAT {type_name}:{key}@@"
+            valid, result = validate_reference(candidate)
+            if not valid:
+                failures.append(
+                    f"{case['id']}: invalid generation gold reference {candidate!r}: {result}"
+                )
 
     comparison = load_jsonl(CORPUS / "comparison.jsonl")
     counts["comparison"] = len(comparison)
