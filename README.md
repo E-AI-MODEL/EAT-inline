@@ -10,11 +10,11 @@
 EAT Inline lets a person or AI write a typed reference without knowing an internal database ID.
 
 ```text
-Het rapport is geschreven door @@EAT person:Hans_Visser@@
-voor @@EAT organisation:EAI_Analyse_Advies@@.
+Door: @@EAT person:Hans@@
+Voor: @@EAT organisation:EAI@@
 ```
 
-The tag makes the intended entity visible. The surrounding sentence keeps the relationship in natural language.
+The tags make the intended entities visible. The words `Door` and `Voor` keep the relationship in natural language.
 
 > **Status:** version `0.3.2` is an experimental candidate. It is usable for testing, but it is not yet a frozen or proven standard.
 
