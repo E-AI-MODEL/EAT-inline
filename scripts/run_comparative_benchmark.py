@@ -63,11 +63,13 @@ def main() -> int:
         plain_predicted: set[str] = set()
         ambiguous_labels: list[str] = []
         for label, candidates in by_label.items():
-            if label in plain_text:
-                if len(candidates) == 1:
-                    plain_predicted.add(candidates[0])
-                else:
-                    ambiguous_labels.append(label)
+            occurrence_count = plain_text.count(label)
+            if occurrence_count == 0:
+                continue
+            if len(candidates) == 1:
+                plain_predicted.add(candidates[0])
+            else:
+                ambiguous_labels.extend([label] * occurrence_count)
 
         eat_predicted: set[str] = set()
         unresolved: list[str] = []
