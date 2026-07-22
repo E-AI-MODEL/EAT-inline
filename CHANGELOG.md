@@ -17,6 +17,12 @@ The project follows semantic versioning for the reference implementation and spe
   conditions refactored behind it. Model-based conditions implement the same
   interface as a documented plug-in point and are not bundled, to keep the
   benchmark reproducible.
+- `EntityLinker` contract and `LinkerAdapter` bridge, plus an offline
+  deterministic `GazetteerLinker` that places its own references from plain
+  text (context-cue disambiguation, conservative abstention). Adds a `linker`
+  condition to the comparative benchmark, isolating the effect of the notation
+  from the effect of perfect author annotation. Real model linkers plug into
+  the same interface without being bundled.
 
 ### Policy
 

@@ -57,7 +57,7 @@ def main() -> int:
         for adapter in adapters
     }
     extras = {
-        adapter.condition: {"ambiguous_mentions": 0, "unresolved": 0}
+        adapter.condition: {"ambiguous_mentions": 0, "unresolved": 0, "abstained": 0}
         for adapter in adapters
     }
     costs = {adapter.condition: Cost() for adapter in adapters}
@@ -81,6 +81,10 @@ def main() -> int:
                 labels = list(result.diagnostics.get("ambiguous_labels", []))
                 extras[condition]["ambiguous_mentions"] += len(labels)
                 row["plain_ambiguous_labels"] = sorted(labels)
+            elif condition == "linker":
+                abstained = list(result.diagnostics.get("abstained_ambiguous", []))
+                extras[condition]["abstained"] += len(abstained)
+                row["linker_abstained"] = sorted(abstained)
             elif condition == "eat_inline":
                 unresolved = list(result.diagnostics.get("unresolved_references", []))
                 extras[condition]["unresolved"] += len(unresolved)
@@ -122,6 +126,8 @@ def main() -> int:
         }
         if condition == "plain":
             condition_result["ambiguous_mentions"] = extras[condition]["ambiguous_mentions"]
+        elif condition == "linker":
+            condition_result["abstained_ambiguous"] = extras[condition]["abstained"]
         elif condition == "eat_inline":
             condition_result["unresolved_references"] = extras[condition]["unresolved"]
         summary["conditions"][condition] = condition_result
@@ -133,19 +139,24 @@ def main() -> int:
     )
 
     plain = summary["conditions"]["plain"]
+    linker = summary["conditions"]["linker"]
     eat = summary["conditions"]["eat_inline"]
     (RESULTS / "comparative-summary.md").write_text(
         "# EAT Inline comparative benchmark\n\n"
-        f"- Dataset cases: `{len(cases)}`\n"
-        f"- Plain-text F1: `{plain['f1']}`\n"
-        f"- EAT Inline F1: `{eat['f1']}`\n"
-        f"- Plain-text exact-match rate: `{plain['exact_match_rate']}`\n"
-        f"- EAT Inline exact-match rate: `{eat['exact_match_rate']}`\n"
+        f"- Dataset cases: `{len(cases)}`\n\n"
+        "| Condition | F1 | Exact-match rate |\n"
+        "|---|---:|---:|\n"
+        f"| Plain label match | `{plain['f1']}` | `{plain['exact_match_rate']}` |\n"
+        f"| Offline linker | `{linker['f1']}` | `{linker['exact_match_rate']}` |\n"
+        f"| EAT Inline | `{eat['f1']}` | `{eat['exact_match_rate']}` |\n\n"
         f"- Plain ambiguous mentions: `{plain['ambiguous_mentions']}`\n"
+        f"- Linker abstained (ambiguous, no cue): `{linker['abstained_ambiguous']}`\n"
         f"- EAT Inline unresolved references: `{eat['unresolved_references']}`\n\n"
-        "Each condition is a baseline adapter over the same gold cases. Model-based "
-        "conditions implement the same interface but are not bundled, to keep this "
-        "benchmark deterministic and reproducible.\n\n"
+        "Each condition is a baseline adapter over the same gold cases. The offline "
+        "linker places its own references from the plain text; it never receives the "
+        "author-written tags. This isolates the effect of the notation from the effect "
+        "of perfect author annotation. Model-based linkers implement the same "
+        "interface but are not bundled, to keep this benchmark deterministic.\n\n"
         "> This is a paired synthetic benchmark. It demonstrates the measurable effect "
         "of supplying explicit type and key information under controlled conditions; "
         "it does not establish real-world superiority.\n",

@@ -124,14 +124,17 @@ This produces reproducible evidence about the effect of supplying type and key i
 
 ## Baseline adapter framework
 
-Each benchmark condition is a `BaselineAdapter` (see [`src/eat_baselines.py`](src/eat_baselines.py)), so different resolution strategies are scored identically over the same gold cases. Two deterministic adapters ship today:
+Each benchmark condition is a `BaselineAdapter` (see [`src/eat_baselines.py`](src/eat_baselines.py)), so different resolution strategies are scored identically over the same gold cases. Three deterministic, offline conditions ship today:
 
-| Condition | Adapter | Uses a model? |
-|---|---|---|
-| `plain` | Exact label matching over the registry | No |
-| `eat_inline` | Resolves author-written references by `type` and `key` | No |
+| Condition | Adapter | Entity info | Uses a model? |
+|---|---|---|---|
+| `plain` | Exact label matching over the registry | none | No |
+| `linker` | Offline gazetteer linker that places its own references | inferred | No |
+| `eat_inline` | Resolves author-written references by `type` and `key` | author-supplied | No |
 
-Model-based conditions — a named-entity recogniser, an entity linker, an LLM resolver or a retriever/reranker — implement the same interface (`requires_model = True`) and are **intentionally not bundled**. They need network access and non-deterministic models, which would make the benchmark irreproducible, and shipping a synthetic stand-in with an invented error rate would fabricate evidence. Each condition reports a deterministic cost proxy (registry lookups, label scans, references read, estimated tokens); wall-clock latency is left to callers as informational context, never a pass/fail gate.
+The `linker` condition matters for interpretation. It reads only the plain text — it never receives the author's tags — detects mentions from the registry gazetteer, disambiguates when a candidate's type word appears near the mention (for example `project` near `Phoenix`), and otherwise abstains rather than guessing. This isolates the effect of the notation from the effect of perfect author annotation: on the current corpus the ambiguous mentions carry no type cue, so the linker abstains and matches the plain baseline, while `eat_inline` resolves every case. The advantage is therefore not an artifact of free perfect tagging — a reasonable automatic tagger cannot recover the ambiguous entities from these sentences.
+
+Model-based linkers — a named-entity recogniser, an entity linker, an LLM resolver or a retriever/reranker — implement the same `EntityLinker` interface (`requires_model = True`) and plug into `LinkerAdapter` unchanged. They are **intentionally not bundled**: they need network access and non-deterministic models, which would make the benchmark irreproducible, and shipping a synthetic stand-in with an invented error rate would fabricate evidence. Each condition reports a deterministic cost proxy (registry lookups, label scans, references read, estimated tokens); wall-clock latency is left to callers as informational context, never a pass/fail gate.
 
 ## Automated verification
 

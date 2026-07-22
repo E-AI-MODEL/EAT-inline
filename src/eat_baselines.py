@@ -28,6 +28,7 @@ never as a pass/fail gate.
 
 from __future__ import annotations
 
+import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Iterable
@@ -56,17 +57,31 @@ class Case:
         )
 
 
+@dataclass(frozen=True)
+class Candidate:
+    """One registry entry that a label could refer to."""
+
+    type: str
+    key: str
+    canonical_id: str
+
+
 class ResolverRegistry:
     """Storage-neutral view over registry entries used by the adapters."""
 
     def __init__(self, entries: Iterable[dict[str, object]]) -> None:
         self.by_typed_key: dict[tuple[str, str], str] = {}
         self.by_label: dict[str, list[str]] = {}
+        self.candidates_by_label: dict[str, list["Candidate"]] = {}
         for entry in entries:
+            type_name = str(entry["type"])
+            key = str(entry["key"])
             canonical_id = str(entry["canonical_id"])
-            self.by_typed_key[(str(entry["type"]), str(entry["key"]))] = canonical_id
-            self.by_label.setdefault(str(entry["label"]).casefold(), []).append(
-                canonical_id
+            label = str(entry["label"])
+            self.by_typed_key[(type_name, key)] = canonical_id
+            self.by_label.setdefault(label.casefold(), []).append(canonical_id)
+            self.candidates_by_label.setdefault(label.casefold(), []).append(
+                Candidate(type=type_name, key=key, canonical_id=canonical_id)
             )
 
     def resolve_typed(self, type_name: str, key: str) -> str | None:
@@ -209,6 +224,156 @@ class EatResolverAdapter(BaselineAdapter):
         )
 
 
+@dataclass(frozen=True)
+class LinkedMention:
+    """A mention a linker found in text, optionally resolved to a type and key.
+
+    ``type`` and ``key`` are ``None`` when the linker detected a mention but
+    could not commit to a single entity (an abstention). ``candidate_count``
+    records how many registry candidates the label had.
+    """
+
+    label: str
+    start: int
+    end: int
+    type: str | None
+    key: str | None
+    candidate_count: int
+
+
+@dataclass
+class LinkOutput:
+    mentions: list[LinkedMention]
+    cost: Cost = field(default_factory=Cost)
+
+
+class EntityLinker(ABC):
+    """Contract for a component that finds and links entity mentions in text.
+
+    This is the plug-in point for real models. A named-entity recogniser, an
+    entity linker or an LLM resolver implements :meth:`link` and sets
+    ``requires_model = True``; :class:`LinkerAdapter` turns any linker into a
+    scored benchmark condition. The bundled :class:`GazetteerLinker` is offline
+    and deterministic (``requires_model = False``) so it can run in CI.
+    """
+
+    name: str
+    requires_model: bool = False
+
+    @abstractmethod
+    def link(self, text: str, registry: ResolverRegistry) -> LinkOutput:
+        """Return the mentions found in ``text`` with any committed type/key."""
+
+
+_WORD_RE = re.compile(r"[A-Za-z_]+")
+
+
+class GazetteerLinker(EntityLinker):
+    """A deterministic, offline linker.
+
+    Detection uses the registry labels as a gazetteer. Linking:
+
+    - a label with a single candidate links to it;
+    - a label with several candidates is disambiguated only when a candidate's
+      ``type`` word appears within :attr:`context_window` tokens of the mention
+      (for example ``project`` near ``Phoenix``);
+    - otherwise the linker abstains rather than guessing.
+
+    Abstention is deliberate: committing to an arbitrary candidate would inject
+    accuracy that reflects a coin toss, not the method. A committing variant is
+    intentionally not provided here.
+    """
+
+    name = "Offline gazetteer entity linker"
+    requires_model = False
+    context_window = 3
+
+    def link(self, text: str, registry: ResolverRegistry) -> LinkOutput:
+        lowered = text.casefold()
+        tokens = [(m.group(0).casefold(), m.start()) for m in _WORD_RE.finditer(text)]
+        cost = Cost(estimated_tokens=len(text.split()))
+        mentions: list[LinkedMention] = []
+        for label, candidates in registry.candidates_by_label.items():
+            cost.label_scans += 1
+            start = lowered.find(label)
+            while start != -1:
+                cost.registry_lookups += 1
+                end = start + len(label)
+                if len(candidates) == 1:
+                    only = candidates[0]
+                    mentions.append(
+                        LinkedMention(label, start, end, only.type, only.key, 1)
+                    )
+                else:
+                    chosen = self._disambiguate(candidates, tokens, start, end)
+                    mentions.append(
+                        LinkedMention(
+                            label,
+                            start,
+                            end,
+                            chosen.type if chosen else None,
+                            chosen.key if chosen else None,
+                            len(candidates),
+                        )
+                    )
+                start = lowered.find(label, end)
+        return LinkOutput(mentions=mentions, cost=cost)
+
+    def _disambiguate(
+        self,
+        candidates: list[Candidate],
+        tokens: list[tuple[str, int]],
+        start: int,
+        end: int,
+    ) -> Candidate | None:
+        before = [tok for tok, offset in tokens if offset < start][-self.context_window :]
+        after = [tok for tok, offset in tokens if offset >= end][: self.context_window]
+        context = set(before) | set(after)
+        matched = [c for c in candidates if c.type.casefold() in context]
+        if len(matched) == 1:
+            return matched[0]
+        return None
+
+
+class LinkerAdapter(BaselineAdapter):
+    """Score any :class:`EntityLinker` as a benchmark condition.
+
+    The linker must place its own mentions on the plain text; it never receives
+    the author-written references. This isolates the effect of the EAT Inline
+    notation from the effect of perfect author annotation.
+    """
+
+    def __init__(self, linker: EntityLinker, condition: str = "linker") -> None:
+        self.linker = linker
+        self.name = linker.name
+        self.condition = condition
+        self.requires_model = linker.requires_model
+
+    def predict(self, case: Case, registry: ResolverRegistry) -> AdapterResult:
+        output = self.linker.link(case.plain_text, registry)
+        predicted: set[str] = set()
+        abstained: list[str] = []
+        unresolved: list[str] = []
+        for mention in output.mentions:
+            if mention.type is None or mention.key is None:
+                abstained.append(mention.label)
+                continue
+            canonical_id = registry.resolve_typed(mention.type, mention.key)
+            if canonical_id:
+                predicted.add(canonical_id)
+            else:
+                unresolved.append(f"{mention.type}:{mention.key}")
+        return AdapterResult(
+            predicted_ids=predicted,
+            diagnostics={
+                "linked": len(predicted),
+                "abstained_ambiguous": abstained,
+                "unresolved_predictions": unresolved,
+            },
+            cost=output.cost,
+        )
+
+
 _REGISTRY: dict[str, BaselineAdapter] = {}
 
 
@@ -234,10 +399,15 @@ def registered_conditions() -> list[str]:
 
 
 def default_adapters() -> list[BaselineAdapter]:
-    """Return the deterministic adapters that run in CI, in report order."""
+    """Return the deterministic adapters that run in CI, in report order.
 
-    return [get_adapter("plain"), get_adapter("eat_inline")]
+    The order is intentional: no entity information, automatic linking, then
+    explicit author-supplied references.
+    """
+
+    return [get_adapter("plain"), get_adapter("linker"), get_adapter("eat_inline")]
 
 
 register_adapter(PlainLabelMatchAdapter())
+register_adapter(LinkerAdapter(GazetteerLinker()))
 register_adapter(EatResolverAdapter())
