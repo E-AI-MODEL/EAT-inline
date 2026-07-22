@@ -46,6 +46,17 @@ The core design rule is:
 
 EAT Inline does not define special blocks for summaries or other document structure. Use the conventions of the host format, such as Markdown headings and paragraphs.
 
+## Types
+
+The syntax accepts any valid identifier as a type. The repository also includes a **benchmark-only vocabulary** for scoring experiments:
+
+```text
+person, organisation, location, document, project, event,
+product, system, dataset, publication, website, method, concept
+```
+
+This list is not a normative registry. Domain-specific types remain possible.
+
 ## Writing format, not storage format
 
 EAT Inline is primarily an authoring format. A resolver may map a written reference to an internal ID and store both:
@@ -75,6 +86,19 @@ REFERENCE_RE = re.compile(
 
 A type list, database resolver, governance process or gateway can be added when a use case needs it. None is required to parse or start using the notation.
 
+## Seed gold corpus
+
+The repository contains a synthetic, versioned seed dataset with **64 reviewed records** in Dutch and English:
+
+| Task | Records | Purpose |
+|---|---:|---|
+| Syntax | 20 | Valid and invalid reference forms |
+| Typing | 16 | Expected entity type and key |
+| Resolution | 12 | Written references mapped to canonical IDs |
+| Generation | 16 | Plain text paired with expected EAT Inline output |
+
+The corpus lives in `benchmark/corpora/` and is validated automatically. It is a starting point for reproducible testing, not enough evidence for broad performance claims.
+
 ## Automated verification
 
 The repository contains four GitHub Actions workflows:
@@ -82,8 +106,8 @@ The repository contains four GitHub Actions workflows:
 | Workflow | Purpose |
 |---|---|
 | `CI` | Runs the unit tests on supported Python versions |
-| `Conformance` | Checks the reference implementation against the versioned examples |
-| `Benchmark` | Measures parser throughput and visible character overhead |
+| `Conformance` | Checks the reference implementation against versioned examples |
+| `Benchmark` | Validates the gold corpus and measures parser throughput and character overhead |
 | `Docs` | Detects version drift and retired names or syntax |
 
 Run the same checks locally:
@@ -92,6 +116,7 @@ Run the same checks locally:
 python -m pip install -e .
 python -m unittest discover -s tests -p "test_*.py" -v
 python scripts/run_conformance.py
+python scripts/validate_dataset.py
 python scripts/run_benchmark.py
 python scripts/check_docs.py
 ```
@@ -105,6 +130,8 @@ Version `0.3.2` establishes:
 - one compact reference syntax;
 - a small Python reference parser;
 - versioned examples and automated checks;
+- a benchmark-only type vocabulary;
+- a bilingual 64-record seed gold corpus;
 - a reproducible parser and syntax-overhead benchmark.
 
 It does not yet prove:
@@ -114,12 +141,13 @@ It does not yet prove:
 - universal model compatibility;
 - production readiness.
 
-Those claims require comparative experiments with people, models and real resolver systems.
+Those claims require larger comparative datasets and experiments with people, models and real resolver systems.
 
 ## Repository map
 
 ```text
 .github/workflows/       automated checks
+benchmark/corpora/       versioned seed gold corpus
 benchmark/results/       generated benchmark artifacts
 scripts/                 verification and benchmark scripts
 src/eat_inline.py        minimal reference implementation
