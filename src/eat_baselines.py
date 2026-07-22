@@ -15,11 +15,10 @@ Three deterministic reference adapters are provided:
 
 Model-based conditions (a named-entity recogniser, an entity linker, an LLM
 resolver or a retriever/reranker) conform to the same :class:`BaselineAdapter`
-interface. They are intentionally **not** bundled here: they require network
-access and non-deterministic models, which would make the benchmark
-irreproducible in CI, and shipping a synthetic stand-in with an invented error
-rate would fabricate evidence. To add one, implement :class:`BaselineAdapter`,
-set ``requires_model = True``, and register it with :func:`register_adapter`.
+interface. The built-in adapters remain model-free. External model predictions
+can be validated and replayed through ``eat_recorded_runs``; the repository's
+public-corpus TF-IDF experiment uses that boundary without changing this core
+adapter set.
 
 Cost is recorded as a deterministic proxy (registry lookups, label scans,
 references read, estimated tokens) rather than wall-clock latency, so committed
@@ -53,7 +52,7 @@ class Case:
         return cls(
             id=str(record["id"]),
             plain_text=str(record["plain_text"]),
-            eat_text=str(record["eat_text"]),
+            eat_text=str(record.get("eat_text", "")),
             gold_ids=frozenset(str(value) for value in record["gold_ids"]),
             language=str(record["language"]) if "language" in record else None,
         )
