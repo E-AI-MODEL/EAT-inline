@@ -104,11 +104,11 @@ The comparison set uses a small entity registry containing deliberately ambiguou
 
 ## Paired evidence
 
-The Benchmark Action runs two conditions over the same gold cases:
+The Benchmark Action runs three conditions over the same gold cases:
 
 ```text
-plain text
-versus
+plain exact-label matching
+offline automatic linking
 EAT Inline with explicit type and key
 ```
 
@@ -135,6 +135,24 @@ Each benchmark condition is a `BaselineAdapter` (see [`src/eat_baselines.py`](sr
 The `linker` condition reads only the plain text; it never receives the author's tags or the gold IDs. It detects complete registry labels, prefers the longest overlapping label, uses a nearby type word as a conservative cue (for example `project` near `Phoenix`), and otherwise abstains. On the current corpus the ambiguous mentions deliberately carry no type cue, so this simple linker matches the plain baseline while `eat_inline` resolves every case. This is a mechanical offline baseline, not evidence that a stronger model could not recover those entities. Its purpose is to make automatic linkers directly scorable without giving them perfect author annotations.
 
 Model-based linkers — a named-entity recogniser, an entity linker, an LLM resolver or a retriever/reranker — implement the same `EntityLinker` interface (`requires_model = True`) and plug into `LinkerAdapter` unchanged. They are **intentionally not bundled**: they need network access and non-deterministic models, which would make the benchmark irreproducible, and shipping a synthetic stand-in with an invented error rate would fabricate evidence. Each condition reports a deterministic cost proxy (registry lookups, label scans, references read, estimated tokens); wall-clock latency is left to callers as informational context, never a pass/fail gate.
+
+### Recorded model runs
+
+An external model run can be replayed without giving CI network access or hiding the per-case output. The artifact format is defined in [`schemas/linker-run.schema.json`](schemas/linker-run.schema.json). Every run records:
+
+- the exact dataset name, dataset SHA-256 and registry SHA-256;
+- `plain_text` as the only benchmark input field;
+- the model name, immutable version and source;
+- the runner commit, command and parameters;
+- complete per-case mention spans, typed keys and model-cost metadata.
+
+The validator rejects missing, duplicate or unknown cases, changed datasets, labels that do not match their plain-text spans, unknown typed keys and undocumented fields such as `gold_ids` or `eat_text`. A validated run uses the same precision, recall, F1 and exact-match functions as the built-in benchmark:
+
+```bash
+python scripts/run_recorded_linker_benchmark.py path/to/linker-run.json
+```
+
+No example model output is committed because an invented artifact would look like evidence. A published result must come from a named, pinned model and include the complete run artifact.
 
 ## Automated verification
 
@@ -165,6 +183,8 @@ benchmark-summary.md
 comparative-results.json
 comparative-summary.md
 dataset-validation.json
+recorded-linker-results.json       # only after replaying an external run
+recorded-linker-summary.md         # only after replaying an external run
 ```
 
 ## Project foundation
@@ -200,6 +220,8 @@ benchmark/results/       generated benchmark artifacts
 schemas/                 portable JSON Schemas
 scripts/                 verification and benchmark scripts
 src/eat_inline.py        minimal reference implementation
+src/eat_baselines.py     benchmark adapter and scoring framework
+src/eat_recorded_runs.py recorded model-run validation and replay
 tests/                   unit tests and conformance examples
 SPEC.md                  normative experimental specification
 GOVERNANCE.md            change and contribution policy
