@@ -8,8 +8,17 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {".md", ".txt", ".py", ".toml", ".json", ".yml", ".yaml", ".abnf"}
-REQUIRED = ("Hans Visser", "EAI Analyse & Advies", "0.3.1")
-FORBIDDEN = ("Nick Milo", "Nick_Milo", "wikilink", "wiki link", "[[")
+REQUIRED = ("Hans Visser", "EAI Analyse & Advies", "0.3.2")
+FORBIDDEN = (
+    "Nick Milo",
+    "Nick_Milo",
+    "wikilink",
+    "wiki link",
+    "[[",
+    "@@EAT tldr:",
+    "TLDR block",
+    "research baseline",
+)
 EXCLUDED = {ROOT / "scripts" / "check_docs.py"}
 
 
@@ -38,10 +47,12 @@ def main() -> int:
 
     pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    if 'version = "0.3.1"' not in pyproject:
-        errors.append("pyproject version is not 0.3.1")
-    if "0.3.1" not in readme:
-        errors.append("README does not mention version 0.3.1")
+    if 'version = "0.3.2"' not in pyproject:
+        errors.append("pyproject version is not 0.3.2")
+    if "0.3.2" not in readme:
+        errors.append("README does not mention version 0.3.2")
+    if "EAT Inline has one construct" not in readme:
+        errors.append("README does not declare the single-construct core")
 
     if errors:
         for error in errors:
