@@ -1,9 +1,10 @@
 {
   "dataset": "eat-inline-gold",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "eat_inline_version": "0.3.2",
   "status": "seed-gold-corpus",
   "vocabulary": "benchmark/corpora/type-vocabulary.json",
+  "entity_registry": "benchmark/corpora/entity-registry.jsonl",
   "files": [
     {
       "task": "syntax",
@@ -24,13 +25,19 @@
       "task": "generation",
       "path": "benchmark/corpora/generation.jsonl",
       "records": 16
+    },
+    {
+      "task": "comparison",
+      "path": "benchmark/corpora/comparison.jsonl",
+      "records": 12
     }
   ],
   "languages": ["nl", "en"],
-  "records_total": 64,
+  "records_total": 76,
   "notes": [
     "The type vocabulary is a benchmark vocabulary, not a normative language registry.",
+    "The paired comparison evaluates the same intended references with and without EAT Inline annotations.",
     "All records are synthetic and intended for reproducible testing.",
-    "The seed corpus is too small to support broad performance claims."
+    "The seed corpus is too small to support broad real-world claims."
   ]
 }
