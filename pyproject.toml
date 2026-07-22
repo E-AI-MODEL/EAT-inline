@@ -20,5 +20,5 @@ classifiers = [
 ]
 
 [tool.setuptools]
-py-modules = ["eat_inline", "eat_baselines"]
+py-modules = ["eat_inline", "eat_baselines", "eat_recorded_runs"]
 package-dir = {"" = "src"}
