@@ -29,10 +29,6 @@ The project follows semantic versioning for the reference implementation and spe
 - Paired deterministic plain-text versus EAT Inline benchmark.
 - Validation for canonical IDs, generation gold references, label multiplicity and surplus plain-text mentions.
 
-### Removed
-
-- Experimental TLDR block syntax.
-
 ### Evidence boundary
 
 The included benchmark is synthetic seed evidence. It does not establish real-world superiority over NER, language-model or production resolver baselines.
