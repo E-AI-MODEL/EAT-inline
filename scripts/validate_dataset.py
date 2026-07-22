@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from pathlib import Path
 
 from eat_inline import VERSION, parse_references, validate_reference
@@ -50,6 +51,26 @@ def has_unparsed_eat_markup(value: str) -> bool:
     return "@@EAT" in remainder or "@@" in remainder
 
 
+def recognized_label_counts(value: str, labels: set[str]) -> Counter[str]:
+    """Count every registry label using the plain baseline's matching semantics."""
+    folded = value.casefold()
+    counts: Counter[str] = Counter()
+    for label in labels:
+        occurrence_count = folded.count(label)
+        if occurrence_count:
+            counts[label] = occurrence_count
+    return counts
+
+
+def plain_mentions_match(
+    value: str,
+    required_labels: Counter[str],
+    registry_labels: set[str],
+) -> bool:
+    """Require the plain condition to contain exactly the paired gold mentions."""
+    return recognized_label_counts(value, registry_labels) == required_labels
+
+
 def main() -> int:
     manifest = json.loads((CORPUS / "manifest.json").read_text(encoding="utf-8"))
     vocabulary = json.loads((CORPUS / "type-vocabulary.json").read_text(encoding="utf-8"))
@@ -64,18 +85,25 @@ def main() -> int:
 
     allowed_types = set(vocabulary["types"])
     registry_by_typed_key: dict[tuple[str, str], str] = {}
+    registry_by_id: dict[str, dict[str, object]] = {}
     registry_ids: set[str] = set()
+    registry_labels: set[str] = set()
     for item in registry:
         typed_key = (str(item["type"]), str(item["key"]))
         canonical_id = str(item["canonical_id"])
+        label = str(item["label"]).casefold()
         if typed_key in registry_by_typed_key:
             failures.append(f"duplicate registry typed key: {typed_key}")
         if canonical_id in registry_ids:
             failures.append(f"duplicate canonical id: {canonical_id}")
         if item["type"] not in allowed_types:
             failures.append(f"registry contains unknown benchmark type {item['type']!r}")
+        if not label:
+            failures.append(f"registry contains empty label for {canonical_id!r}")
         registry_by_typed_key[typed_key] = canonical_id
+        registry_by_id[canonical_id] = item
         registry_ids.add(canonical_id)
+        registry_labels.add(label)
 
     syntax = load_jsonl(CORPUS / "syntax.jsonl")
     counts["syntax"] = len(syntax)
@@ -168,10 +196,31 @@ def main() -> int:
                 failures.append(f"{case['id']}: EAT reference is absent from registry: {item.raw}")
             else:
                 resolved_ids.append(canonical_id)
-        if set(resolved_ids) != set(str(value) for value in case["gold_ids"]):
+
+        gold_ids = [str(value) for value in case["gold_ids"]]
+        if Counter(resolved_ids) != Counter(gold_ids):
             failures.append(f"{case['id']}: resolved EAT IDs do not match gold IDs")
-        if not str(case["plain_text"]).strip():
+
+        plain_text = str(case["plain_text"])
+        if not plain_text.strip():
             failures.append(f"{case['id']}: empty plain-text condition")
+            continue
+
+        required_labels: Counter[str] = Counter()
+        for canonical_id in gold_ids:
+            registry_item = registry_by_id.get(canonical_id)
+            if registry_item is None:
+                failures.append(f"{case['id']}: unknown gold canonical ID {canonical_id!r}")
+                continue
+            required_labels[str(registry_item["label"]).casefold()] += 1
+
+        actual_labels = recognized_label_counts(plain_text, registry_labels)
+        if not plain_mentions_match(plain_text, required_labels, registry_labels):
+            failures.append(
+                f"{case['id']}: plain-text registry mentions "
+                f"{dict(sorted(actual_labels.items()))!r} do not match gold mentions "
+                f"{dict(sorted(required_labels.items()))!r}"
+            )
 
     declared = {item["task"]: item["records"] for item in manifest["files"]}
     if counts != declared:
