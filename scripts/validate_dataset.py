@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from pathlib import Path
 
 from eat_inline import VERSION, parse_references, validate_reference
@@ -64,6 +65,7 @@ def main() -> int:
 
     allowed_types = set(vocabulary["types"])
     registry_by_typed_key: dict[tuple[str, str], str] = {}
+    registry_by_id: dict[str, dict[str, object]] = {}
     registry_ids: set[str] = set()
     for item in registry:
         typed_key = (str(item["type"]), str(item["key"]))
@@ -75,6 +77,7 @@ def main() -> int:
         if item["type"] not in allowed_types:
             failures.append(f"registry contains unknown benchmark type {item['type']!r}")
         registry_by_typed_key[typed_key] = canonical_id
+        registry_by_id[canonical_id] = item
         registry_ids.add(canonical_id)
 
     syntax = load_jsonl(CORPUS / "syntax.jsonl")
@@ -168,10 +171,31 @@ def main() -> int:
                 failures.append(f"{case['id']}: EAT reference is absent from registry: {item.raw}")
             else:
                 resolved_ids.append(canonical_id)
-        if set(resolved_ids) != set(str(value) for value in case["gold_ids"]):
+
+        gold_ids = [str(value) for value in case["gold_ids"]]
+        if Counter(resolved_ids) != Counter(gold_ids):
             failures.append(f"{case['id']}: resolved EAT IDs do not match gold IDs")
-        if not str(case["plain_text"]).strip():
+
+        plain_text = str(case["plain_text"]).casefold()
+        if not plain_text.strip():
             failures.append(f"{case['id']}: empty plain-text condition")
+            continue
+
+        required_labels: Counter[str] = Counter()
+        for canonical_id in gold_ids:
+            registry_item = registry_by_id.get(canonical_id)
+            if registry_item is None:
+                failures.append(f"{case['id']}: unknown gold canonical ID {canonical_id!r}")
+                continue
+            required_labels[str(registry_item["label"]).casefold()] += 1
+
+        for label, required_count in required_labels.items():
+            actual_count = plain_text.count(label)
+            if actual_count < required_count:
+                failures.append(
+                    f"{case['id']}: plain text contains label {label!r} "
+                    f"{actual_count} time(s), expected at least {required_count}"
+                )
 
     declared = {item["task"]: item["records"] for item in manifest["files"]}
     if counts != declared:
