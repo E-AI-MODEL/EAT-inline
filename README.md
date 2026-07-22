@@ -124,14 +124,17 @@ This produces reproducible evidence about the effect of supplying type and key i
 
 ## Baseline adapter framework
 
-Each benchmark condition is a `BaselineAdapter` (see [`src/eat_baselines.py`](src/eat_baselines.py)), so different resolution strategies are scored identically over the same gold cases. Two deterministic adapters ship today:
+Each benchmark condition is a `BaselineAdapter` (see [`src/eat_baselines.py`](src/eat_baselines.py)), so different resolution strategies are scored identically over the same gold cases. Three deterministic, offline conditions ship today:
 
-| Condition | Adapter | Uses a model? |
-|---|---|---|
-| `plain` | Exact label matching over the registry | No |
-| `eat_inline` | Resolves author-written references by `type` and `key` | No |
+| Condition | Adapter | Entity info | Uses a model? |
+|---|---|---|---|
+| `plain` | Exact label matching over the registry | none | No |
+| `linker` | Offline gazetteer linker that places its own references | inferred | No |
+| `eat_inline` | Resolves author-written references by `type` and `key` | author-supplied | No |
 
-Model-based conditions — a named-entity recogniser, an entity linker, an LLM resolver or a retriever/reranker — implement the same interface (`requires_model = True`) and are **intentionally not bundled**. They need network access and non-deterministic models, which would make the benchmark irreproducible, and shipping a synthetic stand-in with an invented error rate would fabricate evidence. Each condition reports a deterministic cost proxy (registry lookups, label scans, references read, estimated tokens); wall-clock latency is left to callers as informational context, never a pass/fail gate.
+The `linker` condition reads only the plain text; it never receives the author's tags or the gold IDs. It detects complete registry labels, prefers the longest overlapping label, uses a nearby type word as a conservative cue (for example `project` near `Phoenix`), and otherwise abstains. On the current corpus the ambiguous mentions deliberately carry no type cue, so this simple linker matches the plain baseline while `eat_inline` resolves every case. This is a mechanical offline baseline, not evidence that a stronger model could not recover those entities. Its purpose is to make automatic linkers directly scorable without giving them perfect author annotations.
+
+Model-based linkers — a named-entity recogniser, an entity linker, an LLM resolver or a retriever/reranker — implement the same `EntityLinker` interface (`requires_model = True`) and plug into `LinkerAdapter` unchanged. They are **intentionally not bundled**: they need network access and non-deterministic models, which would make the benchmark irreproducible, and shipping a synthetic stand-in with an invented error rate would fabricate evidence. Each condition reports a deterministic cost proxy (registry lookups, label scans, references read, estimated tokens); wall-clock latency is left to callers as informational context, never a pass/fail gate.
 
 ## Automated verification
 
