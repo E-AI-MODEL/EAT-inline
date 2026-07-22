@@ -8,7 +8,14 @@ import json
 from pathlib import Path
 import sys
 
-from eat_baselines import Case, Cost, ResolverRegistry, metrics, score
+from eat_baselines import (
+    Case,
+    Cost,
+    PlainLabelMatchAdapter,
+    ResolverRegistry,
+    metrics,
+    score,
+)
 from eat_inline import VERSION
 from eat_recorded_runs import (
     RecordedLinkerAdapter,
@@ -70,11 +77,28 @@ def evaluate(
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("run", type=Path, help="recorded linker-run JSON artifact")
+    parser.add_argument(
+        "--dataset",
+        type=Path,
+        default=CORPUS / "comparison.jsonl",
+        help="comparison JSONL to score",
+    )
+    parser.add_argument(
+        "--registry",
+        type=Path,
+        default=CORPUS / "entity-registry.jsonl",
+        help="registry JSONL used by the recorded run",
+    )
+    parser.add_argument(
+        "--dataset-name",
+        default=DATASET_NAME,
+        help="provenance name expected in the recorded run",
+    )
     parser.add_argument("--output-dir", type=Path, default=RESULTS)
     args = parser.parse_args(argv)
 
-    dataset_path = CORPUS / "comparison.jsonl"
-    registry_path = CORPUS / "entity-registry.jsonl"
+    dataset_path = args.dataset
+    registry_path = args.registry
     cases = [Case.from_record(item) for item in load_jsonl(dataset_path)]
     registry = ResolverRegistry(load_jsonl(registry_path))
     try:
@@ -82,7 +106,7 @@ def main(argv: list[str] | None = None) -> int:
             args.run,
             cases,
             registry,
-            dataset_name=DATASET_NAME,
+            dataset_name=args.dataset_name,
             dataset_path=dataset_path,
             registry_path=registry_path,
         )
@@ -92,6 +116,7 @@ def main(argv: list[str] | None = None) -> int:
 
     adapter = RecordedLinkerAdapter(run)
     condition, rows = evaluate(adapter, cases, registry)
+    baseline_condition, _ = evaluate(PlainLabelMatchAdapter(), cases, registry)
     summary = {
         "eat_inline_version": VERSION,
         "dataset": run.dataset_name,
@@ -110,10 +135,14 @@ def main(argv: list[str] | None = None) -> int:
             "parameters": run.runner_parameters,
         },
         "condition": condition,
+        "baseline": {
+            "name": PlainLabelMatchAdapter.name,
+            "condition": baseline_condition,
+        },
         "limitations": [
             "A recorded run proves only the supplied model, revision, configuration and dataset.",
             "The replay validates provenance and scoring but does not rerun the external model.",
-            "The included comparison corpus remains synthetic seed data.",
+            "Dataset provenance, candidate construction and limitations must be read alongside the result.",
         ],
     }
 
@@ -134,6 +163,13 @@ def main(argv: list[str] | None = None) -> int:
         f"- Recall: `{condition['recall']}`\n"
         f"- F1: `{condition['f1']}`\n"
         f"- Exact-match rate: `{condition['exact_match_rate']}`\n\n"
+        "| Condition | Precision | Recall | F1 | Exact match |\n"
+        "|---|---:|---:|---:|---:|\n"
+        f"| Recorded model | `{condition['precision']}` | `{condition['recall']}` | "
+        f"`{condition['f1']}` | `{condition['exact_match_rate']}` |\n"
+        f"| Plain label match | `{baseline_condition['precision']}` | "
+        f"`{baseline_condition['recall']}` | `{baseline_condition['f1']}` | "
+        f"`{baseline_condition['exact_match_rate']}` |\n\n"
         "> This file replays a validated external model run. It does not rerun the "
         "model or establish general superiority.\n",
         encoding="utf-8",
