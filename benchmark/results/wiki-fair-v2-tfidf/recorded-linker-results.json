@@ -1,0 +1,1383 @@
+{
+  "summary": {
+    "eat_inline_version": "0.3.2",
+    "dataset": "wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26",
+    "dataset_sha256": "b909e1d6df95b59a2e49cdd8331202d5a06d67f844c61ff9fdf5941d6b9f79e2",
+    "registry_sha256": "89e3fa89b5b8e14bdfa18f599f8dfee3a41560f349ecc331bcad802fc79a22de",
+    "cases": 40,
+    "model": {
+      "name": "scikit-learn TF-IDF character n-gram entity retriever",
+      "version": "scikit-learn==1.8.0;eat-profile-v1",
+      "source": "https://github.com/scikit-learn/scikit-learn/tree/1.8.0"
+    },
+    "runner": {
+      "source": "https://github.com/E-AI-MODEL/EAT-inline/blob/f7e3fc2a63d8e9c9e84e70f3e990f46fcd31e6d3/scripts/run_tfidf_linker.py",
+      "commit": "f7e3fc2a63d8e9c9e84e70f3e990f46fcd31e6d3",
+      "command": "python scripts/run_tfidf_linker.py --training benchmark/external/wiki-fair-v2/dev.training.jsonl --input benchmark/external/wiki-fair-v2/test.inputs.jsonl --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 --runner-commit f7e3fc2a63d8e9c9e84e70f3e990f46fcd31e6d3 --output benchmark/results/wiki-fair-v2-tfidf-linker-run.json",
+      "parameters": {
+        "candidate_generation": "registry labels plus dev-only mention aliases",
+        "context_characters_each_side": 160,
+        "input_sha256": "6d04de8818615ac0266b2c240228fe12f3cf14da8819e662f79ec665334da886",
+        "ngram_range": [
+          3,
+          5
+        ],
+        "training_sha256": "bb735f16e8d8b3a2962f29060bc826ba62924ed67e128961a745cfb81452b5dd",
+        "vectorizer_analyzer": "char_wb",
+        "vectorizer_norm": "l2",
+        "vectorizer_sublinear_tf": true
+      }
+    },
+    "condition": {
+      "precision": 0.7247,
+      "recall": 0.6937,
+      "f1": 0.7089,
+      "exact_match_rate": 0.125,
+      "true_positives": 308,
+      "false_positives": 117,
+      "false_negatives": 136,
+      "cost": {
+        "registry_lookups": 831,
+        "label_scans": 0,
+        "references_read": 0,
+        "model_calls": 40,
+        "estimated_tokens": 16722
+      }
+    },
+    "baseline": {
+      "name": "Deterministic plain-text label match",
+      "condition": {
+        "precision": 0.6667,
+        "recall": 0.7072,
+        "f1": 0.6863,
+        "exact_match_rate": 0.05,
+        "true_positives": 314,
+        "false_positives": 157,
+        "false_negatives": 130,
+        "cost": {
+          "registry_lookups": 485,
+          "label_scans": 42160,
+          "references_read": 0,
+          "model_calls": 0,
+          "estimated_tokens": 16722
+        }
+      }
+    },
+    "limitations": [
+      "A recorded run proves only the supplied model, revision, configuration and dataset.",
+      "The replay validates provenance and scoring but does not rerun the external model.",
+      "Dataset provenance, candidate construction and limitations must be read alongside the result."
+    ]
+  },
+  "cases": [
+    {
+      "id": "wiki-fair-v2-test-37040882",
+      "gold_ids": [
+        "Q16919374",
+        "Q17403146"
+      ],
+      "predicted_ids": [
+        "Q1313",
+        "Q142",
+        "Q16919374",
+        "Q17403146",
+        "Q208045",
+        "Q23666",
+        "Q31920",
+        "Q406039",
+        "Q55",
+        "Q628099",
+        "Q787674",
+        "Q90"
+      ],
+      "diagnostics": {
+        "mentions": 19,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-61951348",
+      "gold_ids": [
+        "Q11864051",
+        "Q1310777",
+        "Q1346663",
+        "Q1474497",
+        "Q1474502",
+        "Q1740443",
+        "Q214",
+        "Q23045120",
+        "Q26720335",
+        "Q33",
+        "Q41466",
+        "Q750918",
+        "Q827966"
+      ],
+      "predicted_ids": [
+        "Q1474497",
+        "Q1474502",
+        "Q1740443",
+        "Q214",
+        "Q23045120",
+        "Q23051084",
+        "Q25379",
+        "Q26720335",
+        "Q41466",
+        "Q5038893",
+        "Q750918"
+      ],
+      "diagnostics": {
+        "mentions": 13,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-2000128",
+      "gold_ids": [
+        "Q113843169",
+        "Q2159907",
+        "Q356",
+        "Q484876",
+        "Q6503343",
+        "Q92747",
+        "Q95"
+      ],
+      "predicted_ids": [
+        "Q10870555",
+        "Q11661",
+        "Q13974",
+        "Q148",
+        "Q160381",
+        "Q18554460",
+        "Q25379",
+        "Q30",
+        "Q3400985",
+        "Q356",
+        "Q37226",
+        "Q48282",
+        "Q876720",
+        "Q918",
+        "Q92747",
+        "Q95"
+      ],
+      "diagnostics": {
+        "mentions": 21,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-61494965",
+      "gold_ids": [
+        "Q1146447",
+        "Q1162635",
+        "Q159",
+        "Q190001",
+        "Q2952044",
+        "Q41466",
+        "Q48940420",
+        "Q568805",
+        "Q649",
+        "Q891"
+      ],
+      "predicted_ids": [
+        "Q1162635",
+        "Q159",
+        "Q41466",
+        "Q42884",
+        "Q568805",
+        "Q649",
+        "Q891"
+      ],
+      "diagnostics": {
+        "mentions": 18,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-47570184",
+      "gold_ids": [
+        "Q1706472",
+        "Q21040968",
+        "Q21040970",
+        "Q21040974"
+      ],
+      "predicted_ids": [
+        "Q1706472",
+        "Q21040968",
+        "Q21040970",
+        "Q21040974"
+      ],
+      "diagnostics": {
+        "mentions": 5,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-14261177",
+      "gold_ids": [
+        "Q233",
+        "Q2736",
+        "Q4619635",
+        "Q475585",
+        "Q58239",
+        "Q58243",
+        "Q75836"
+      ],
+      "predicted_ids": [
+        "Q160381",
+        "Q233",
+        "Q475585",
+        "Q58239",
+        "Q742747",
+        "Q75836"
+      ],
+      "diagnostics": {
+        "mentions": 7,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-3586255",
+      "gold_ids": [
+        "Q1088",
+        "Q11303546",
+        "Q118863",
+        "Q120755",
+        "Q13235160",
+        "Q133073",
+        "Q1363572",
+        "Q1408",
+        "Q16773145",
+        "Q1930187",
+        "Q1961776",
+        "Q208045",
+        "Q21",
+        "Q212940",
+        "Q23661",
+        "Q2462658",
+        "Q247492",
+        "Q266101",
+        "Q2734911",
+        "Q30",
+        "Q3133",
+        "Q3142",
+        "Q3257809",
+        "Q3257938",
+        "Q47476",
+        "Q4773672",
+        "Q4782",
+        "Q502163",
+        "Q5096994",
+        "Q538101",
+        "Q60",
+        "Q6350718",
+        "Q63755226",
+        "Q664",
+        "Q66889825",
+        "Q686046",
+        "Q6956204",
+        "Q6956212",
+        "Q7381971",
+        "Q79990",
+        "Q804868",
+        "Q911397",
+        "Q911909",
+        "Q943"
+      ],
+      "predicted_ids": [
+        "Q1088",
+        "Q11303546",
+        "Q118863",
+        "Q120755",
+        "Q133073",
+        "Q1384",
+        "Q1408",
+        "Q159",
+        "Q16773145",
+        "Q1860",
+        "Q1930187",
+        "Q1961776",
+        "Q208045",
+        "Q21",
+        "Q23661",
+        "Q2462658",
+        "Q266101",
+        "Q30",
+        "Q3133",
+        "Q3142",
+        "Q3257809",
+        "Q47476",
+        "Q4782",
+        "Q5096994",
+        "Q517472",
+        "Q6350718",
+        "Q63755226",
+        "Q664",
+        "Q66889825",
+        "Q79990",
+        "Q911909",
+        "Q943"
+      ],
+      "diagnostics": {
+        "mentions": 55,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-36024203",
+      "gold_ids": [
+        "Q1188550",
+        "Q128257",
+        "Q17073815",
+        "Q36180",
+        "Q3882417",
+        "Q5736317",
+        "Q730523",
+        "Q731313",
+        "Q7383528"
+      ],
+      "predicted_ids": [
+        "Q1188550",
+        "Q128257",
+        "Q17073815",
+        "Q3882417",
+        "Q5736317",
+        "Q730523",
+        "Q731313",
+        "Q7383528"
+      ],
+      "diagnostics": {
+        "mentions": 11,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-7688617",
+      "gold_ids": [
+        "Q116080",
+        "Q1251441",
+        "Q152951",
+        "Q15627658",
+        "Q184",
+        "Q189290",
+        "Q2727209",
+        "Q36",
+        "Q362",
+        "Q705173",
+        "Q7318",
+        "Q79854",
+        "Q842008",
+        "Q941748"
+      ],
+      "predicted_ids": [
+        "Q1251441",
+        "Q15180",
+        "Q152951",
+        "Q159",
+        "Q182956",
+        "Q184",
+        "Q2808",
+        "Q319544",
+        "Q36",
+        "Q362",
+        "Q55",
+        "Q705173",
+        "Q79854",
+        "Q941748"
+      ],
+      "diagnostics": {
+        "mentions": 25,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-12376162",
+      "gold_ids": [
+        "Q14234469",
+        "Q2750094",
+        "Q30",
+        "Q3315767",
+        "Q53636",
+        "Q53696",
+        "Q65554733",
+        "Q7565263",
+        "Q7988067"
+      ],
+      "predicted_ids": [
+        "Q160381",
+        "Q2750094",
+        "Q27611",
+        "Q30",
+        "Q53696",
+        "Q65554733",
+        "Q7565263"
+      ],
+      "diagnostics": {
+        "mentions": 7,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-20114283",
+      "gold_ids": [
+        "Q16350067",
+        "Q192853",
+        "Q222",
+        "Q2431917"
+      ],
+      "predicted_ids": [
+        "Q160381",
+        "Q192853",
+        "Q222",
+        "Q2431917"
+      ],
+      "diagnostics": {
+        "mentions": 5,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-1092869",
+      "gold_ids": [
+        "Q11761",
+        "Q11764",
+        "Q1405",
+        "Q1747689",
+        "Q2277",
+        "Q36422",
+        "Q3934",
+        "Q40203",
+        "Q41573",
+        "Q753",
+        "Q842606",
+        "Q897"
+      ],
+      "predicted_ids": [
+        "Q11761",
+        "Q11764",
+        "Q1321",
+        "Q1405",
+        "Q160381",
+        "Q201788",
+        "Q208045",
+        "Q220",
+        "Q2277",
+        "Q29",
+        "Q36422",
+        "Q39018",
+        "Q3934",
+        "Q40203",
+        "Q41573",
+        "Q753"
+      ],
+      "diagnostics": {
+        "mentions": 47,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-32565052",
+      "gold_ids": [
+        "Q1162163",
+        "Q1550903",
+        "Q1967606",
+        "Q19940089",
+        "Q2256",
+        "Q23159",
+        "Q2329",
+        "Q387419",
+        "Q5647674",
+        "Q752297",
+        "Q757609",
+        "Q76473",
+        "Q787674",
+        "Q8564903"
+      ],
+      "predicted_ids": [
+        "Q1162163",
+        "Q161885",
+        "Q1967606",
+        "Q19940089",
+        "Q2256",
+        "Q23051084",
+        "Q23159",
+        "Q2329",
+        "Q387419",
+        "Q5647674",
+        "Q757609",
+        "Q76473",
+        "Q8564903"
+      ],
+      "diagnostics": {
+        "mentions": 14,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-35862559",
+      "gold_ids": [
+        "Q7065433",
+        "Q7268035"
+      ],
+      "predicted_ids": [
+        "Q7065433",
+        "Q7268035"
+      ],
+      "diagnostics": {
+        "mentions": 3,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-20490257",
+      "gold_ids": [
+        "Q102105",
+        "Q109960",
+        "Q12859263",
+        "Q188751",
+        "Q19546",
+        "Q200441",
+        "Q2210015",
+        "Q263892",
+        "Q29182",
+        "Q339512",
+        "Q352506",
+        "Q38060",
+        "Q39018",
+        "Q44024",
+        "Q46418",
+        "Q4656",
+        "Q490",
+        "Q731413",
+        "Q83460",
+        "Q83922"
+      ],
+      "predicted_ids": [
+        "Q102105",
+        "Q109960",
+        "Q12859263",
+        "Q16533",
+        "Q188751",
+        "Q19546",
+        "Q200441",
+        "Q2210015",
+        "Q2277",
+        "Q263892",
+        "Q339512",
+        "Q352506",
+        "Q38060",
+        "Q39018",
+        "Q44024",
+        "Q46418",
+        "Q4656",
+        "Q490",
+        "Q61022630",
+        "Q731413",
+        "Q83460",
+        "Q83922"
+      ],
+      "diagnostics": {
+        "mentions": 39,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-59807010",
+      "gold_ids": [
+        "Q1689423",
+        "Q1954169",
+        "Q65118168",
+        "Q855091"
+      ],
+      "predicted_ids": [
+        "Q1689423",
+        "Q65118168",
+        "Q855091"
+      ],
+      "diagnostics": {
+        "mentions": 5,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-22798092",
+      "gold_ids": [
+        "Q12353254",
+        "Q1757912",
+        "Q647087"
+      ],
+      "predicted_ids": [
+        "Q12353254",
+        "Q1757912"
+      ],
+      "diagnostics": {
+        "mentions": 3,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-19360289",
+      "gold_ids": [
+        "Q101991",
+        "Q11190",
+        "Q12167",
+        "Q202301",
+        "Q20739489",
+        "Q406",
+        "Q4734737",
+        "Q6065437",
+        "Q7914466",
+        "Q913404"
+      ],
+      "predicted_ids": [
+        "Q101991",
+        "Q11190",
+        "Q12167",
+        "Q20739489",
+        "Q406",
+        "Q43",
+        "Q4734737",
+        "Q7914466"
+      ],
+      "diagnostics": {
+        "mentions": 11,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-40454086",
+      "gold_ids": [
+        "Q110993687",
+        "Q1356547",
+        "Q16957812",
+        "Q216170",
+        "Q221697",
+        "Q235034",
+        "Q355201",
+        "Q406039",
+        "Q452770",
+        "Q4964182",
+        "Q5891",
+        "Q95189"
+      ],
+      "predicted_ids": [
+        "Q1356547",
+        "Q16957812",
+        "Q216170",
+        "Q221697",
+        "Q235034",
+        "Q355201",
+        "Q406039",
+        "Q452770",
+        "Q5891"
+      ],
+      "diagnostics": {
+        "mentions": 10,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-15315355",
+      "gold_ids": [
+        "Q11468",
+        "Q15023366",
+        "Q16842261",
+        "Q1856153",
+        "Q20971519",
+        "Q3879074"
+      ],
+      "predicted_ids": [
+        "Q11468",
+        "Q15023366",
+        "Q16842261",
+        "Q20971519",
+        "Q3879074"
+      ],
+      "diagnostics": {
+        "mentions": 16,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-60096101",
+      "gold_ids": [
+        "Q61927936"
+      ],
+      "predicted_ids": [
+        "Q61927936"
+      ],
+      "diagnostics": {
+        "mentions": 1,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-26436239",
+      "gold_ids": [
+        "Q1588",
+        "Q4667978",
+        "Q4889539",
+        "Q5316962",
+        "Q7354646"
+      ],
+      "predicted_ids": [
+        "Q1588",
+        "Q4667978",
+        "Q4889539",
+        "Q5316962",
+        "Q7354646"
+      ],
+      "diagnostics": {
+        "mentions": 9,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-38901928",
+      "gold_ids": [
+        "Q1130017",
+        "Q1140373",
+        "Q11703711",
+        "Q1322713",
+        "Q16195965",
+        "Q16642",
+        "Q27",
+        "Q3098495",
+        "Q3217619",
+        "Q3996444",
+        "Q3996445",
+        "Q3996446",
+        "Q3996448",
+        "Q3996454",
+        "Q3996456",
+        "Q584540",
+        "Q5849",
+        "Q599903",
+        "Q7594894",
+        "Q945016"
+      ],
+      "predicted_ids": [
+        "Q11703711",
+        "Q142",
+        "Q16195965",
+        "Q22",
+        "Q3996446",
+        "Q408",
+        "Q49",
+        "Q584540",
+        "Q5849",
+        "Q664",
+        "Q7594894"
+      ],
+      "diagnostics": {
+        "mentions": 13,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-25537354",
+      "gold_ids": [
+        "Q1770695",
+        "Q56273810",
+        "Q60140",
+        "Q6727571",
+        "Q6934367"
+      ],
+      "predicted_ids": [
+        "Q56273810",
+        "Q60140",
+        "Q6727571",
+        "Q6934367"
+      ],
+      "diagnostics": {
+        "mentions": 10,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-2091831",
+      "gold_ids": [
+        "Q1656432",
+        "Q1779774",
+        "Q1926477",
+        "Q19804",
+        "Q1987694",
+        "Q23112",
+        "Q23143",
+        "Q2361700",
+        "Q2525645",
+        "Q3410",
+        "Q350",
+        "Q4649410",
+        "Q708492",
+        "Q7566485",
+        "Q944772"
+      ],
+      "predicted_ids": [
+        "Q116",
+        "Q1312",
+        "Q160381",
+        "Q1656432",
+        "Q1779774",
+        "Q1860",
+        "Q1926477",
+        "Q19804",
+        "Q1987694",
+        "Q21",
+        "Q220",
+        "Q23051084",
+        "Q23112",
+        "Q23143",
+        "Q23445",
+        "Q2361700",
+        "Q2525645",
+        "Q2808",
+        "Q3410",
+        "Q350",
+        "Q49",
+        "Q753",
+        "Q7566485",
+        "Q944772"
+      ],
+      "diagnostics": {
+        "mentions": 46,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-19956975",
+      "gold_ids": [
+        "Q2460337",
+        "Q36",
+        "Q7191597",
+        "Q936157"
+      ],
+      "predicted_ids": [
+        "Q2460337",
+        "Q27611",
+        "Q36",
+        "Q7191597",
+        "Q936157"
+      ],
+      "diagnostics": {
+        "mentions": 6,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-39970022",
+      "gold_ids": [
+        "Q1313",
+        "Q15053489",
+        "Q1676261",
+        "Q6419478"
+      ],
+      "predicted_ids": [
+        "Q1313",
+        "Q15053489",
+        "Q2730433",
+        "Q6419478"
+      ],
+      "diagnostics": {
+        "mentions": 4,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-50284573",
+      "gold_ids": [
+        "Q1337601",
+        "Q1744",
+        "Q1995653",
+        "Q223769",
+        "Q2252262",
+        "Q24006244",
+        "Q2643890",
+        "Q298694",
+        "Q309843",
+        "Q33999",
+        "Q3786295",
+        "Q3826989",
+        "Q3926010",
+        "Q3995939",
+        "Q4120225",
+        "Q46",
+        "Q4642507",
+        "Q485240",
+        "Q525827",
+        "Q646077",
+        "Q846570",
+        "Q933598",
+        "Q941293"
+      ],
+      "predicted_ids": [
+        "Q1744",
+        "Q1995653",
+        "Q223769",
+        "Q2252262",
+        "Q24006244",
+        "Q2643890",
+        "Q298694",
+        "Q30",
+        "Q309843",
+        "Q3786295",
+        "Q3826989",
+        "Q3926010",
+        "Q4120225",
+        "Q4642507",
+        "Q485240",
+        "Q525827",
+        "Q646077",
+        "Q933598"
+      ],
+      "diagnostics": {
+        "mentions": 30,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-40171989",
+      "gold_ids": [
+        "Q5680611",
+        "Q5802310"
+      ],
+      "predicted_ids": [
+        "Q5680611",
+        "Q5802310"
+      ],
+      "diagnostics": {
+        "mentions": 3,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-11087023",
+      "gold_ids": [
+        "Q1092632",
+        "Q128610",
+        "Q16308156",
+        "Q214917",
+        "Q237572",
+        "Q25379",
+        "Q2937718",
+        "Q30607539",
+        "Q4263842",
+        "Q485178",
+        "Q60834955",
+        "Q63537266",
+        "Q673361",
+        "Q692",
+        "Q7367264",
+        "Q80056"
+      ],
+      "predicted_ids": [
+        "Q1092632",
+        "Q1162163",
+        "Q142",
+        "Q1860",
+        "Q214917",
+        "Q237572",
+        "Q25379",
+        "Q2937718",
+        "Q30",
+        "Q30607539",
+        "Q33999",
+        "Q397",
+        "Q40831",
+        "Q60834955",
+        "Q63537266",
+        "Q673361",
+        "Q692",
+        "Q90"
+      ],
+      "diagnostics": {
+        "mentions": 134,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-51975400",
+      "gold_ids": [
+        "Q15623158",
+        "Q181634",
+        "Q2146933",
+        "Q22",
+        "Q22079737",
+        "Q2309784",
+        "Q23666",
+        "Q2474467",
+        "Q25344558",
+        "Q272598",
+        "Q27451900",
+        "Q29983238",
+        "Q3294383",
+        "Q721937",
+        "Q84",
+        "Q873364"
+      ],
+      "predicted_ids": [
+        "Q15623158",
+        "Q2146933",
+        "Q22",
+        "Q22079737",
+        "Q272598",
+        "Q27451900",
+        "Q3294383",
+        "Q84",
+        "Q873364"
+      ],
+      "diagnostics": {
+        "mentions": 13,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-19104446",
+      "gold_ids": [
+        "Q103076",
+        "Q130232",
+        "Q15070021",
+        "Q265021",
+        "Q267282",
+        "Q3048506",
+        "Q3229161",
+        "Q350666",
+        "Q5038893",
+        "Q590870",
+        "Q966656"
+      ],
+      "predicted_ids": [
+        "Q103076",
+        "Q130232",
+        "Q15070021",
+        "Q265021",
+        "Q3048506",
+        "Q3229161",
+        "Q350666",
+        "Q5038893",
+        "Q590870",
+        "Q966656"
+      ],
+      "diagnostics": {
+        "mentions": 11,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-54955774",
+      "gold_ids": [
+        "Q1061",
+        "Q11739",
+        "Q132851",
+        "Q1695155",
+        "Q193891",
+        "Q2258261",
+        "Q233583",
+        "Q3695416",
+        "Q37999506",
+        "Q6044705",
+        "Q6451128",
+        "Q817247",
+        "Q8660"
+      ],
+      "predicted_ids": [
+        "Q1061",
+        "Q11220",
+        "Q11739",
+        "Q132851",
+        "Q1695155",
+        "Q18554460",
+        "Q2258261",
+        "Q22683250",
+        "Q30",
+        "Q362",
+        "Q3695416",
+        "Q37999506",
+        "Q4478",
+        "Q61022630",
+        "Q6451128",
+        "Q817247",
+        "Q843",
+        "Q8660"
+      ],
+      "diagnostics": {
+        "mentions": 30,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-34603833",
+      "gold_ids": [
+        "Q11874157",
+        "Q12840545",
+        "Q3042256",
+        "Q36",
+        "Q4679995"
+      ],
+      "predicted_ids": [
+        "Q11874157",
+        "Q3042256",
+        "Q36",
+        "Q4679995"
+      ],
+      "diagnostics": {
+        "mentions": 5,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-16088155",
+      "gold_ids": [
+        "Q10870555",
+        "Q11002",
+        "Q11268",
+        "Q11696",
+        "Q11701",
+        "Q131512",
+        "Q207",
+        "Q22656",
+        "Q22855",
+        "Q23505",
+        "Q28367",
+        "Q30",
+        "Q41576",
+        "Q419",
+        "Q48525",
+        "Q490417",
+        "Q520837",
+        "Q5456",
+        "Q628807",
+        "Q736",
+        "Q739",
+        "Q750",
+        "Q753",
+        "Q839560",
+        "Q897"
+      ],
+      "predicted_ids": [
+        "Q10870555",
+        "Q11002",
+        "Q11701",
+        "Q1255921",
+        "Q207",
+        "Q208045",
+        "Q23505",
+        "Q28367",
+        "Q30",
+        "Q41576",
+        "Q419",
+        "Q520837",
+        "Q5456",
+        "Q628807",
+        "Q736",
+        "Q739",
+        "Q750",
+        "Q753",
+        "Q839560"
+      ],
+      "diagnostics": {
+        "mentions": 43,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-35695532",
+      "gold_ids": [
+        "Q6802408"
+      ],
+      "predicted_ids": [
+        "Q6802408",
+        "Q83460"
+      ],
+      "diagnostics": {
+        "mentions": 4,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-4700989",
+      "gold_ids": [
+        "Q1040389",
+        "Q12022803",
+        "Q130857",
+        "Q16958139",
+        "Q183",
+        "Q2057907",
+        "Q4202018",
+        "Q434101",
+        "Q4882810",
+        "Q5976999",
+        "Q77002"
+      ],
+      "predicted_ids": [
+        "Q1040389",
+        "Q12022803",
+        "Q16958139",
+        "Q2057907",
+        "Q42884",
+        "Q434101",
+        "Q4882810",
+        "Q5976999",
+        "Q77002"
+      ],
+      "diagnostics": {
+        "mentions": 11,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-4892547",
+      "gold_ids": [
+        "Q104835300",
+        "Q1127270",
+        "Q11661",
+        "Q140686",
+        "Q1518641",
+        "Q1760791",
+        "Q2580491",
+        "Q319544",
+        "Q380075",
+        "Q4058325",
+        "Q47165448",
+        "Q5086802",
+        "Q61022630",
+        "Q6166096",
+        "Q648413",
+        "Q7324265",
+        "Q7894986",
+        "Q817393",
+        "Q8461"
+      ],
+      "predicted_ids": [
+        "Q104835300",
+        "Q11661",
+        "Q1255921",
+        "Q1518641",
+        "Q160381",
+        "Q161885",
+        "Q1760791",
+        "Q21",
+        "Q2256",
+        "Q23445",
+        "Q249838",
+        "Q2580491",
+        "Q319544",
+        "Q380075",
+        "Q49",
+        "Q5086802",
+        "Q61022630",
+        "Q6166096",
+        "Q727928",
+        "Q7324265",
+        "Q7894986",
+        "Q84",
+        "Q8461"
+      ],
+      "diagnostics": {
+        "mentions": 27,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-18420178",
+      "gold_ids": [
+        "Q1240788",
+        "Q1312",
+        "Q1314",
+        "Q1370",
+        "Q15360275",
+        "Q16003605",
+        "Q170167",
+        "Q235155",
+        "Q2507691",
+        "Q37226",
+        "Q40348",
+        "Q48282",
+        "Q495132",
+        "Q527127",
+        "Q5325242",
+        "Q5325245",
+        "Q5568105",
+        "Q6142157",
+        "Q654437",
+        "Q7643464",
+        "Q817393"
+      ],
+      "predicted_ids": [
+        "Q1255921",
+        "Q1312",
+        "Q1370",
+        "Q1397",
+        "Q16533",
+        "Q170167",
+        "Q23445",
+        "Q24460",
+        "Q2808",
+        "Q3400985",
+        "Q37226",
+        "Q49",
+        "Q49078",
+        "Q495132",
+        "Q527127",
+        "Q5325242",
+        "Q5568105",
+        "Q584540",
+        "Q6142157",
+        "Q654437",
+        "Q66889825",
+        "Q83460",
+        "Q846570"
+      ],
+      "diagnostics": {
+        "mentions": 78,
+        "unresolved_predictions": []
+      }
+    },
+    {
+      "id": "wiki-fair-v2-test-32251441",
+      "gold_ids": [
+        "Q1390690",
+        "Q1414443",
+        "Q16",
+        "Q170238",
+        "Q1930187",
+        "Q1951167",
+        "Q249838",
+        "Q25379",
+        "Q28389",
+        "Q2944916",
+        "Q3141327",
+        "Q3322928",
+        "Q40831",
+        "Q5009037",
+        "Q6271700",
+        "Q637866",
+        "Q69699844",
+        "Q7586652",
+        "Q7734943",
+        "Q8026741",
+        "Q8261"
+      ],
+      "predicted_ids": [
+        "Q1390690",
+        "Q1414443",
+        "Q16",
+        "Q1930187",
+        "Q1951167",
+        "Q249838",
+        "Q28389",
+        "Q2944916",
+        "Q3322928",
+        "Q40831",
+        "Q5009037",
+        "Q6271700",
+        "Q7734943",
+        "Q8026741",
+        "Q8261"
+      ],
+      "diagnostics": {
+        "mentions": 19,
+        "unresolved_predictions": []
+      }
+    }
+  ]
+}
