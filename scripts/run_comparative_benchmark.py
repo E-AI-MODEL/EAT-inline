@@ -16,6 +16,8 @@ from eat_baselines import (
     Cost,
     ResolverRegistry,
     default_adapters,
+    metrics,
+    score,
 )
 from eat_inline import VERSION
 
@@ -30,21 +32,6 @@ def load_jsonl(path: Path) -> list[dict[str, object]]:
         for line in path.read_text(encoding="utf-8").splitlines()
         if line.strip()
     ]
-
-
-def score(predicted: set[str], gold: set[str]) -> tuple[int, int, int]:
-    return len(predicted & gold), len(predicted - gold), len(gold - predicted)
-
-
-def metrics(tp: int, fp: int, fn: int) -> dict[str, float]:
-    precision = tp / (tp + fp) if tp + fp else 0.0
-    recall = tp / (tp + fn) if tp + fn else 0.0
-    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
-    return {
-        "precision": round(precision, 4),
-        "recall": round(recall, 4),
-        "f1": round(f1, 4),
-    }
 
 
 def main() -> int:
