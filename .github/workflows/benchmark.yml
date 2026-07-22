@@ -26,8 +26,11 @@ jobs:
       - name: Validate benchmark dataset
         run: python scripts/validate_dataset.py
 
-      - name: Run deterministic benchmark
+      - name: Run parser and syntax-overhead benchmark
         run: python scripts/run_benchmark.py
+
+      - name: Compare plain text with EAT Inline
+        run: python scripts/run_comparative_benchmark.py
 
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4

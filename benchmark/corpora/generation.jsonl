@@ -1,16 +1,16 @@
-{"id":"generation-nl-001","language":"nl","input":"Hans Visser schreef het rapport.","expected":"@@EAT person:Hans_Visser@@ schreef het rapport."}
-{"id":"generation-nl-002","language":"nl","input":"EAI Analyse & Advies publiceerde de analyse.","expected":"@@EAT organisation:EAI_Analyse_Advies@@ publiceerde de analyse."}
-{"id":"generation-nl-003","language":"nl","input":"Hans Visser werkt voor EAI Analyse & Advies.","expected":"@@EAT person:Hans_Visser@@ werkt voor @@EAT organisation:EAI_Analyse_Advies@@."}
-{"id":"generation-nl-004","language":"nl","input":"Project Phoenix gebruikt de Gold Corpus-set.","expected":"@@EAT project:Phoenix@@ gebruikt @@EAT dataset:Gold_Corpus@@."}
-{"id":"generation-nl-005","language":"nl","input":"De bijeenkomst vindt plaats in Rotterdam.","expected":"De bijeenkomst vindt plaats in @@EAT location:Rotterdam@@."}
-{"id":"generation-nl-006","language":"nl","input":"Lees het EAT Inline onderzoeksrapport.","expected":"Lees @@EAT document:EAT_Inline_Onderzoeksrapport@@."}
-{"id":"generation-nl-007","language":"nl","input":"De Resolver API verwerkt de tags.","expected":"@@EAT system:Resolver_API@@ verwerkt de tags."}
-{"id":"generation-nl-008","language":"nl","input":"Entity resolution is het centrale begrip.","expected":"@@EAT concept:Entity_Resolution@@ is het centrale begrip."}
-{"id":"generation-en-001","language":"en","input":"Hans Visser authored the report.","expected":"@@EAT person:Hans_Visser@@ authored the report."}
-{"id":"generation-en-002","language":"en","input":"EAI Analyse & Advies released the study.","expected":"@@EAT organisation:EAI_Analyse_Advies@@ released the study."}
-{"id":"generation-en-003","language":"en","input":"Jordan Lee presented Project Atlas.","expected":"@@EAT person:Jordan_Lee@@ presented @@EAT project:Atlas@@."}
-{"id":"generation-en-004","language":"en","input":"The service uses the Resolver API.","expected":"The service uses @@EAT system:Resolver_API@@."}
-{"id":"generation-en-005","language":"en","input":"The article appeared in AI Review.","expected":"The article appeared in @@EAT publication:AI_Review@@."}
-{"id":"generation-en-006","language":"en","input":"Visit the EAI Research Portal.","expected":"Visit @@EAT website:EAI_Research_Portal@@."}
-{"id":"generation-en-007","language":"en","input":"The study applies a controlled experiment.","expected":"The study applies @@EAT method:Controlled_Experiment@@."}
-{"id":"generation-en-008","language":"en","input":"The benchmark dataset contains synthetic cases.","expected":"@@EAT dataset:Benchmark_Dataset@@ contains synthetic cases."}
+{"id":"generation-nl-001","language":"nl","input":"Hans Visser schreef het rapport.","expected":"@@EAT person:Hans_Visser@@ schreef het rapport.","expected_references":[{"type":"person","key":"Hans_Visser"}]}
+{"id":"generation-nl-002","language":"nl","input":"EAI Analyse & Advies publiceerde de analyse.","expected":"@@EAT organisation:EAI_Analyse_Advies@@ publiceerde de analyse.","expected_references":[{"type":"organisation","key":"EAI_Analyse_Advies"}]}
+{"id":"generation-nl-003","language":"nl","input":"Hans Visser werkt voor EAI Analyse & Advies.","expected":"@@EAT person:Hans_Visser@@ werkt voor @@EAT organisation:EAI_Analyse_Advies@@.","expected_references":[{"type":"person","key":"Hans_Visser"},{"type":"organisation","key":"EAI_Analyse_Advies"}]}
+{"id":"generation-nl-004","language":"nl","input":"Project Phoenix gebruikt de Gold Corpus-set.","expected":"@@EAT project:Phoenix@@ gebruikt @@EAT dataset:Gold_Corpus@@.","expected_references":[{"type":"project","key":"Phoenix"},{"type":"dataset","key":"Gold_Corpus"}]}
+{"id":"generation-nl-005","language":"nl","input":"De bijeenkomst vindt plaats in Rotterdam.","expected":"De bijeenkomst vindt plaats in @@EAT location:Rotterdam@@.","expected_references":[{"type":"location","key":"Rotterdam"}]}
+{"id":"generation-nl-006","language":"nl","input":"Lees het EAT Inline onderzoeksrapport.","expected":"Lees @@EAT document:EAT_Inline_Onderzoeksrapport@@.","expected_references":[{"type":"document","key":"EAT_Inline_Onderzoeksrapport"}]}
+{"id":"generation-nl-007","language":"nl","input":"De Resolver API verwerkt de tags.","expected":"@@EAT system:Resolver_API@@ verwerkt de tags.","expected_references":[{"type":"system","key":"Resolver_API"}]}
+{"id":"generation-nl-008","language":"nl","input":"Entity resolution is het centrale begrip.","expected":"@@EAT concept:Entity_Resolution@@ is het centrale begrip.","expected_references":[{"type":"concept","key":"Entity_Resolution"}]}
+{"id":"generation-en-001","language":"en","input":"Hans Visser authored the report.","expected":"@@EAT person:Hans_Visser@@ authored the report.","expected_references":[{"type":"person","key":"Hans_Visser"}]}
+{"id":"generation-en-002","language":"en","input":"EAI Analyse & Advies released the study.","expected":"@@EAT organisation:EAI_Analyse_Advies@@ released the study.","expected_references":[{"type":"organisation","key":"EAI_Analyse_Advies"}]}
+{"id":"generation-en-003","language":"en","input":"Jordan Lee presented Project Atlas.","expected":"@@EAT person:Jordan_Lee@@ presented @@EAT project:Atlas@@.","expected_references":[{"type":"person","key":"Jordan_Lee"},{"type":"project","key":"Atlas"}]}
+{"id":"generation-en-004","language":"en","input":"The service uses the Resolver API.","expected":"The service uses @@EAT system:Resolver_API@@.","expected_references":[{"type":"system","key":"Resolver_API"}]}
+{"id":"generation-en-005","language":"en","input":"The article appeared in AI Review.","expected":"The article appeared in @@EAT publication:AI_Review@@.","expected_references":[{"type":"publication","key":"AI_Review"}]}
+{"id":"generation-en-006","language":"en","input":"Visit the EAI Research Portal.","expected":"Visit @@EAT website:EAI_Research_Portal@@.","expected_references":[{"type":"website","key":"EAI_Research_Portal"}]}
+{"id":"generation-en-007","language":"en","input":"The study applies a controlled experiment.","expected":"The study applies @@EAT method:Controlled_Experiment@@.","expected_references":[{"type":"method","key":"Controlled_Experiment"}]}
+{"id":"generation-en-008","language":"en","input":"The benchmark dataset contains synthetic cases.","expected":"@@EAT dataset:Benchmark_Dataset@@ contains synthetic cases.","expected_references":[{"type":"dataset","key":"Benchmark_Dataset"}]}

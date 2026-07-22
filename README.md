@@ -40,26 +40,24 @@ Examples:
 [A-Za-z_][A-Za-z0-9_]*
 ```
 
-The core design rule is:
-
 > **References identify entities. Natural language expresses relations.**
 
-EAT Inline does not define special blocks for summaries or other document structure. Use the conventions of the host format, such as Markdown headings and paragraphs.
+EAT Inline does not define special blocks for summaries or other document structure. Use the conventions of the host format.
 
 ## Types
 
-The syntax accepts any valid identifier as a type. The repository also includes a **benchmark-only vocabulary** for scoring experiments:
+The syntax accepts any valid identifier as a type. The repository includes this benchmark-only vocabulary:
 
 ```text
 person, organisation, location, document, project, event,
 product, system, dataset, publication, website, method, concept
 ```
 
-This list is not a normative registry. Domain-specific types remain possible.
+It is a scoring aid, not a normative registry. Domain-specific types remain possible.
 
 ## Writing format, not storage format
 
-EAT Inline is primarily an authoring format. A resolver may map a written reference to an internal ID and store both:
+EAT Inline is primarily an authoring format. A resolver may map the written reference to an internal ID and store both:
 
 ```json
 {
@@ -86,9 +84,9 @@ REFERENCE_RE = re.compile(
 
 A type list, database resolver, governance process or gateway can be added when a use case needs it. None is required to parse or start using the notation.
 
-## Seed gold corpus
+## Benchmark corpus
 
-The repository contains a synthetic, versioned seed dataset with **64 reviewed records** in Dutch and English:
+The repository contains a synthetic, bilingual seed gold corpus with **76 records**:
 
 | Task | Records | Purpose |
 |---|---:|---|
@@ -96,18 +94,37 @@ The repository contains a synthetic, versioned seed dataset with **64 reviewed r
 | Typing | 16 | Expected entity type and key |
 | Resolution | 12 | Written references mapped to canonical IDs |
 | Generation | 16 | Plain text paired with expected EAT Inline output |
+| Comparison | 12 | The same intended references with and without EAT Inline |
 
-The corpus lives in `benchmark/corpora/` and is validated automatically. It is a starting point for reproducible testing, not enough evidence for broad performance claims.
+The comparison set uses a small entity registry containing deliberately ambiguous labels such as `Phoenix`, `Atlas` and `Resolver API`.
+
+## Paired evidence
+
+The Benchmark Action runs two conditions over the same gold cases:
+
+```text
+plain text
+versus
+EAT Inline with explicit type and key
+```
+
+For each condition it reports:
+
+- precision, recall and F1;
+- exact-match rate per case;
+- unresolved references;
+- ambiguous plain-text mentions;
+- machine-readable per-case predictions.
+
+This produces reproducible evidence about the effect of supplying type and key information under controlled conditions. It does **not** by itself prove real-world superiority: the seed dataset is synthetic and the plain-text baseline uses deterministic label matching rather than a language model.
 
 ## Automated verification
 
-The repository contains four GitHub Actions workflows:
-
 | Workflow | Purpose |
 |---|---|
-| `CI` | Runs the unit tests on supported Python versions |
-| `Conformance` | Checks the reference implementation against versioned examples |
-| `Benchmark` | Validates the gold corpus and measures parser throughput and character overhead |
+| `CI` | Runs unit tests on supported Python versions |
+| `Conformance` | Checks the implementation against versioned examples |
+| `Benchmark` | Validates the corpus and runs parser, overhead and paired comparative benchmarks |
 | `Docs` | Detects version drift and retired names or syntax |
 
 Run the same checks locally:
@@ -118,36 +135,39 @@ python -m unittest discover -s tests -p "test_*.py" -v
 python scripts/run_conformance.py
 python scripts/validate_dataset.py
 python scripts/run_benchmark.py
+python scripts/run_comparative_benchmark.py
 python scripts/check_docs.py
 ```
 
-Conformance protects compatibility between implementations. It does not make optional resolver architecture part of the language.
+Benchmark artifacts include:
+
+```text
+benchmark-results.json
+benchmark-summary.md
+comparative-results.json
+comparative-summary.md
+dataset-validation.json
+```
 
 ## Evidence boundary
 
-Version `0.3.2` establishes:
-
-- one compact reference syntax;
-- a small Python reference parser;
-- versioned examples and automated checks;
-- a benchmark-only type vocabulary;
-- a bilingual 64-record seed gold corpus;
-- a reproducible parser and syntax-overhead benchmark.
+Version `0.3.2` establishes a testable notation, reference implementation, gold corpus and paired benchmark harness.
 
 It does not yet prove:
 
 - acceptable writing friction in every context;
-- improved retrieval, entity resolution or RAG results;
+- improved performance against strong NER or LLM baselines;
+- improved retrieval or RAG outcomes;
 - universal model compatibility;
 - production readiness.
 
-Those claims require larger comparative datasets and experiments with people, models and real resolver systems.
+Those claims require larger public datasets and experiments with people, models and real resolver systems.
 
 ## Repository map
 
 ```text
 .github/workflows/       automated checks
-benchmark/corpora/       versioned seed gold corpus
+benchmark/corpora/       versioned gold corpus and entity registry
 benchmark/results/       generated benchmark artifacts
 scripts/                 verification and benchmark scripts
 src/eat_inline.py        minimal reference implementation
