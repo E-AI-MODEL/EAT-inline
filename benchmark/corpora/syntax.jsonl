@@ -1,0 +1,20 @@
+{"id":"syntax-nl-001","language":"nl","input":"@@EAT person:Hans_Visser@@","valid":true,"type":"person","key":"Hans_Visser"}
+{"id":"syntax-nl-002","language":"nl","input":"@@EAT organisation:EAI_Analyse_Advies@@","valid":true,"type":"organisation","key":"EAI_Analyse_Advies"}
+{"id":"syntax-nl-003","language":"nl","input":"@@EAT project:EAT_Inline@@","valid":true,"type":"project","key":"EAT_Inline"}
+{"id":"syntax-nl-004","language":"nl","input":"Zie @@EAT document:Onderzoeksrapport_0_3_2@@ voor details.","valid":true,"type":"document","key":"Onderzoeksrapport_0_3_2"}
+{"id":"syntax-nl-005","language":"nl","input":"@@EAT dataset:Gold_Corpus_001@@","valid":true,"type":"dataset","key":"Gold_Corpus_001"}
+{"id":"syntax-en-001","language":"en","input":"@@EAT person:Alex_Jansen@@","valid":true,"type":"person","key":"Alex_Jansen"}
+{"id":"syntax-en-002","language":"en","input":"@@EAT system:Resolver_API@@","valid":true,"type":"system","key":"Resolver_API"}
+{"id":"syntax-en-003","language":"en","input":"@@EAT research_method:Controlled_Experiment@@","valid":true,"type":"research_method","key":"Controlled_Experiment"}
+{"id":"syntax-en-004","language":"en","input":"Use @@EAT website:EAI_Research_Portal@@ today.","valid":true,"type":"website","key":"EAI_Research_Portal"}
+{"id":"syntax-en-005","language":"en","input":"@@EAT concept:Entity_Resolution@@","valid":true,"type":"concept","key":"Entity_Resolution"}
+{"id":"syntax-invalid-001","language":"nl","input":"@@EAT person:Hans Visser@@","valid":false,"error":"invalid_identifier"}
+{"id":"syntax-invalid-002","language":"nl","input":"@@EAT person:@@","valid":false,"error":"missing_key"}
+{"id":"syntax-invalid-003","language":"nl","input":"@@EAT :Hans_Visser@@","valid":false,"error":"missing_type"}
+{"id":"syntax-invalid-004","language":"nl","input":"@@EAT person_Hans_Visser@@","valid":false,"error":"missing_separator"}
+{"id":"syntax-invalid-005","language":"nl","input":"@@EAT person:Hans_Visser","valid":false,"error":"missing_closing_marker"}
+{"id":"syntax-invalid-006","language":"en","input":"EAT person:Hans_Visser@@","valid":false,"error":"incomplete_opening_marker"}
+{"id":"syntax-invalid-007","language":"en","input":"@@EAT 9type:Hans_Visser@@","valid":false,"error":"invalid_identifier"}
+{"id":"syntax-invalid-008","language":"en","input":"@@EAT person:9Hans@@","valid":false,"error":"invalid_identifier"}
+{"id":"syntax-invalid-009","language":"en","input":"@@EAT person:Hans-Visser@@","valid":false,"error":"invalid_identifier"}
+{"id":"syntax-invalid-010","language":"en","input":"@@eat person:Hans_Visser@@","valid":false,"error":"incomplete_opening_marker"}

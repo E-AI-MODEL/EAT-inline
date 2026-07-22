@@ -1,0 +1,12 @@
+{"id":"compare-nl-001","language":"nl","plain_text":"Hans Visser werkt voor EAI Analyse & Advies.","eat_text":"@@EAT person:Hans_Visser@@ werkt voor @@EAT organisation:EAI_Analyse_Advies@@.","gold_ids":["person-0001","organisation-0001"]}
+{"id":"compare-nl-002","language":"nl","plain_text":"Alex Jansen werkt aan Phoenix.","eat_text":"@@EAT person:Alex_Jansen@@ werkt aan @@EAT project:Phoenix@@.","gold_ids":["person-0042","project-0017"]}
+{"id":"compare-nl-003","language":"nl","plain_text":"De bijeenkomst is in Rotterdam.","eat_text":"De bijeenkomst is in @@EAT location:Rotterdam@@.","gold_ids":["location-nl-rtm"]}
+{"id":"compare-nl-004","language":"nl","plain_text":"Lees het EAT Inline onderzoeksrapport.","eat_text":"Lees @@EAT document:EAT_Inline_Onderzoeksrapport@@.","gold_ids":["document-0032"]}
+{"id":"compare-nl-005","language":"nl","plain_text":"Gebruik Gold Corpus voor de test.","eat_text":"Gebruik @@EAT dataset:Gold_Corpus@@ voor de test.","gold_ids":["dataset-0001"]}
+{"id":"compare-nl-006","language":"nl","plain_text":"Phoenix beheert Phoenix.","eat_text":"@@EAT organisation:Phoenix@@ beheert @@EAT project:Phoenix@@.","gold_ids":["organisation-0091","project-0017"]}
+{"id":"compare-en-001","language":"en","plain_text":"Jordan Lee presented Atlas.","eat_text":"@@EAT person:Jordan_Lee@@ presented @@EAT project:Atlas@@.","gold_ids":["person-0201","project-0310"]}
+{"id":"compare-en-002","language":"en","plain_text":"Open EAI Research Portal.","eat_text":"Open @@EAT website:EAI_Research_Portal@@.","gold_ids":["website-0007"]}
+{"id":"compare-en-003","language":"en","plain_text":"The service uses Resolver API.","eat_text":"The service uses @@EAT system:Resolver_API@@.","gold_ids":["system-0104"]}
+{"id":"compare-en-004","language":"en","plain_text":"The paper appeared in AI Review.","eat_text":"The paper appeared in @@EAT publication:AI_Review@@.","gold_ids":["publication-0028"]}
+{"id":"compare-en-005","language":"en","plain_text":"The study applies a controlled experiment.","eat_text":"The study applies @@EAT method:Controlled_Experiment@@.","gold_ids":["method-0002"]}
+{"id":"compare-en-006","language":"en","plain_text":"Phoenix leads Phoenix.","eat_text":"@@EAT person:Phoenix@@ leads @@EAT organisation:Phoenix@@.","gold_ids":["person-0777","organisation-0091"]}

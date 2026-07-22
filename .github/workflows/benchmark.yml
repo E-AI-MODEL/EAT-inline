@@ -1,0 +1,38 @@
+name: Benchmark
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package
+        run: python -m pip install -e .
+
+      - name: Validate benchmark dataset
+        run: python scripts/validate_dataset.py
+
+      - name: Run deterministic benchmark
+        run: python scripts/run_benchmark.py
+
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v4
+        with:
+          name: eat-inline-benchmark-${{ github.run_number }}
+          path: benchmark/results/
+          if-no-files-found: error
+          retention-days: 30
