@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "eat-inline"
-version = "0.3.1"
-description = "Reference implementation for the EAT Inline research baseline"
+version = "0.3.2"
+description = "Minimal reference implementation for the EAT Inline experimental candidate"
 requires-python = ">=3.10"
 authors = [
   { name = "Hans Visser", email = "info@eai-advies.nl" }
