@@ -1,0 +1,17 @@
+{"type":"person","key":"Hans_Visser","label":"Hans Visser","canonical_id":"person-0001"}
+{"type":"organisation","key":"EAI_Analyse_Advies","label":"EAI Analyse & Advies","canonical_id":"organisation-0001"}
+{"type":"person","key":"Alex_Jansen","label":"Alex Jansen","canonical_id":"person-0042"}
+{"type":"project","key":"Phoenix","label":"Phoenix","canonical_id":"project-0017"}
+{"type":"organisation","key":"Phoenix","label":"Phoenix","canonical_id":"organisation-0091"}
+{"type":"person","key":"Phoenix","label":"Phoenix","canonical_id":"person-0777"}
+{"type":"location","key":"Rotterdam","label":"Rotterdam","canonical_id":"location-nl-rtm"}
+{"type":"document","key":"EAT_Inline_Onderzoeksrapport","label":"EAT Inline onderzoeksrapport","canonical_id":"document-0032"}
+{"type":"dataset","key":"Gold_Corpus","label":"Gold Corpus","canonical_id":"dataset-0001"}
+{"type":"person","key":"Jordan_Lee","label":"Jordan Lee","canonical_id":"person-0201"}
+{"type":"project","key":"Atlas","label":"Atlas","canonical_id":"project-0310"}
+{"type":"organisation","key":"Atlas","label":"Atlas","canonical_id":"organisation-0400"}
+{"type":"website","key":"EAI_Research_Portal","label":"EAI Research Portal","canonical_id":"website-0007"}
+{"type":"system","key":"Resolver_API","label":"Resolver API","canonical_id":"system-0104"}
+{"type":"product","key":"Resolver_API","label":"Resolver API","canonical_id":"product-0105"}
+{"type":"publication","key":"AI_Review","label":"AI Review","canonical_id":"publication-0028"}
+{"type":"method","key":"Controlled_Experiment","label":"controlled experiment","canonical_id":"method-0002"}
