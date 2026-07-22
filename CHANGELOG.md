@@ -23,6 +23,11 @@ The project follows semantic versioning for the reference implementation and spe
   disambiguation and conservative abstention). Adds a no-tag `linker` condition
   to the comparative benchmark. Real model linkers plug into the same interface
   without being bundled.
+- Versioned recorded model-linker run schema, strict provenance and leakage
+  validation, and a replay command that scores external per-case predictions
+  with the same metrics as the built-in benchmark. Recorded runs accept only
+  `plain_text`, require exact dataset and registry hashes, and reject gold or
+  EAT fields.
 
 ### Policy
 
