@@ -16,7 +16,7 @@ voor @@EAT organisation:EAI_Analyse_Advies@@.
 
 The tag makes the intended entity visible. The surrounding sentence keeps the relationship in natural language.
 
-> **Status:** version `0.3.2` is an experimental candidate. It is usable for testing, but it is not a proven or frozen standard.
+> **Status:** version `0.3.2` is an experimental candidate. It is usable for testing, but it is not yet a frozen or proven standard.
 
 ## Core syntax
 
@@ -44,6 +44,8 @@ Examples:
 
 EAT Inline does not define special blocks for summaries or other document structure. Use the conventions of the host format.
 
+The normative grammar, semantics and compatibility rules are defined in [`SPEC.md`](SPEC.md).
+
 ## Types
 
 The syntax accepts any valid identifier as a type. The repository includes this benchmark-only vocabulary:
@@ -68,6 +70,8 @@ EAT Inline is primarily an authoring format. A resolver may map the written refe
 ```
 
 The source reference records author intent. The canonical ID records the system's resolved entity. Resolution metadata belongs to the consuming system, not to the EAT Inline syntax.
+
+A storage-neutral registry-entry schema is available at [`schemas/registry-entry.schema.json`](schemas/registry-entry.schema.json).
 
 ## Minimal implementation
 
@@ -125,7 +129,7 @@ This produces reproducible evidence about the effect of supplying type and key i
 | `CI` | Runs unit tests on supported Python versions |
 | `Conformance` | Checks the implementation against versioned examples |
 | `Benchmark` | Validates the corpus and runs parser, overhead and paired comparative benchmarks |
-| `Docs` | Detects version drift and retired names or syntax |
+| `Docs` | Detects version drift, invalid JSON, missing foundation files and retired names or syntax |
 
 Run the same checks locally:
 
@@ -149,6 +153,16 @@ comparative-summary.md
 dataset-validation.json
 ```
 
+## Project foundation
+
+- [`SPEC.md`](SPEC.md) defines the normative single-construct grammar.
+- [`GOVERNANCE.md`](GOVERNANCE.md) describes change control and contribution rules.
+- [`CHANGELOG.md`](CHANGELOG.md) records compatibility and release history.
+- [`LICENSE`](LICENSE) makes the project available under Apache License 2.0.
+- [`schemas/registry-entry.schema.json`](schemas/registry-entry.schema.json) defines a portable resolver-registry record.
+
+The core grammar is intentionally conservative. New entity types do not require syntax changes, and application-specific metadata belongs in registries, resolvers or optional integration profiles.
+
 ## Evidence boundary
 
 Version `0.3.2` establishes a testable notation, reference implementation, gold corpus and paired benchmark harness.
@@ -169,16 +183,20 @@ Those claims require larger public datasets and experiments with people, models 
 .github/workflows/       automated checks
 benchmark/corpora/       versioned gold corpus and entity registry
 benchmark/results/       generated benchmark artifacts
+schemas/                 portable JSON Schemas
 scripts/                 verification and benchmark scripts
 src/eat_inline.py        minimal reference implementation
 tests/                   unit tests and conformance examples
+SPEC.md                  normative experimental specification
+GOVERNANCE.md            change and contribution policy
+CHANGELOG.md             release and compatibility history
 pyproject.toml           package metadata
 ```
 
 ## Stewardship
 
-EAT Inline is developed by **Hans Visser** under **EAI Analyse & Advies**.
+EAT Inline is developed by **Hans Visser** under **EAI Analyse & Advies**. Governance details are in [`GOVERNANCE.md`](GOVERNANCE.md).
 
 ## License
 
-A license has not yet been selected. Until one is added, normal copyright restrictions apply.
+Licensed under the [Apache License 2.0](LICENSE).
