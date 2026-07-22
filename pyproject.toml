@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eat-inline"
+version = "0.3.1"
+description = "Reference implementation for the EAT Inline research baseline"
+requires-python = ">=3.10"
+authors = [
+  { name = "Hans Visser", email = "info@eai-advies.nl" }
+]
+
+[tool.setuptools]
+py-modules = ["eat_inline"]
+package-dir = {"" = "src"}
