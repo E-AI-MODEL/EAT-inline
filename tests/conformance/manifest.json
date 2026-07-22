@@ -1,5 +1,5 @@
 {
-  "specification": "0.3.1",
+  "specification": "0.3.2",
   "cases": [
     {
       "id": "valid-person",
@@ -23,25 +23,25 @@
       "id": "invalid-space-in-key",
       "input": "@@EAT person:Hans Visser@@",
       "valid": false,
-      "result": "E005 invalid_identifier"
+      "result": "invalid_identifier"
     },
     {
       "id": "invalid-missing-key",
       "input": "@@EAT person:@@",
       "valid": false,
-      "result": "E004 missing_key"
+      "result": "missing_key"
     },
     {
       "id": "invalid-missing-separator",
       "input": "@@EAT person_Hans_Visser@@",
       "valid": false,
-      "result": "E003 missing_separator"
+      "result": "missing_separator"
     },
     {
       "id": "invalid-missing-close",
       "input": "@@EAT person:Hans_Visser",
       "valid": false,
-      "result": "E006 missing_closing_marker"
+      "result": "missing_closing_marker"
     }
   ]
 }
