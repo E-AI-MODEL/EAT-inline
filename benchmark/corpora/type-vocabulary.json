@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0",
+  "status": "benchmark-only",
+  "types": [
+    "person",
+    "organisation",
+    "location",
+    "document",
+    "project",
+    "event",
+    "product",
+    "system",
+    "dataset",
+    "publication",
+    "website",
+    "method",
+    "concept"
+  ],
+  "note": "This vocabulary supports benchmark scoring and is not a normative EAT Inline registry."
+}
