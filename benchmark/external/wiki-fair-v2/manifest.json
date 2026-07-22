@@ -1,0 +1,52 @@
+{
+  "dataset_name": "wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26",
+  "derived_files": {
+    "inputs": {
+      "path": "test.inputs.jsonl",
+      "sha256": "6d04de8818615ac0266b2c240228fe12f3cf14da8819e662f79ec665334da886"
+    },
+    "registry": {
+      "path": "entity-registry.jsonl",
+      "sha256": "89e3fa89b5b8e14bdfa18f599f8dfee3a41560f349ecc331bcad802fc79a22de"
+    },
+    "test": {
+      "path": "test.comparison.jsonl",
+      "sha256": "b909e1d6df95b59a2e49cdd8331202d5a06d67f844c61ff9fdf5941d6b9f79e2"
+    },
+    "training": {
+      "path": "dev.training.jsonl",
+      "sha256": "bb735f16e8d8b3a2962f29060bc826ba62924ed67e128961a745cfb81452b5dd"
+    }
+  },
+  "records": {
+    "registry_entities": 1063,
+    "test_articles": 40,
+    "test_input_articles": 40,
+    "training_articles": 80
+  },
+  "source": {
+    "commit": "c9a3fe9c4933888d756d702fdb9ff607fc36aa26",
+    "files": {
+      "dev": {
+        "path": "benchmarks/wiki-fair-v2-dev-no-coref.benchmark.jsonl",
+        "sha256": "19f859e0b23dc5c955879e0300e5193022480f1f89d350f926a69c59d71d7ef3"
+      },
+      "test": {
+        "path": "benchmarks/wiki-fair-v2-test-no-coref.benchmark.jsonl",
+        "sha256": "a45e272855362fd8be3dc95480dc2948ee37f9b0f031f1a6dc5788a9bc8f7dc1"
+      }
+    },
+    "repository": "https://github.com/ad-freiburg/wiki-entity-linker"
+  },
+  "transform": {
+    "excluded": [
+      "nested labels with a parent field",
+      "non-Wikidata identifiers such as DATETIME, QUANTITY and <NIL>"
+    ],
+    "test_input_fields": [
+      "id",
+      "plain_text"
+    ],
+    "type": "entity"
+  }
+}
