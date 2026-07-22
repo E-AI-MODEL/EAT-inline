@@ -12,6 +12,11 @@ The project follows semantic versioning for the reference implementation and spe
 - Normative `SPEC.md` for the single-reference grammar and compatibility rules.
 - Storage-neutral JSON Schema for registry entries.
 - Public governance and contribution policy.
+- Baseline adapter framework (`eat_baselines`) with a stable `BaselineAdapter`
+  interface, deterministic cost accounting, and the plain-text and EAT Inline
+  conditions refactored behind it. Model-based conditions implement the same
+  interface as a documented plug-in point and are not bundled, to keep the
+  benchmark reproducible.
 
 ### Policy
 

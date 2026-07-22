@@ -1,12 +1,23 @@
 #!/usr/bin/env python3
-"""Compare deterministic resolution with and without EAT Inline annotations."""
+"""Compare resolution conditions over the same gold cases via baseline adapters.
+
+Each condition is a :class:`eat_baselines.BaselineAdapter`. The deterministic
+plain-text and EAT Inline adapters run in CI; model-based adapters conform to
+the same interface but are not bundled (see ``src/eat_baselines.py``).
+"""
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
-from eat_inline import VERSION, parse_references
+from eat_baselines import (
+    Case,
+    Cost,
+    ResolverRegistry,
+    default_adapters,
+)
+from eat_inline import VERSION
 
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "benchmark" / "corpora"
@@ -37,86 +48,69 @@ def metrics(tp: int, fp: int, fn: int) -> dict[str, float]:
 
 
 def main() -> int:
-    registry = load_jsonl(CORPUS / "entity-registry.jsonl")
-    cases = load_jsonl(CORPUS / "comparison.jsonl")
-
-    by_typed_key = {
-        (str(item["type"]), str(item["key"])): str(item["canonical_id"])
-        for item in registry
-    }
-    by_label: dict[str, list[str]] = {}
-    for item in registry:
-        by_label.setdefault(str(item["label"]).casefold(), []).append(
-            str(item["canonical_id"])
-        )
+    registry = ResolverRegistry(load_jsonl(CORPUS / "entity-registry.jsonl"))
+    cases = [Case.from_record(record) for record in load_jsonl(CORPUS / "comparison.jsonl")]
+    adapters = default_adapters()
 
     totals = {
-        "plain": {"tp": 0, "fp": 0, "fn": 0, "exact": 0, "ambiguous_mentions": 0},
-        "eat_inline": {"tp": 0, "fp": 0, "fn": 0, "exact": 0, "unresolved": 0},
+        adapter.condition: {"tp": 0, "fp": 0, "fn": 0, "exact": 0}
+        for adapter in adapters
     }
+    extras = {
+        adapter.condition: {"ambiguous_mentions": 0, "unresolved": 0}
+        for adapter in adapters
+    }
+    costs = {adapter.condition: Cost() for adapter in adapters}
     rows: list[dict[str, object]] = []
 
     for case in cases:
-        gold = set(str(value) for value in case["gold_ids"])
-
-        plain_text = str(case["plain_text"]).casefold()
-        plain_predicted: set[str] = set()
-        ambiguous_labels: list[str] = []
-        for label, candidates in by_label.items():
-            occurrence_count = plain_text.count(label)
-            if occurrence_count == 0:
-                continue
-            if len(candidates) == 1:
-                plain_predicted.add(candidates[0])
-            else:
-                ambiguous_labels.extend([label] * occurrence_count)
-
-        eat_predicted: set[str] = set()
-        unresolved: list[str] = []
-        for reference in parse_references(str(case["eat_text"])):
-            canonical_id = by_typed_key.get((reference.type, reference.key))
-            if canonical_id:
-                eat_predicted.add(canonical_id)
-            else:
-                unresolved.append(reference.raw)
-
-        for condition, predicted in (
-            ("plain", plain_predicted),
-            ("eat_inline", eat_predicted),
-        ):
-            tp, fp, fn = score(predicted, gold)
+        gold = set(case.gold_ids)
+        row: dict[str, object] = {"id": case.id, "gold_ids": sorted(gold)}
+        for adapter in adapters:
+            result = adapter.predict(case, registry)
+            condition = adapter.condition
+            tp, fp, fn = score(result.predicted_ids, gold)
             totals[condition]["tp"] += tp
             totals[condition]["fp"] += fp
             totals[condition]["fn"] += fn
-            totals[condition]["exact"] += int(predicted == gold)
+            totals[condition]["exact"] += int(result.predicted_ids == gold)
+            costs[condition].add(result.cost)
+            row[f"{condition}_predicted_ids"] = sorted(result.predicted_ids)
 
-        totals["plain"]["ambiguous_mentions"] += len(ambiguous_labels)
-        totals["eat_inline"]["unresolved"] += len(unresolved)
-        rows.append(
-            {
-                "id": case["id"],
-                "gold_ids": sorted(gold),
-                "plain_predicted_ids": sorted(plain_predicted),
-                "eat_inline_predicted_ids": sorted(eat_predicted),
-                "plain_ambiguous_labels": sorted(ambiguous_labels),
-                "eat_inline_unresolved": unresolved,
-            }
-        )
+            if condition == "plain":
+                labels = list(result.diagnostics.get("ambiguous_labels", []))
+                extras[condition]["ambiguous_mentions"] += len(labels)
+                row["plain_ambiguous_labels"] = sorted(labels)
+            elif condition == "eat_inline":
+                unresolved = list(result.diagnostics.get("unresolved_references", []))
+                extras[condition]["unresolved"] += len(unresolved)
+                row["eat_inline_unresolved"] = unresolved
+        rows.append(row)
 
     summary: dict[str, object] = {
         "eat_inline_version": VERSION,
         "dataset": "eat-inline-gold/comparison",
         "cases": len(cases),
         "design": "paired synthetic deterministic resolution benchmark",
+        "adapters": [
+            {
+                "condition": adapter.condition,
+                "name": adapter.name,
+                "requires_model": adapter.requires_model,
+            }
+            for adapter in adapters
+        ],
         "conditions": {},
         "limitations": [
             "Synthetic seed data is not evidence of real-world generalization.",
             "The plain-text baseline uses exact label matching and no language model.",
             "The EAT Inline condition receives author-supplied type and key information.",
+            "Cost counters are deterministic effort proxies, not billed cost or latency.",
         ],
     }
 
-    for condition in ("plain", "eat_inline"):
+    for adapter in adapters:
+        condition = adapter.condition
         values = totals[condition]
         condition_result = {
             **metrics(values["tp"], values["fp"], values["fn"]),
@@ -124,11 +118,12 @@ def main() -> int:
             "true_positives": values["tp"],
             "false_positives": values["fp"],
             "false_negatives": values["fn"],
+            "cost": costs[condition].to_dict(),
         }
         if condition == "plain":
-            condition_result["ambiguous_mentions"] = values["ambiguous_mentions"]
-        else:
-            condition_result["unresolved_references"] = values["unresolved"]
+            condition_result["ambiguous_mentions"] = extras[condition]["ambiguous_mentions"]
+        elif condition == "eat_inline":
+            condition_result["unresolved_references"] = extras[condition]["unresolved"]
         summary["conditions"][condition] = condition_result
 
     RESULTS.mkdir(parents=True, exist_ok=True)
@@ -148,6 +143,9 @@ def main() -> int:
         f"- EAT Inline exact-match rate: `{eat['exact_match_rate']}`\n"
         f"- Plain ambiguous mentions: `{plain['ambiguous_mentions']}`\n"
         f"- EAT Inline unresolved references: `{eat['unresolved_references']}`\n\n"
+        "Each condition is a baseline adapter over the same gold cases. Model-based "
+        "conditions implement the same interface but are not bundled, to keep this "
+        "benchmark deterministic and reproducible.\n\n"
         "> This is a paired synthetic benchmark. It demonstrates the measurable effect "
         "of supplying explicit type and key information under controlled conditions; "
         "it does not establish real-world superiority.\n",

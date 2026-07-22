@@ -122,6 +122,17 @@ For each condition it reports:
 
 This produces reproducible evidence about the effect of supplying type and key information under controlled conditions. It does **not** by itself prove real-world superiority: the seed dataset is synthetic and the plain-text baseline uses deterministic label matching rather than a language model.
 
+## Baseline adapter framework
+
+Each benchmark condition is a `BaselineAdapter` (see [`src/eat_baselines.py`](src/eat_baselines.py)), so different resolution strategies are scored identically over the same gold cases. Two deterministic adapters ship today:
+
+| Condition | Adapter | Uses a model? |
+|---|---|---|
+| `plain` | Exact label matching over the registry | No |
+| `eat_inline` | Resolves author-written references by `type` and `key` | No |
+
+Model-based conditions — a named-entity recogniser, an entity linker, an LLM resolver or a retriever/reranker — implement the same interface (`requires_model = True`) and are **intentionally not bundled**. They need network access and non-deterministic models, which would make the benchmark irreproducible, and shipping a synthetic stand-in with an invented error rate would fabricate evidence. Each condition reports a deterministic cost proxy (registry lookups, label scans, references read, estimated tokens); wall-clock latency is left to callers as informational context, never a pass/fail gate.
+
 ## Automated verification
 
 | Workflow | Purpose |
