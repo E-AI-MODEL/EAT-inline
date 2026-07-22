@@ -19,6 +19,9 @@ classifiers = [
   "Programming Language :: Python :: 3.12"
 ]
 
+[project.optional-dependencies]
+model = ["scikit-learn==1.8.0"]
+
 [tool.setuptools]
 py-modules = ["eat_inline", "eat_baselines", "eat_recorded_runs"]
 package-dir = {"" = "src"}

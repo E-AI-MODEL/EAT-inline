@@ -1,0 +1,1063 @@
+{"canonical_id":"Q16","key":"Q16","label":"Canada","same_as":["https://www.wikidata.org/wiki/Q16"],"type":"entity"}
+{"canonical_id":"Q18","key":"Q18","label":"South America","same_as":["https://www.wikidata.org/wiki/Q18"],"type":"entity"}
+{"canonical_id":"Q21","key":"Q21","label":"England","same_as":["https://www.wikidata.org/wiki/Q21"],"type":"entity"}
+{"canonical_id":"Q22","key":"Q22","label":"Scotland","same_as":["https://www.wikidata.org/wiki/Q22"],"type":"entity"}
+{"canonical_id":"Q27","key":"Q27","label":"Republic of Ireland","same_as":["https://www.wikidata.org/wiki/Q27"],"type":"entity"}
+{"canonical_id":"Q28","key":"Q28","label":"Hungary","same_as":["https://www.wikidata.org/wiki/Q28"],"type":"entity"}
+{"canonical_id":"Q29","key":"Q29","label":"Spain","same_as":["https://www.wikidata.org/wiki/Q29"],"type":"entity"}
+{"canonical_id":"Q30","key":"Q30","label":"United States of America","same_as":["https://www.wikidata.org/wiki/Q30"],"type":"entity"}
+{"canonical_id":"Q33","key":"Q33","label":"Finland","same_as":["https://www.wikidata.org/wiki/Q33"],"type":"entity"}
+{"canonical_id":"Q35","key":"Q35","label":"Denmark","same_as":["https://www.wikidata.org/wiki/Q35"],"type":"entity"}
+{"canonical_id":"Q36","key":"Q36","label":"Poland","same_as":["https://www.wikidata.org/wiki/Q36"],"type":"entity"}
+{"canonical_id":"Q37","key":"Q37","label":"Lithuania","same_as":["https://www.wikidata.org/wiki/Q37"],"type":"entity"}
+{"canonical_id":"Q43","key":"Q43","label":"Turkey","same_as":["https://www.wikidata.org/wiki/Q43"],"type":"entity"}
+{"canonical_id":"Q46","key":"Q46","label":"Europe","same_as":["https://www.wikidata.org/wiki/Q46"],"type":"entity"}
+{"canonical_id":"Q49","key":"Q49","label":"North America","same_as":["https://www.wikidata.org/wiki/Q49"],"type":"entity"}
+{"canonical_id":"Q55","key":"Q55","label":"Netherlands","same_as":["https://www.wikidata.org/wiki/Q55"],"type":"entity"}
+{"canonical_id":"Q60","key":"Q60","label":"New York City","same_as":["https://www.wikidata.org/wiki/Q60"],"type":"entity"}
+{"canonical_id":"Q79","key":"Q79","label":"Egypt","same_as":["https://www.wikidata.org/wiki/Q79"],"type":"entity"}
+{"canonical_id":"Q84","key":"Q84","label":"London","same_as":["https://www.wikidata.org/wiki/Q84"],"type":"entity"}
+{"canonical_id":"Q90","key":"Q90","label":"Paris","same_as":["https://www.wikidata.org/wiki/Q90"],"type":"entity"}
+{"canonical_id":"Q95","key":"Q95","label":"Google","same_as":["https://www.wikidata.org/wiki/Q95"],"type":"entity"}
+{"canonical_id":"Q97","key":"Q97","label":"Atlantic Ocean","same_as":["https://www.wikidata.org/wiki/Q97"],"type":"entity"}
+{"canonical_id":"Q116","key":"Q116","label":"monarch","same_as":["https://www.wikidata.org/wiki/Q116"],"type":"entity"}
+{"canonical_id":"Q142","key":"Q142","label":"France","same_as":["https://www.wikidata.org/wiki/Q142"],"type":"entity"}
+{"canonical_id":"Q145","key":"Q145","label":"United Kingdom","same_as":["https://www.wikidata.org/wiki/Q145"],"type":"entity"}
+{"canonical_id":"Q148","key":"Q148","label":"People's Republic of China","same_as":["https://www.wikidata.org/wiki/Q148"],"type":"entity"}
+{"canonical_id":"Q154","key":"Q154","label":"alcoholic beverage","same_as":["https://www.wikidata.org/wiki/Q154"],"type":"entity"}
+{"canonical_id":"Q159","key":"Q159","label":"Russia","same_as":["https://www.wikidata.org/wiki/Q159"],"type":"entity"}
+{"canonical_id":"Q176","key":"Q176","label":"Quebec","same_as":["https://www.wikidata.org/wiki/Q176"],"type":"entity"}
+{"canonical_id":"Q183","key":"Q183","label":"Germany","same_as":["https://www.wikidata.org/wiki/Q183"],"type":"entity"}
+{"canonical_id":"Q184","key":"Q184","label":"Belarus","same_as":["https://www.wikidata.org/wiki/Q184"],"type":"entity"}
+{"canonical_id":"Q191","key":"Q191","label":"Estonia","same_as":["https://www.wikidata.org/wiki/Q191"],"type":"entity"}
+{"canonical_id":"Q207","key":"Q207","label":"George W. Bush","same_as":["https://www.wikidata.org/wiki/Q207"],"type":"entity"}
+{"canonical_id":"Q211","key":"Q211","label":"Latvia","same_as":["https://www.wikidata.org/wiki/Q211"],"type":"entity"}
+{"canonical_id":"Q212","key":"Q212","label":"Ukraine","same_as":["https://www.wikidata.org/wiki/Q212"],"type":"entity"}
+{"canonical_id":"Q214","key":"Q214","label":"Slovakia","same_as":["https://www.wikidata.org/wiki/Q214"],"type":"entity"}
+{"canonical_id":"Q220","key":"Q220","label":"Rome","same_as":["https://www.wikidata.org/wiki/Q220"],"type":"entity"}
+{"canonical_id":"Q222","key":"Q222","label":"Albania","same_as":["https://www.wikidata.org/wiki/Q222"],"type":"entity"}
+{"canonical_id":"Q233","key":"Q233","label":"Malta","same_as":["https://www.wikidata.org/wiki/Q233"],"type":"entity"}
+{"canonical_id":"Q262","key":"Q262","label":"Algeria","same_as":["https://www.wikidata.org/wiki/Q262"],"type":"entity"}
+{"canonical_id":"Q347","key":"Q347","label":"Liechtenstein","same_as":["https://www.wikidata.org/wiki/Q347"],"type":"entity"}
+{"canonical_id":"Q350","key":"Q350","label":"Cambridge","same_as":["https://www.wikidata.org/wiki/Q350"],"type":"entity"}
+{"canonical_id":"Q356","key":"Q356","label":"Google+","same_as":["https://www.wikidata.org/wiki/Q356"],"type":"entity"}
+{"canonical_id":"Q362","key":"Q362","label":"World War II","same_as":["https://www.wikidata.org/wiki/Q362"],"type":"entity"}
+{"canonical_id":"Q397","key":"Q397","label":"Latin","same_as":["https://www.wikidata.org/wiki/Q397"],"type":"entity"}
+{"canonical_id":"Q406","key":"Q406","label":"Istanbul","same_as":["https://www.wikidata.org/wiki/Q406"],"type":"entity"}
+{"canonical_id":"Q408","key":"Q408","label":"Australia","same_as":["https://www.wikidata.org/wiki/Q408"],"type":"entity"}
+{"canonical_id":"Q419","key":"Q419","label":"Peru","same_as":["https://www.wikidata.org/wiki/Q419"],"type":"entity"}
+{"canonical_id":"Q458","key":"Q458","label":"European Union","same_as":["https://www.wikidata.org/wiki/Q458"],"type":"entity"}
+{"canonical_id":"Q490","key":"Q490","label":"Milan","same_as":["https://www.wikidata.org/wiki/Q490"],"type":"entity"}
+{"canonical_id":"Q556","key":"Q556","label":"hydrogen","same_as":["https://www.wikidata.org/wiki/Q556"],"type":"entity"}
+{"canonical_id":"Q648","key":"Q648","label":"Lille","same_as":["https://www.wikidata.org/wiki/Q648"],"type":"entity"}
+{"canonical_id":"Q649","key":"Q649","label":"Moscow","same_as":["https://www.wikidata.org/wiki/Q649"],"type":"entity"}
+{"canonical_id":"Q664","key":"Q664","label":"New Zealand","same_as":["https://www.wikidata.org/wiki/Q664"],"type":"entity"}
+{"canonical_id":"Q692","key":"Q692","label":"William Shakespeare","same_as":["https://www.wikidata.org/wiki/Q692"],"type":"entity"}
+{"canonical_id":"Q736","key":"Q736","label":"Ecuador","same_as":["https://www.wikidata.org/wiki/Q736"],"type":"entity"}
+{"canonical_id":"Q739","key":"Q739","label":"Colombia","same_as":["https://www.wikidata.org/wiki/Q739"],"type":"entity"}
+{"canonical_id":"Q750","key":"Q750","label":"Bolivia","same_as":["https://www.wikidata.org/wiki/Q750"],"type":"entity"}
+{"canonical_id":"Q753","key":"Q753","label":"copper","same_as":["https://www.wikidata.org/wiki/Q753"],"type":"entity"}
+{"canonical_id":"Q766","key":"Q766","label":"Jamaica","same_as":["https://www.wikidata.org/wiki/Q766"],"type":"entity"}
+{"canonical_id":"Q786","key":"Q786","label":"Dominican Republic","same_as":["https://www.wikidata.org/wiki/Q786"],"type":"entity"}
+{"canonical_id":"Q810","key":"Q810","label":"Jordan","same_as":["https://www.wikidata.org/wiki/Q810"],"type":"entity"}
+{"canonical_id":"Q812","key":"Q812","label":"Florida","same_as":["https://www.wikidata.org/wiki/Q812"],"type":"entity"}
+{"canonical_id":"Q822","key":"Q822","label":"Lebanon","same_as":["https://www.wikidata.org/wiki/Q822"],"type":"entity"}
+{"canonical_id":"Q843","key":"Q843","label":"Pakistan","same_as":["https://www.wikidata.org/wiki/Q843"],"type":"entity"}
+{"canonical_id":"Q866","key":"Q866","label":"YouTube","same_as":["https://www.wikidata.org/wiki/Q866"],"type":"entity"}
+{"canonical_id":"Q884","key":"Q884","label":"South Korea","same_as":["https://www.wikidata.org/wiki/Q884"],"type":"entity"}
+{"canonical_id":"Q891","key":"Q891","label":"Nizhny Novgorod","same_as":["https://www.wikidata.org/wiki/Q891"],"type":"entity"}
+{"canonical_id":"Q897","key":"Q897","label":"gold","same_as":["https://www.wikidata.org/wiki/Q897"],"type":"entity"}
+{"canonical_id":"Q918","key":"Q918","label":"Twitter","same_as":["https://www.wikidata.org/wiki/Q918"],"type":"entity"}
+{"canonical_id":"Q943","key":"Q943","label":"yellow","same_as":["https://www.wikidata.org/wiki/Q943"],"type":"entity"}
+{"canonical_id":"Q974","key":"Q974","label":"Democratic Republic of the Congo","same_as":["https://www.wikidata.org/wiki/Q974"],"type":"entity"}
+{"canonical_id":"Q1061","key":"Q1061","label":"Gujarat","same_as":["https://www.wikidata.org/wiki/Q1061"],"type":"entity"}
+{"canonical_id":"Q1088","key":"Q1088","label":"blue","same_as":["https://www.wikidata.org/wiki/Q1088"],"type":"entity"}
+{"canonical_id":"Q1183","key":"Q1183","label":"Puerto Rico","same_as":["https://www.wikidata.org/wiki/Q1183"],"type":"entity"}
+{"canonical_id":"Q1188","key":"Q1188","label":"Madhya Pradesh","same_as":["https://www.wikidata.org/wiki/Q1188"],"type":"entity"}
+{"canonical_id":"Q1246","key":"Q1246","label":"Kosovo","same_as":["https://www.wikidata.org/wiki/Q1246"],"type":"entity"}
+{"canonical_id":"Q1247","key":"Q1247","label":"Caribbean Sea","same_as":["https://www.wikidata.org/wiki/Q1247"],"type":"entity"}
+{"canonical_id":"Q1282","key":"Q1282","label":"Lazio","same_as":["https://www.wikidata.org/wiki/Q1282"],"type":"entity"}
+{"canonical_id":"Q1311","key":"Q1311","label":"winter","same_as":["https://www.wikidata.org/wiki/Q1311"],"type":"entity"}
+{"canonical_id":"Q1312","key":"Q1312","label":"spring","same_as":["https://www.wikidata.org/wiki/Q1312"],"type":"entity"}
+{"canonical_id":"Q1313","key":"Q1313","label":"summer","same_as":["https://www.wikidata.org/wiki/Q1313"],"type":"entity"}
+{"canonical_id":"Q1314","key":"Q1314","label":"autumn","same_as":["https://www.wikidata.org/wiki/Q1314"],"type":"entity"}
+{"canonical_id":"Q1321","key":"Q1321","label":"Spanish","same_as":["https://www.wikidata.org/wiki/Q1321"],"type":"entity"}
+{"canonical_id":"Q1342","key":"Q1342","label":"Pittsburgh","same_as":["https://www.wikidata.org/wiki/Q1342"],"type":"entity"}
+{"canonical_id":"Q1370","key":"Q1370","label":"Virginia","same_as":["https://www.wikidata.org/wiki/Q1370"],"type":"entity"}
+{"canonical_id":"Q1384","key":"Q1384","label":"New York","same_as":["https://www.wikidata.org/wiki/Q1384"],"type":"entity"}
+{"canonical_id":"Q1391","key":"Q1391","label":"Maryland","same_as":["https://www.wikidata.org/wiki/Q1391"],"type":"entity"}
+{"canonical_id":"Q1397","key":"Q1397","label":"Ohio","same_as":["https://www.wikidata.org/wiki/Q1397"],"type":"entity"}
+{"canonical_id":"Q1405","key":"Q1405","label":"Augustus","same_as":["https://www.wikidata.org/wiki/Q1405"],"type":"entity"}
+{"canonical_id":"Q1408","key":"Q1408","label":"New Jersey","same_as":["https://www.wikidata.org/wiki/Q1408"],"type":"entity"}
+{"canonical_id":"Q1443","key":"Q1443","label":"Molise","same_as":["https://www.wikidata.org/wiki/Q1443"],"type":"entity"}
+{"canonical_id":"Q1588","key":"Q1588","label":"Louisiana","same_as":["https://www.wikidata.org/wiki/Q1588"],"type":"entity"}
+{"canonical_id":"Q1726","key":"Q1726","label":"Munich","same_as":["https://www.wikidata.org/wiki/Q1726"],"type":"entity"}
+{"canonical_id":"Q1741","key":"Q1741","label":"Vienna","same_as":["https://www.wikidata.org/wiki/Q1741"],"type":"entity"}
+{"canonical_id":"Q1744","key":"Q1744","label":"Madonna","same_as":["https://www.wikidata.org/wiki/Q1744"],"type":"entity"}
+{"canonical_id":"Q1749","key":"Q1749","label":"Kaliningrad Oblast","same_as":["https://www.wikidata.org/wiki/Q1749"],"type":"entity"}
+{"canonical_id":"Q1860","key":"Q1860","label":"English","same_as":["https://www.wikidata.org/wiki/Q1860"],"type":"entity"}
+{"canonical_id":"Q1861","key":"Q1861","label":"Bangkok","same_as":["https://www.wikidata.org/wiki/Q1861"],"type":"entity"}
+{"canonical_id":"Q1904","key":"Q1904","label":"Ontario","same_as":["https://www.wikidata.org/wiki/Q1904"],"type":"entity"}
+{"canonical_id":"Q1968","key":"Q1968","label":"Formula One","same_as":["https://www.wikidata.org/wiki/Q1968"],"type":"entity"}
+{"canonical_id":"Q2256","key":"Q2256","label":"Birmingham","same_as":["https://www.wikidata.org/wiki/Q2256"],"type":"entity"}
+{"canonical_id":"Q2277","key":"Q2277","label":"Roman Empire","same_as":["https://www.wikidata.org/wiki/Q2277"],"type":"entity"}
+{"canonical_id":"Q2329","key":"Q2329","label":"chemistry","same_as":["https://www.wikidata.org/wiki/Q2329"],"type":"entity"}
+{"canonical_id":"Q2634","key":"Q2634","label":"Naples","same_as":["https://www.wikidata.org/wiki/Q2634"],"type":"entity"}
+{"canonical_id":"Q2736","key":"Q2736","label":"association football","same_as":["https://www.wikidata.org/wiki/Q2736"],"type":"entity"}
+{"canonical_id":"Q2808","key":"Q2808","label":"Elton John","same_as":["https://www.wikidata.org/wiki/Q2808"],"type":"entity"}
+{"canonical_id":"Q2973","key":"Q2973","label":"Darmstadt","same_as":["https://www.wikidata.org/wiki/Q2973"],"type":"entity"}
+{"canonical_id":"Q3133","key":"Q3133","label":"green","same_as":["https://www.wikidata.org/wiki/Q3133"],"type":"entity"}
+{"canonical_id":"Q3142","key":"Q3142","label":"red","same_as":["https://www.wikidata.org/wiki/Q3142"],"type":"entity"}
+{"canonical_id":"Q3224","key":"Q3224","label":"New South Wales","same_as":["https://www.wikidata.org/wiki/Q3224"],"type":"entity"}
+{"canonical_id":"Q3410","key":"Q3410","label":"Hertfordshire","same_as":["https://www.wikidata.org/wiki/Q3410"],"type":"entity"}
+{"canonical_id":"Q3757","key":"Q3757","label":"Java","same_as":["https://www.wikidata.org/wiki/Q3757"],"type":"entity"}
+{"canonical_id":"Q3934","key":"Q3934","label":"Asturias","same_as":["https://www.wikidata.org/wiki/Q3934"],"type":"entity"}
+{"canonical_id":"Q4440","key":"Q4440","label":"Eric Bana","same_as":["https://www.wikidata.org/wiki/Q4440"],"type":"entity"}
+{"canonical_id":"Q4478","key":"Q4478","label":"Punjab","same_as":["https://www.wikidata.org/wiki/Q4478"],"type":"entity"}
+{"canonical_id":"Q4656","key":"Q4656","label":"Pula","same_as":["https://www.wikidata.org/wiki/Q4656"],"type":"entity"}
+{"canonical_id":"Q4782","key":"Q4782","label":"Oamaru","same_as":["https://www.wikidata.org/wiki/Q4782"],"type":"entity"}
+{"canonical_id":"Q4918","key":"Q4918","label":"Mediterranean Sea","same_as":["https://www.wikidata.org/wiki/Q4918"],"type":"entity"}
+{"canonical_id":"Q5456","key":"Q5456","label":"Andes","same_as":["https://www.wikidata.org/wiki/Q5456"],"type":"entity"}
+{"canonical_id":"Q5849","key":"Q5849","label":"rugby union","same_as":["https://www.wikidata.org/wiki/Q5849"],"type":"entity"}
+{"canonical_id":"Q5891","key":"Q5891","label":"philosophy","same_as":["https://www.wikidata.org/wiki/Q5891"],"type":"entity"}
+{"canonical_id":"Q7318","key":"Q7318","label":"Nazi Germany","same_as":["https://www.wikidata.org/wiki/Q7318"],"type":"entity"}
+{"canonical_id":"Q7735","key":"Q7735","label":"diving","same_as":["https://www.wikidata.org/wiki/Q7735"],"type":"entity"}
+{"canonical_id":"Q7747","key":"Q7747","label":"Vladimir Putin","same_as":["https://www.wikidata.org/wiki/Q7747"],"type":"entity"}
+{"canonical_id":"Q8261","key":"Q8261","label":"novel","same_as":["https://www.wikidata.org/wiki/Q8261"],"type":"entity"}
+{"canonical_id":"Q8461","key":"Q8461","label":"racism","same_as":["https://www.wikidata.org/wiki/Q8461"],"type":"entity"}
+{"canonical_id":"Q8660","key":"Q8660","label":"Karachi","same_as":["https://www.wikidata.org/wiki/Q8660"],"type":"entity"}
+{"canonical_id":"Q8823","key":"Q8823","label":"Levante UD","same_as":["https://www.wikidata.org/wiki/Q8823"],"type":"entity"}
+{"canonical_id":"Q9612","key":"Q9612","label":"uterus","same_as":["https://www.wikidata.org/wiki/Q9612"],"type":"entity"}
+{"canonical_id":"Q10383","key":"Q10383","label":"CD Quesada","same_as":["https://www.wikidata.org/wiki/Q10383"],"type":"entity"}
+{"canonical_id":"Q10806","key":"Q10806","label":"September 11 attacks","same_as":["https://www.wikidata.org/wiki/Q10806"],"type":"entity"}
+{"canonical_id":"Q11002","key":"Q11002","label":"sugar","same_as":["https://www.wikidata.org/wiki/Q11002"],"type":"entity"}
+{"canonical_id":"Q11190","key":"Q11190","label":"medicine","same_as":["https://www.wikidata.org/wiki/Q11190"],"type":"entity"}
+{"canonical_id":"Q11220","key":"Q11220","label":"United States Navy","same_as":["https://www.wikidata.org/wiki/Q11220"],"type":"entity"}
+{"canonical_id":"Q11223","key":"Q11223","label":"United States Air Force","same_as":["https://www.wikidata.org/wiki/Q11223"],"type":"entity"}
+{"canonical_id":"Q11268","key":"Q11268","label":"United States Congress","same_as":["https://www.wikidata.org/wiki/Q11268"],"type":"entity"}
+{"canonical_id":"Q11468","key":"Q11468","label":"nanotechnology","same_as":["https://www.wikidata.org/wiki/Q11468"],"type":"entity"}
+{"canonical_id":"Q11575","key":"Q11575","label":"maize","same_as":["https://www.wikidata.org/wiki/Q11575"],"type":"entity"}
+{"canonical_id":"Q11661","key":"Q11661","label":"information technology","same_as":["https://www.wikidata.org/wiki/Q11661"],"type":"entity"}
+{"canonical_id":"Q11696","key":"Q11696","label":"President of the United States","same_as":["https://www.wikidata.org/wiki/Q11696"],"type":"entity"}
+{"canonical_id":"Q11701","key":"Q11701","label":"United States House of Representatives","same_as":["https://www.wikidata.org/wiki/Q11701"],"type":"entity"}
+{"canonical_id":"Q11739","key":"Q11739","label":"Lahore","same_as":["https://www.wikidata.org/wiki/Q11739"],"type":"entity"}
+{"canonical_id":"Q11761","key":"Q11761","label":"Bronze Age","same_as":["https://www.wikidata.org/wiki/Q11761"],"type":"entity"}
+{"canonical_id":"Q11764","key":"Q11764","label":"Iron Age","same_as":["https://www.wikidata.org/wiki/Q11764"],"type":"entity"}
+{"canonical_id":"Q12167","key":"Q12167","label":"malnutrition","same_as":["https://www.wikidata.org/wiki/Q12167"],"type":"entity"}
+{"canonical_id":"Q12583","key":"Q12583","label":"Spanish–American War","same_as":["https://www.wikidata.org/wiki/Q12583"],"type":"entity"}
+{"canonical_id":"Q13371","key":"Q13371","label":"Harvard University","same_as":["https://www.wikidata.org/wiki/Q13371"],"type":"entity"}
+{"canonical_id":"Q13711","key":"Q13711","label":"Abra","same_as":["https://www.wikidata.org/wiki/Q13711"],"type":"entity"}
+{"canonical_id":"Q13974","key":"Q13974","label":"NBC","same_as":["https://www.wikidata.org/wiki/Q13974"],"type":"entity"}
+{"canonical_id":"Q14294","key":"Q14294","label":"Tagus River","same_as":["https://www.wikidata.org/wiki/Q14294"],"type":"entity"}
+{"canonical_id":"Q14849","key":"Q14849","label":"Pirmasens","same_as":["https://www.wikidata.org/wiki/Q14849"],"type":"entity"}
+{"canonical_id":"Q15180","key":"Q15180","label":"Soviet Union","same_as":["https://www.wikidata.org/wiki/Q15180"],"type":"entity"}
+{"canonical_id":"Q16181","key":"Q16181","label":"Province of Frosinone","same_as":["https://www.wikidata.org/wiki/Q16181"],"type":"entity"}
+{"canonical_id":"Q16189","key":"Q16189","label":"Province of L'Aquila","same_as":["https://www.wikidata.org/wiki/Q16189"],"type":"entity"}
+{"canonical_id":"Q16533","key":"Q16533","label":"judge","same_as":["https://www.wikidata.org/wiki/Q16533"],"type":"entity"}
+{"canonical_id":"Q16568","key":"Q16568","label":"Jacksonville","same_as":["https://www.wikidata.org/wiki/Q16568"],"type":"entity"}
+{"canonical_id":"Q16642","key":"Q16642","label":"Six Nations Championship","same_as":["https://www.wikidata.org/wiki/Q16642"],"type":"entity"}
+{"canonical_id":"Q17042","key":"Q17042","label":"Oakland","same_as":["https://www.wikidata.org/wiki/Q17042"],"type":"entity"}
+{"canonical_id":"Q18805","key":"Q18805","label":"naturalist","same_as":["https://www.wikidata.org/wiki/Q18805"],"type":"entity"}
+{"canonical_id":"Q19100","key":"Q19100","label":"captain","same_as":["https://www.wikidata.org/wiki/Q19100"],"type":"entity"}
+{"canonical_id":"Q19546","key":"Q19546","label":"pope","same_as":["https://www.wikidata.org/wiki/Q19546"],"type":"entity"}
+{"canonical_id":"Q19575","key":"Q19575","label":"Carlisle United F.C.","same_as":["https://www.wikidata.org/wiki/Q19575"],"type":"entity"}
+{"canonical_id":"Q19689","key":"Q19689","label":"Tirana","same_as":["https://www.wikidata.org/wiki/Q19689"],"type":"entity"}
+{"canonical_id":"Q19804","key":"Q19804","label":"Royston","same_as":["https://www.wikidata.org/wiki/Q19804"],"type":"entity"}
+{"canonical_id":"Q22656","key":"Q22656","label":"petroleum","same_as":["https://www.wikidata.org/wiki/Q22656"],"type":"entity"}
+{"canonical_id":"Q22855","key":"Q22855","label":"consumer","same_as":["https://www.wikidata.org/wiki/Q22855"],"type":"entity"}
+{"canonical_id":"Q23112","key":"Q23112","label":"Cambridgeshire","same_as":["https://www.wikidata.org/wiki/Q23112"],"type":"entity"}
+{"canonical_id":"Q23143","key":"Q23143","label":"Bedfordshire","same_as":["https://www.wikidata.org/wiki/Q23143"],"type":"entity"}
+{"canonical_id":"Q23159","key":"Q23159","label":"Dorset","same_as":["https://www.wikidata.org/wiki/Q23159"],"type":"entity"}
+{"canonical_id":"Q23406","key":"Q23406","label":"Red Sea","same_as":["https://www.wikidata.org/wiki/Q23406"],"type":"entity"}
+{"canonical_id":"Q23445","key":"Q23445","label":"black","same_as":["https://www.wikidata.org/wiki/Q23445"],"type":"entity"}
+{"canonical_id":"Q23505","key":"Q23505","label":"George H. W. Bush","same_as":["https://www.wikidata.org/wiki/Q23505"],"type":"entity"}
+{"canonical_id":"Q23589","key":"Q23589","label":"Showtime","same_as":["https://www.wikidata.org/wiki/Q23589"],"type":"entity"}
+{"canonical_id":"Q23661","key":"Q23661","label":"Wellington","same_as":["https://www.wikidata.org/wiki/Q23661"],"type":"entity"}
+{"canonical_id":"Q23666","key":"Q23666","label":"Great Britain","same_as":["https://www.wikidata.org/wiki/Q23666"],"type":"entity"}
+{"canonical_id":"Q24460","key":"Q24460","label":"Northeastern United States","same_as":["https://www.wikidata.org/wiki/Q24460"],"type":"entity"}
+{"canonical_id":"Q25379","key":"Q25379","label":"play","same_as":["https://www.wikidata.org/wiki/Q25379"],"type":"entity"}
+{"canonical_id":"Q27046","key":"Q27046","label":"Carabidae","same_as":["https://www.wikidata.org/wiki/Q27046"],"type":"entity"}
+{"canonical_id":"Q27329","key":"Q27329","label":"North Asia","same_as":["https://www.wikidata.org/wiki/Q27329"],"type":"entity"}
+{"canonical_id":"Q27433","key":"Q27433","label":"Central Africa","same_as":["https://www.wikidata.org/wiki/Q27433"],"type":"entity"}
+{"canonical_id":"Q27449","key":"Q27449","label":"Southern Europe","same_as":["https://www.wikidata.org/wiki/Q27449"],"type":"entity"}
+{"canonical_id":"Q27611","key":"Q27611","label":"Central America","same_as":["https://www.wikidata.org/wiki/Q27611"],"type":"entity"}
+{"canonical_id":"Q27995","key":"Q27995","label":"Bangued","same_as":["https://www.wikidata.org/wiki/Q27995"],"type":"entity"}
+{"canonical_id":"Q28014","key":"Q28014","label":"Bucay","same_as":["https://www.wikidata.org/wiki/Q28014"],"type":"entity"}
+{"canonical_id":"Q28367","key":"Q28367","label":"asparagus","same_as":["https://www.wikidata.org/wiki/Q28367"],"type":"entity"}
+{"canonical_id":"Q28389","key":"Q28389","label":"screenwriter","same_as":["https://www.wikidata.org/wiki/Q28389"],"type":"entity"}
+{"canonical_id":"Q28419","key":"Q28419","label":"Mandan","same_as":["https://www.wikidata.org/wiki/Q28419"],"type":"entity"}
+{"canonical_id":"Q29020","key":"Q29020","label":"Lagangilang","same_as":["https://www.wikidata.org/wiki/Q29020"],"type":"entity"}
+{"canonical_id":"Q29045","key":"Q29045","label":"Licuan-Baay","same_as":["https://www.wikidata.org/wiki/Q29045"],"type":"entity"}
+{"canonical_id":"Q29082","key":"Q29082","label":"Manabo","same_as":["https://www.wikidata.org/wiki/Q29082"],"type":"entity"}
+{"canonical_id":"Q29094","key":"Q29094","label":"Peñarrubia","same_as":["https://www.wikidata.org/wiki/Q29094"],"type":"entity"}
+{"canonical_id":"Q29116","key":"Q29116","label":"Sallapadan","same_as":["https://www.wikidata.org/wiki/Q29116"],"type":"entity"}
+{"canonical_id":"Q29139","key":"Q29139","label":"Tayum","same_as":["https://www.wikidata.org/wiki/Q29139"],"type":"entity"}
+{"canonical_id":"Q29171","key":"Q29171","label":"infantry","same_as":["https://www.wikidata.org/wiki/Q29171"],"type":"entity"}
+{"canonical_id":"Q29182","key":"Q29182","label":"bishop","same_as":["https://www.wikidata.org/wiki/Q29182"],"type":"entity"}
+{"canonical_id":"Q29191","key":"Q29191","label":"Villaviciosa","same_as":["https://www.wikidata.org/wiki/Q29191"],"type":"entity"}
+{"canonical_id":"Q29468","key":"Q29468","label":"Republican Party","same_as":["https://www.wikidata.org/wiki/Q29468"],"type":"entity"}
+{"canonical_id":"Q29552","key":"Q29552","label":"Democratic Party","same_as":["https://www.wikidata.org/wiki/Q29552"],"type":"entity"}
+{"canonical_id":"Q31920","key":"Q31920","label":"swimming","same_as":["https://www.wikidata.org/wiki/Q31920"],"type":"entity"}
+{"canonical_id":"Q32429","key":"Q32429","label":"Jhelum District","same_as":["https://www.wikidata.org/wiki/Q32429"],"type":"entity"}
+{"canonical_id":"Q33231","key":"Q33231","label":"photographer","same_as":["https://www.wikidata.org/wiki/Q33231"],"type":"entity"}
+{"canonical_id":"Q33788","key":"Q33788","label":"New Caledonia","same_as":["https://www.wikidata.org/wiki/Q33788"],"type":"entity"}
+{"canonical_id":"Q33999","key":"Q33999","label":"actor","same_as":["https://www.wikidata.org/wiki/Q33999"],"type":"entity"}
+{"canonical_id":"Q34490","key":"Q34490","label":"Al-Qaeda","same_as":["https://www.wikidata.org/wiki/Q34490"],"type":"entity"}
+{"canonical_id":"Q34623","key":"Q34623","label":"Ten Commandments","same_as":["https://www.wikidata.org/wiki/Q34623"],"type":"entity"}
+{"canonical_id":"Q35615","key":"Q35615","label":"Segunda División","same_as":["https://www.wikidata.org/wiki/Q35615"],"type":"entity"}
+{"canonical_id":"Q36014","key":"Q36014","label":"Ho Chi Minh","same_as":["https://www.wikidata.org/wiki/Q36014"],"type":"entity"}
+{"canonical_id":"Q36074","key":"Q36074","label":"Queensland","same_as":["https://www.wikidata.org/wiki/Q36074"],"type":"entity"}
+{"canonical_id":"Q36180","key":"Q36180","label":"writer","same_as":["https://www.wikidata.org/wiki/Q36180"],"type":"entity"}
+{"canonical_id":"Q36422","key":"Q36422","label":"Neolithic","same_as":["https://www.wikidata.org/wiki/Q36422"],"type":"entity"}
+{"canonical_id":"Q36834","key":"Q36834","label":"composer","same_as":["https://www.wikidata.org/wiki/Q36834"],"type":"entity"}
+{"canonical_id":"Q37226","key":"Q37226","label":"teacher","same_as":["https://www.wikidata.org/wiki/Q37226"],"type":"entity"}
+{"canonical_id":"Q38060","key":"Q38060","label":"Gaul","same_as":["https://www.wikidata.org/wiki/Q38060"],"type":"entity"}
+{"canonical_id":"Q39018","key":"Q39018","label":"emperor","same_as":["https://www.wikidata.org/wiki/Q39018"],"type":"entity"}
+{"canonical_id":"Q40203","key":"Q40203","label":"Paleolithic","same_as":["https://www.wikidata.org/wiki/Q40203"],"type":"entity"}
+{"canonical_id":"Q40209","key":"Q40209","label":"Long Beach","same_as":["https://www.wikidata.org/wiki/Q40209"],"type":"entity"}
+{"canonical_id":"Q40348","key":"Q40348","label":"lawyer","same_as":["https://www.wikidata.org/wiki/Q40348"],"type":"entity"}
+{"canonical_id":"Q40469","key":"Q40469","label":"Associated Press","same_as":["https://www.wikidata.org/wiki/Q40469"],"type":"entity"}
+{"canonical_id":"Q40831","key":"Q40831","label":"comedy","same_as":["https://www.wikidata.org/wiki/Q40831"],"type":"entity"}
+{"canonical_id":"Q41466","key":"Q41466","label":"ice hockey","same_as":["https://www.wikidata.org/wiki/Q41466"],"type":"entity"}
+{"canonical_id":"Q41573","key":"Q41573","label":"Bay of Biscay","same_as":["https://www.wikidata.org/wiki/Q41573"],"type":"entity"}
+{"canonical_id":"Q41576","key":"Q41576","label":"cocaine","same_as":["https://www.wikidata.org/wiki/Q41576"],"type":"entity"}
+{"canonical_id":"Q41644","key":"Q41644","label":"Warsaw Pact","same_as":["https://www.wikidata.org/wiki/Q41644"],"type":"entity"}
+{"canonical_id":"Q42000","key":"Q42000","label":"Tahiti","same_as":["https://www.wikidata.org/wiki/Q42000"],"type":"entity"}
+{"canonical_id":"Q42519","key":"Q42519","label":"gray","same_as":["https://www.wikidata.org/wiki/Q42519"],"type":"entity"}
+{"canonical_id":"Q42884","key":"Q42884","label":"Germans","same_as":["https://www.wikidata.org/wiki/Q42884"],"type":"entity"}
+{"canonical_id":"Q44024","key":"Q44024","label":"Athanasius of Alexandria","same_as":["https://www.wikidata.org/wiki/Q44024"],"type":"entity"}
+{"canonical_id":"Q46232","key":"Q46232","label":"Vienna Ring Road","same_as":["https://www.wikidata.org/wiki/Q46232"],"type":"entity"}
+{"canonical_id":"Q46418","key":"Q46418","label":"Constantius II","same_as":["https://www.wikidata.org/wiki/Q46418"],"type":"entity"}
+{"canonical_id":"Q46974","key":"Q46974","label":"Canadian Pacific Railway","same_as":["https://www.wikidata.org/wiki/Q46974"],"type":"entity"}
+{"canonical_id":"Q47071","key":"Q47071","label":"brown","same_as":["https://www.wikidata.org/wiki/Q47071"],"type":"entity"}
+{"canonical_id":"Q47315","key":"Q47315","label":"cavalry","same_as":["https://www.wikidata.org/wiki/Q47315"],"type":"entity"}
+{"canonical_id":"Q47476","key":"Q47476","label":"Alhambra","same_as":["https://www.wikidata.org/wiki/Q47476"],"type":"entity"}
+{"canonical_id":"Q47740","key":"Q47740","label":"Muslim","same_as":["https://www.wikidata.org/wiki/Q47740"],"type":"entity"}
+{"canonical_id":"Q47762","key":"Q47762","label":"England national association football team","same_as":["https://www.wikidata.org/wiki/Q47762"],"type":"entity"}
+{"canonical_id":"Q47912","key":"Q47912","label":"lung cancer","same_as":["https://www.wikidata.org/wiki/Q47912"],"type":"entity"}
+{"canonical_id":"Q48282","key":"Q48282","label":"student","same_as":["https://www.wikidata.org/wiki/Q48282"],"type":"entity"}
+{"canonical_id":"Q48525","key":"Q48525","label":"Federal Government of the United States","same_as":["https://www.wikidata.org/wiki/Q48525"],"type":"entity"}
+{"canonical_id":"Q49078","key":"Q49078","label":"White Americans","same_as":["https://www.wikidata.org/wiki/Q49078"],"type":"entity"}
+{"canonical_id":"Q49084","key":"Q49084","label":"short story","same_as":["https://www.wikidata.org/wiki/Q49084"],"type":"entity"}
+{"canonical_id":"Q49085","key":"Q49085","label":"African Americans","same_as":["https://www.wikidata.org/wiki/Q49085"],"type":"entity"}
+{"canonical_id":"Q49111","key":"Q49111","label":"Cambridge","same_as":["https://www.wikidata.org/wiki/Q49111"],"type":"entity"}
+{"canonical_id":"Q49231","key":"Q49231","label":"Norfolk","same_as":["https://www.wikidata.org/wiki/Q49231"],"type":"entity"}
+{"canonical_id":"Q49297","key":"Q49297","label":"Native Americans in the United States","same_as":["https://www.wikidata.org/wiki/Q49297"],"type":"entity"}
+{"canonical_id":"Q51068","key":"Q51068","label":"Karl I of Austria","same_as":["https://www.wikidata.org/wiki/Q51068"],"type":"entity"}
+{"canonical_id":"Q52028","key":"Q52028","label":"Chiang Mai","same_as":["https://www.wikidata.org/wiki/Q52028"],"type":"entity"}
+{"canonical_id":"Q52162","key":"Q52162","label":"Project Mercury","same_as":["https://www.wikidata.org/wiki/Q52162"],"type":"entity"}
+{"canonical_id":"Q53636","key":"Q53636","label":"Anura","same_as":["https://www.wikidata.org/wiki/Q53636"],"type":"entity"}
+{"canonical_id":"Q53696","key":"Q53696","label":"Hylidae","same_as":["https://www.wikidata.org/wiki/Q53696"],"type":"entity"}
+{"canonical_id":"Q54925","key":"Q54925","label":"Guadalajara Province","same_as":["https://www.wikidata.org/wiki/Q54925"],"type":"entity"}
+{"canonical_id":"Q58239","key":"Q58239","label":"Maltese Third Division","same_as":["https://www.wikidata.org/wiki/Q58239"],"type":"entity"}
+{"canonical_id":"Q58243","key":"Q58243","label":"Maltese Second Division","same_as":["https://www.wikidata.org/wiki/Q58243"],"type":"entity"}
+{"canonical_id":"Q58339","key":"Q58339","label":"disco","same_as":["https://www.wikidata.org/wiki/Q58339"],"type":"entity"}
+{"canonical_id":"Q58669","key":"Q58669","label":"Hispanic and Latino Americans","same_as":["https://www.wikidata.org/wiki/Q58669"],"type":"entity"}
+{"canonical_id":"Q60140","key":"Q60140","label":"Indian subcontinent","same_as":["https://www.wikidata.org/wiki/Q60140"],"type":"entity"}
+{"canonical_id":"Q60699","key":"Q60699","label":"Zog I of Albania","same_as":["https://www.wikidata.org/wiki/Q60699"],"type":"entity"}
+{"canonical_id":"Q61966","key":"Q61966","label":"Christian III, Count Palatine of Zweibrücken","same_as":["https://www.wikidata.org/wiki/Q61966"],"type":"entity"}
+{"canonical_id":"Q62063","key":"Q62063","label":"Countess Palatine Caroline of Zweibrücken","same_as":["https://www.wikidata.org/wiki/Q62063"],"type":"entity"}
+{"canonical_id":"Q64194","key":"Q64194","label":"Countess Charlotte of Hanau-Lichtenberg","same_as":["https://www.wikidata.org/wiki/Q64194"],"type":"entity"}
+{"canonical_id":"Q65610","key":"Q65610","label":"Nicola Perscheid","same_as":["https://www.wikidata.org/wiki/Q65610"],"type":"entity"}
+{"canonical_id":"Q68188","key":"Q68188","label":"Johann von Ewald","same_as":["https://www.wikidata.org/wiki/Q68188"],"type":"entity"}
+{"canonical_id":"Q71581","key":"Q71581","label":"Rio Torto","same_as":["https://www.wikidata.org/wiki/Q71581"],"type":"entity"}
+{"canonical_id":"Q72349","key":"Q72349","label":"Krewella","same_as":["https://www.wikidata.org/wiki/Q72349"],"type":"entity"}
+{"canonical_id":"Q73160","key":"Q73160","label":"Hermann Otto Sleumer","same_as":["https://www.wikidata.org/wiki/Q73160"],"type":"entity"}
+{"canonical_id":"Q75836","key":"Q75836","label":"Luqa St. Andrew's F.C.","same_as":["https://www.wikidata.org/wiki/Q75836"],"type":"entity"}
+{"canonical_id":"Q76473","key":"Q76473","label":"University of Southampton","same_as":["https://www.wikidata.org/wiki/Q76473"],"type":"entity"}
+{"canonical_id":"Q77002","key":"Q77002","label":"ATB","same_as":["https://www.wikidata.org/wiki/Q77002"],"type":"entity"}
+{"canonical_id":"Q79854","key":"Q79854","label":"Communist Party of the Soviet Union","same_as":["https://www.wikidata.org/wiki/Q79854"],"type":"entity"}
+{"canonical_id":"Q79990","key":"Q79990","label":"Christchurch","same_as":["https://www.wikidata.org/wiki/Q79990"],"type":"entity"}
+{"canonical_id":"Q80056","key":"Q80056","label":"sonnet","same_as":["https://www.wikidata.org/wiki/Q80056"],"type":"entity"}
+{"canonical_id":"Q80687","key":"Q80687","label":"secretary","same_as":["https://www.wikidata.org/wiki/Q80687"],"type":"entity"}
+{"canonical_id":"Q82955","key":"Q82955","label":"politician","same_as":["https://www.wikidata.org/wiki/Q82955"],"type":"entity"}
+{"canonical_id":"Q83440","key":"Q83440","label":"country music","same_as":["https://www.wikidata.org/wiki/Q83440"],"type":"entity"}
+{"canonical_id":"Q83460","key":"Q83460","label":"general","same_as":["https://www.wikidata.org/wiki/Q83460"],"type":"entity"}
+{"canonical_id":"Q83515","key":"Q83515","label":"#willpower","same_as":["https://www.wikidata.org/wiki/Q83515"],"type":"entity"}
+{"canonical_id":"Q83922","key":"Q83922","label":"Arianism","same_as":["https://www.wikidata.org/wiki/Q83922"],"type":"entity"}
+{"canonical_id":"Q87063","key":"Q87063","label":"Dora Kallmus","same_as":["https://www.wikidata.org/wiki/Q87063"],"type":"entity"}
+{"canonical_id":"Q92747","key":"Q92747","label":"Eric Schmidt","same_as":["https://www.wikidata.org/wiki/Q92747"],"type":"entity"}
+{"canonical_id":"Q94445","key":"Q94445","label":"Order of the White Eagle","same_as":["https://www.wikidata.org/wiki/Q94445"],"type":"entity"}
+{"canonical_id":"Q94797","key":"Q94797","label":"Grand Theft Auto IV","same_as":["https://www.wikidata.org/wiki/Q94797"],"type":"entity"}
+{"canonical_id":"Q95189","key":"Q95189","label":"Jürgen Mittelstraß","same_as":["https://www.wikidata.org/wiki/Q95189"],"type":"entity"}
+{"canonical_id":"Q101991","key":"Q101991","label":"inflammation","same_as":["https://www.wikidata.org/wiki/Q101991"],"type":"entity"}
+{"canonical_id":"Q102105","key":"Q102105","label":"Liberius","same_as":["https://www.wikidata.org/wiki/Q102105"],"type":"entity"}
+{"canonical_id":"Q103039","key":"Q103039","label":"Arthur Benda","same_as":["https://www.wikidata.org/wiki/Q103039"],"type":"entity"}
+{"canonical_id":"Q103076","key":"Q103076","label":"screenplay","same_as":["https://www.wikidata.org/wiki/Q103076"],"type":"entity"}
+{"canonical_id":"Q109960","key":"Q109960","label":"Magister equitum","same_as":["https://www.wikidata.org/wiki/Q109960"],"type":"entity"}
+{"canonical_id":"Q112983","key":"Q112983","label":"memoir","same_as":["https://www.wikidata.org/wiki/Q112983"],"type":"entity"}
+{"canonical_id":"Q113846","key":"Q113846","label":"2002 NHL Entry Draft","same_as":["https://www.wikidata.org/wiki/Q113846"],"type":"entity"}
+{"canonical_id":"Q115275","key":"Q115275","label":"Urmia County","same_as":["https://www.wikidata.org/wiki/Q115275"],"type":"entity"}
+{"canonical_id":"Q116080","key":"Q116080","label":"Polish Underground State","same_as":["https://www.wikidata.org/wiki/Q116080"],"type":"entity"}
+{"canonical_id":"Q118863","key":"Q118863","label":"North Island","same_as":["https://www.wikidata.org/wiki/Q118863"],"type":"entity"}
+{"canonical_id":"Q120755","key":"Q120755","label":"South Island","same_as":["https://www.wikidata.org/wiki/Q120755"],"type":"entity"}
+{"canonical_id":"Q122669","key":"Q122669","label":"Vertigo","same_as":["https://www.wikidata.org/wiki/Q122669"],"type":"entity"}
+{"canonical_id":"Q128160","key":"Q128160","label":"Cuban Missile Crisis","same_as":["https://www.wikidata.org/wiki/Q128160"],"type":"entity"}
+{"canonical_id":"Q128257","key":"Q128257","label":"cephalopod","same_as":["https://www.wikidata.org/wiki/Q128257"],"type":"entity"}
+{"canonical_id":"Q128468","key":"Q128468","label":"Wembley Stadium","same_as":["https://www.wikidata.org/wiki/Q128468"],"type":"entity"}
+{"canonical_id":"Q128610","key":"Q128610","label":"Love's Labour's Lost","same_as":["https://www.wikidata.org/wiki/Q128610"],"type":"entity"}
+{"canonical_id":"Q130232","key":"Q130232","label":"drama film","same_as":["https://www.wikidata.org/wiki/Q130232"],"type":"entity"}
+{"canonical_id":"Q130857","key":"Q130857","label":"disc jockey","same_as":["https://www.wikidata.org/wiki/Q130857"],"type":"entity"}
+{"canonical_id":"Q131512","key":"Q131512","label":"farmer","same_as":["https://www.wikidata.org/wiki/Q131512"],"type":"entity"}
+{"canonical_id":"Q132443","key":"Q132443","label":"Ron Dante","same_as":["https://www.wikidata.org/wiki/Q132443"],"type":"entity"}
+{"canonical_id":"Q132851","key":"Q132851","label":"admiral","same_as":["https://www.wikidata.org/wiki/Q132851"],"type":"entity"}
+{"canonical_id":"Q133073","key":"Q133073","label":"Dunedin","same_as":["https://www.wikidata.org/wiki/Q133073"],"type":"entity"}
+{"canonical_id":"Q137373","key":"Q137373","label":"Harpalinae","same_as":["https://www.wikidata.org/wiki/Q137373"],"type":"entity"}
+{"canonical_id":"Q138311","key":"Q138311","label":"Elizabeth","same_as":["https://www.wikidata.org/wiki/Q138311"],"type":"entity"}
+{"canonical_id":"Q140686","key":"Q140686","label":"chairperson","same_as":["https://www.wikidata.org/wiki/Q140686"],"type":"entity"}
+{"canonical_id":"Q146906","key":"Q146906","label":"Hussein I of Jordan","same_as":["https://www.wikidata.org/wiki/Q146906"],"type":"entity"}
+{"canonical_id":"Q147663","key":"Q147663","label":"Zara Tindall","same_as":["https://www.wikidata.org/wiki/Q147663"],"type":"entity"}
+{"canonical_id":"Q152006","key":"Q152006","label":"Partitions of Poland","same_as":["https://www.wikidata.org/wiki/Q152006"],"type":"entity"}
+{"canonical_id":"Q152474","key":"Q152474","label":"Rafael Trujillo","same_as":["https://www.wikidata.org/wiki/Q152474"],"type":"entity"}
+{"canonical_id":"Q152951","key":"Q152951","label":"lieutenant general","same_as":["https://www.wikidata.org/wiki/Q152951"],"type":"entity"}
+{"canonical_id":"Q155700","key":"Q155700","label":"Chris Brown","same_as":["https://www.wikidata.org/wiki/Q155700"],"type":"entity"}
+{"canonical_id":"Q156376","key":"Q156376","label":"Vimeo","same_as":["https://www.wikidata.org/wiki/Q156376"],"type":"entity"}
+{"canonical_id":"Q157228","key":"Q157228","label":"Proteaceae","same_as":["https://www.wikidata.org/wiki/Q157228"],"type":"entity"}
+{"canonical_id":"Q157779","key":"Q157779","label":"Lytkarino","same_as":["https://www.wikidata.org/wiki/Q157779"],"type":"entity"}
+{"canonical_id":"Q159992","key":"Q159992","label":"surfing","same_as":["https://www.wikidata.org/wiki/Q159992"],"type":"entity"}
+{"canonical_id":"Q160381","key":"Q160381","label":"Western world","same_as":["https://www.wikidata.org/wiki/Q160381"],"type":"entity"}
+{"canonical_id":"Q161265","key":"Q161265","label":"Asphodeloideae","same_as":["https://www.wikidata.org/wiki/Q161265"],"type":"entity"}
+{"canonical_id":"Q161885","key":"Q161885","label":"Kingdom of Great Britain","same_as":["https://www.wikidata.org/wiki/Q161885"],"type":"entity"}
+{"canonical_id":"Q162533","key":"Q162533","label":"Russian First League","same_as":["https://www.wikidata.org/wiki/Q162533"],"type":"entity"}
+{"canonical_id":"Q163727","key":"Q163727","label":"bachelor's degree","same_as":["https://www.wikidata.org/wiki/Q163727"],"type":"entity"}
+{"canonical_id":"Q165149","key":"Q165149","label":"100 Bullets","same_as":["https://www.wikidata.org/wiki/Q165149"],"type":"entity"}
+{"canonical_id":"Q165763","key":"Q165763","label":"Waldeck","same_as":["https://www.wikidata.org/wiki/Q165763"],"type":"entity"}
+{"canonical_id":"Q170167","key":"Q170167","label":"TNT","same_as":["https://www.wikidata.org/wiki/Q170167"],"type":"entity"}
+{"canonical_id":"Q170238","key":"Q170238","label":"sitcom","same_as":["https://www.wikidata.org/wiki/Q170238"],"type":"entity"}
+{"canonical_id":"Q170468","key":"Q170468","label":"United Arab Republic","same_as":["https://www.wikidata.org/wiki/Q170468"],"type":"entity"}
+{"canonical_id":"Q170539","key":"Q170539","label":"parody","same_as":["https://www.wikidata.org/wiki/Q170539"],"type":"entity"}
+{"canonical_id":"Q172771","key":"Q172771","label":"Royal Navy","same_as":["https://www.wikidata.org/wiki/Q172771"],"type":"entity"}
+{"canonical_id":"Q174035","key":"Q174035","label":"Formula One Group","same_as":["https://www.wikidata.org/wiki/Q174035"],"type":"entity"}
+{"canonical_id":"Q177518","key":"Q177518","label":"IPTV","same_as":["https://www.wikidata.org/wiki/Q177518"],"type":"entity"}
+{"canonical_id":"Q180072","key":"Q180072","label":"Billboard Hot 100","same_as":["https://www.wikidata.org/wiki/Q180072"],"type":"entity"}
+{"canonical_id":"Q181634","key":"Q181634","label":"Scottish people","same_as":["https://www.wikidata.org/wiki/Q181634"],"type":"entity"}
+{"canonical_id":"Q182743","key":"Q182743","label":"Jamie Foreman","same_as":["https://www.wikidata.org/wiki/Q182743"],"type":"entity"}
+{"canonical_id":"Q182956","key":"Q182956","label":"portrait photography","same_as":["https://www.wikidata.org/wiki/Q182956"],"type":"entity"}
+{"canonical_id":"Q183816","key":"Q183816","label":"master's degree","same_as":["https://www.wikidata.org/wiki/Q183816"],"type":"entity"}
+{"canonical_id":"Q185079","key":"Q185079","label":"Jim Broadbent","same_as":["https://www.wikidata.org/wiki/Q185079"],"type":"entity"}
+{"canonical_id":"Q185610","key":"Q185610","label":"will.i.am","same_as":["https://www.wikidata.org/wiki/Q185610"],"type":"entity"}
+{"canonical_id":"Q185682","key":"Q185682","label":"French Indochina","same_as":["https://www.wikidata.org/wiki/Q185682"],"type":"entity"}
+{"canonical_id":"Q186005","key":"Q186005","label":"physiotherapy","same_as":["https://www.wikidata.org/wiki/Q186005"],"type":"entity"}
+{"canonical_id":"Q188751","key":"Q188751","label":"Caesar","same_as":["https://www.wikidata.org/wiki/Q188751"],"type":"entity"}
+{"canonical_id":"Q189290","key":"Q189290","label":"military officer","same_as":["https://www.wikidata.org/wiki/Q189290"],"type":"entity"}
+{"canonical_id":"Q190001","key":"Q190001","label":"Kontinental Hockey League","same_as":["https://www.wikidata.org/wiki/Q190001"],"type":"entity"}
+{"canonical_id":"Q190610","key":"Q190610","label":"Baranov Central Institute of Aviation Motor Development","same_as":["https://www.wikidata.org/wiki/Q190610"],"type":"entity"}
+{"canonical_id":"Q191489","key":"Q191489","label":"melodrama","same_as":["https://www.wikidata.org/wiki/Q191489"],"type":"entity"}
+{"canonical_id":"Q192853","key":"Q192853","label":"Durrës County","same_as":["https://www.wikidata.org/wiki/Q192853"],"type":"entity"}
+{"canonical_id":"Q193103","key":"Q193103","label":"Herceg Novi","same_as":["https://www.wikidata.org/wiki/Q193103"],"type":"entity"}
+{"canonical_id":"Q193891","key":"Q193891","label":"veteran","same_as":["https://www.wikidata.org/wiki/Q193891"],"type":"entity"}
+{"canonical_id":"Q200441","key":"Q200441","label":"Antioch","same_as":["https://www.wikidata.org/wiki/Q200441"],"type":"entity"}
+{"canonical_id":"Q200863","key":"Q200863","label":"Recording Industry Association of America","same_as":["https://www.wikidata.org/wiki/Q200863"],"type":"entity"}
+{"canonical_id":"Q201788","key":"Q201788","label":"historian","same_as":["https://www.wikidata.org/wiki/Q201788"],"type":"entity"}
+{"canonical_id":"Q202301","key":"Q202301","label":"renal dialysis","same_as":["https://www.wikidata.org/wiki/Q202301"],"type":"entity"}
+{"canonical_id":"Q207507","key":"Q207507","label":"Columbus Blue Jackets","same_as":["https://www.wikidata.org/wiki/Q207507"],"type":"entity"}
+{"canonical_id":"Q208045","key":"Q208045","label":"gold","same_as":["https://www.wikidata.org/wiki/Q208045"],"type":"entity"}
+{"canonical_id":"Q210175","key":"Q210175","label":"MI5","same_as":["https://www.wikidata.org/wiki/Q210175"],"type":"entity"}
+{"canonical_id":"Q211867","key":"Q211867","label":"Oshawa","same_as":["https://www.wikidata.org/wiki/Q211867"],"type":"entity"}
+{"canonical_id":"Q212940","key":"Q212940","label":"Islamic architecture","same_as":["https://www.wikidata.org/wiki/Q212940"],"type":"entity"}
+{"canonical_id":"Q213610","key":"Q213610","label":"Ludwig IX, Landgrave of Hesse-Darmstadt","same_as":["https://www.wikidata.org/wiki/Q213610"],"type":"entity"}
+{"canonical_id":"Q213677","key":"Q213677","label":"Louis VIII, Landgrave of Hesse-Darmstadt","same_as":["https://www.wikidata.org/wiki/Q213677"],"type":"entity"}
+{"canonical_id":"Q214917","key":"Q214917","label":"playwright","same_as":["https://www.wikidata.org/wiki/Q214917"],"type":"entity"}
+{"canonical_id":"Q216170","key":"Q216170","label":"Nicholas Rescher","same_as":["https://www.wikidata.org/wiki/Q216170"],"type":"entity"}
+{"canonical_id":"Q217117","key":"Q217117","label":"burlesque","same_as":["https://www.wikidata.org/wiki/Q217117"],"type":"entity"}
+{"canonical_id":"Q217905","key":"Q217905","label":"Syrphidae","same_as":["https://www.wikidata.org/wiki/Q217905"],"type":"entity"}
+{"canonical_id":"Q221697","key":"Q221697","label":"Hilary Putnam","same_as":["https://www.wikidata.org/wiki/Q221697"],"type":"entity"}
+{"canonical_id":"Q223620","key":"Q223620","label":"Deportivo Alavés","same_as":["https://www.wikidata.org/wiki/Q223620"],"type":"entity"}
+{"canonical_id":"Q223769","key":"Q223769","label":"DMX","same_as":["https://www.wikidata.org/wiki/Q223769"],"type":"entity"}
+{"canonical_id":"Q230534","key":"Q230534","label":"Rebecca Hall","same_as":["https://www.wikidata.org/wiki/Q230534"],"type":"entity"}
+{"canonical_id":"Q231694","key":"Q231694","label":"Interscope Records","same_as":["https://www.wikidata.org/wiki/Q231694"],"type":"entity"}
+{"canonical_id":"Q233583","key":"Q233583","label":"Indo-Pakistani War of 1965","same_as":["https://www.wikidata.org/wiki/Q233583"],"type":"entity"}
+{"canonical_id":"Q235034","key":"Q235034","label":"University of Pittsburgh","same_as":["https://www.wikidata.org/wiki/Q235034"],"type":"entity"}
+{"canonical_id":"Q235155","key":"Q235155","label":"white people","same_as":["https://www.wikidata.org/wiki/Q235155"],"type":"entity"}
+{"canonical_id":"Q237572","key":"Q237572","label":"As You Like It","same_as":["https://www.wikidata.org/wiki/Q237572"],"type":"entity"}
+{"canonical_id":"Q238101","key":"Q238101","label":"University of Minnesota","same_as":["https://www.wikidata.org/wiki/Q238101"],"type":"entity"}
+{"canonical_id":"Q241353","key":"Q241353","label":"Mongolia national football team","same_as":["https://www.wikidata.org/wiki/Q241353"],"type":"entity"}
+{"canonical_id":"Q246497","key":"Q246497","label":"Mstislav Keldysh","same_as":["https://www.wikidata.org/wiki/Q246497"],"type":"entity"}
+{"canonical_id":"Q247492","key":"Q247492","label":"Moorish architecture","same_as":["https://www.wikidata.org/wiki/Q247492"],"type":"entity"}
+{"canonical_id":"Q249838","key":"Q249838","label":"Vice","same_as":["https://www.wikidata.org/wiki/Q249838"],"type":"entity"}
+{"canonical_id":"Q260779","key":"Q260779","label":"cutworm","same_as":["https://www.wikidata.org/wiki/Q260779"],"type":"entity"}
+{"canonical_id":"Q263892","key":"Q263892","label":"Libanius","same_as":["https://www.wikidata.org/wiki/Q263892"],"type":"entity"}
+{"canonical_id":"Q265021","key":"Q265021","label":"Anne Shirley","same_as":["https://www.wikidata.org/wiki/Q265021"],"type":"entity"}
+{"canonical_id":"Q266101","key":"Q266101","label":"Kingston Flyer","same_as":["https://www.wikidata.org/wiki/Q266101"],"type":"entity"}
+{"canonical_id":"Q267282","key":"Q267282","label":"RKO Pictures","same_as":["https://www.wikidata.org/wiki/Q267282"],"type":"entity"}
+{"canonical_id":"Q270961","key":"Q270961","label":"Chilcotin River","same_as":["https://www.wikidata.org/wiki/Q270961"],"type":"entity"}
+{"canonical_id":"Q271805","key":"Q271805","label":"National Collegiate Athletic Association","same_as":["https://www.wikidata.org/wiki/Q271805"],"type":"entity"}
+{"canonical_id":"Q271894","key":"Q271894","label":"French Equatorial Africa","same_as":["https://www.wikidata.org/wiki/Q271894"],"type":"entity"}
+{"canonical_id":"Q272129","key":"Q272129","label":"Ærøskøbing","same_as":["https://www.wikidata.org/wiki/Q272129"],"type":"entity"}
+{"canonical_id":"Q272598","key":"Q272598","label":"Laura Kenny","same_as":["https://www.wikidata.org/wiki/Q272598"],"type":"entity"}
+{"canonical_id":"Q298694","key":"Q298694","label":"Method Man","same_as":["https://www.wikidata.org/wiki/Q298694"],"type":"entity"}
+{"canonical_id":"Q309843","key":"Q309843","label":"Ja Rule","same_as":["https://www.wikidata.org/wiki/Q309843"],"type":"entity"}
+{"canonical_id":"Q310041","key":"Q310041","label":"Macadamia","same_as":["https://www.wikidata.org/wiki/Q310041"],"type":"entity"}
+{"canonical_id":"Q314892","key":"Q314892","label":"Ciarán Hinds","same_as":["https://www.wikidata.org/wiki/Q314892"],"type":"entity"}
+{"canonical_id":"Q315316","key":"Q315316","label":"jägers","same_as":["https://www.wikidata.org/wiki/Q315316"],"type":"entity"}
+{"canonical_id":"Q319544","key":"Q319544","label":"secretary","same_as":["https://www.wikidata.org/wiki/Q319544"],"type":"entity"}
+{"canonical_id":"Q323187","key":"Q323187","label":"Above & Beyond","same_as":["https://www.wikidata.org/wiki/Q323187"],"type":"entity"}
+{"canonical_id":"Q326673","key":"Q326673","label":"S-200","same_as":["https://www.wikidata.org/wiki/Q326673"],"type":"entity"}
+{"canonical_id":"Q327819","key":"Q327819","label":"Grant McLennan","same_as":["https://www.wikidata.org/wiki/Q327819"],"type":"entity"}
+{"canonical_id":"Q333260","key":"Q333260","label":"Vladimir Chelomey","same_as":["https://www.wikidata.org/wiki/Q333260"],"type":"entity"}
+{"canonical_id":"Q335503","key":"Q335503","label":"Scott Carpenter","same_as":["https://www.wikidata.org/wiki/Q335503"],"type":"entity"}
+{"canonical_id":"Q339512","key":"Q339512","label":"Eusebius","same_as":["https://www.wikidata.org/wiki/Q339512"],"type":"entity"}
+{"canonical_id":"Q350666","key":"Q350666","label":"Dalton Trumbo","same_as":["https://www.wikidata.org/wiki/Q350666"],"type":"entity"}
+{"canonical_id":"Q352506","key":"Q352506","label":"Constantius Gallus","same_as":["https://www.wikidata.org/wiki/Q352506"],"type":"entity"}
+{"canonical_id":"Q355201","key":"Q355201","label":"Alvin Plantinga","same_as":["https://www.wikidata.org/wiki/Q355201"],"type":"entity"}
+{"canonical_id":"Q380075","key":"Q380075","label":"advocate","same_as":["https://www.wikidata.org/wiki/Q380075"],"type":"entity"}
+{"canonical_id":"Q384225","key":"Q384225","label":"Eduardo Risso","same_as":["https://www.wikidata.org/wiki/Q384225"],"type":"entity"}
+{"canonical_id":"Q384544","key":"Q384544","label":"Karlovy Vary","same_as":["https://www.wikidata.org/wiki/Q384544"],"type":"entity"}
+{"canonical_id":"Q386338","key":"Q386338","label":"Whitby","same_as":["https://www.wikidata.org/wiki/Q386338"],"type":"entity"}
+{"canonical_id":"Q387419","key":"Q387419","label":"Wareham","same_as":["https://www.wikidata.org/wiki/Q387419"],"type":"entity"}
+{"canonical_id":"Q388338","key":"Q388338","label":"treasurer","same_as":["https://www.wikidata.org/wiki/Q388338"],"type":"entity"}
+{"canonical_id":"Q391107","key":"Q391107","label":"FC Zvezda Irkutsk","same_as":["https://www.wikidata.org/wiki/Q391107"],"type":"entity"}
+{"canonical_id":"Q392651","key":"Q392651","label":"intelligence agent","same_as":["https://www.wikidata.org/wiki/Q392651"],"type":"entity"}
+{"canonical_id":"Q406039","key":"Q406039","label":"gold medal","same_as":["https://www.wikidata.org/wiki/Q406039"],"type":"entity"}
+{"canonical_id":"Q421966","key":"Q421966","label":"nude photography","same_as":["https://www.wikidata.org/wiki/Q421966"],"type":"entity"}
+{"canonical_id":"Q428124","key":"Q428124","label":"violet","same_as":["https://www.wikidata.org/wiki/Q428124"],"type":"entity"}
+{"canonical_id":"Q434101","key":"Q434101","label":"Tiff Lacey","same_as":["https://www.wikidata.org/wiki/Q434101"],"type":"entity"}
+{"canonical_id":"Q443528","key":"Q443528","label":"J. B. Priestley","same_as":["https://www.wikidata.org/wiki/Q443528"],"type":"entity"}
+{"canonical_id":"Q447124","key":"Q447124","label":"Alphons Czibulka","same_as":["https://www.wikidata.org/wiki/Q447124"],"type":"entity"}
+{"canonical_id":"Q452770","key":"Q452770","label":"Ruth Millikan","same_as":["https://www.wikidata.org/wiki/Q452770"],"type":"entity"}
+{"canonical_id":"Q459180","key":"Q459180","label":"Noctuidae","same_as":["https://www.wikidata.org/wiki/Q459180"],"type":"entity"}
+{"canonical_id":"Q460735","key":"Q460735","label":"West End","same_as":["https://www.wikidata.org/wiki/Q460735"],"type":"entity"}
+{"canonical_id":"Q473873","key":"Q473873","label":"Vevo","same_as":["https://www.wikidata.org/wiki/Q473873"],"type":"entity"}
+{"canonical_id":"Q475585","key":"Q475585","label":"Luqa","same_as":["https://www.wikidata.org/wiki/Q475585"],"type":"entity"}
+{"canonical_id":"Q483251","key":"Q483251","label":"death metal","same_as":["https://www.wikidata.org/wiki/Q483251"],"type":"entity"}
+{"canonical_id":"Q483501","key":"Q483501","label":"artist","same_as":["https://www.wikidata.org/wiki/Q483501"],"type":"entity"}
+{"canonical_id":"Q484876","key":"Q484876","label":"chief executive officer","same_as":["https://www.wikidata.org/wiki/Q484876"],"type":"entity"}
+{"canonical_id":"Q485178","key":"Q485178","label":"analyst","same_as":["https://www.wikidata.org/wiki/Q485178"],"type":"entity"}
+{"canonical_id":"Q485240","key":"Q485240","label":"Billboard","same_as":["https://www.wikidata.org/wiki/Q485240"],"type":"entity"}
+{"canonical_id":"Q486443","key":"Q486443","label":"Henry Lau","same_as":["https://www.wikidata.org/wiki/Q486443"],"type":"entity"}
+{"canonical_id":"Q487403","key":"Q487403","label":"McHenry County","same_as":["https://www.wikidata.org/wiki/Q487403"],"type":"entity"}
+{"canonical_id":"Q488205","key":"Q488205","label":"singer-songwriter","same_as":["https://www.wikidata.org/wiki/Q488205"],"type":"entity"}
+{"canonical_id":"Q490417","key":"Q490417","label":"Andean states","same_as":["https://www.wikidata.org/wiki/Q490417"],"type":"entity"}
+{"canonical_id":"Q491886","key":"Q491886","label":"Tashkent Metro","same_as":["https://www.wikidata.org/wiki/Q491886"],"type":"entity"}
+{"canonical_id":"Q494161","key":"Q494161","label":"Mifflin County","same_as":["https://www.wikidata.org/wiki/Q494161"],"type":"entity"}
+{"canonical_id":"Q495132","key":"Q495132","label":"Botetourt County","same_as":["https://www.wikidata.org/wiki/Q495132"],"type":"entity"}
+{"canonical_id":"Q498680","key":"Q498680","label":"Mercury-Atlas 7","same_as":["https://www.wikidata.org/wiki/Q498680"],"type":"entity"}
+{"canonical_id":"Q498773","key":"Q498773","label":"Montauk","same_as":["https://www.wikidata.org/wiki/Q498773"],"type":"entity"}
+{"canonical_id":"Q498979","key":"Q498979","label":"Panama Canal Zone","same_as":["https://www.wikidata.org/wiki/Q498979"],"type":"entity"}
+{"canonical_id":"Q501284","key":"Q501284","label":"Harford County","same_as":["https://www.wikidata.org/wiki/Q501284"],"type":"entity"}
+{"canonical_id":"Q502163","key":"Q502163","label":"Renaissance Revival architecture","same_as":["https://www.wikidata.org/wiki/Q502163"],"type":"entity"}
+{"canonical_id":"Q502950","key":"Q502950","label":"Andrej Longo","same_as":["https://www.wikidata.org/wiki/Q502950"],"type":"entity"}
+{"canonical_id":"Q503415","key":"Q503415","label":"University of Maryland","same_as":["https://www.wikidata.org/wiki/Q503415"],"type":"entity"}
+{"canonical_id":"Q509857","key":"Q509857","label":"Poveda de la Sierra","same_as":["https://www.wikidata.org/wiki/Q509857"],"type":"entity"}
+{"canonical_id":"Q514041","key":"Q514041","label":"Dulcie Gray","same_as":["https://www.wikidata.org/wiki/Q514041"],"type":"entity"}
+{"canonical_id":"Q517472","key":"Q517472","label":"Exhumed","same_as":["https://www.wikidata.org/wiki/Q517472"],"type":"entity"}
+{"canonical_id":"Q518393","key":"Q518393","label":"Michael Denison","same_as":["https://www.wikidata.org/wiki/Q518393"],"type":"entity"}
+{"canonical_id":"Q520837","key":"Q520837","label":"Andean Trade Promotion and Drug Eradication Act","same_as":["https://www.wikidata.org/wiki/Q520837"],"type":"entity"}
+{"canonical_id":"Q523716","key":"Q523716","label":"2010 United States Census","same_as":["https://www.wikidata.org/wiki/Q523716"],"type":"entity"}
+{"canonical_id":"Q525827","key":"Q525827","label":"Irv Gotti","same_as":["https://www.wikidata.org/wiki/Q525827"],"type":"entity"}
+{"canonical_id":"Q527127","key":"Q527127","label":"Fincastle","same_as":["https://www.wikidata.org/wiki/Q527127"],"type":"entity"}
+{"canonical_id":"Q538101","key":"Q538101","label":"New Zealand Railways Department","same_as":["https://www.wikidata.org/wiki/Q538101"],"type":"entity"}
+{"canonical_id":"Q543391","key":"Q543391","label":"DJM Records","same_as":["https://www.wikidata.org/wiki/Q543391"],"type":"entity"}
+{"canonical_id":"Q551566","key":"Q551566","label":"Anjunabeats","same_as":["https://www.wikidata.org/wiki/Q551566"],"type":"entity"}
+{"canonical_id":"Q562781","key":"Q562781","label":"Vladimir Klimov","same_as":["https://www.wikidata.org/wiki/Q562781"],"type":"entity"}
+{"canonical_id":"Q568805","key":"Q568805","label":"Torpedo Nizhny Novgorod","same_as":["https://www.wikidata.org/wiki/Q568805"],"type":"entity"}
+{"canonical_id":"Q584301","key":"Q584301","label":"bassist","same_as":["https://www.wikidata.org/wiki/Q584301"],"type":"entity"}
+{"canonical_id":"Q584540","key":"Q584540","label":"captain","same_as":["https://www.wikidata.org/wiki/Q584540"],"type":"entity"}
+{"canonical_id":"Q590870","key":"Q590870","label":"cinematography","same_as":["https://www.wikidata.org/wiki/Q590870"],"type":"entity"}
+{"canonical_id":"Q599903","key":"Q599903","label":"Ireland national rugby union team","same_as":["https://www.wikidata.org/wiki/Q599903"],"type":"entity"}
+{"canonical_id":"Q600751","key":"Q600751","label":"prosecutor","same_as":["https://www.wikidata.org/wiki/Q600751"],"type":"entity"}
+{"canonical_id":"Q607514","key":"Q607514","label":"EastEnders","same_as":["https://www.wikidata.org/wiki/Q607514"],"type":"entity"}
+{"canonical_id":"Q618532","key":"Q618532","label":"landlord","same_as":["https://www.wikidata.org/wiki/Q618532"],"type":"entity"}
+{"canonical_id":"Q618728","key":"Q618728","label":"Glenn Research Center","same_as":["https://www.wikidata.org/wiki/Q618728"],"type":"entity"}
+{"canonical_id":"Q622291","key":"Q622291","label":"political thriller","same_as":["https://www.wikidata.org/wiki/Q622291"],"type":"entity"}
+{"canonical_id":"Q622779","key":"Q622779","label":"liquid hydrogen","same_as":["https://www.wikidata.org/wiki/Q622779"],"type":"entity"}
+{"canonical_id":"Q624798","key":"Q624798","label":"Canadian National Railway","same_as":["https://www.wikidata.org/wiki/Q624798"],"type":"entity"}
+{"canonical_id":"Q628099","key":"Q628099","label":"association football manager","same_as":["https://www.wikidata.org/wiki/Q628099"],"type":"entity"}
+{"canonical_id":"Q628807","key":"Q628807","label":"United States Department of Labor","same_as":["https://www.wikidata.org/wiki/Q628807"],"type":"entity"}
+{"canonical_id":"Q630873","key":"Q630873","label":"James Murphy","same_as":["https://www.wikidata.org/wiki/Q630873"],"type":"entity"}
+{"canonical_id":"Q637866","key":"Q637866","label":"book review","same_as":["https://www.wikidata.org/wiki/Q637866"],"type":"entity"}
+{"canonical_id":"Q639669","key":"Q639669","label":"musician","same_as":["https://www.wikidata.org/wiki/Q639669"],"type":"entity"}
+{"canonical_id":"Q646077","key":"Q646077","label":"Belly","same_as":["https://www.wikidata.org/wiki/Q646077"],"type":"entity"}
+{"canonical_id":"Q647087","key":"Q647087","label":"Pleuronectidae","same_as":["https://www.wikidata.org/wiki/Q647087"],"type":"entity"}
+{"canonical_id":"Q648413","key":"Q648413","label":"Murder of Stephen Lawrence","same_as":["https://www.wikidata.org/wiki/Q648413"],"type":"entity"}
+{"canonical_id":"Q653501","key":"Q653501","label":"Gustav Lange","same_as":["https://www.wikidata.org/wiki/Q653501"],"type":"entity"}
+{"canonical_id":"Q654437","key":"Q654437","label":"executor","same_as":["https://www.wikidata.org/wiki/Q654437"],"type":"entity"}
+{"canonical_id":"Q654947","key":"Q654947","label":"Allegheny Plateau","same_as":["https://www.wikidata.org/wiki/Q654947"],"type":"entity"}
+{"canonical_id":"Q657558","key":"Q657558","label":"Relapse Records","same_as":["https://www.wikidata.org/wiki/Q657558"],"type":"entity"}
+{"canonical_id":"Q658371","key":"Q658371","label":"extra","same_as":["https://www.wikidata.org/wiki/Q658371"],"type":"entity"}
+{"canonical_id":"Q664167","key":"Q664167","label":"Arista Records","same_as":["https://www.wikidata.org/wiki/Q664167"],"type":"entity"}
+{"canonical_id":"Q664283","key":"Q664283","label":"glazier","same_as":["https://www.wikidata.org/wiki/Q664283"],"type":"entity"}
+{"canonical_id":"Q664609","key":"Q664609","label":"Caribbean","same_as":["https://www.wikidata.org/wiki/Q664609"],"type":"entity"}
+{"canonical_id":"Q666831","key":"Q666831","label":"Flin Flon","same_as":["https://www.wikidata.org/wiki/Q666831"],"type":"entity"}
+{"canonical_id":"Q669037","key":"Q669037","label":"West Indies","same_as":["https://www.wikidata.org/wiki/Q669037"],"type":"entity"}
+{"canonical_id":"Q673361","key":"Q673361","label":"Romeo","same_as":["https://www.wikidata.org/wiki/Q673361"],"type":"entity"}
+{"canonical_id":"Q676020","key":"Q676020","label":"Eastern and Oriental Express","same_as":["https://www.wikidata.org/wiki/Q676020"],"type":"entity"}
+{"canonical_id":"Q683476","key":"Q683476","label":"financial adviser","same_as":["https://www.wikidata.org/wiki/Q683476"],"type":"entity"}
+{"canonical_id":"Q685291","key":"Q685291","label":"Cyril Tenison White","same_as":["https://www.wikidata.org/wiki/Q685291"],"type":"entity"}
+{"canonical_id":"Q686046","key":"Q686046","label":"Alfred Belpaire","same_as":["https://www.wikidata.org/wiki/Q686046"],"type":"entity"}
+{"canonical_id":"Q688893","key":"Q688893","label":"Bombardier Transportation","same_as":["https://www.wikidata.org/wiki/Q688893"],"type":"entity"}
+{"canonical_id":"Q693551","key":"Q693551","label":"Landgraviate of Hesse-Darmstadt","same_as":["https://www.wikidata.org/wiki/Q693551"],"type":"entity"}
+{"canonical_id":"Q695375","key":"Q695375","label":"Béjar","same_as":["https://www.wikidata.org/wiki/Q695375"],"type":"entity"}
+{"canonical_id":"Q703534","key":"Q703534","label":"employee","same_as":["https://www.wikidata.org/wiki/Q703534"],"type":"entity"}
+{"canonical_id":"Q705173","key":"Q705173","label":"Institute of National Remembrance","same_as":["https://www.wikidata.org/wiki/Q705173"],"type":"entity"}
+{"canonical_id":"Q708002","key":"Q708002","label":"Ferdinand von Mueller","same_as":["https://www.wikidata.org/wiki/Q708002"],"type":"entity"}
+{"canonical_id":"Q708492","key":"Q708492","label":"council member","same_as":["https://www.wikidata.org/wiki/Q708492"],"type":"entity"}
+{"canonical_id":"Q715472","key":"Q715472","label":"Marc Denis","same_as":["https://www.wikidata.org/wiki/Q715472"],"type":"entity"}
+{"canonical_id":"Q715890","key":"Q715890","label":"Arty","same_as":["https://www.wikidata.org/wiki/Q715890"],"type":"entity"}
+{"canonical_id":"Q721937","key":"Q721937","label":"Pruszków","same_as":["https://www.wikidata.org/wiki/Q721937"],"type":"entity"}
+{"canonical_id":"Q727928","key":"Q727928","label":"Asian Americans","same_as":["https://www.wikidata.org/wiki/Q727928"],"type":"entity"}
+{"canonical_id":"Q730523","key":"Q730523","label":"Eifelian","same_as":["https://www.wikidata.org/wiki/Q730523"],"type":"entity"}
+{"canonical_id":"Q731313","key":"Q731313","label":"Middle Devonian","same_as":["https://www.wikidata.org/wiki/Q731313"],"type":"entity"}
+{"canonical_id":"Q731413","key":"Q731413","label":"Ursicinus","same_as":["https://www.wikidata.org/wiki/Q731413"],"type":"entity"}
+{"canonical_id":"Q735105","key":"Q735105","label":"Bloc Québécois","same_as":["https://www.wikidata.org/wiki/Q735105"],"type":"entity"}
+{"canonical_id":"Q735235","key":"Q735235","label":"Charles Scott","same_as":["https://www.wikidata.org/wiki/Q735235"],"type":"entity"}
+{"canonical_id":"Q739820","key":"Q739820","label":"Ken Dryden","same_as":["https://www.wikidata.org/wiki/Q739820"],"type":"entity"}
+{"canonical_id":"Q742747","key":"Q742747","label":"2010–11 Segunda División","same_as":["https://www.wikidata.org/wiki/Q742747"],"type":"entity"}
+{"canonical_id":"Q750918","key":"Q750918","label":"Mestis","same_as":["https://www.wikidata.org/wiki/Q750918"],"type":"entity"}
+{"canonical_id":"Q751826","key":"Q751826","label":"Segunda División B","same_as":["https://www.wikidata.org/wiki/Q751826"],"type":"entity"}
+{"canonical_id":"Q752297","key":"Q752297","label":"Doctor of Philosophy","same_as":["https://www.wikidata.org/wiki/Q752297"],"type":"entity"}
+{"canonical_id":"Q755509","key":"Q755509","label":"Atherton Tableland","same_as":["https://www.wikidata.org/wiki/Q755509"],"type":"entity"}
+{"canonical_id":"Q756559","key":"Q756559","label":"Ernő Csiki","same_as":["https://www.wikidata.org/wiki/Q756559"],"type":"entity"}
+{"canonical_id":"Q757609","key":"Q757609","label":"Atomic Weapons Establishment","same_as":["https://www.wikidata.org/wiki/Q757609"],"type":"entity"}
+{"canonical_id":"Q770431","key":"Q770431","label":"Augustus Charles Gregory","same_as":["https://www.wikidata.org/wiki/Q770431"],"type":"entity"}
+{"canonical_id":"Q771405","key":"Q771405","label":"South Asia","same_as":["https://www.wikidata.org/wiki/Q771405"],"type":"entity"}
+{"canonical_id":"Q774306","key":"Q774306","label":"surgeon","same_as":["https://www.wikidata.org/wiki/Q774306"],"type":"entity"}
+{"canonical_id":"Q778491","key":"Q778491","label":"Gelechiidae","same_as":["https://www.wikidata.org/wiki/Q778491"],"type":"entity"}
+{"canonical_id":"Q787674","key":"Q787674","label":"Bachelor of Science","same_as":["https://www.wikidata.org/wiki/Q787674"],"type":"entity"}
+{"canonical_id":"Q788568","key":"Q788568","label":"Bagutta Prize","same_as":["https://www.wikidata.org/wiki/Q788568"],"type":"entity"}
+{"canonical_id":"Q804868","key":"Q804868","label":"Baldwin Locomotive Works","same_as":["https://www.wikidata.org/wiki/Q804868"],"type":"entity"}
+{"canonical_id":"Q817247","key":"Q817247","label":"Dwarka","same_as":["https://www.wikidata.org/wiki/Q817247"],"type":"entity"}
+{"canonical_id":"Q817393","key":"Q817393","label":"Black people","same_as":["https://www.wikidata.org/wiki/Q817393"],"type":"entity"}
+{"canonical_id":"Q827966","key":"Q827966","label":"Slovak Extraliga","same_as":["https://www.wikidata.org/wiki/Q827966"],"type":"entity"}
+{"canonical_id":"Q836654","key":"Q836654","label":"Ondo State","same_as":["https://www.wikidata.org/wiki/Q836654"],"type":"entity"}
+{"canonical_id":"Q839560","key":"Q839560","label":"United States International Trade Commission","same_as":["https://www.wikidata.org/wiki/Q839560"],"type":"entity"}
+{"canonical_id":"Q841633","key":"Q841633","label":"landgrave","same_as":["https://www.wikidata.org/wiki/Q841633"],"type":"entity"}
+{"canonical_id":"Q842008","key":"Q842008","label":"Politburo of the Central Committee of the Communist Party of the Soviet Union","same_as":["https://www.wikidata.org/wiki/Q842008"],"type":"entity"}
+{"canonical_id":"Q842606","key":"Q842606","label":"Roman emperor","same_as":["https://www.wikidata.org/wiki/Q842606"],"type":"entity"}
+{"canonical_id":"Q842793","key":"Q842793","label":"NBA G League","same_as":["https://www.wikidata.org/wiki/Q842793"],"type":"entity"}
+{"canonical_id":"Q846309","key":"Q846309","label":"Chlamydia","same_as":["https://www.wikidata.org/wiki/Q846309"],"type":"entity"}
+{"canonical_id":"Q846570","key":"Q846570","label":"Americans","same_as":["https://www.wikidata.org/wiki/Q846570"],"type":"entity"}
+{"canonical_id":"Q847137","key":"Q847137","label":"Treaty of Paris","same_as":["https://www.wikidata.org/wiki/Q847137"],"type":"entity"}
+{"canonical_id":"Q849595","key":"Q849595","label":"Brian Azzarello","same_as":["https://www.wikidata.org/wiki/Q849595"],"type":"entity"}
+{"canonical_id":"Q851213","key":"Q851213","label":"electronic dance music","same_as":["https://www.wikidata.org/wiki/Q851213"],"type":"entity"}
+{"canonical_id":"Q855091","key":"Q855091","label":"guitarist","same_as":["https://www.wikidata.org/wiki/Q855091"],"type":"entity"}
+{"canonical_id":"Q862771","key":"Q862771","label":"Hot Country Songs","same_as":["https://www.wikidata.org/wiki/Q862771"],"type":"entity"}
+{"canonical_id":"Q871231","key":"Q871231","label":"Norman Wooland","same_as":["https://www.wikidata.org/wiki/Q871231"],"type":"entity"}
+{"canonical_id":"Q873364","key":"Q873364","label":"bronze medal","same_as":["https://www.wikidata.org/wiki/Q873364"],"type":"entity"}
+{"canonical_id":"Q876720","key":"Q876720","label":"VIA Rail Canada","same_as":["https://www.wikidata.org/wiki/Q876720"],"type":"entity"}
+{"canonical_id":"Q888445","key":"Q888445","label":"UAC TurboTrain","same_as":["https://www.wikidata.org/wiki/Q888445"],"type":"entity"}
+{"canonical_id":"Q891793","key":"Q891793","label":"LRC","same_as":["https://www.wikidata.org/wiki/Q891793"],"type":"entity"}
+{"canonical_id":"Q894072","key":"Q894072","label":"Borough Market","same_as":["https://www.wikidata.org/wiki/Q894072"],"type":"entity"}
+{"canonical_id":"Q907311","key":"Q907311","label":"Netflix","same_as":["https://www.wikidata.org/wiki/Q907311"],"type":"entity"}
+{"canonical_id":"Q911397","key":"Q911397","label":"baroque revival","same_as":["https://www.wikidata.org/wiki/Q911397"],"type":"entity"}
+{"canonical_id":"Q911909","key":"Q911909","label":"Lyttelton","same_as":["https://www.wikidata.org/wiki/Q911909"],"type":"entity"}
+{"canonical_id":"Q913404","key":"Q913404","label":"Doctor of Medicine","same_as":["https://www.wikidata.org/wiki/Q913404"],"type":"entity"}
+{"canonical_id":"Q933598","key":"Q933598","label":"D'Angelo","same_as":["https://www.wikidata.org/wiki/Q933598"],"type":"entity"}
+{"canonical_id":"Q936157","key":"Q936157","label":"Żyrardów County","same_as":["https://www.wikidata.org/wiki/Q936157"],"type":"entity"}
+{"canonical_id":"Q937857","key":"Q937857","label":"association football player","same_as":["https://www.wikidata.org/wiki/Q937857"],"type":"entity"}
+{"canonical_id":"Q941293","key":"Q941293","label":"N.E.R.D.","same_as":["https://www.wikidata.org/wiki/Q941293"],"type":"entity"}
+{"canonical_id":"Q941748","key":"Q941748","label":"Panteleimon Ponomarenko","same_as":["https://www.wikidata.org/wiki/Q941748"],"type":"entity"}
+{"canonical_id":"Q944772","key":"Q944772","label":"River Cam","same_as":["https://www.wikidata.org/wiki/Q944772"],"type":"entity"}
+{"canonical_id":"Q945016","key":"Q945016","label":"Scotland national rugby union team","same_as":["https://www.wikidata.org/wiki/Q945016"],"type":"entity"}
+{"canonical_id":"Q952656","key":"Q952656","label":"Paul Kelly","same_as":["https://www.wikidata.org/wiki/Q952656"],"type":"entity"}
+{"canonical_id":"Q960308","key":"Q960308","label":"Budd Company","same_as":["https://www.wikidata.org/wiki/Q960308"],"type":"entity"}
+{"canonical_id":"Q966656","key":"Q966656","label":"Bert Granet","same_as":["https://www.wikidata.org/wiki/Q966656"],"type":"entity"}
+{"canonical_id":"Q968559","key":"Q968559","label":"University of North Dakota","same_as":["https://www.wikidata.org/wiki/Q968559"],"type":"entity"}
+{"canonical_id":"Q974144","key":"Q974144","label":"educator","same_as":["https://www.wikidata.org/wiki/Q974144"],"type":"entity"}
+{"canonical_id":"Q979996","key":"Q979996","label":"Río Grande","same_as":["https://www.wikidata.org/wiki/Q979996"],"type":"entity"}
+{"canonical_id":"Q985592","key":"Q985592","label":"Perth Amboy","same_as":["https://www.wikidata.org/wiki/Q985592"],"type":"entity"}
+{"canonical_id":"Q986135","key":"Q986135","label":"Chhindwara","same_as":["https://www.wikidata.org/wiki/Q986135"],"type":"entity"}
+{"canonical_id":"Q1024624","key":"Q1024624","label":"Greater Toronto Area","same_as":["https://www.wikidata.org/wiki/Q1024624"],"type":"entity"}
+{"canonical_id":"Q1025401","key":"Q1025401","label":"Scarborough","same_as":["https://www.wikidata.org/wiki/Q1025401"],"type":"entity"}
+{"canonical_id":"Q1040389","key":"Q1040389","label":"Seven Years: 1998–2005","same_as":["https://www.wikidata.org/wiki/Q1040389"],"type":"entity"}
+{"canonical_id":"Q1040770","key":"Q1040770","label":"Quaternary glaciation","same_as":["https://www.wikidata.org/wiki/Q1040770"],"type":"entity"}
+{"canonical_id":"Q1053574","key":"Q1053574","label":"executive producer","same_as":["https://www.wikidata.org/wiki/Q1053574"],"type":"entity"}
+{"canonical_id":"Q1070763","key":"Q1070763","label":"Johnstown","same_as":["https://www.wikidata.org/wiki/Q1070763"],"type":"entity"}
+{"canonical_id":"Q1086154","key":"Q1086154","label":"Springfield Township","same_as":["https://www.wikidata.org/wiki/Q1086154"],"type":"entity"}
+{"canonical_id":"Q1088638","key":"Q1088638","label":"Helicia","same_as":["https://www.wikidata.org/wiki/Q1088638"],"type":"entity"}
+{"canonical_id":"Q1088995","key":"Q1088995","label":"The Chathams","same_as":["https://www.wikidata.org/wiki/Q1088995"],"type":"entity"}
+{"canonical_id":"Q1089738","key":"Q1089738","label":"Union Township","same_as":["https://www.wikidata.org/wiki/Q1089738"],"type":"entity"}
+{"canonical_id":"Q1092632","key":"Q1092632","label":"Juliet","same_as":["https://www.wikidata.org/wiki/Q1092632"],"type":"entity"}
+{"canonical_id":"Q1111380","key":"Q1111380","label":"Digital Spy","same_as":["https://www.wikidata.org/wiki/Q1111380"],"type":"entity"}
+{"canonical_id":"Q1127270","key":"Q1127270","label":"deputy chairperson","same_as":["https://www.wikidata.org/wiki/Q1127270"],"type":"entity"}
+{"canonical_id":"Q1130017","key":"Q1130017","label":"1995 Rugby World Cup","same_as":["https://www.wikidata.org/wiki/Q1130017"],"type":"entity"}
+{"canonical_id":"Q1130252","key":"Q1130252","label":"sporting director","same_as":["https://www.wikidata.org/wiki/Q1130252"],"type":"entity"}
+{"canonical_id":"Q1133274","key":"Q1133274","label":"Bellefonte","same_as":["https://www.wikidata.org/wiki/Q1133274"],"type":"entity"}
+{"canonical_id":"Q1134486","key":"Q1134486","label":"North Shore","same_as":["https://www.wikidata.org/wiki/Q1134486"],"type":"entity"}
+{"canonical_id":"Q1139213","key":"Q1139213","label":"Metropolitan Police","same_as":["https://www.wikidata.org/wiki/Q1139213"],"type":"entity"}
+{"canonical_id":"Q1140373","key":"Q1140373","label":"Munster Rugby","same_as":["https://www.wikidata.org/wiki/Q1140373"],"type":"entity"}
+{"canonical_id":"Q1146354","key":"Q1146354","label":"fashion photography","same_as":["https://www.wikidata.org/wiki/Q1146354"],"type":"entity"}
+{"canonical_id":"Q1146447","key":"Q1146447","label":"Culture and Entertainment Complex Nagorny","same_as":["https://www.wikidata.org/wiki/Q1146447"],"type":"entity"}
+{"canonical_id":"Q1162163","key":"Q1162163","label":"director","same_as":["https://www.wikidata.org/wiki/Q1162163"],"type":"entity"}
+{"canonical_id":"Q1162635","key":"Q1162635","label":"SKIF Nizhny Novgorod","same_as":["https://www.wikidata.org/wiki/Q1162635"],"type":"entity"}
+{"canonical_id":"Q1184736","key":"Q1184736","label":"Lewistown","same_as":["https://www.wikidata.org/wiki/Q1184736"],"type":"entity"}
+{"canonical_id":"Q1187590","key":"Q1187590","label":"Keretapi Tanah Melayu","same_as":["https://www.wikidata.org/wiki/Q1187590"],"type":"entity"}
+{"canonical_id":"Q1188550","key":"Q1188550","label":"Nautilida","same_as":["https://www.wikidata.org/wiki/Q1188550"],"type":"entity"}
+{"canonical_id":"Q1195376","key":"Q1195376","label":"Ciudad de Murcia","same_as":["https://www.wikidata.org/wiki/Q1195376"],"type":"entity"}
+{"canonical_id":"Q1229914","key":"Q1229914","label":"Mat Zo","same_as":["https://www.wikidata.org/wiki/Q1229914"],"type":"entity"}
+{"canonical_id":"Q1240788","key":"Q1240788","label":"supervisor","same_as":["https://www.wikidata.org/wiki/Q1240788"],"type":"entity"}
+{"canonical_id":"Q1251441","key":"Q1251441","label":"leader","same_as":["https://www.wikidata.org/wiki/Q1251441"],"type":"entity"}
+{"canonical_id":"Q1255921","key":"Q1255921","label":"president","same_as":["https://www.wikidata.org/wiki/Q1255921"],"type":"entity"}
+{"canonical_id":"Q1270287","key":"Q1270287","label":"South Funen Archipelago","same_as":["https://www.wikidata.org/wiki/Q1270287"],"type":"entity"}
+{"canonical_id":"Q1279640","key":"Q1279640","label":"Božidar Janković","same_as":["https://www.wikidata.org/wiki/Q1279640"],"type":"entity"}
+{"canonical_id":"Q1310777","key":"Q1310777","label":"Imatran Ketterä","same_as":["https://www.wikidata.org/wiki/Q1310777"],"type":"entity"}
+{"canonical_id":"Q1322713","key":"Q1322713","label":"1991 Rugby World Cup","same_as":["https://www.wikidata.org/wiki/Q1322713"],"type":"entity"}
+{"canonical_id":"Q1325863","key":"Q1325863","label":"Electric Daisy Carnival","same_as":["https://www.wikidata.org/wiki/Q1325863"],"type":"entity"}
+{"canonical_id":"Q1329463","key":"Q1329463","label":"Quiksilver, Inc.","same_as":["https://www.wikidata.org/wiki/Q1329463"],"type":"entity"}
+{"canonical_id":"Q1334823","key":"Q1334823","label":"Emanuela Giordano","same_as":["https://www.wikidata.org/wiki/Q1334823"],"type":"entity"}
+{"canonical_id":"Q1336200","key":"Q1336200","label":"Penguin Books","same_as":["https://www.wikidata.org/wiki/Q1336200"],"type":"entity"}
+{"canonical_id":"Q1337354","key":"Q1337354","label":"Steven Knight","same_as":["https://www.wikidata.org/wiki/Q1337354"],"type":"entity"}
+{"canonical_id":"Q1337601","key":"Q1337601","label":"Murder Inc. Records","same_as":["https://www.wikidata.org/wiki/Q1337601"],"type":"entity"}
+{"canonical_id":"Q1346663","key":"Q1346663","label":"HK Dukla Ingema Michalovce","same_as":["https://www.wikidata.org/wiki/Q1346663"],"type":"entity"}
+{"canonical_id":"Q1356547","key":"Q1356547","label":"Ernest Sosa","same_as":["https://www.wikidata.org/wiki/Q1356547"],"type":"entity"}
+{"canonical_id":"Q1363572","key":"Q1363572","label":"Julius Vogel","same_as":["https://www.wikidata.org/wiki/Q1363572"],"type":"entity"}
+{"canonical_id":"Q1364673","key":"Q1364673","label":"informant","same_as":["https://www.wikidata.org/wiki/Q1364673"],"type":"entity"}
+{"canonical_id":"Q1382617","key":"Q1382617","label":"Lefortovo District","same_as":["https://www.wikidata.org/wiki/Q1382617"],"type":"entity"}
+{"canonical_id":"Q1386944","key":"Q1386944","label":"Mike Tindall","same_as":["https://www.wikidata.org/wiki/Q1386944"],"type":"entity"}
+{"canonical_id":"Q1390690","key":"Q1390690","label":"Showcase","same_as":["https://www.wikidata.org/wiki/Q1390690"],"type":"entity"}
+{"canonical_id":"Q1393782","key":"Q1393782","label":"José Luis Sampedro","same_as":["https://www.wikidata.org/wiki/Q1393782"],"type":"entity"}
+{"canonical_id":"Q1414443","key":"Q1414443","label":"filmmaker","same_as":["https://www.wikidata.org/wiki/Q1414443"],"type":"entity"}
+{"canonical_id":"Q1427240","key":"Q1427240","label":"The Knack","same_as":["https://www.wikidata.org/wiki/Q1427240"],"type":"entity"}
+{"canonical_id":"Q1433693","key":"Q1433693","label":"whip","same_as":["https://www.wikidata.org/wiki/Q1433693"],"type":"entity"}
+{"canonical_id":"Q1436315","key":"Q1436315","label":"Football League Fourth Division","same_as":["https://www.wikidata.org/wiki/Q1436315"],"type":"entity"}
+{"canonical_id":"Q1466815","key":"Q1466815","label":"2008 Canadian federal election","same_as":["https://www.wikidata.org/wiki/Q1466815"],"type":"entity"}
+{"canonical_id":"Q1474497","key":"Q1474497","label":"Lukko","same_as":["https://www.wikidata.org/wiki/Q1474497"],"type":"entity"}
+{"canonical_id":"Q1474502","key":"Q1474502","label":"HPK","same_as":["https://www.wikidata.org/wiki/Q1474502"],"type":"entity"}
+{"canonical_id":"Q1518641","key":"Q1518641","label":"union representative","same_as":["https://www.wikidata.org/wiki/Q1518641"],"type":"entity"}
+{"canonical_id":"Q1526823","key":"Q1526823","label":"Independent Foreign Fiction Prize","same_as":["https://www.wikidata.org/wiki/Q1526823"],"type":"entity"}
+{"canonical_id":"Q1536328","key":"Q1536328","label":"North Dakota House of Representatives","same_as":["https://www.wikidata.org/wiki/Q1536328"],"type":"entity"}
+{"canonical_id":"Q1543331","key":"Q1543331","label":"Pristilomatidae","same_as":["https://www.wikidata.org/wiki/Q1543331"],"type":"entity"}
+{"canonical_id":"Q1550903","key":"Q1550903","label":"section chief","same_as":["https://www.wikidata.org/wiki/Q1550903"],"type":"entity"}
+{"canonical_id":"Q1570201","key":"Q1570201","label":"Jacquetta Hawkes","same_as":["https://www.wikidata.org/wiki/Q1570201"],"type":"entity"}
+{"canonical_id":"Q1574188","key":"Q1574188","label":"Elez Han","same_as":["https://www.wikidata.org/wiki/Q1574188"],"type":"entity"}
+{"canonical_id":"Q1582014","key":"Q1582014","label":"KIIS-FM","same_as":["https://www.wikidata.org/wiki/Q1582014"],"type":"entity"}
+{"canonical_id":"Q1598759","key":"Q1598759","label":"light infantry","same_as":["https://www.wikidata.org/wiki/Q1598759"],"type":"entity"}
+{"canonical_id":"Q1656432","key":"Q1656432","label":"Icknield Way","same_as":["https://www.wikidata.org/wiki/Q1656432"],"type":"entity"}
+{"canonical_id":"Q1676261","key":"Q1676261","label":"Kongsberg Jazzfestival","same_as":["https://www.wikidata.org/wiki/Q1676261"],"type":"entity"}
+{"canonical_id":"Q1689423","key":"Q1689423","label":"Jimmy Ponder","same_as":["https://www.wikidata.org/wiki/Q1689423"],"type":"entity"}
+{"canonical_id":"Q1695155","key":"Q1695155","label":"Officer in Tactical Command","same_as":["https://www.wikidata.org/wiki/Q1695155"],"type":"entity"}
+{"canonical_id":"Q1699179","key":"Q1699179","label":"John Atherton","same_as":["https://www.wikidata.org/wiki/Q1699179"],"type":"entity"}
+{"canonical_id":"Q1706472","key":"Q1706472","label":"Konkan Railway","same_as":["https://www.wikidata.org/wiki/Q1706472"],"type":"entity"}
+{"canonical_id":"Q1708986","key":"Q1708986","label":"Staphylococcus saprophyticus","same_as":["https://www.wikidata.org/wiki/Q1708986"],"type":"entity"}
+{"canonical_id":"Q1725788","key":"Q1725788","label":"moths","same_as":["https://www.wikidata.org/wiki/Q1725788"],"type":"entity"}
+{"canonical_id":"Q1740443","key":"Q1740443","label":"SaPKo","same_as":["https://www.wikidata.org/wiki/Q1740443"],"type":"entity"}
+{"canonical_id":"Q1747689","key":"Q1747689","label":"Ancient Rome","same_as":["https://www.wikidata.org/wiki/Q1747689"],"type":"entity"}
+{"canonical_id":"Q1757912","key":"Q1757912","label":"Eopsetta","same_as":["https://www.wikidata.org/wiki/Q1757912"],"type":"entity"}
+{"canonical_id":"Q1760791","key":"Q1760791","label":"Middlesex University","same_as":["https://www.wikidata.org/wiki/Q1760791"],"type":"entity"}
+{"canonical_id":"Q1770695","key":"Q1770695","label":"Hindustani classical music","same_as":["https://www.wikidata.org/wiki/Q1770695"],"type":"entity"}
+{"canonical_id":"Q1779774","key":"Q1779774","label":"Abington Pigotts","same_as":["https://www.wikidata.org/wiki/Q1779774"],"type":"entity"}
+{"canonical_id":"Q1856153","key":"Q1856153","label":"National Renewable Energy Laboratory","same_as":["https://www.wikidata.org/wiki/Q1856153"],"type":"entity"}
+{"canonical_id":"Q1861917","key":"Q1861917","label":"Riz Ahmed","same_as":["https://www.wikidata.org/wiki/Q1861917"],"type":"entity"}
+{"canonical_id":"Q1891138","key":"Q1891138","label":"The Go-Betweens","same_as":["https://www.wikidata.org/wiki/Q1891138"],"type":"entity"}
+{"canonical_id":"Q1907648","key":"Q1907648","label":"Peñalén","same_as":["https://www.wikidata.org/wiki/Q1907648"],"type":"entity"}
+{"canonical_id":"Q1926477","key":"Q1926477","label":"Steeple Morden","same_as":["https://www.wikidata.org/wiki/Q1926477"],"type":"entity"}
+{"canonical_id":"Q1930187","key":"Q1930187","label":"journalist","same_as":["https://www.wikidata.org/wiki/Q1930187"],"type":"entity"}
+{"canonical_id":"Q1951167","key":"Q1951167","label":"Movie Central","same_as":["https://www.wikidata.org/wiki/Q1951167"],"type":"entity"}
+{"canonical_id":"Q1954169","key":"Q1954169","label":"Muse Records","same_as":["https://www.wikidata.org/wiki/Q1954169"],"type":"entity"}
+{"canonical_id":"Q1961776","key":"Q1961776","label":"NZR K class","same_as":["https://www.wikidata.org/wiki/Q1961776"],"type":"entity"}
+{"canonical_id":"Q1967606","key":"Q1967606","label":"National Physical Laboratory","same_as":["https://www.wikidata.org/wiki/Q1967606"],"type":"entity"}
+{"canonical_id":"Q1986096","key":"Q1986096","label":"Chhindwara district","same_as":["https://www.wikidata.org/wiki/Q1986096"],"type":"entity"}
+{"canonical_id":"Q1987694","key":"Q1987694","label":"Guilden Morden","same_as":["https://www.wikidata.org/wiki/Q1987694"],"type":"entity"}
+{"canonical_id":"Q1995653","key":"Q1995653","label":"Down 4 U","same_as":["https://www.wikidata.org/wiki/Q1995653"],"type":"entity"}
+{"canonical_id":"Q2057907","key":"Q2057907","label":"Let U Go","same_as":["https://www.wikidata.org/wiki/Q2057907"],"type":"entity"}
+{"canonical_id":"Q2097743","key":"Q2097743","label":"Pyotr Baranov","same_as":["https://www.wikidata.org/wiki/Q2097743"],"type":"entity"}
+{"canonical_id":"Q2146933","key":"Q2146933","label":"Revolution","same_as":["https://www.wikidata.org/wiki/Q2146933"],"type":"entity"}
+{"canonical_id":"Q2155625","key":"Q2155625","label":"Riverina","same_as":["https://www.wikidata.org/wiki/Q2155625"],"type":"entity"}
+{"canonical_id":"Q2159907","key":"Q2159907","label":"criminal","same_as":["https://www.wikidata.org/wiki/Q2159907"],"type":"entity"}
+{"canonical_id":"Q2165702","key":"Q2165702","label":"State Railway of Thailand","same_as":["https://www.wikidata.org/wiki/Q2165702"],"type":"entity"}
+{"canonical_id":"Q2210015","key":"Q2210015","label":"Sabinianus","same_as":["https://www.wikidata.org/wiki/Q2210015"],"type":"entity"}
+{"canonical_id":"Q2215497","key":"Q2215497","label":"Diane Parish","same_as":["https://www.wikidata.org/wiki/Q2215497"],"type":"entity"}
+{"canonical_id":"Q2222883","key":"Q2222883","label":"Dave Dobbyn","same_as":["https://www.wikidata.org/wiki/Q2222883"],"type":"entity"}
+{"canonical_id":"Q2247225","key":"Q2247225","label":"Tarumanagara","same_as":["https://www.wikidata.org/wiki/Q2247225"],"type":"entity"}
+{"canonical_id":"Q2252262","key":"Q2252262","label":"rapper","same_as":["https://www.wikidata.org/wiki/Q2252262"],"type":"entity"}
+{"canonical_id":"Q2258261","key":"Q2258261","label":"Pakistan Navy","same_as":["https://www.wikidata.org/wiki/Q2258261"],"type":"entity"}
+{"canonical_id":"Q2260957","key":"Q2260957","label":"Scott Maslen","same_as":["https://www.wikidata.org/wiki/Q2260957"],"type":"entity"}
+{"canonical_id":"Q2309784","key":"Q2309784","label":"sport cyclist","same_as":["https://www.wikidata.org/wiki/Q2309784"],"type":"entity"}
+{"canonical_id":"Q2310972","key":"Q2310972","label":"CD Guijuelo","same_as":["https://www.wikidata.org/wiki/Q2310972"],"type":"entity"}
+{"canonical_id":"Q2322896","key":"Q2322896","label":"My Sharona","same_as":["https://www.wikidata.org/wiki/Q2322896"],"type":"entity"}
+{"canonical_id":"Q2356897","key":"Q2356897","label":"Barbara G. Briggs","same_as":["https://www.wikidata.org/wiki/Q2356897"],"type":"entity"}
+{"canonical_id":"Q2361700","key":"Q2361700","label":"Ashwell and Morden railway station","same_as":["https://www.wikidata.org/wiki/Q2361700"],"type":"entity"}
+{"canonical_id":"Q2363920","key":"Q2363920","label":"Edward Meyrick","same_as":["https://www.wikidata.org/wiki/Q2363920"],"type":"entity"}
+{"canonical_id":"Q2374149","key":"Q2374149","label":"botanist","same_as":["https://www.wikidata.org/wiki/Q2374149"],"type":"entity"}
+{"canonical_id":"Q2431917","key":"Q2431917","label":"Katund i Ri","same_as":["https://www.wikidata.org/wiki/Q2431917"],"type":"entity"}
+{"canonical_id":"Q2450879","key":"Q2450879","label":"Interstate 385","same_as":["https://www.wikidata.org/wiki/Q2450879"],"type":"entity"}
+{"canonical_id":"Q2460337","key":"Q2460337","label":"Gmina Mszczonów","same_as":["https://www.wikidata.org/wiki/Q2460337"],"type":"entity"}
+{"canonical_id":"Q2462658","key":"Q2462658","label":"manager","same_as":["https://www.wikidata.org/wiki/Q2462658"],"type":"entity"}
+{"canonical_id":"Q2474467","key":"Q2474467","label":"Six Days of London","same_as":["https://www.wikidata.org/wiki/Q2474467"],"type":"entity"}
+{"canonical_id":"Q2485771","key":"Q2485771","label":"FC Mashuk-KMV Pyatigorsk","same_as":["https://www.wikidata.org/wiki/Q2485771"],"type":"entity"}
+{"canonical_id":"Q2503103","key":"Q2503103","label":"South Carolina Highway 291","same_as":["https://www.wikidata.org/wiki/Q2503103"],"type":"entity"}
+{"canonical_id":"Q2507691","key":"Q2507691","label":"Virginia State Route 43","same_as":["https://www.wikidata.org/wiki/Q2507691"],"type":"entity"}
+{"canonical_id":"Q2525641","key":"Q2525641","label":"Theodore Moses Tobani","same_as":["https://www.wikidata.org/wiki/Q2525641"],"type":"entity"}
+{"canonical_id":"Q2525645","key":"Q2525645","label":"Tadlow","same_as":["https://www.wikidata.org/wiki/Q2525645"],"type":"entity"}
+{"canonical_id":"Q2562848","key":"Q2562848","label":"Murrabit","same_as":["https://www.wikidata.org/wiki/Q2562848"],"type":"entity"}
+{"canonical_id":"Q2568267","key":"Q2568267","label":"Barham","same_as":["https://www.wikidata.org/wiki/Q2568267"],"type":"entity"}
+{"canonical_id":"Q2580491","key":"Q2580491","label":"British Pakistanis","same_as":["https://www.wikidata.org/wiki/Q2580491"],"type":"entity"}
+{"canonical_id":"Q2631987","key":"Q2631987","label":"Attorney General for England and Wales","same_as":["https://www.wikidata.org/wiki/Q2631987"],"type":"entity"}
+{"canonical_id":"Q2643890","key":"Q2643890","label":"vocalist","same_as":["https://www.wikidata.org/wiki/Q2643890"],"type":"entity"}
+{"canonical_id":"Q2673941","key":"Q2673941","label":"Salakanagara","same_as":["https://www.wikidata.org/wiki/Q2673941"],"type":"entity"}
+{"canonical_id":"Q2727209","key":"Q2727209","label":"Belarusian partisans","same_as":["https://www.wikidata.org/wiki/Q2727209"],"type":"entity"}
+{"canonical_id":"Q2730433","key":"Q2730433","label":"cream","same_as":["https://www.wikidata.org/wiki/Q2730433"],"type":"entity"}
+{"canonical_id":"Q2734911","key":"Q2734911","label":"Rogers Locomotive and Machine Works","same_as":["https://www.wikidata.org/wiki/Q2734911"],"type":"entity"}
+{"canonical_id":"Q2735557","key":"Q2735557","label":"Banzai Pipeline","same_as":["https://www.wikidata.org/wiki/Q2735557"],"type":"entity"}
+{"canonical_id":"Q2750094","key":"Q2750094","label":"Smilisca fodiens","same_as":["https://www.wikidata.org/wiki/Q2750094"],"type":"entity"}
+{"canonical_id":"Q2869046","key":"Q2869046","label":"Athertonia diversifolia","same_as":["https://www.wikidata.org/wiki/Q2869046"],"type":"entity"}
+{"canonical_id":"Q2878852","key":"Q2878852","label":"Heliciopsis","same_as":["https://www.wikidata.org/wiki/Q2878852"],"type":"entity"}
+{"canonical_id":"Q2937718","key":"Q2937718","label":"Capulets","same_as":["https://www.wikidata.org/wiki/Q2937718"],"type":"entity"}
+{"canonical_id":"Q2944916","key":"Q2944916","label":"Canadian Film Centre","same_as":["https://www.wikidata.org/wiki/Q2944916"],"type":"entity"}
+{"canonical_id":"Q2952044","key":"Q2952044","label":"Zhenskaya Hockey League","same_as":["https://www.wikidata.org/wiki/Q2952044"],"type":"entity"}
+{"canonical_id":"Q2978709","key":"Q2978709","label":"Clay Marzo","same_as":["https://www.wikidata.org/wiki/Q2978709"],"type":"entity"}
+{"canonical_id":"Q2979643","key":"Q2979643","label":"Closed Circuit","same_as":["https://www.wikidata.org/wiki/Q2979643"],"type":"entity"}
+{"canonical_id":"Q2998450","key":"Q2998450","label":"Costellariidae","same_as":["https://www.wikidata.org/wiki/Q2998450"],"type":"entity"}
+{"canonical_id":"Q3040119","key":"Q3040119","label":"Drummond","same_as":["https://www.wikidata.org/wiki/Q3040119"],"type":"entity"}
+{"canonical_id":"Q3042256","key":"Q3042256","label":"Wisła Płock","same_as":["https://www.wikidata.org/wiki/Q3042256"],"type":"entity"}
+{"canonical_id":"Q3048506","key":"Q3048506","label":"Edward Ellis","same_as":["https://www.wikidata.org/wiki/Q3048506"],"type":"entity"}
+{"canonical_id":"Q3068744","key":"Q3068744","label":"Syrian Arab Army","same_as":["https://www.wikidata.org/wiki/Q3068744"],"type":"entity"}
+{"canonical_id":"Q3075458","key":"Q3075458","label":"Jake Wood","same_as":["https://www.wikidata.org/wiki/Q3075458"],"type":"entity"}
+{"canonical_id":"Q3090721","key":"Q3090721","label":"Lawrence Alexander Sidney Johnson","same_as":["https://www.wikidata.org/wiki/Q3090721"],"type":"entity"}
+{"canonical_id":"Q3098495","key":"Q3098495","label":"Garryowen Football Club","same_as":["https://www.wikidata.org/wiki/Q3098495"],"type":"entity"}
+{"canonical_id":"Q3112627","key":"Q3112627","label":"Queensland Government","same_as":["https://www.wikidata.org/wiki/Q3112627"],"type":"entity"}
+{"canonical_id":"Q3132837","key":"Q3132837","label":"Henry Holt and Company","same_as":["https://www.wikidata.org/wiki/Q3132837"],"type":"entity"}
+{"canonical_id":"Q3141327","key":"Q3141327","label":"Hour Community","same_as":["https://www.wikidata.org/wiki/Q3141327"],"type":"entity"}
+{"canonical_id":"Q3153780","key":"Q3153780","label":"British Columbia Interior","same_as":["https://www.wikidata.org/wiki/Q3153780"],"type":"entity"}
+{"canonical_id":"Q3217619","key":"Q3217619","label":"Lansdowne Football Club","same_as":["https://www.wikidata.org/wiki/Q3217619"],"type":"entity"}
+{"canonical_id":"Q3229161","key":"Q3229161","label":"Leigh Jason","same_as":["https://www.wikidata.org/wiki/Q3229161"],"type":"entity"}
+{"canonical_id":"Q3246252","key":"Q3246252","label":"Pind Dadan Khan Tehsil","same_as":["https://www.wikidata.org/wiki/Q3246252"],"type":"entity"}
+{"canonical_id":"Q3257809","key":"Q3257809","label":"purple","same_as":["https://www.wikidata.org/wiki/Q3257809"],"type":"entity"}
+{"canonical_id":"Q3257938","key":"Q3257938","label":"Westinghouse Air Brake Company","same_as":["https://www.wikidata.org/wiki/Q3257938"],"type":"entity"}
+{"canonical_id":"Q3294383","key":"Q3294383","label":"2018 Commonwealth Games","same_as":["https://www.wikidata.org/wiki/Q3294383"],"type":"entity"}
+{"canonical_id":"Q3301962","key":"Q3301962","label":"Eastern Mediterranean","same_as":["https://www.wikidata.org/wiki/Q3301962"],"type":"entity"}
+{"canonical_id":"Q3308846","key":"Q3308846","label":"Royal Yugoslav Army","same_as":["https://www.wikidata.org/wiki/Q3308846"],"type":"entity"}
+{"canonical_id":"Q3315767","key":"Q3315767","label":"mezquite","same_as":["https://www.wikidata.org/wiki/Q3315767"],"type":"entity"}
+{"canonical_id":"Q3322928","key":"Q3322928","label":"Montreal Mirror","same_as":["https://www.wikidata.org/wiki/Q3322928"],"type":"entity"}
+{"canonical_id":"Q3364600","key":"Q3364600","label":"Alto Tajo Nature Reserve","same_as":["https://www.wikidata.org/wiki/Q3364600"],"type":"entity"}
+{"canonical_id":"Q3372756","key":"Q3372756","label":"Pauline Picard","same_as":["https://www.wikidata.org/wiki/Q3372756"],"type":"entity"}
+{"canonical_id":"Q3389507","key":"Q3389507","label":"pizzaiolo","same_as":["https://www.wikidata.org/wiki/Q3389507"],"type":"entity"}
+{"canonical_id":"Q3400985","key":"Q3400985","label":"academic","same_as":["https://www.wikidata.org/wiki/Q3400985"],"type":"entity"}
+{"canonical_id":"Q3462209","key":"Q3462209","label":"Saint-Gabriel-Lalemant","same_as":["https://www.wikidata.org/wiki/Q3462209"],"type":"entity"}
+{"canonical_id":"Q3499072","key":"Q3499072","label":"chef","same_as":["https://www.wikidata.org/wiki/Q3499072"],"type":"entity"}
+{"canonical_id":"Q3540989","key":"Q3540989","label":"Trooper","same_as":["https://www.wikidata.org/wiki/Q3540989"],"type":"entity"}
+{"canonical_id":"Q3548084","key":"Q3548084","label":"International Ultramarine Corps","same_as":["https://www.wikidata.org/wiki/Q3548084"],"type":"entity"}
+{"canonical_id":"Q3551781","key":"Q3551781","label":"District of Columbia","same_as":["https://www.wikidata.org/wiki/Q3551781"],"type":"entity"}
+{"canonical_id":"Q3568143","key":"Q3568143","label":"Northwestern Wildcats","same_as":["https://www.wikidata.org/wiki/Q3568143"],"type":"entity"}
+{"canonical_id":"Q3641131","key":"Q3641131","label":"dark blue","same_as":["https://www.wikidata.org/wiki/Q3641131"],"type":"entity"}
+{"canonical_id":"Q3695416","key":"Q3695416","label":"Forman Christian College","same_as":["https://www.wikidata.org/wiki/Q3695416"],"type":"entity"}
+{"canonical_id":"Q3729598","key":"Q3729598","label":"Queer as Folk, season 4","same_as":["https://www.wikidata.org/wiki/Q3729598"],"type":"entity"}
+{"canonical_id":"Q3770218","key":"Q3770218","label":"Giuseppe Camuncoli","same_as":["https://www.wikidata.org/wiki/Q3770218"],"type":"entity"}
+{"canonical_id":"Q3785291","key":"Q3785291","label":"Hero Hotline","same_as":["https://www.wikidata.org/wiki/Q3785291"],"type":"entity"}
+{"canonical_id":"Q3786295","key":"Q3786295","label":"Holla Holla","same_as":["https://www.wikidata.org/wiki/Q3786295"],"type":"entity"}
+{"canonical_id":"Q3826989","key":"Q3826989","label":"Lapdance","same_as":["https://www.wikidata.org/wiki/Q3826989"],"type":"entity"}
+{"canonical_id":"Q3850219","key":"Q3850219","label":"Roosevelt Roads Naval Station","same_as":["https://www.wikidata.org/wiki/Q3850219"],"type":"entity"}
+{"canonical_id":"Q3879074","key":"Q3879074","label":"Noventi","same_as":["https://www.wikidata.org/wiki/Q3879074"],"type":"entity"}
+{"canonical_id":"Q3880278","key":"Q3880278","label":"Rosamund John","same_as":["https://www.wikidata.org/wiki/Q3880278"],"type":"entity"}
+{"canonical_id":"Q3882417","key":"Q3882417","label":"Oncocerida","same_as":["https://www.wikidata.org/wiki/Q3882417"],"type":"entity"}
+{"canonical_id":"Q3910732","key":"Q3910732","label":"Premio Chiara","same_as":["https://www.wikidata.org/wiki/Q3910732"],"type":"entity"}
+{"canonical_id":"Q3922505","key":"Q3922505","label":"DJ producer","same_as":["https://www.wikidata.org/wiki/Q3922505"],"type":"entity"}
+{"canonical_id":"Q3926010","key":"Q3926010","label":"Put It on Me","same_as":["https://www.wikidata.org/wiki/Q3926010"],"type":"entity"}
+{"canonical_id":"Q3939773","key":"Q3939773","label":"The Rocket Record Company","same_as":["https://www.wikidata.org/wiki/Q3939773"],"type":"entity"}
+{"canonical_id":"Q3942072","key":"Q3942072","label":"Royal Numismatic Society","same_as":["https://www.wikidata.org/wiki/Q3942072"],"type":"entity"}
+{"canonical_id":"Q3955054","key":"Q3955054","label":"Kat Slater","same_as":["https://www.wikidata.org/wiki/Q3955054"],"type":"entity"}
+{"canonical_id":"Q3995939","key":"Q3995939","label":"TotalEnergies","same_as":["https://www.wikidata.org/wiki/Q3995939"],"type":"entity"}
+{"canonical_id":"Q3996444","key":"Q3996444","label":"1988 Ireland rugby union tour of France","same_as":["https://www.wikidata.org/wiki/Q3996444"],"type":"entity"}
+{"canonical_id":"Q3996445","key":"Q3996445","label":"1989 Ireland rugby union tour of North America","same_as":["https://www.wikidata.org/wiki/Q3996445"],"type":"entity"}
+{"canonical_id":"Q3996446","key":"Q3996446","label":"1992 Ireland rugby union tour of New Zealand","same_as":["https://www.wikidata.org/wiki/Q3996446"],"type":"entity"}
+{"canonical_id":"Q3996448","key":"Q3996448","label":"1994 Ireland rugby union tour of Australia","same_as":["https://www.wikidata.org/wiki/Q3996448"],"type":"entity"}
+{"canonical_id":"Q3996454","key":"Q3996454","label":"1998 Ireland rugby union tour of South Africa","same_as":["https://www.wikidata.org/wiki/Q3996454"],"type":"entity"}
+{"canonical_id":"Q3996456","key":"Q3996456","label":"1999 Ireland rugby union tour of Australia","same_as":["https://www.wikidata.org/wiki/Q3996456"],"type":"entity"}
+{"canonical_id":"Q4055794","key":"Q4055794","label":"Aviamotornaya Street","same_as":["https://www.wikidata.org/wiki/Q4055794"],"type":"entity"}
+{"canonical_id":"Q4058325","key":"Q4058325","label":"Asian people","same_as":["https://www.wikidata.org/wiki/Q4058325"],"type":"entity"}
+{"canonical_id":"Q4120225","key":"Q4120225","label":"DatPiff","same_as":["https://www.wikidata.org/wiki/Q4120225"],"type":"entity"}
+{"canonical_id":"Q4164344","key":"Q4164344","label":"documentary","same_as":["https://www.wikidata.org/wiki/Q4164344"],"type":"entity"}
+{"canonical_id":"Q4175034","key":"Q4175034","label":"legislator","same_as":["https://www.wikidata.org/wiki/Q4175034"],"type":"entity"}
+{"canonical_id":"Q4202018","key":"Q4202018","label":"journalistic interview","same_as":["https://www.wikidata.org/wiki/Q4202018"],"type":"entity"}
+{"canonical_id":"Q4263842","key":"Q4263842","label":"literary critic","same_as":["https://www.wikidata.org/wiki/Q4263842"],"type":"entity"}
+{"canonical_id":"Q4333950","key":"Q4333950","label":"Olmazar","same_as":["https://www.wikidata.org/wiki/Q4333950"],"type":"entity"}
+{"canonical_id":"Q4515924","key":"Q4515924","label":"Chilonzor Line","same_as":["https://www.wikidata.org/wiki/Q4515924"],"type":"entity"}
+{"canonical_id":"Q4580065","key":"Q4580065","label":"1981 World Weightlifting Championships","same_as":["https://www.wikidata.org/wiki/Q4580065"],"type":"entity"}
+{"canonical_id":"Q4619635","key":"Q4619635","label":"2010–11 Maltese Third Division","same_as":["https://www.wikidata.org/wiki/Q4619635"],"type":"entity"}
+{"canonical_id":"Q4623948","key":"Q4623948","label":"2011–12 NCAA Division I men's basketball season","same_as":["https://www.wikidata.org/wiki/Q4623948"],"type":"entity"}
+{"canonical_id":"Q4639489","key":"Q4639489","label":"4th Virginia Regiment","same_as":["https://www.wikidata.org/wiki/Q4639489"],"type":"entity"}
+{"canonical_id":"Q4641479","key":"Q4641479","label":"5th Virginia Regiment","same_as":["https://www.wikidata.org/wiki/Q4641479"],"type":"entity"}
+{"canonical_id":"Q4642507","key":"Q4642507","label":"6 Feet Underground","same_as":["https://www.wikidata.org/wiki/Q4642507"],"type":"entity"}
+{"canonical_id":"Q4642825","key":"Q4642825","label":"6th Virginia Regiment","same_as":["https://www.wikidata.org/wiki/Q4642825"],"type":"entity"}
+{"canonical_id":"Q4643099","key":"Q4643099","label":"71st (Highland) Regiment of Foot","same_as":["https://www.wikidata.org/wiki/Q4643099"],"type":"entity"}
+{"canonical_id":"Q4649410","key":"Q4649410","label":"A505 road","same_as":["https://www.wikidata.org/wiki/Q4649410"],"type":"entity"}
+{"canonical_id":"Q4667978","key":"Q4667978","label":"Abita Brewing Company","same_as":["https://www.wikidata.org/wiki/Q4667978"],"type":"entity"}
+{"canonical_id":"Q4679995","key":"Q4679995","label":"Adam Wiśniewski","same_as":["https://www.wikidata.org/wiki/Q4679995"],"type":"entity"}
+{"canonical_id":"Q4701509","key":"Q4701509","label":"Akoko South-West","same_as":["https://www.wikidata.org/wiki/Q4701509"],"type":"entity"}
+{"canonical_id":"Q4711261","key":"Q4711261","label":"Albert Square","same_as":["https://www.wikidata.org/wiki/Q4711261"],"type":"entity"}
+{"canonical_id":"Q4721932","key":"Q4721932","label":"Alfie Moon","same_as":["https://www.wikidata.org/wiki/Q4721932"],"type":"entity"}
+{"canonical_id":"Q4734737","key":"Q4734737","label":"Alp Ikizler","same_as":["https://www.wikidata.org/wiki/Q4734737"],"type":"entity"}
+{"canonical_id":"Q4739572","key":"Q4739572","label":"Amanda Brown","same_as":["https://www.wikidata.org/wiki/Q4739572"],"type":"entity"}
+{"canonical_id":"Q4744378","key":"Q4744378","label":"American Machine and Foundry","same_as":["https://www.wikidata.org/wiki/Q4744378"],"type":"entity"}
+{"canonical_id":"Q4750906","key":"Q4750906","label":"Anahim Volcanic Belt","same_as":["https://www.wikidata.org/wiki/Q4750906"],"type":"entity"}
+{"canonical_id":"Q4773672","key":"Q4773672","label":"Anthony Walton White Evans","same_as":["https://www.wikidata.org/wiki/Q4773672"],"type":"entity"}
+{"canonical_id":"Q4795040","key":"Q4795040","label":"Arnold Engineering Development Complex","same_as":["https://www.wikidata.org/wiki/Q4795040"],"type":"entity"}
+{"canonical_id":"Q4815590","key":"Q4815590","label":"Central District","same_as":["https://www.wikidata.org/wiki/Q4815590"],"type":"entity"}
+{"canonical_id":"Q4817178","key":"Q4817178","label":"Central District","same_as":["https://www.wikidata.org/wiki/Q4817178"],"type":"entity"}
+{"canonical_id":"Q4849268","key":"Q4849268","label":"Bakers Narrows","same_as":["https://www.wikidata.org/wiki/Q4849268"],"type":"entity"}
+{"canonical_id":"Q4850082","key":"Q4850082","label":"Balaram Stack","same_as":["https://www.wikidata.org/wiki/Q4850082"],"type":"entity"}
+{"canonical_id":"Q4851560","key":"Q4851560","label":"Ballbank","same_as":["https://www.wikidata.org/wiki/Q4851560"],"type":"entity"}
+{"canonical_id":"Q4867740","key":"Q4867740","label":"Gastropoda","same_as":["https://www.wikidata.org/wiki/Q4867740"],"type":"entity"}
+{"canonical_id":"Q4882810","key":"Q4882810","label":"Believe in Me","same_as":["https://www.wikidata.org/wiki/Q4882810"],"type":"entity"}
+{"canonical_id":"Q4889539","key":"Q4889539","label":"Benjy Davis Project","same_as":["https://www.wikidata.org/wiki/Q4889539"],"type":"entity"}
+{"canonical_id":"Q4922099","key":"Q4922099","label":"Black Velvet","same_as":["https://www.wikidata.org/wiki/Q4922099"],"type":"entity"}
+{"canonical_id":"Q4931078","key":"Q4931078","label":"Bo Donaldson and The Heywoods","same_as":["https://www.wikidata.org/wiki/Q4931078"],"type":"entity"}
+{"canonical_id":"Q4941953","key":"Q4941953","label":"Bonhamtown","same_as":["https://www.wikidata.org/wiki/Q4941953"],"type":"entity"}
+{"canonical_id":"Q4964182","key":"Q4964182","label":"philosopher","same_as":["https://www.wikidata.org/wiki/Q4964182"],"type":"entity"}
+{"canonical_id":"Q4991371","key":"Q4991371","label":"soldier","same_as":["https://www.wikidata.org/wiki/Q4991371"],"type":"entity"}
+{"canonical_id":"Q5009037","key":"Q5009037","label":"CBC Radio One","same_as":["https://www.wikidata.org/wiki/Q5009037"],"type":"entity"}
+{"canonical_id":"Q5017530","key":"Q5017530","label":"Minot State University","same_as":["https://www.wikidata.org/wiki/Q5017530"],"type":"entity"}
+{"canonical_id":"Q5038893","key":"Q5038893","label":"Career","same_as":["https://www.wikidata.org/wiki/Q5038893"],"type":"entity"}
+{"canonical_id":"Q5068249","key":"Q5068249","label":"Chak Shadi","same_as":["https://www.wikidata.org/wiki/Q5068249"],"type":"entity"}
+{"canonical_id":"Q5086802","key":"Q5086802","label":"Chartered Institute of Arbitrators","same_as":["https://www.wikidata.org/wiki/Q5086802"],"type":"entity"}
+{"canonical_id":"Q5096994","key":"Q5096994","label":"chief mechanical engineer","same_as":["https://www.wikidata.org/wiki/Q5096994"],"type":"entity"}
+{"canonical_id":"Q5097651","key":"Q5097651","label":"Chilcotin Plateau","same_as":["https://www.wikidata.org/wiki/Q5097651"],"type":"entity"}
+{"canonical_id":"Q5115892","key":"Q5115892","label":"Charles Venn","same_as":["https://www.wikidata.org/wiki/Q5115892"],"type":"entity"}
+{"canonical_id":"Q5123401","key":"Q5123401","label":"City Road","same_as":["https://www.wikidata.org/wiki/Q5123401"],"type":"entity"}
+{"canonical_id":"Q5131743","key":"Q5131743","label":"Cleopatra Wong","same_as":["https://www.wikidata.org/wiki/Q5131743"],"type":"entity"}
+{"canonical_id":"Q5167679","key":"Q5167679","label":"dissolution of the Soviet Union","same_as":["https://www.wikidata.org/wiki/Q5167679"],"type":"entity"}
+{"canonical_id":"Q5199566","key":"Q5199566","label":"Cymindis budensis","same_as":["https://www.wikidata.org/wiki/Q5199566"],"type":"entity"}
+{"canonical_id":"Q5224696","key":"Q5224696","label":"Athertonia","same_as":["https://www.wikidata.org/wiki/Q5224696"],"type":"entity"}
+{"canonical_id":"Q5257665","key":"Q5257665","label":"Denise Fox","same_as":["https://www.wikidata.org/wiki/Q5257665"],"type":"entity"}
+{"canonical_id":"Q5261834","key":"Q5261834","label":"Derek Branning","same_as":["https://www.wikidata.org/wiki/Q5261834"],"type":"entity"}
+{"canonical_id":"Q5316962","key":"Q5316962","label":"Dust","same_as":["https://www.wikidata.org/wiki/Q5316962"],"type":"entity"}
+{"canonical_id":"Q5325242","key":"Q5325242","label":"Eagle Rock","same_as":["https://www.wikidata.org/wiki/Q5325242"],"type":"entity"}
+{"canonical_id":"Q5325245","key":"Q5325245","label":"Eagle Rock High School","same_as":["https://www.wikidata.org/wiki/Q5325245"],"type":"entity"}
+{"canonical_id":"Q5374367","key":"Q5374367","label":"Employment consultant","same_as":["https://www.wikidata.org/wiki/Q5374367"],"type":"entity"}
+{"canonical_id":"Q5501718","key":"Q5501718","label":"French Colonial Union","same_as":["https://www.wikidata.org/wiki/Q5501718"],"type":"entity"}
+{"canonical_id":"Q5545506","key":"Q5545506","label":"George Virtue","same_as":["https://www.wikidata.org/wiki/Q5545506"],"type":"entity"}
+{"canonical_id":"Q5547005","key":"Q5547005","label":"Georgetown Hoyas men's basketball","same_as":["https://www.wikidata.org/wiki/Q5547005"],"type":"entity"}
+{"canonical_id":"Q5547538","key":"Q5547538","label":"Ciénaga Baja","same_as":["https://www.wikidata.org/wiki/Q5547538"],"type":"entity"}
+{"canonical_id":"Q5568105","key":"Q5568105","label":"Glen Wilton","same_as":["https://www.wikidata.org/wiki/Q5568105"],"type":"entity"}
+{"canonical_id":"Q5599988","key":"Q5599988","label":"Great South Pacific Express","same_as":["https://www.wikidata.org/wiki/Q5599988"],"type":"entity"}
+{"canonical_id":"Q5647674","key":"Q5647674","label":"Handsworth Grammar School","same_as":["https://www.wikidata.org/wiki/Q5647674"],"type":"entity"}
+{"canonical_id":"Q5648565","key":"Q5648565","label":"Hanks","same_as":["https://www.wikidata.org/wiki/Q5648565"],"type":"entity"}
+{"canonical_id":"Q5680611","key":"Q5680611","label":"Soltaniyeh Rural District","same_as":["https://www.wikidata.org/wiki/Q5680611"],"type":"entity"}
+{"canonical_id":"Q5683778","key":"Q5683778","label":"Torkaman Rural District","same_as":["https://www.wikidata.org/wiki/Q5683778"],"type":"entity"}
+{"canonical_id":"Q5692979","key":"Q5692979","label":"Hearts and Flowers","same_as":["https://www.wikidata.org/wiki/Q5692979"],"type":"entity"}
+{"canonical_id":"Q5720272","key":"Q5720272","label":"Tizkharab, Urmia","same_as":["https://www.wikidata.org/wiki/Q5720272"],"type":"entity"}
+{"canonical_id":"Q5736317","key":"Q5736317","label":"Hercoceras","same_as":["https://www.wikidata.org/wiki/Q5736317"],"type":"entity"}
+{"canonical_id":"Q5751433","key":"Q5751433","label":"Hicksbeachia","same_as":["https://www.wikidata.org/wiki/Q5751433"],"type":"entity"}
+{"canonical_id":"Q5802310","key":"Q5802310","label":"Kheyrabad","same_as":["https://www.wikidata.org/wiki/Q5802310"],"type":"entity"}
+{"canonical_id":"Q5820321","key":"Q5820321","label":"Lulaman","same_as":["https://www.wikidata.org/wiki/Q5820321"],"type":"entity"}
+{"canonical_id":"Q5826546","key":"Q5826546","label":"El río que nos lleva","same_as":["https://www.wikidata.org/wiki/Q5826546"],"type":"entity"}
+{"canonical_id":"Q5919397","key":"Q5919397","label":"Howard Curtis","same_as":["https://www.wikidata.org/wiki/Q5919397"],"type":"entity"}
+{"canonical_id":"Q5929775","key":"Q5929775","label":"Jessie Wallace","same_as":["https://www.wikidata.org/wiki/Q5929775"],"type":"entity"}
+{"canonical_id":"Q5976999","key":"Q5976999","label":"I Don't Wanna Stop","same_as":["https://www.wikidata.org/wiki/Q5976999"],"type":"entity"}
+{"canonical_id":"Q6012848","key":"Q6012848","label":"Michael Moon","same_as":["https://www.wikidata.org/wiki/Q6012848"],"type":"entity"}
+{"canonical_id":"Q6044705","key":"Q6044705","label":"Inter-Services Public Relations","same_as":["https://www.wikidata.org/wiki/Q6044705"],"type":"entity"}
+{"canonical_id":"Q6065437","key":"Q6065437","label":"Istanbul Faculty of Medicine","same_as":["https://www.wikidata.org/wiki/Q6065437"],"type":"entity"}
+{"canonical_id":"Q6100764","key":"Q6100764","label":"Ray Dixon","same_as":["https://www.wikidata.org/wiki/Q6100764"],"type":"entity"}
+{"canonical_id":"Q6138516","key":"Q6138516","label":"Tameka Empson","same_as":["https://www.wikidata.org/wiki/Q6138516"],"type":"entity"}
+{"canonical_id":"Q6142157","key":"Q6142157","label":"James River High School","same_as":["https://www.wikidata.org/wiki/Q6142157"],"type":"entity"}
+{"canonical_id":"Q6143462","key":"Q6143462","label":"James Sprent Virtue","same_as":["https://www.wikidata.org/wiki/Q6143462"],"type":"entity"}
+{"canonical_id":"Q6166096","key":"Q6166096","label":"Jawed Siddiqi","same_as":["https://www.wikidata.org/wiki/Q6166096"],"type":"entity"}
+{"canonical_id":"Q6227781","key":"Q6227781","label":"John Crowley","same_as":["https://www.wikidata.org/wiki/Q6227781"],"type":"entity"}
+{"canonical_id":"Q6271700","key":"Q6271700","label":"Jon Tucker","same_as":["https://www.wikidata.org/wiki/Q6271700"],"type":"entity"}
+{"canonical_id":"Q6296067","key":"Q6296067","label":"Partula","same_as":["https://www.wikidata.org/wiki/Q6296067"],"type":"entity"}
+{"canonical_id":"Q6350718","key":"Q6350718","label":"Main South Line","same_as":["https://www.wikidata.org/wiki/Q6350718"],"type":"entity"}
+{"canonical_id":"Q6408627","key":"Q6408627","label":"Kim Fox","same_as":["https://www.wikidata.org/wiki/Q6408627"],"type":"entity"}
+{"canonical_id":"Q6412254","key":"Q6412254","label":"Apostolic King of Hungary","same_as":["https://www.wikidata.org/wiki/Q6412254"],"type":"entity"}
+{"canonical_id":"Q6419478","key":"Q6419478","label":"Kjetil Møster","same_as":["https://www.wikidata.org/wiki/Q6419478"],"type":"entity"}
+{"canonical_id":"Q6422609","key":"Q6422609","label":"Kniphofia nana","same_as":["https://www.wikidata.org/wiki/Q6422609"],"type":"entity"}
+{"canonical_id":"Q6451128","key":"Q6451128","label":"one-star rank","same_as":["https://www.wikidata.org/wiki/Q6451128"],"type":"entity"}
+{"canonical_id":"Q6451489","key":"Q6451489","label":"Kyle Vincent","same_as":["https://www.wikidata.org/wiki/Q6451489"],"type":"entity"}
+{"canonical_id":"Q6500303","key":"Q6500303","label":"Lauren Manning","same_as":["https://www.wikidata.org/wiki/Q6500303"],"type":"entity"}
+{"canonical_id":"Q6503343","key":"Q6503343","label":"law enforcement officer","same_as":["https://www.wikidata.org/wiki/Q6503343"],"type":"entity"}
+{"canonical_id":"Q6531690","key":"Q6531690","label":"clean and jerk","same_as":["https://www.wikidata.org/wiki/Q6531690"],"type":"entity"}
+{"canonical_id":"Q6552992","key":"Q6552992","label":"Lindy Morrison","same_as":["https://www.wikidata.org/wiki/Q6552992"],"type":"entity"}
+{"canonical_id":"Q6665223","key":"Q6665223","label":"Lock Haven University of Pennsylvania","same_as":["https://www.wikidata.org/wiki/Q6665223"],"type":"entity"}
+{"canonical_id":"Q6672299","key":"Q6672299","label":"Long Beach High School","same_as":["https://www.wikidata.org/wiki/Q6672299"],"type":"entity"}
+{"canonical_id":"Q6681665","key":"Q6681665","label":"Lorraine Newman","same_as":["https://www.wikidata.org/wiki/Q6681665"],"type":"entity"}
+{"canonical_id":"Q6727571","key":"Q6727571","label":"Madhuvanti","same_as":["https://www.wikidata.org/wiki/Q6727571"],"type":"entity"}
+{"canonical_id":"Q6743907","key":"Q6743907","label":"Malkin Athletic Center","same_as":["https://www.wikidata.org/wiki/Q6743907"],"type":"entity"}
+{"canonical_id":"Q6750015","key":"Q6750015","label":"Manitoba Highway 10","same_as":["https://www.wikidata.org/wiki/Q6750015"],"type":"entity"}
+{"canonical_id":"Q6794615","key":"Q6794615","label":"Max Branning","same_as":["https://www.wikidata.org/wiki/Q6794615"],"type":"entity"}
+{"canonical_id":"Q6802408","key":"Q6802408","label":"McMullen problem","same_as":["https://www.wikidata.org/wiki/Q6802408"],"type":"entity"}
+{"canonical_id":"Q6934367","key":"Q6934367","label":"Multani","same_as":["https://www.wikidata.org/wiki/Q6934367"],"type":"entity"}
+{"canonical_id":"Q6956204","key":"Q6956204","label":"NZR E class","same_as":["https://www.wikidata.org/wiki/Q6956204"],"type":"entity"}
+{"canonical_id":"Q6956212","key":"Q6956212","label":"NZR J class","same_as":["https://www.wikidata.org/wiki/Q6956212"],"type":"entity"}
+{"canonical_id":"Q7065433","key":"Q7065433","label":"Now Qand","same_as":["https://www.wikidata.org/wiki/Q7065433"],"type":"entity"}
+{"canonical_id":"Q7087840","key":"Q7087840","label":"Oliver Spencer","same_as":["https://www.wikidata.org/wiki/Q7087840"],"type":"entity"}
+{"canonical_id":"Q7088285","key":"Q7088285","label":"Genie TV","same_as":["https://www.wikidata.org/wiki/Q7088285"],"type":"entity"}
+{"canonical_id":"Q7187883","key":"Q7187883","label":"photoplay music","same_as":["https://www.wikidata.org/wiki/Q7187883"],"type":"entity"}
+{"canonical_id":"Q7191597","key":"Q7191597","label":"Piekarowo","same_as":["https://www.wikidata.org/wiki/Q7191597"],"type":"entity"}
+{"canonical_id":"Q7268035","key":"Q7268035","label":"Qohestan Rural District","same_as":["https://www.wikidata.org/wiki/Q7268035"],"type":"entity"}
+{"canonical_id":"Q7324265","key":"Q7324265","label":"Richard Bornat","same_as":["https://www.wikidata.org/wiki/Q7324265"],"type":"entity"}
+{"canonical_id":"Q7352615","key":"Q7352615","label":"Robin Lee Bruce","same_as":["https://www.wikidata.org/wiki/Q7352615"],"type":"entity"}
+{"canonical_id":"Q7354646","key":"Q7354646","label":"Rock Ridge Music","same_as":["https://www.wikidata.org/wiki/Q7354646"],"type":"entity"}
+{"canonical_id":"Q7367264","key":"Q7367264","label":"Rosaline","same_as":["https://www.wikidata.org/wiki/Q7367264"],"type":"entity"}
+{"canonical_id":"Q7381971","key":"Q7381971","label":"Russia iron","same_as":["https://www.wikidata.org/wiki/Q7381971"],"type":"entity"}
+{"canonical_id":"Q7382804","key":"Q7382804","label":"Rutgers Scarlet Knights men's basketball","same_as":["https://www.wikidata.org/wiki/Q7382804"],"type":"entity"}
+{"canonical_id":"Q7383528","key":"Q7383528","label":"Rutoceratidae","same_as":["https://www.wikidata.org/wiki/Q7383528"],"type":"entity"}
+{"canonical_id":"Q7397428","key":"Q7397428","label":"Sad Eyes","same_as":["https://www.wikidata.org/wiki/Q7397428"],"type":"entity"}
+{"canonical_id":"Q7453755","key":"Q7453755","label":"Sergei Romanovich","same_as":["https://www.wikidata.org/wiki/Q7453755"],"type":"entity"}
+{"canonical_id":"Q7485323","key":"Q7485323","label":"FC Amur Blagoveshchensk (1960—2009)","same_as":["https://www.wikidata.org/wiki/Q7485323"],"type":"entity"}
+{"canonical_id":"Q7500708","key":"Q7500708","label":"shooting at the 1936 Summer Olympics – men's 50 metre rifle, prone","same_as":["https://www.wikidata.org/wiki/Q7500708"],"type":"entity"}
+{"canonical_id":"Q7565263","key":"Q7565263","label":"South-Central Mexico","same_as":["https://www.wikidata.org/wiki/Q7565263"],"type":"entity"}
+{"canonical_id":"Q7566485","key":"Q7566485","label":"South Cambridgeshire District Council","same_as":["https://www.wikidata.org/wiki/Q7566485"],"type":"entity"}
+{"canonical_id":"Q7574456","key":"Q7574456","label":"Special Advocate","same_as":["https://www.wikidata.org/wiki/Q7574456"],"type":"entity"}
+{"canonical_id":"Q7586652","key":"Q7586652","label":"St-Ambroise Montreal Fringe Festival","same_as":["https://www.wikidata.org/wiki/Q7586652"],"type":"entity"}
+{"canonical_id":"Q7594894","key":"Q7594894","label":"St Munchin's College","same_as":["https://www.wikidata.org/wiki/Q7594894"],"type":"entity"}
+{"canonical_id":"Q7612948","key":"Q7612948","label":"Steve John Shepherd","same_as":["https://www.wikidata.org/wiki/Q7612948"],"type":"entity"}
+{"canonical_id":"Q7619547","key":"Q7619547","label":"Stony Crossing railway line","same_as":["https://www.wikidata.org/wiki/Q7619547"],"type":"entity"}
+{"canonical_id":"Q7643464","key":"Q7643464","label":"school superintendent","same_as":["https://www.wikidata.org/wiki/Q7643464"],"type":"entity"}
+{"canonical_id":"Q7718494","key":"Q7718494","label":"The Blackeyed Susans","same_as":["https://www.wikidata.org/wiki/Q7718494"],"type":"entity"}
+{"canonical_id":"Q7734943","key":"Q7734943","label":"The Foundation","same_as":["https://www.wikidata.org/wiki/Q7734943"],"type":"entity"}
+{"canonical_id":"Q7752522","key":"Q7752522","label":"The Moved and the Shaken","same_as":["https://www.wikidata.org/wiki/Q7752522"],"type":"entity"}
+{"canonical_id":"Q7758998","key":"Q7758998","label":"The Queen Victoria","same_as":["https://www.wikidata.org/wiki/Q7758998"],"type":"entity"}
+{"canonical_id":"Q7762181","key":"Q7762181","label":"The Samples","same_as":["https://www.wikidata.org/wiki/Q7762181"],"type":"entity"}
+{"canonical_id":"Q7762182","key":"Q7762182","label":"The Samples","same_as":["https://www.wikidata.org/wiki/Q7762182"],"type":"entity"}
+{"canonical_id":"Q7830454","key":"Q7830454","label":"Toxomerus politus","same_as":["https://www.wikidata.org/wiki/Q7830454"],"type":"entity"}
+{"canonical_id":"Q7830963","key":"Q7830963","label":"Toytown","same_as":["https://www.wikidata.org/wiki/Q7830963"],"type":"entity"}
+{"canonical_id":"Q7832152","key":"Q7832152","label":"Trader-Price","same_as":["https://www.wikidata.org/wiki/Q7832152"],"type":"entity"}
+{"canonical_id":"Q7870570","key":"Q7870570","label":"USS John R. Pierce","same_as":["https://www.wikidata.org/wiki/Q7870570"],"type":"entity"}
+{"canonical_id":"Q7894986","key":"Q7894986","label":"University and College Union","same_as":["https://www.wikidata.org/wiki/Q7894986"],"type":"entity"}
+{"canonical_id":"Q7914466","key":"Q7914466","label":"Vanderbilt University School of Medicine","same_as":["https://www.wikidata.org/wiki/Q7914466"],"type":"entity"}
+{"canonical_id":"Q7934382","key":"Q7934382","label":"Virginia Line","same_as":["https://www.wikidata.org/wiki/Q7934382"],"type":"entity"}
+{"canonical_id":"Q7934877","key":"Q7934877","label":"Virotia","same_as":["https://www.wikidata.org/wiki/Q7934877"],"type":"entity"}
+{"canonical_id":"Q7937224","key":"Q7937224","label":"Vitrea subrimata","same_as":["https://www.wikidata.org/wiki/Q7937224"],"type":"entity"}
+{"canonical_id":"Q7949281","key":"Q7949281","label":"WFGI-FM","same_as":["https://www.wikidata.org/wiki/Q7949281"],"type":"entity"}
+{"canonical_id":"Q7953029","key":"Q7953029","label":"WMRF-FM","same_as":["https://www.wikidata.org/wiki/Q7953029"],"type":"entity"}
+{"canonical_id":"Q7958425","key":"Q7958425","label":"WRSC-FM","same_as":["https://www.wikidata.org/wiki/Q7958425"],"type":"entity"}
+{"canonical_id":"Q7974413","key":"Q7974413","label":"Watershed","same_as":["https://www.wikidata.org/wiki/Q7974413"],"type":"entity"}
+{"canonical_id":"Q7988067","key":"Q7988067","label":"Western Mexico","same_as":["https://www.wikidata.org/wiki/Q7988067"],"type":"entity"}
+{"canonical_id":"Q7999781","key":"Q7999781","label":"Hebron Township","same_as":["https://www.wikidata.org/wiki/Q7999781"],"type":"entity"}
+{"canonical_id":"Q8026741","key":"Q8026741","label":"WireTap","same_as":["https://www.wikidata.org/wiki/Q8026741"],"type":"entity"}
+{"canonical_id":"Q8076919","key":"Q8076919","label":"Ángel Sánchez Martín","same_as":["https://www.wikidata.org/wiki/Q8076919"],"type":"entity"}
+{"canonical_id":"Q8564903","key":"Q8564903","label":"Foster's School","same_as":["https://www.wikidata.org/wiki/Q8564903"],"type":"entity"}
+{"canonical_id":"Q8571655","key":"Q8571655","label":"Alive","same_as":["https://www.wikidata.org/wiki/Q8571655"],"type":"entity"}
+{"canonical_id":"Q8701407","key":"Q8701407","label":"waltz","same_as":["https://www.wikidata.org/wiki/Q8701407"],"type":"entity"}
+{"canonical_id":"Q8963018","key":"Q8963018","label":"Multi-National Force – Iraq","same_as":["https://www.wikidata.org/wiki/Q8963018"],"type":"entity"}
+{"canonical_id":"Q9010450","key":"Q9010450","label":"Jack Branning","same_as":["https://www.wikidata.org/wiki/Q9010450"],"type":"entity"}
+{"canonical_id":"Q10833314","key":"Q10833314","label":"tennis player","same_as":["https://www.wikidata.org/wiki/Q10833314"],"type":"entity"}
+{"canonical_id":"Q10870555","key":"Q10870555","label":"report","same_as":["https://www.wikidata.org/wiki/Q10870555"],"type":"entity"}
+{"canonical_id":"Q11303546","key":"Q11303546","label":"Gothic style","same_as":["https://www.wikidata.org/wiki/Q11303546"],"type":"entity"}
+{"canonical_id":"Q11701102","key":"Q11701102","label":"Gore Metal","same_as":["https://www.wikidata.org/wiki/Q11701102"],"type":"entity"}
+{"canonical_id":"Q11703711","key":"Q11703711","label":"assistant coach","same_as":["https://www.wikidata.org/wiki/Q11703711"],"type":"entity"}
+{"canonical_id":"Q11774891","key":"Q11774891","label":"ice hockey player","same_as":["https://www.wikidata.org/wiki/Q11774891"],"type":"entity"}
+{"canonical_id":"Q11835406","key":"Q11835406","label":"Rudolf Senti","same_as":["https://www.wikidata.org/wiki/Q11835406"],"type":"entity"}
+{"canonical_id":"Q11864051","key":"Q11864051","label":"Hämeenlinnan Pallokerho","same_as":["https://www.wikidata.org/wiki/Q11864051"],"type":"entity"}
+{"canonical_id":"Q11874157","key":"Q11874157","label":"handball at the 2016 Summer Olympics","same_as":["https://www.wikidata.org/wiki/Q11874157"],"type":"entity"}
+{"canonical_id":"Q12022803","key":"Q12022803","label":"Jan Löchel","same_as":["https://www.wikidata.org/wiki/Q12022803"],"type":"entity"}
+{"canonical_id":"Q12353254","key":"Q12353254","label":"North Pacific Ocean","same_as":["https://www.wikidata.org/wiki/Q12353254"],"type":"entity"}
+{"canonical_id":"Q12507243","key":"Q12507243","label":"Purnawarman","same_as":["https://www.wikidata.org/wiki/Q12507243"],"type":"entity"}
+{"canonical_id":"Q12840545","key":"Q12840545","label":"handball player","same_as":["https://www.wikidata.org/wiki/Q12840545"],"type":"entity"}
+{"canonical_id":"Q12859263","key":"Q12859263","label":"orator","same_as":["https://www.wikidata.org/wiki/Q12859263"],"type":"entity"}
+{"canonical_id":"Q13217299","key":"Q13217299","label":"Play Hard","same_as":["https://www.wikidata.org/wiki/Q13217299"],"type":"entity"}
+{"canonical_id":"Q13235160","key":"Q13235160","label":"manufacturer","same_as":["https://www.wikidata.org/wiki/Q13235160"],"type":"entity"}
+{"canonical_id":"Q13395526","key":"Q13395526","label":"Aristotelia erycina","same_as":["https://www.wikidata.org/wiki/Q13395526"],"type":"entity"}
+{"canonical_id":"Q13462698","key":"Q13462698","label":"Chersotis juncta","same_as":["https://www.wikidata.org/wiki/Q13462698"],"type":"entity"}
+{"canonical_id":"Q13561328","key":"Q13561328","label":"surfer","same_as":["https://www.wikidata.org/wiki/Q13561328"],"type":"entity"}
+{"canonical_id":"Q14009165","key":"Q14009165","label":"trapper","same_as":["https://www.wikidata.org/wiki/Q14009165"],"type":"entity"}
+{"canonical_id":"Q14234469","key":"Q14234469","label":"South Central Arizona","same_as":["https://www.wikidata.org/wiki/Q14234469"],"type":"entity"}
+{"canonical_id":"Q14617490","key":"Q14617490","label":"River Melfa","same_as":["https://www.wikidata.org/wiki/Q14617490"],"type":"entity"}
+{"canonical_id":"Q14786282","key":"Q14786282","label":"snatch","same_as":["https://www.wikidata.org/wiki/Q14786282"],"type":"entity"}
+{"canonical_id":"Q14944049","key":"Q14944049","label":"Get Wet","same_as":["https://www.wikidata.org/wiki/Q14944049"],"type":"entity"}
+{"canonical_id":"Q15023366","key":"Q15023366","label":"Copper indium gallium selenide","same_as":["https://www.wikidata.org/wiki/Q15023366"],"type":"entity"}
+{"canonical_id":"Q15053489","key":"Q15053489","label":"Bushman's Revenge","same_as":["https://www.wikidata.org/wiki/Q15053489"],"type":"entity"}
+{"canonical_id":"Q15070021","key":"Q15070021","label":"Frank Redman","same_as":["https://www.wikidata.org/wiki/Q15070021"],"type":"entity"}
+{"canonical_id":"Q15087636","key":"Q15087636","label":"Pavel Aleksandrovich Sevastyanov","same_as":["https://www.wikidata.org/wiki/Q15087636"],"type":"entity"}
+{"canonical_id":"Q15215576","key":"Q15215576","label":"Lulaman Rural District","same_as":["https://www.wikidata.org/wiki/Q15215576"],"type":"entity"}
+{"canonical_id":"Q15265241","key":"Q15265241","label":"Feelin' Myself","same_as":["https://www.wikidata.org/wiki/Q15265241"],"type":"entity"}
+{"canonical_id":"Q15295967","key":"Q15295967","label":"Ripogonum elseyanum","same_as":["https://www.wikidata.org/wiki/Q15295967"],"type":"entity"}
+{"canonical_id":"Q15360275","key":"Q15360275","label":"high school student","same_as":["https://www.wikidata.org/wiki/Q15360275"],"type":"entity"}
+{"canonical_id":"Q15456810","key":"Q15456810","label":"Léonce Jore","same_as":["https://www.wikidata.org/wiki/Q15456810"],"type":"entity"}
+{"canonical_id":"Q15623158","key":"Q15623158","label":"Katie Archibald","same_as":["https://www.wikidata.org/wiki/Q15623158"],"type":"entity"}
+{"canonical_id":"Q15627658","key":"Q15627658","label":"ambassador of the Soviet Union in Poland","same_as":["https://www.wikidata.org/wiki/Q15627658"],"type":"entity"}
+{"canonical_id":"Q15637683","key":"Q15637683","label":"Eileen M. Rehrmann","same_as":["https://www.wikidata.org/wiki/Q15637683"],"type":"entity"}
+{"canonical_id":"Q15927936","key":"Q15927936","label":"Westchester Knicks","same_as":["https://www.wikidata.org/wiki/Q15927936"],"type":"entity"}
+{"canonical_id":"Q15964890","key":"Q15964890","label":"member of the House of Commons of Canada","same_as":["https://www.wikidata.org/wiki/Q15964890"],"type":"entity"}
+{"canonical_id":"Q15993496","key":"Q15993496","label":"A. R. Shaw","same_as":["https://www.wikidata.org/wiki/Q15993496"],"type":"entity"}
+{"canonical_id":"Q16003605","key":"Q16003605","label":"elementary school student","same_as":["https://www.wikidata.org/wiki/Q16003605"],"type":"entity"}
+{"canonical_id":"Q16105622","key":"Q16105622","label":"Habern W. Freeman","same_as":["https://www.wikidata.org/wiki/Q16105622"],"type":"entity"}
+{"canonical_id":"Q16147194","key":"Q16147194","label":"Ministère de la Marine","same_as":["https://www.wikidata.org/wiki/Q16147194"],"type":"entity"}
+{"canonical_id":"Q16192072","key":"Q16192072","label":"2013–14 NCAA Division I men's basketball season","same_as":["https://www.wikidata.org/wiki/Q16192072"],"type":"entity"}
+{"canonical_id":"Q16192093","key":"Q16192093","label":"2014–15 NCAA Division I men's basketball season","same_as":["https://www.wikidata.org/wiki/Q16192093"],"type":"entity"}
+{"canonical_id":"Q16195965","key":"Q16195965","label":"Phil Danaher","same_as":["https://www.wikidata.org/wiki/Q16195965"],"type":"entity"}
+{"canonical_id":"Q16308156","key":"Q16308156","label":"scholar of English","same_as":["https://www.wikidata.org/wiki/Q16308156"],"type":"entity"}
+{"canonical_id":"Q16350067","key":"Q16350067","label":"Durrës Municipality","same_as":["https://www.wikidata.org/wiki/Q16350067"],"type":"entity"}
+{"canonical_id":"Q16773145","key":"Q16773145","label":"Charles Rous-Marten","same_as":["https://www.wikidata.org/wiki/Q16773145"],"type":"entity"}
+{"canonical_id":"Q16842261","key":"Q16842261","label":"HelioVolt","same_as":["https://www.wikidata.org/wiki/Q16842261"],"type":"entity"}
+{"canonical_id":"Q16858932","key":"Q16858932","label":"Chandangaon","same_as":["https://www.wikidata.org/wiki/Q16858932"],"type":"entity"}
+{"canonical_id":"Q16919374","key":"Q16919374","label":"City of Southampton Swimming Club","same_as":["https://www.wikidata.org/wiki/Q16919374"],"type":"entity"}
+{"canonical_id":"Q16932993","key":"Q16932993","label":"New Jersey Line","same_as":["https://www.wikidata.org/wiki/Q16932993"],"type":"entity"}
+{"canonical_id":"Q16933808","key":"Q16933808","label":"Militia","same_as":["https://www.wikidata.org/wiki/Q16933808"],"type":"entity"}
+{"canonical_id":"Q16957812","key":"Q16957812","label":"Nicholas Rescher Prize for Systematic Philosophy","same_as":["https://www.wikidata.org/wiki/Q16957812"],"type":"entity"}
+{"canonical_id":"Q16958139","key":"Q16958139","label":"Humanity","same_as":["https://www.wikidata.org/wiki/Q16958139"],"type":"entity"}
+{"canonical_id":"Q17067223","key":"Q17067223","label":"Philippine Statistics Authority","same_as":["https://www.wikidata.org/wiki/Q17067223"],"type":"entity"}
+{"canonical_id":"Q17073815","key":"Q17073815","label":"Paleobiology Database","same_as":["https://www.wikidata.org/wiki/Q17073815"],"type":"entity"}
+{"canonical_id":"Q17199087","key":"Q17199087","label":"Monti delle Mainarde","same_as":["https://www.wikidata.org/wiki/Q17199087"],"type":"entity"}
+{"canonical_id":"Q17403146","key":"Q17403146","label":"Thelma Young","same_as":["https://www.wikidata.org/wiki/Q17403146"],"type":"entity"}
+{"canonical_id":"Q17486376","key":"Q17486376","label":"sport shooter","same_as":["https://www.wikidata.org/wiki/Q17486376"],"type":"entity"}
+{"canonical_id":"Q18057594","key":"Q18057594","label":"Gabriel Ferrand","same_as":["https://www.wikidata.org/wiki/Q18057594"],"type":"entity"}
+{"canonical_id":"Q18149966","key":"Q18149966","label":"Downton Creek","same_as":["https://www.wikidata.org/wiki/Q18149966"],"type":"entity"}
+{"canonical_id":"Q18393722","key":"Q18393722","label":"Rebound","same_as":["https://www.wikidata.org/wiki/Q18393722"],"type":"entity"}
+{"canonical_id":"Q18554460","key":"Q18554460","label":"Unknown","same_as":["https://www.wikidata.org/wiki/Q18554460"],"type":"entity"}
+{"canonical_id":"Q18686086","key":"Q18686086","label":"Jordi Fabregat","same_as":["https://www.wikidata.org/wiki/Q18686086"],"type":"entity"}
+{"canonical_id":"Q18912826","key":"Q18912826","label":"anterior cruciate ligament injury","same_as":["https://www.wikidata.org/wiki/Q18912826"],"type":"entity"}
+{"canonical_id":"Q18931911","key":"Q18931911","label":"theorist","same_as":["https://www.wikidata.org/wiki/Q18931911"],"type":"entity"}
+{"canonical_id":"Q19880664","key":"Q19880664","label":"JLA","same_as":["https://www.wikidata.org/wiki/Q19880664"],"type":"entity"}
+{"canonical_id":"Q19940089","key":"Q19940089","label":"managing director","same_as":["https://www.wikidata.org/wiki/Q19940089"],"type":"entity"}
+{"canonical_id":"Q20064926","key":"Q20064926","label":"member of the State Senate of Maryland","same_as":["https://www.wikidata.org/wiki/Q20064926"],"type":"entity"}
+{"canonical_id":"Q20704265","key":"Q20704265","label":"Game of Thrones, season 6","same_as":["https://www.wikidata.org/wiki/Q20704265"],"type":"entity"}
+{"canonical_id":"Q20739489","key":"Q20739489","label":"nephrologist","same_as":["https://www.wikidata.org/wiki/Q20739489"],"type":"entity"}
+{"canonical_id":"Q20971519","key":"Q20971519","label":"Passport Capital","same_as":["https://www.wikidata.org/wiki/Q20971519"],"type":"entity"}
+{"canonical_id":"Q20979428","key":"Q20979428","label":"Unmeasured Strength","same_as":["https://www.wikidata.org/wiki/Q20979428"],"type":"entity"}
+{"canonical_id":"Q21040968","key":"Q21040968","label":"Vilavade railway station","same_as":["https://www.wikidata.org/wiki/Q21040968"],"type":"entity"}
+{"canonical_id":"Q21040970","key":"Q21040970","label":"Adavali railway station","same_as":["https://www.wikidata.org/wiki/Q21040970"],"type":"entity"}
+{"canonical_id":"Q21040974","key":"Q21040974","label":"Rajapur Road railway station","same_as":["https://www.wikidata.org/wiki/Q21040974"],"type":"entity"}
+{"canonical_id":"Q21066526","key":"Q21066526","label":"Greg Whittington","same_as":["https://www.wikidata.org/wiki/Q21066526"],"type":"entity"}
+{"canonical_id":"Q21189135","key":"Q21189135","label":"What Are Records?","same_as":["https://www.wikidata.org/wiki/Q21189135"],"type":"entity"}
+{"canonical_id":"Q22079737","key":"Q22079737","label":"Podium Ambition Pro Cycling","same_as":["https://www.wikidata.org/wiki/Q22079737"],"type":"entity"}
+{"canonical_id":"Q22612688","key":"Q22612688","label":"Whitetop Mountain","same_as":["https://www.wikidata.org/wiki/Q22612688"],"type":"entity"}
+{"canonical_id":"Q22683250","key":"Q22683250","label":"lieutenant","same_as":["https://www.wikidata.org/wiki/Q22683250"],"type":"entity"}
+{"canonical_id":"Q22810750","key":"Q22810750","label":"Joseph Ravenscroft Elsey","same_as":["https://www.wikidata.org/wiki/Q22810750"],"type":"entity"}
+{"canonical_id":"Q22813352","key":"Q22813352","label":"traveler","same_as":["https://www.wikidata.org/wiki/Q22813352"],"type":"entity"}
+{"canonical_id":"Q23045120","key":"Q23045120","label":"2016–17 Liiga season","same_as":["https://www.wikidata.org/wiki/Q23045120"],"type":"entity"}
+{"canonical_id":"Q23051084","key":"Q23051084","label":"2018 Formula One World Championship","same_as":["https://www.wikidata.org/wiki/Q23051084"],"type":"entity"}
+{"canonical_id":"Q23736538","key":"Q23736538","label":"Store Egholm","same_as":["https://www.wikidata.org/wiki/Q23736538"],"type":"entity"}
+{"canonical_id":"Q23744889","key":"Q23744889","label":"Lille Egholm","same_as":["https://www.wikidata.org/wiki/Q23744889"],"type":"entity"}
+{"canonical_id":"Q23835475","key":"Q23835475","label":"assistant","same_as":["https://www.wikidata.org/wiki/Q23835475"],"type":"entity"}
+{"canonical_id":"Q24006244","key":"Q24006244","label":"Vita","same_as":["https://www.wikidata.org/wiki/Q24006244"],"type":"entity"}
+{"canonical_id":"Q24837023","key":"Q24837023","label":"light grey","same_as":["https://www.wikidata.org/wiki/Q24837023"],"type":"entity"}
+{"canonical_id":"Q24885932","key":"Q24885932","label":"Belmond Andean Explorer","same_as":["https://www.wikidata.org/wiki/Q24885932"],"type":"entity"}
+{"canonical_id":"Q25344558","key":"Q25344558","label":"2016–17 UCI Track Cycling World Cup","same_as":["https://www.wikidata.org/wiki/Q25344558"],"type":"entity"}
+{"canonical_id":"Q26720335","key":"Q26720335","label":"Sameli Ventelä","same_as":["https://www.wikidata.org/wiki/Q26720335"],"type":"entity"}
+{"canonical_id":"Q26812659","key":"Q26812659","label":"F1 Paddock Pass","same_as":["https://www.wikidata.org/wiki/Q26812659"],"type":"entity"}
+{"canonical_id":"Q27451900","key":"Q27451900","label":"Neah Evans","same_as":["https://www.wikidata.org/wiki/Q27451900"],"type":"entity"}
+{"canonical_id":"Q27868077","key":"Q27868077","label":"documentary television series","same_as":["https://www.wikidata.org/wiki/Q27868077"],"type":"entity"}
+{"canonical_id":"Q28223561","key":"Q28223561","label":"Pinanwal","same_as":["https://www.wikidata.org/wiki/Q28223561"],"type":"entity"}
+{"canonical_id":"Q28446681","key":"Q28446681","label":"1930 NCAA Swimming and Diving Championships","same_as":["https://www.wikidata.org/wiki/Q28446681"],"type":"entity"}
+{"canonical_id":"Q29983238","key":"Q29983238","label":"2017–18 UCI Track Cycling World Cup","same_as":["https://www.wikidata.org/wiki/Q29983238"],"type":"entity"}
+{"canonical_id":"Q30325498","key":"Q30325498","label":"1899 Puerto Rico Census","same_as":["https://www.wikidata.org/wiki/Q30325498"],"type":"entity"}
+{"canonical_id":"Q30607539","key":"Q30607539","label":"Dark Lady","same_as":["https://www.wikidata.org/wiki/Q30607539"],"type":"entity"}
+{"canonical_id":"Q31616708","key":"Q31616708","label":"Monte Petroso","same_as":["https://www.wikidata.org/wiki/Q31616708"],"type":"entity"}
+{"canonical_id":"Q31619481","key":"Q31619481","label":"Monte Mare","same_as":["https://www.wikidata.org/wiki/Q31619481"],"type":"entity"}
+{"canonical_id":"Q31624561","key":"Q31624561","label":"Monte Cavallo","same_as":["https://www.wikidata.org/wiki/Q31624561"],"type":"entity"}
+{"canonical_id":"Q37999506","key":"Q37999506","label":"S. M. Anwar","same_as":["https://www.wikidata.org/wiki/Q37999506"],"type":"entity"}
+{"canonical_id":"Q41173535","key":"Q41173535","label":"2019 Formula One World Championship","same_as":["https://www.wikidata.org/wiki/Q41173535"],"type":"entity"}
+{"canonical_id":"Q41968785","key":"Q41968785","label":"Winter Garden Theatre","same_as":["https://www.wikidata.org/wiki/Q41968785"],"type":"entity"}
+{"canonical_id":"Q42625830","key":"Q42625830","label":"prospector","same_as":["https://www.wikidata.org/wiki/Q42625830"],"type":"entity"}
+{"canonical_id":"Q47165448","key":"Q47165448","label":"associate member","same_as":["https://www.wikidata.org/wiki/Q47165448"],"type":"entity"}
+{"canonical_id":"Q48940420","key":"Q48940420","label":"Russian Women's Ice Hockey Championship","same_as":["https://www.wikidata.org/wiki/Q48940420"],"type":"entity"}
+{"canonical_id":"Q54669958","key":"Q54669958","label":"Executive of Harford County, Maryland","same_as":["https://www.wikidata.org/wiki/Q54669958"],"type":"entity"}
+{"canonical_id":"Q55982999","key":"Q55982999","label":"pastoralist","same_as":["https://www.wikidata.org/wiki/Q55982999"],"type":"entity"}
+{"canonical_id":"Q56273810","key":"Q56273810","label":"Todi","same_as":["https://www.wikidata.org/wiki/Q56273810"],"type":"entity"}
+{"canonical_id":"Q60295323","key":"Q60295323","label":"Thala pallida","same_as":["https://www.wikidata.org/wiki/Q60295323"],"type":"entity"}
+{"canonical_id":"Q60760278","key":"Q60760278","label":"Cumberland House Cree Nation","same_as":["https://www.wikidata.org/wiki/Q60760278"],"type":"entity"}
+{"canonical_id":"Q60834955","key":"Q60834955","label":"Rosalind","same_as":["https://www.wikidata.org/wiki/Q60834955"],"type":"entity"}
+{"canonical_id":"Q61022630","key":"Q61022630","label":"officer","same_as":["https://www.wikidata.org/wiki/Q61022630"],"type":"entity"}
+{"canonical_id":"Q61927936","key":"Q61927936","label":"2019 European Athletics Indoor Championships – women's 60 metres","same_as":["https://www.wikidata.org/wiki/Q61927936"],"type":"entity"}
+{"canonical_id":"Q62027261","key":"Q62027261","label":"Matt Harvey","same_as":["https://www.wikidata.org/wiki/Q62027261"],"type":"entity"}
+{"canonical_id":"Q63537266","key":"Q63537266","label":"Rosaline","same_as":["https://www.wikidata.org/wiki/Q63537266"],"type":"entity"}
+{"canonical_id":"Q63755226","key":"Q63755226","label":"consulting engineer","same_as":["https://www.wikidata.org/wiki/Q63755226"],"type":"entity"}
+{"canonical_id":"Q64759135","key":"Q64759135","label":"Will Buxton","same_as":["https://www.wikidata.org/wiki/Q64759135"],"type":"entity"}
+{"canonical_id":"Q65077540","key":"Q65077540","label":"Army general","same_as":["https://www.wikidata.org/wiki/Q65077540"],"type":"entity"}
+{"canonical_id":"Q65081471","key":"Q65081471","label":"Let's Go","same_as":["https://www.wikidata.org/wiki/Q65081471"],"type":"entity"}
+{"canonical_id":"Q65118168","key":"Q65118168","label":"To Reach a Dream","same_as":["https://www.wikidata.org/wiki/Q65118168"],"type":"entity"}
+{"canonical_id":"Q65554733","key":"Q65554733","label":"agricultural development","same_as":["https://www.wikidata.org/wiki/Q65554733"],"type":"entity"}
+{"canonical_id":"Q66889825","key":"Q66889825","label":"superintendent","same_as":["https://www.wikidata.org/wiki/Q66889825"],"type":"entity"}
+{"canonical_id":"Q69699844","key":"Q69699844","label":"film review","same_as":["https://www.wikidata.org/wiki/Q69699844"],"type":"entity"}
+{"canonical_id":"Q76102587","key":"Q76102587","label":"Marie Adelaide de Cheirouze Gräfin von Lemberg","same_as":["https://www.wikidata.org/wiki/Q76102587"],"type":"entity"}
+{"canonical_id":"Q91031120","key":"Q91031120","label":"RIAA platinum album record","same_as":["https://www.wikidata.org/wiki/Q91031120"],"type":"entity"}
+{"canonical_id":"Q91082197","key":"Q91082197","label":"RIAA gold album record","same_as":["https://www.wikidata.org/wiki/Q91082197"],"type":"entity"}
+{"canonical_id":"Q96279339","key":"Q96279339","label":"Unknown","same_as":["https://www.wikidata.org/wiki/Q96279339"],"type":"entity"}
+{"canonical_id":"Q96376604","key":"Q96376604","label":"Dragon's Mouth","same_as":["https://www.wikidata.org/wiki/Q96376604"],"type":"entity"}
+{"canonical_id":"Q104835300","key":"Q104835300","label":"The Monitoring Group","same_as":["https://www.wikidata.org/wiki/Q104835300"],"type":"entity"}
+{"canonical_id":"Q106194713","key":"Q106194713","label":"Wipplingerstraße","same_as":["https://www.wikidata.org/wiki/Q106194713"],"type":"entity"}
+{"canonical_id":"Q108402810","key":"Q108402810","label":"Mandan Public Schools","same_as":["https://www.wikidata.org/wiki/Q108402810"],"type":"entity"}
+{"canonical_id":"Q109981393","key":"Q109981393","label":"Unknown","same_as":["https://www.wikidata.org/wiki/Q109981393"],"type":"entity"}
+{"canonical_id":"Q110993687","key":"Q110993687","label":"distinguished professor","same_as":["https://www.wikidata.org/wiki/Q110993687"],"type":"entity"}
+{"canonical_id":"Q111784255","key":"Q111784255","label":"rose pink","same_as":["https://www.wikidata.org/wiki/Q111784255"],"type":"entity"}
+{"canonical_id":"Q113843169","key":"Q113843169","label":"Shannon McRae","same_as":["https://www.wikidata.org/wiki/Q113843169"],"type":"entity"}

@@ -28,6 +28,10 @@ The project follows semantic versioning for the reference implementation and spe
   with the same metrics as the built-in benchmark. Recorded runs accept only
   `plain_text`, require exact dataset and registry hashes, and reject gold or
   EAT fields.
+- Reproducible TF-IDF entity-retrieval run on the independent Wiki-Fair v2
+  no-coreference dev/test split, including pinned source data, a closed
+  Wikidata candidate registry, complete recorded predictions, shared scoring
+  and CI reproduction.
 
 ### Policy
 

@@ -134,7 +134,7 @@ Each benchmark condition is a `BaselineAdapter` (see [`src/eat_baselines.py`](sr
 
 The `linker` condition reads only the plain text; it never receives the author's tags or the gold IDs. It detects complete registry labels, prefers the longest overlapping label, uses a nearby type word as a conservative cue (for example `project` near `Phoenix`), and otherwise abstains. On the current corpus the ambiguous mentions deliberately carry no type cue, so this simple linker matches the plain baseline while `eat_inline` resolves every case. This is a mechanical offline baseline, not evidence that a stronger model could not recover those entities. Its purpose is to make automatic linkers directly scorable without giving them perfect author annotations.
 
-Model-based linkers — a named-entity recogniser, an entity linker, an LLM resolver or a retriever/reranker — implement the same `EntityLinker` interface (`requires_model = True`) and plug into `LinkerAdapter` unchanged. They are **intentionally not bundled**: they need network access and non-deterministic models, which would make the benchmark irreproducible, and shipping a synthetic stand-in with an invented error rate would fabricate evidence. Each condition reports a deterministic cost proxy (registry lookups, label scans, references read, estimated tokens); wall-clock latency is left to callers as informational context, never a pass/fail gate.
+Model-based linkers — a named-entity recogniser, an entity linker, an LLM resolver or a retriever/reranker — use the same prediction and scoring boundary. The default synthetic benchmark remains model-free. A separate, pinned TF-IDF runner is included for the public-corpus experiment below; it is installed through the optional `model` dependency and recorded before deterministic replay. Each condition reports a deterministic cost proxy (registry lookups, label scans, references read, estimated tokens); wall-clock latency is left to callers as informational context, never as a pass/fail gate.
 
 ### Recorded model runs
 
@@ -152,7 +152,60 @@ The validator rejects missing, duplicate or unknown cases, changed datasets, lab
 python scripts/run_recorded_linker_benchmark.py path/to/linker-run.json
 ```
 
-No example model output is committed because an invented artifact would look like evidence. A published result must come from a named, pinned model and include the complete run artifact.
+The committed Wiki-Fair result below was produced by its named, pinned model and includes the complete run artifact. New published results must meet the same requirement; illustrative or invented model output is not accepted as evidence.
+
+### Independent public-corpus model run
+
+The repository now includes a reproducible run on the no-coreference split of
+[Wiki-Fair v2](https://github.com/ad-freiburg/wiki-entity-linker), pinned to
+upstream commit `c9a3fe9c4933888d756d702fdb9ff607fc36aa26`:
+
+- 80 development articles train entity profiles and mention aliases;
+- 40 separate test articles are used only for evaluation;
+- 1,063 Wikidata entities form a closed candidate registry;
+- scikit-learn `1.8.0` builds a character 3–5-gram TF-IDF retriever;
+- inference receives a separate file containing exactly `id` and `plain_text`;
+- the scorer alone receives test `gold_ids`.
+
+Results use the same canonical-ID set metrics as the recorded-run scorer. A
+duplicate entity within an article therefore counts once; these are not
+mention-level scores.
+
+| Condition | Precision | Recall | F1 | Exact match |
+|---|---:|---:|---:|---:|
+| TF-IDF model linker | `0.7247` | `0.6937` | `0.7089` | `0.125` |
+| Plain exact-label baseline | `0.6667` | `0.7072` | `0.6863` | `0.05` |
+
+The model run improves F1 by `0.0226` over the label baseline on this setup,
+mainly by reducing false positives. This is real non-synthetic linker evidence,
+but it is deliberately narrow. Candidate names are constructed from entities
+annotated in the dev and test splits rather than all of Wikidata, alias learning
+uses dev only, and no EAT-annotated condition exists for this public corpus.
+The result therefore does not establish that EAT Inline beats the model.
+
+Reproduce the frozen run and replay its score:
+
+```bash
+python -m pip install -e '.[model]'
+RUNNER_COMMIT=$(python -c "import json; print(json.load(open('benchmark/results/wiki-fair-v2-tfidf-linker-run.json'))['runner']['commit'])")
+python scripts/run_tfidf_linker.py \
+  --training benchmark/external/wiki-fair-v2/dev.training.jsonl \
+  --input benchmark/external/wiki-fair-v2/test.inputs.jsonl \
+  --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
+  --runner-commit "$RUNNER_COMMIT" \
+  --output /tmp/wiki-fair-v2-tfidf-linker-run.json
+python scripts/run_recorded_linker_benchmark.py \
+  /tmp/wiki-fair-v2-tfidf-linker-run.json \
+  --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
+  --output-dir /tmp/wiki-fair-v2-results
+```
+
+Source checksums, transformation rules, attribution and data terms are in
+[`benchmark/external/wiki-fair-v2/`](benchmark/external/wiki-fair-v2/).
 
 ## Automated verification
 
@@ -160,7 +213,7 @@ No example model output is committed because an invented artifact would look lik
 |---|---|
 | `CI` | Runs unit tests on supported Python versions |
 | `Conformance` | Checks the implementation against versioned examples |
-| `Benchmark` | Validates the corpus and runs parser, overhead and paired comparative benchmarks |
+| `Benchmark` | Validates the corpora, runs the deterministic benchmarks and reproduces the recorded Wiki-Fair model run |
 | `Docs` | Detects version drift, invalid JSON, missing foundation files and retired names or syntax |
 
 Run the same checks locally:
@@ -185,6 +238,7 @@ comparative-summary.md
 dataset-validation.json
 recorded-linker-results.json       # only after replaying an external run
 recorded-linker-summary.md         # only after replaying an external run
+wiki-fair-v2-tfidf-linker-run.json # complete public-corpus predictions
 ```
 
 ## Project foundation
@@ -199,12 +253,15 @@ The core grammar is intentionally conservative. New entity types do not require 
 
 ## Evidence boundary
 
-Version `0.3.2` establishes a testable notation, reference implementation, gold corpus and paired benchmark harness.
+Version `0.3.2` establishes a testable notation, reference implementation,
+gold corpus, paired benchmark harness and one independent public-corpus model
+run.
 
 It does not yet prove:
 
 - acceptable writing friction in every context;
 - improved performance against strong NER or LLM baselines;
+- superiority over the included TF-IDF model on the same public corpus;
 - improved retrieval or RAG outcomes;
 - universal model compatibility;
 - production readiness.
@@ -216,12 +273,14 @@ Those claims require larger public datasets and experiments with people, models 
 ```text
 .github/workflows/       automated checks
 benchmark/corpora/       versioned gold corpus and entity registry
+benchmark/external/      pinned public-corpus training, input and scorer data
 benchmark/results/       generated benchmark artifacts
 schemas/                 portable JSON Schemas
 scripts/                 verification and benchmark scripts
 src/eat_inline.py        minimal reference implementation
 src/eat_baselines.py     benchmark adapter and scoring framework
 src/eat_recorded_runs.py recorded model-run validation and replay
+scripts/run_tfidf_linker.py reproducible Wiki-Fair model runner
 tests/                   unit tests and conformance examples
 SPEC.md                  normative experimental specification
 GOVERNANCE.md            change and contribution policy

@@ -1,0 +1,6211 @@
+{
+  "cases": [
+    {
+      "cost": {
+        "estimated_tokens": 283,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-37040882",
+      "mentions": [
+        {
+          "end": 12,
+          "key": "Q17403146",
+          "label": "Thelma Young",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 26,
+          "key": "Q17403146",
+          "label": "Thelma Young",
+          "start": 14,
+          "type": "entity"
+        },
+        {
+          "end": 93,
+          "key": "Q23666",
+          "label": "Great Britain",
+          "start": 80,
+          "type": "entity"
+        },
+        {
+          "end": 385,
+          "key": "Q16919374",
+          "label": "City of Southampton Swimming Club",
+          "start": 352,
+          "type": "entity"
+        },
+        {
+          "end": 477,
+          "key": "Q628099",
+          "label": "Coach",
+          "start": 472,
+          "type": "entity"
+        },
+        {
+          "end": 515,
+          "key": "Q628099",
+          "label": "Coach",
+          "start": 510,
+          "type": "entity"
+        },
+        {
+          "end": 695,
+          "key": "Q90",
+          "label": "Paris",
+          "start": 690,
+          "type": "entity"
+        },
+        {
+          "end": 703,
+          "key": "Q142",
+          "label": "France",
+          "start": 697,
+          "type": "entity"
+        },
+        {
+          "end": 721,
+          "key": "Q208045",
+          "label": "gold",
+          "start": 717,
+          "type": "entity"
+        },
+        {
+          "end": 815,
+          "key": "Q208045",
+          "label": "gold",
+          "start": 811,
+          "type": "entity"
+        },
+        {
+          "end": 1119,
+          "key": "Q208045",
+          "label": "gold",
+          "start": 1115,
+          "type": "entity"
+        },
+        {
+          "end": 1194,
+          "key": "Q406039",
+          "label": "gold medal",
+          "start": 1184,
+          "type": "entity"
+        },
+        {
+          "end": 1279,
+          "key": "Q55",
+          "label": "Netherlands",
+          "start": 1268,
+          "type": "entity"
+        },
+        {
+          "end": 1336,
+          "key": "Q208045",
+          "label": "gold",
+          "start": 1332,
+          "type": "entity"
+        },
+        {
+          "end": 1445,
+          "key": "Q787674",
+          "label": "Bachelor of Science",
+          "start": 1426,
+          "type": "entity"
+        },
+        {
+          "end": 1652,
+          "key": "Q31920",
+          "label": "swimming",
+          "start": 1644,
+          "type": "entity"
+        },
+        {
+          "end": 1797,
+          "key": "Q31920",
+          "label": "swimming",
+          "start": 1789,
+          "type": "entity"
+        },
+        {
+          "end": 1916,
+          "key": "Q31920",
+          "label": "Swimming",
+          "start": 1908,
+          "type": "entity"
+        },
+        {
+          "end": 1935,
+          "key": "Q1313",
+          "label": "Summer",
+          "start": 1929,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 124,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-61951348",
+      "mentions": [
+        {
+          "end": 14,
+          "key": "Q26720335",
+          "label": "Sameli Ventelä",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 30,
+          "key": "Q26720335",
+          "label": "Sameli Ventelä",
+          "start": 16,
+          "type": "entity"
+        },
+        {
+          "end": 88,
+          "key": "Q41466",
+          "label": "ice hockey",
+          "start": 78,
+          "type": "entity"
+        },
+        {
+          "end": 189,
+          "key": "Q5038893",
+          "label": "career",
+          "start": 183,
+          "type": "entity"
+        },
+        {
+          "end": 198,
+          "key": "Q1474502",
+          "label": "HPK",
+          "start": 195,
+          "type": "entity"
+        },
+        {
+          "end": 273,
+          "key": "Q25379",
+          "label": "play",
+          "start": 269,
+          "type": "entity"
+        },
+        {
+          "end": 316,
+          "key": "Q1740443",
+          "label": "SaPKo",
+          "start": 311,
+          "type": "entity"
+        },
+        {
+          "end": 326,
+          "key": "Q750918",
+          "label": "Mestis",
+          "start": 320,
+          "type": "entity"
+        },
+        {
+          "end": 433,
+          "key": "Q1474497",
+          "label": "Lukko",
+          "start": 428,
+          "type": "entity"
+        },
+        {
+          "end": 487,
+          "key": "Q23045120",
+          "label": "2016–17 Liiga season",
+          "start": 467,
+          "type": "entity"
+        },
+        {
+          "end": 558,
+          "key": "Q750918",
+          "label": "Mestis",
+          "start": 552,
+          "type": "entity"
+        },
+        {
+          "end": 621,
+          "key": "Q23051084",
+          "label": "2018",
+          "start": 617,
+          "type": "entity"
+        },
+        {
+          "end": 693,
+          "key": "Q214",
+          "label": "Slovakia",
+          "start": 685,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 4409,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-2000128",
+      "mentions": [
+        {
+          "end": 2430,
+          "key": "Q3400985",
+          "label": "academics",
+          "start": 2421,
+          "type": "entity"
+        },
+        {
+          "end": 7089,
+          "key": "Q10870555",
+          "label": "report",
+          "start": 7083,
+          "type": "entity"
+        },
+        {
+          "end": 7156,
+          "key": "Q30",
+          "label": "American",
+          "start": 7148,
+          "type": "entity"
+        },
+        {
+          "end": 9024,
+          "key": "Q18554460",
+          "label": "unknown",
+          "start": 9017,
+          "type": "entity"
+        },
+        {
+          "end": 10095,
+          "key": "Q876720",
+          "label": "via",
+          "start": 10092,
+          "type": "entity"
+        },
+        {
+          "end": 10284,
+          "key": "Q876720",
+          "label": "via",
+          "start": 10281,
+          "type": "entity"
+        },
+        {
+          "end": 11253,
+          "key": "Q37226",
+          "label": "teacher",
+          "start": 11246,
+          "type": "entity"
+        },
+        {
+          "end": 12311,
+          "key": "Q876720",
+          "label": "via",
+          "start": 12308,
+          "type": "entity"
+        },
+        {
+          "end": 13393,
+          "key": "Q25379",
+          "label": "play",
+          "start": 13389,
+          "type": "entity"
+        },
+        {
+          "end": 14070,
+          "key": "Q48282",
+          "label": "student",
+          "start": 14063,
+          "type": "entity"
+        },
+        {
+          "end": 14148,
+          "key": "Q148",
+          "label": "China",
+          "start": 14143,
+          "type": "entity"
+        },
+        {
+          "end": 15897,
+          "key": "Q11661",
+          "label": "information technology",
+          "start": 15875,
+          "type": "entity"
+        },
+        {
+          "end": 18101,
+          "key": "Q25379",
+          "label": "play",
+          "start": 18097,
+          "type": "entity"
+        },
+        {
+          "end": 18388,
+          "key": "Q160381",
+          "label": "Western",
+          "start": 18381,
+          "type": "entity"
+        },
+        {
+          "end": 20670,
+          "key": "Q918",
+          "label": "Twitter",
+          "start": 20663,
+          "type": "entity"
+        },
+        {
+          "end": 24376,
+          "key": "Q92747",
+          "label": "Eric Schmidt",
+          "start": 24364,
+          "type": "entity"
+        },
+        {
+          "end": 24391,
+          "key": "Q95",
+          "label": "Google",
+          "start": 24385,
+          "type": "entity"
+        },
+        {
+          "end": 24420,
+          "key": "Q356",
+          "label": "Google+",
+          "start": 24413,
+          "type": "entity"
+        },
+        {
+          "end": 24525,
+          "key": "Q356",
+          "label": "Google+",
+          "start": 24518,
+          "type": "entity"
+        },
+        {
+          "end": 26136,
+          "key": "Q13974",
+          "label": "NBC",
+          "start": 26133,
+          "type": "entity"
+        },
+        {
+          "end": 26464,
+          "key": "Q13974",
+          "label": "NBC",
+          "start": 26461,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 185,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-61494965",
+      "mentions": [
+        {
+          "end": 20,
+          "key": "Q1162635",
+          "label": "SKIF Nizhny Novgorod",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 42,
+          "key": "Q1162635",
+          "label": "SKIF Nizhny Novgorod",
+          "start": 22,
+          "type": "entity"
+        },
+        {
+          "end": 105,
+          "key": "Q159",
+          "label": "Russian",
+          "start": 98,
+          "type": "entity"
+        },
+        {
+          "end": 124,
+          "key": "Q41466",
+          "label": "ice hockey",
+          "start": 114,
+          "type": "entity"
+        },
+        {
+          "end": 154,
+          "key": "Q891",
+          "label": "Nizhny Novgorod",
+          "start": 139,
+          "type": "entity"
+        },
+        {
+          "end": 162,
+          "key": "Q159",
+          "label": "Russia",
+          "start": 156,
+          "type": "entity"
+        },
+        {
+          "end": 255,
+          "key": "Q41466",
+          "label": "ice hockey",
+          "start": 245,
+          "type": "entity"
+        },
+        {
+          "end": 265,
+          "key": "Q159",
+          "label": "Russia",
+          "start": 259,
+          "type": "entity"
+        },
+        {
+          "end": 298,
+          "key": "Q159",
+          "label": "Russian",
+          "start": 291,
+          "type": "entity"
+        },
+        {
+          "end": 357,
+          "key": "Q649",
+          "label": "Moscow",
+          "start": 351,
+          "type": "entity"
+        },
+        {
+          "end": 445,
+          "key": "Q649",
+          "label": "Moscow",
+          "start": 439,
+          "type": "entity"
+        },
+        {
+          "end": 611,
+          "key": "Q649",
+          "label": "Moscow",
+          "start": 605,
+          "type": "entity"
+        },
+        {
+          "end": 630,
+          "key": "Q891",
+          "label": "Nizhny Novgorod",
+          "start": 615,
+          "type": "entity"
+        },
+        {
+          "end": 668,
+          "key": "Q1162635",
+          "label": "SKIF Nizhny Novgorod",
+          "start": 648,
+          "type": "entity"
+        },
+        {
+          "end": 775,
+          "key": "Q568805",
+          "label": "Torpedo Nizhny Novgorod",
+          "start": 752,
+          "type": "entity"
+        },
+        {
+          "end": 883,
+          "key": "Q1162635",
+          "label": "SKIF Nizhny Novgorod",
+          "start": 863,
+          "type": "entity"
+        },
+        {
+          "end": 967,
+          "key": "Q1162635",
+          "label": "SKIF Nizhny Novgorod",
+          "start": 947,
+          "type": "entity"
+        },
+        {
+          "end": 1086,
+          "key": "Q42884",
+          "label": "German",
+          "start": 1080,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 31,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-47570184",
+      "mentions": [
+        {
+          "end": 24,
+          "key": "Q21040968",
+          "label": "Vilavade railway station",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 50,
+          "key": "Q21040968",
+          "label": "Vilavade railway station",
+          "start": 26,
+          "type": "entity"
+        },
+        {
+          "end": 81,
+          "key": "Q1706472",
+          "label": "Konkan Railway",
+          "start": 67,
+          "type": "entity"
+        },
+        {
+          "end": 142,
+          "key": "Q21040970",
+          "label": "Adavali railway station",
+          "start": 119,
+          "type": "entity"
+        },
+        {
+          "end": 201,
+          "key": "Q21040974",
+          "label": "Rajapur Road railway station",
+          "start": 173,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 61,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-14261177",
+      "mentions": [
+        {
+          "end": 22,
+          "key": "Q75836",
+          "label": "Luqa St. Andrew's F.C.",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 28,
+          "key": "Q475585",
+          "label": "Luqa",
+          "start": 24,
+          "type": "entity"
+        },
+        {
+          "end": 106,
+          "key": "Q160381",
+          "label": "western",
+          "start": 99,
+          "type": "entity"
+        },
+        {
+          "end": 119,
+          "key": "Q475585",
+          "label": "Luqa",
+          "start": 115,
+          "type": "entity"
+        },
+        {
+          "end": 128,
+          "key": "Q233",
+          "label": "Malta",
+          "start": 123,
+          "type": "entity"
+        },
+        {
+          "end": 222,
+          "key": "Q742747",
+          "label": "2010–11",
+          "start": 215,
+          "type": "entity"
+        },
+        {
+          "end": 313,
+          "key": "Q58239",
+          "label": "Maltese Third Division",
+          "start": 291,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 1245,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-3586255",
+      "mentions": [
+        {
+          "end": 11,
+          "key": "Q1961776",
+          "label": "NZR K class",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 35,
+          "key": "Q1961776",
+          "label": "NZR K class",
+          "start": 24,
+          "type": "entity"
+        },
+        {
+          "end": 77,
+          "key": "Q30",
+          "label": "American",
+          "start": 69,
+          "type": "entity"
+        },
+        {
+          "end": 121,
+          "key": "Q664",
+          "label": "New Zealand",
+          "start": 110,
+          "type": "entity"
+        },
+        {
+          "end": 198,
+          "key": "Q664",
+          "label": "New Zealand",
+          "start": 187,
+          "type": "entity"
+        },
+        {
+          "end": 266,
+          "key": "Q5096994",
+          "label": "Chief Mechanical Engineer",
+          "start": 241,
+          "type": "entity"
+        },
+        {
+          "end": 442,
+          "key": "Q1860",
+          "label": "English",
+          "start": 435,
+          "type": "entity"
+        },
+        {
+          "end": 489,
+          "key": "Q30",
+          "label": "American",
+          "start": 481,
+          "type": "entity"
+        },
+        {
+          "end": 545,
+          "key": "Q664",
+          "label": "New Zealand",
+          "start": 534,
+          "type": "entity"
+        },
+        {
+          "end": 669,
+          "key": "Q1408",
+          "label": "New Jersey",
+          "start": 659,
+          "type": "entity"
+        },
+        {
+          "end": 864,
+          "key": "Q2462658",
+          "label": "manager",
+          "start": 857,
+          "type": "entity"
+        },
+        {
+          "end": 882,
+          "key": "Q23661",
+          "label": "Wellington",
+          "start": 872,
+          "type": "entity"
+        },
+        {
+          "end": 926,
+          "key": "Q1384",
+          "label": "New York",
+          "start": 918,
+          "type": "entity"
+        },
+        {
+          "end": 946,
+          "key": "Q63755226",
+          "label": "consulting engineer",
+          "start": 927,
+          "type": "entity"
+        },
+        {
+          "end": 1062,
+          "key": "Q66889825",
+          "label": "Superintendent",
+          "start": 1048,
+          "type": "entity"
+        },
+        {
+          "end": 1288,
+          "key": "Q664",
+          "label": "New Zealand",
+          "start": 1277,
+          "type": "entity"
+        },
+        {
+          "end": 1362,
+          "key": "Q11303546",
+          "label": "Gothic style",
+          "start": 1350,
+          "type": "entity"
+        },
+        {
+          "end": 1486,
+          "key": "Q1860",
+          "label": "English",
+          "start": 1479,
+          "type": "entity"
+        },
+        {
+          "end": 1523,
+          "key": "Q664",
+          "label": "New Zealand",
+          "start": 1512,
+          "type": "entity"
+        },
+        {
+          "end": 1568,
+          "key": "Q1930187",
+          "label": "journalist",
+          "start": 1558,
+          "type": "entity"
+        },
+        {
+          "end": 1588,
+          "key": "Q16773145",
+          "label": "Charles Rous-Marten",
+          "start": 1569,
+          "type": "entity"
+        },
+        {
+          "end": 1646,
+          "key": "Q79990",
+          "label": "Christchurch",
+          "start": 1634,
+          "type": "entity"
+        },
+        {
+          "end": 1936,
+          "key": "Q3133",
+          "label": "green",
+          "start": 1931,
+          "type": "entity"
+        },
+        {
+          "end": 1942,
+          "key": "Q1088",
+          "label": "blue",
+          "start": 1938,
+          "type": "entity"
+        },
+        {
+          "end": 1950,
+          "key": "Q943",
+          "label": "yellow",
+          "start": 1944,
+          "type": "entity"
+        },
+        {
+          "end": 1955,
+          "key": "Q3142",
+          "label": "red",
+          "start": 1952,
+          "type": "entity"
+        },
+        {
+          "end": 1963,
+          "key": "Q3257809",
+          "label": "purple",
+          "start": 1957,
+          "type": "entity"
+        },
+        {
+          "end": 1973,
+          "key": "Q208045",
+          "label": "gold",
+          "start": 1969,
+          "type": "entity"
+        },
+        {
+          "end": 2002,
+          "key": "Q159",
+          "label": "Russian",
+          "start": 1995,
+          "type": "entity"
+        },
+        {
+          "end": 2113,
+          "key": "Q30",
+          "label": "American",
+          "start": 2105,
+          "type": "entity"
+        },
+        {
+          "end": 2243,
+          "key": "Q47476",
+          "label": "Alhambra",
+          "start": 2235,
+          "type": "entity"
+        },
+        {
+          "end": 2339,
+          "key": "Q120755",
+          "label": "South Island",
+          "start": 2327,
+          "type": "entity"
+        },
+        {
+          "end": 2352,
+          "key": "Q911909",
+          "label": "Lyttelton",
+          "start": 2343,
+          "type": "entity"
+        },
+        {
+          "end": 2663,
+          "key": "Q79990",
+          "label": "Christchurch",
+          "start": 2651,
+          "type": "entity"
+        },
+        {
+          "end": 2675,
+          "key": "Q133073",
+          "label": "Dunedin",
+          "start": 2668,
+          "type": "entity"
+        },
+        {
+          "end": 2721,
+          "key": "Q6350718",
+          "label": "Main South Line",
+          "start": 2706,
+          "type": "entity"
+        },
+        {
+          "end": 2781,
+          "key": "Q4782",
+          "label": "Oamaru",
+          "start": 2775,
+          "type": "entity"
+        },
+        {
+          "end": 3332,
+          "key": "Q21",
+          "label": "English",
+          "start": 3325,
+          "type": "entity"
+        },
+        {
+          "end": 3450,
+          "key": "Q120755",
+          "label": "South Island",
+          "start": 3438,
+          "type": "entity"
+        },
+        {
+          "end": 3913,
+          "key": "Q30",
+          "label": "American",
+          "start": 3905,
+          "type": "entity"
+        },
+        {
+          "end": 4110,
+          "key": "Q118863",
+          "label": "North Island",
+          "start": 4098,
+          "type": "entity"
+        },
+        {
+          "end": 4269,
+          "key": "Q120755",
+          "label": "South Island",
+          "start": 4257,
+          "type": "entity"
+        },
+        {
+          "end": 4341,
+          "key": "Q118863",
+          "label": "North Island",
+          "start": 4329,
+          "type": "entity"
+        },
+        {
+          "end": 4756,
+          "key": "Q266101",
+          "label": "Kingston Flyer",
+          "start": 4742,
+          "type": "entity"
+        },
+        {
+          "end": 4844,
+          "key": "Q118863",
+          "label": "North Island",
+          "start": 4832,
+          "type": "entity"
+        },
+        {
+          "end": 5170,
+          "key": "Q120755",
+          "label": "South Island",
+          "start": 5158,
+          "type": "entity"
+        },
+        {
+          "end": 5327,
+          "key": "Q517472",
+          "label": "exhumed",
+          "start": 5320,
+          "type": "entity"
+        },
+        {
+          "end": 5446,
+          "key": "Q517472",
+          "label": "exhumed",
+          "start": 5439,
+          "type": "entity"
+        },
+        {
+          "end": 5931,
+          "key": "Q517472",
+          "label": "exhumed",
+          "start": 5924,
+          "type": "entity"
+        },
+        {
+          "end": 6384,
+          "key": "Q517472",
+          "label": "exhumed",
+          "start": 6377,
+          "type": "entity"
+        },
+        {
+          "end": 6409,
+          "key": "Q517472",
+          "label": "exhumed",
+          "start": 6402,
+          "type": "entity"
+        },
+        {
+          "end": 6894,
+          "key": "Q133073",
+          "label": "Dunedin",
+          "start": 6887,
+          "type": "entity"
+        },
+        {
+          "end": 7027,
+          "key": "Q266101",
+          "label": "Kingston Flyer",
+          "start": 7013,
+          "type": "entity"
+        },
+        {
+          "end": 7189,
+          "key": "Q120755",
+          "label": "South Island",
+          "start": 7177,
+          "type": "entity"
+        },
+        {
+          "end": 7261,
+          "key": "Q266101",
+          "label": "Kingston Flyer",
+          "start": 7247,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 93,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-36024203",
+      "mentions": [
+        {
+          "end": 10,
+          "key": "Q5736317",
+          "label": "Hercoceras",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 22,
+          "key": "Q5736317",
+          "label": "Hercoceras",
+          "start": 12,
+          "type": "entity"
+        },
+        {
+          "end": 122,
+          "key": "Q7383528",
+          "label": "Rutoceratidae",
+          "start": 109,
+          "type": "entity"
+        },
+        {
+          "end": 140,
+          "key": "Q128257",
+          "label": "cephalopod",
+          "start": 130,
+          "type": "entity"
+        },
+        {
+          "end": 164,
+          "key": "Q730523",
+          "label": "Eifelian",
+          "start": 156,
+          "type": "entity"
+        },
+        {
+          "end": 191,
+          "key": "Q731313",
+          "label": "middle Devonian",
+          "start": 176,
+          "type": "entity"
+        },
+        {
+          "end": 375,
+          "key": "Q17073815",
+          "label": "Paleobiology database",
+          "start": 354,
+          "type": "entity"
+        },
+        {
+          "end": 394,
+          "key": "Q5736317",
+          "label": "Hercoceras",
+          "start": 384,
+          "type": "entity"
+        },
+        {
+          "end": 423,
+          "key": "Q7383528",
+          "label": "Rutoceratidae",
+          "start": 410,
+          "type": "entity"
+        },
+        {
+          "end": 446,
+          "key": "Q1188550",
+          "label": "Nautilida",
+          "start": 437,
+          "type": "entity"
+        },
+        {
+          "end": 633,
+          "key": "Q3882417",
+          "label": "Oncocerida",
+          "start": 623,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 406,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-7688617",
+      "mentions": [
+        {
+          "end": 23,
+          "key": "Q941748",
+          "label": "Panteleimon Ponomarenko",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 117,
+          "key": "Q15180",
+          "label": "Soviet",
+          "start": 111,
+          "type": "entity"
+        },
+        {
+          "end": 148,
+          "key": "Q184",
+          "label": "Belarus",
+          "start": 141,
+          "type": "entity"
+        },
+        {
+          "end": 223,
+          "key": "Q15180",
+          "label": "Soviet",
+          "start": 217,
+          "type": "entity"
+        },
+        {
+          "end": 459,
+          "key": "Q159",
+          "label": "Russian",
+          "start": 452,
+          "type": "entity"
+        },
+        {
+          "end": 577,
+          "key": "Q319544",
+          "label": "Secretary",
+          "start": 568,
+          "type": "entity"
+        },
+        {
+          "end": 695,
+          "key": "Q184",
+          "label": "Belarus",
+          "start": 688,
+          "type": "entity"
+        },
+        {
+          "end": 1062,
+          "key": "Q362",
+          "label": "World War II",
+          "start": 1050,
+          "type": "entity"
+        },
+        {
+          "end": 1150,
+          "key": "Q184",
+          "label": "Belarus",
+          "start": 1143,
+          "type": "entity"
+        },
+        {
+          "end": 1197,
+          "key": "Q152951",
+          "label": "Lieutenant general",
+          "start": 1179,
+          "type": "entity"
+        },
+        {
+          "end": 1237,
+          "key": "Q36",
+          "label": "Polish",
+          "start": 1231,
+          "type": "entity"
+        },
+        {
+          "end": 1271,
+          "key": "Q705173",
+          "label": "Institute of National Remembrance",
+          "start": 1238,
+          "type": "entity"
+        },
+        {
+          "end": 1321,
+          "key": "Q36",
+          "label": "Polish",
+          "start": 1315,
+          "type": "entity"
+        },
+        {
+          "end": 1585,
+          "key": "Q36",
+          "label": "Polish",
+          "start": 1579,
+          "type": "entity"
+        },
+        {
+          "end": 1756,
+          "key": "Q79854",
+          "label": "Communist Party of the Soviet Union",
+          "start": 1721,
+          "type": "entity"
+        },
+        {
+          "end": 1785,
+          "key": "Q319544",
+          "label": "Secretary",
+          "start": 1776,
+          "type": "entity"
+        },
+        {
+          "end": 1861,
+          "key": "Q15180",
+          "label": "Soviet",
+          "start": 1855,
+          "type": "entity"
+        },
+        {
+          "end": 1882,
+          "key": "Q36",
+          "label": "Poland",
+          "start": 1876,
+          "type": "entity"
+        },
+        {
+          "end": 1971,
+          "key": "Q15180",
+          "label": "Soviet",
+          "start": 1965,
+          "type": "entity"
+        },
+        {
+          "end": 2059,
+          "key": "Q55",
+          "label": "Netherlands",
+          "start": 2048,
+          "type": "entity"
+        },
+        {
+          "end": 2224,
+          "key": "Q941748",
+          "label": "Panteleimon Ponomarenko",
+          "start": 2201,
+          "type": "entity"
+        },
+        {
+          "end": 2299,
+          "key": "Q1251441",
+          "label": "leader",
+          "start": 2293,
+          "type": "entity"
+        },
+        {
+          "end": 2360,
+          "key": "Q1251441",
+          "label": "leader",
+          "start": 2354,
+          "type": "entity"
+        },
+        {
+          "end": 2369,
+          "key": "Q182956",
+          "label": "portrait",
+          "start": 2361,
+          "type": "entity"
+        },
+        {
+          "end": 2445,
+          "key": "Q2808",
+          "label": "John",
+          "start": 2441,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 102,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-12376162",
+      "mentions": [
+        {
+          "end": 107,
+          "key": "Q2750094",
+          "label": "Smilisca fodiens",
+          "start": 91,
+          "type": "entity"
+        },
+        {
+          "end": 152,
+          "key": "Q53696",
+          "label": "Hylidae",
+          "start": 145,
+          "type": "entity"
+        },
+        {
+          "end": 182,
+          "key": "Q27611",
+          "label": "central",
+          "start": 175,
+          "type": "entity"
+        },
+        {
+          "end": 209,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 192,
+          "type": "entity"
+        },
+        {
+          "end": 273,
+          "key": "Q160381",
+          "label": "Western",
+          "start": 266,
+          "type": "entity"
+        },
+        {
+          "end": 298,
+          "key": "Q7565263",
+          "label": "South-Central Mexico",
+          "start": 278,
+          "type": "entity"
+        },
+        {
+          "end": 602,
+          "key": "Q65554733",
+          "label": "agricultural development",
+          "start": 578,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 41,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-20114283",
+      "mentions": [
+        {
+          "end": 11,
+          "key": "Q2431917",
+          "label": "Katund i Ri",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 24,
+          "key": "Q2431917",
+          "label": "Katund i Ri",
+          "start": 13,
+          "type": "entity"
+        },
+        {
+          "end": 84,
+          "key": "Q192853",
+          "label": "Durrës County",
+          "start": 71,
+          "type": "entity"
+        },
+        {
+          "end": 93,
+          "key": "Q160381",
+          "label": "western",
+          "start": 86,
+          "type": "entity"
+        },
+        {
+          "end": 101,
+          "key": "Q222",
+          "label": "Albania",
+          "start": 94,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 1533,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-1092869",
+      "mentions": [
+        {
+          "end": 33,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 25,
+          "type": "entity"
+        },
+        {
+          "end": 72,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 64,
+          "type": "entity"
+        },
+        {
+          "end": 81,
+          "key": "Q1321",
+          "label": "Spanish",
+          "start": 74,
+          "type": "entity"
+        },
+        {
+          "end": 113,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 105,
+          "type": "entity"
+        },
+        {
+          "end": 244,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 236,
+          "type": "entity"
+        },
+        {
+          "end": 251,
+          "key": "Q29",
+          "label": "Spain",
+          "start": 246,
+          "type": "entity"
+        },
+        {
+          "end": 311,
+          "key": "Q36422",
+          "label": "Neolithic",
+          "start": 302,
+          "type": "entity"
+        },
+        {
+          "end": 335,
+          "key": "Q11761",
+          "label": "Bronze Age",
+          "start": 325,
+          "type": "entity"
+        },
+        {
+          "end": 345,
+          "key": "Q11764",
+          "label": "Iron Age",
+          "start": 337,
+          "type": "entity"
+        },
+        {
+          "end": 377,
+          "key": "Q220",
+          "label": "Roman",
+          "start": 372,
+          "type": "entity"
+        },
+        {
+          "end": 469,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 461,
+          "type": "entity"
+        },
+        {
+          "end": 578,
+          "key": "Q1321",
+          "label": "Spanish",
+          "start": 571,
+          "type": "entity"
+        },
+        {
+          "end": 664,
+          "key": "Q1321",
+          "label": "Spanish",
+          "start": 657,
+          "type": "entity"
+        },
+        {
+          "end": 789,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 781,
+          "type": "entity"
+        },
+        {
+          "end": 1685,
+          "key": "Q40203",
+          "label": "Paleolithic",
+          "start": 1674,
+          "type": "entity"
+        },
+        {
+          "end": 1725,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 1717,
+          "type": "entity"
+        },
+        {
+          "end": 1919,
+          "key": "Q36422",
+          "label": "Neolithic",
+          "start": 1910,
+          "type": "entity"
+        },
+        {
+          "end": 1945,
+          "key": "Q11761",
+          "label": "Bronze Age",
+          "start": 1935,
+          "type": "entity"
+        },
+        {
+          "end": 2039,
+          "key": "Q40203",
+          "label": "Paleolithic",
+          "start": 2028,
+          "type": "entity"
+        },
+        {
+          "end": 2415,
+          "key": "Q753",
+          "label": "copper",
+          "start": 2409,
+          "type": "entity"
+        },
+        {
+          "end": 2558,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 2550,
+          "type": "entity"
+        },
+        {
+          "end": 2750,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 2742,
+          "type": "entity"
+        },
+        {
+          "end": 2784,
+          "key": "Q11761",
+          "label": "Bronze Age",
+          "start": 2774,
+          "type": "entity"
+        },
+        {
+          "end": 2794,
+          "key": "Q220",
+          "label": "Roman",
+          "start": 2789,
+          "type": "entity"
+        },
+        {
+          "end": 2832,
+          "key": "Q11764",
+          "label": "Iron Age",
+          "start": 2824,
+          "type": "entity"
+        },
+        {
+          "end": 3054,
+          "key": "Q220",
+          "label": "Rome",
+          "start": 3050,
+          "type": "entity"
+        },
+        {
+          "end": 3103,
+          "key": "Q41573",
+          "label": "Bay of Biscay",
+          "start": 3090,
+          "type": "entity"
+        },
+        {
+          "end": 3131,
+          "key": "Q39018",
+          "label": "emperor",
+          "start": 3124,
+          "type": "entity"
+        },
+        {
+          "end": 3140,
+          "key": "Q1405",
+          "label": "Augustus",
+          "start": 3132,
+          "type": "entity"
+        },
+        {
+          "end": 3150,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 3142,
+          "type": "entity"
+        },
+        {
+          "end": 3182,
+          "key": "Q2277",
+          "label": "Roman Empire",
+          "start": 3170,
+          "type": "entity"
+        },
+        {
+          "end": 3195,
+          "key": "Q220",
+          "label": "Roman",
+          "start": 3190,
+          "type": "entity"
+        },
+        {
+          "end": 3353,
+          "key": "Q208045",
+          "label": "gold",
+          "start": 3349,
+          "type": "entity"
+        },
+        {
+          "end": 3372,
+          "key": "Q220",
+          "label": "Rome",
+          "start": 3368,
+          "type": "entity"
+        },
+        {
+          "end": 3399,
+          "key": "Q160381",
+          "label": "western",
+          "start": 3392,
+          "type": "entity"
+        },
+        {
+          "end": 3647,
+          "key": "Q220",
+          "label": "Rome",
+          "start": 3643,
+          "type": "entity"
+        },
+        {
+          "end": 3659,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 3651,
+          "type": "entity"
+        },
+        {
+          "end": 3768,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 3760,
+          "type": "entity"
+        },
+        {
+          "end": 4898,
+          "key": "Q1321",
+          "label": "Spanish",
+          "start": 4891,
+          "type": "entity"
+        },
+        {
+          "end": 5383,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 5375,
+          "type": "entity"
+        },
+        {
+          "end": 5396,
+          "key": "Q40203",
+          "label": "Paleolithic",
+          "start": 5385,
+          "type": "entity"
+        },
+        {
+          "end": 6491,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 6483,
+          "type": "entity"
+        },
+        {
+          "end": 6621,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 6613,
+          "type": "entity"
+        },
+        {
+          "end": 7231,
+          "key": "Q40203",
+          "label": "Paleolithic",
+          "start": 7220,
+          "type": "entity"
+        },
+        {
+          "end": 7265,
+          "key": "Q220",
+          "label": "Roman",
+          "start": 7260,
+          "type": "entity"
+        },
+        {
+          "end": 7856,
+          "key": "Q3934",
+          "label": "Asturias",
+          "start": 7848,
+          "type": "entity"
+        },
+        {
+          "end": 9067,
+          "key": "Q201788",
+          "label": "historian",
+          "start": 9058,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 133,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-32565052",
+      "mentions": [
+        {
+          "end": 68,
+          "key": "Q161885",
+          "label": "British",
+          "start": 61,
+          "type": "entity"
+        },
+        {
+          "end": 198,
+          "key": "Q23051084",
+          "label": "2018",
+          "start": 194,
+          "type": "entity"
+        },
+        {
+          "end": 326,
+          "key": "Q2256",
+          "label": "Birmingham",
+          "start": 316,
+          "type": "entity"
+        },
+        {
+          "end": 365,
+          "key": "Q5647674",
+          "label": "Handsworth Grammar School",
+          "start": 340,
+          "type": "entity"
+        },
+        {
+          "end": 414,
+          "key": "Q8564903",
+          "label": "Foster's School",
+          "start": 399,
+          "type": "entity"
+        },
+        {
+          "end": 425,
+          "key": "Q23159",
+          "label": "Dorset",
+          "start": 419,
+          "type": "entity"
+        },
+        {
+          "end": 461,
+          "key": "Q76473",
+          "label": "University of Southampton",
+          "start": 436,
+          "type": "entity"
+        },
+        {
+          "end": 499,
+          "key": "Q2329",
+          "label": "Chemistry",
+          "start": 490,
+          "type": "entity"
+        },
+        {
+          "end": 573,
+          "key": "Q19940089",
+          "label": "Managing Director",
+          "start": 556,
+          "type": "entity"
+        },
+        {
+          "end": 609,
+          "key": "Q1967606",
+          "label": "National Physical Laboratory",
+          "start": 581,
+          "type": "entity"
+        },
+        {
+          "end": 683,
+          "key": "Q1162163",
+          "label": "director",
+          "start": 675,
+          "type": "entity"
+        },
+        {
+          "end": 725,
+          "key": "Q757609",
+          "label": "Atomic Weapons Establishment",
+          "start": 697,
+          "type": "entity"
+        },
+        {
+          "end": 801,
+          "key": "Q387419",
+          "label": "Wareham",
+          "start": 794,
+          "type": "entity"
+        },
+        {
+          "end": 809,
+          "key": "Q23159",
+          "label": "Dorset",
+          "start": 803,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 37,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-35862559",
+      "mentions": [
+        {
+          "end": 8,
+          "key": "Q7065433",
+          "label": "Now Qand",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 34,
+          "key": "Q7065433",
+          "label": "Now Qand",
+          "start": 26,
+          "type": "entity"
+        },
+        {
+          "end": 105,
+          "key": "Q7268035",
+          "label": "Qohestan Rural District",
+          "start": 82,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 296,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-20490257",
+      "mentions": [
+        {
+          "end": 8,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 47,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 39,
+          "type": "entity"
+        },
+        {
+          "end": 88,
+          "key": "Q61022630",
+          "label": "officer",
+          "start": 81,
+          "type": "entity"
+        },
+        {
+          "end": 108,
+          "key": "Q2277",
+          "label": "Roman Empire",
+          "start": 96,
+          "type": "entity"
+        },
+        {
+          "end": 189,
+          "key": "Q39018",
+          "label": "Emperor",
+          "start": 182,
+          "type": "entity"
+        },
+        {
+          "end": 204,
+          "key": "Q46418",
+          "label": "Constantius II",
+          "start": 190,
+          "type": "entity"
+        },
+        {
+          "end": 225,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 217,
+          "type": "entity"
+        },
+        {
+          "end": 345,
+          "key": "Q39018",
+          "label": "Emperor",
+          "start": 338,
+          "type": "entity"
+        },
+        {
+          "end": 355,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 347,
+          "type": "entity"
+        },
+        {
+          "end": 386,
+          "key": "Q83922",
+          "label": "Arianism",
+          "start": 378,
+          "type": "entity"
+        },
+        {
+          "end": 526,
+          "key": "Q46418",
+          "label": "Constantius II",
+          "start": 512,
+          "type": "entity"
+        },
+        {
+          "end": 572,
+          "key": "Q83922",
+          "label": "Arianism",
+          "start": 564,
+          "type": "entity"
+        },
+        {
+          "end": 631,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 623,
+          "type": "entity"
+        },
+        {
+          "end": 658,
+          "key": "Q46418",
+          "label": "Constantius II",
+          "start": 644,
+          "type": "entity"
+        },
+        {
+          "end": 674,
+          "key": "Q19546",
+          "label": "Pope",
+          "start": 670,
+          "type": "entity"
+        },
+        {
+          "end": 683,
+          "key": "Q102105",
+          "label": "Liberius",
+          "start": 675,
+          "type": "entity"
+        },
+        {
+          "end": 736,
+          "key": "Q39018",
+          "label": "Emperor",
+          "start": 729,
+          "type": "entity"
+        },
+        {
+          "end": 749,
+          "key": "Q19546",
+          "label": "Pope",
+          "start": 745,
+          "type": "entity"
+        },
+        {
+          "end": 778,
+          "key": "Q12859263",
+          "label": "orator",
+          "start": 772,
+          "type": "entity"
+        },
+        {
+          "end": 787,
+          "key": "Q263892",
+          "label": "Libanius",
+          "start": 779,
+          "type": "entity"
+        },
+        {
+          "end": 881,
+          "key": "Q44024",
+          "label": "Athanasius of Alexandria",
+          "start": 857,
+          "type": "entity"
+        },
+        {
+          "end": 892,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 884,
+          "type": "entity"
+        },
+        {
+          "end": 923,
+          "key": "Q38060",
+          "label": "Gaul",
+          "start": 919,
+          "type": "entity"
+        },
+        {
+          "end": 951,
+          "key": "Q490",
+          "label": "Milan",
+          "start": 946,
+          "type": "entity"
+        },
+        {
+          "end": 1029,
+          "key": "Q188751",
+          "label": "Caesar",
+          "start": 1023,
+          "type": "entity"
+        },
+        {
+          "end": 1049,
+          "key": "Q352506",
+          "label": "Constantius Gallus",
+          "start": 1031,
+          "type": "entity"
+        },
+        {
+          "end": 1088,
+          "key": "Q4656",
+          "label": "Pula",
+          "start": 1084,
+          "type": "entity"
+        },
+        {
+          "end": 1172,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 1164,
+          "type": "entity"
+        },
+        {
+          "end": 1282,
+          "key": "Q83460",
+          "label": "general",
+          "start": 1275,
+          "type": "entity"
+        },
+        {
+          "end": 1292,
+          "key": "Q731413",
+          "label": "Ursicinus",
+          "start": 1283,
+          "type": "entity"
+        },
+        {
+          "end": 1346,
+          "key": "Q200441",
+          "label": "Antioch",
+          "start": 1339,
+          "type": "entity"
+        },
+        {
+          "end": 1364,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 1356,
+          "type": "entity"
+        },
+        {
+          "end": 1418,
+          "key": "Q109960",
+          "label": "magister equitum",
+          "start": 1402,
+          "type": "entity"
+        },
+        {
+          "end": 1438,
+          "key": "Q2210015",
+          "label": "Sabinianus",
+          "start": 1428,
+          "type": "entity"
+        },
+        {
+          "end": 1465,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 1457,
+          "type": "entity"
+        },
+        {
+          "end": 1513,
+          "key": "Q39018",
+          "label": "Emperor",
+          "start": 1506,
+          "type": "entity"
+        },
+        {
+          "end": 1543,
+          "key": "Q39018",
+          "label": "Emperor",
+          "start": 1536,
+          "type": "entity"
+        },
+        {
+          "end": 1591,
+          "key": "Q16533",
+          "label": "judge",
+          "start": 1586,
+          "type": "entity"
+        },
+        {
+          "end": 1766,
+          "key": "Q339512",
+          "label": "Eusebius",
+          "start": 1758,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 30,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-59807010",
+      "mentions": [
+        {
+          "end": 16,
+          "key": "Q65118168",
+          "label": "To Reach a Dream",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 34,
+          "key": "Q65118168",
+          "label": "To Reach a Dream",
+          "start": 18,
+          "type": "entity"
+        },
+        {
+          "end": 59,
+          "key": "Q855091",
+          "label": "guitarist",
+          "start": 50,
+          "type": "entity"
+        },
+        {
+          "end": 72,
+          "key": "Q1689423",
+          "label": "Jimmy Ponder",
+          "start": 60,
+          "type": "entity"
+        },
+        {
+          "end": 141,
+          "key": "Q1689423",
+          "label": "Jimmy Ponder",
+          "start": 129,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 23,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-22798092",
+      "mentions": [
+        {
+          "end": 8,
+          "key": "Q1757912",
+          "label": "Eopsetta",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 18,
+          "key": "Q1757912",
+          "label": "Eopsetta",
+          "start": 10,
+          "type": "entity"
+        },
+        {
+          "end": 85,
+          "key": "Q12353254",
+          "label": "North Pacific Ocean",
+          "start": 66,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 162,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-19360289",
+      "mentions": [
+        {
+          "end": 11,
+          "key": "Q4734737",
+          "label": "Alp Ikizler",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 27,
+          "key": "Q4734737",
+          "label": "Alp Ikizler",
+          "start": 16,
+          "type": "entity"
+        },
+        {
+          "end": 45,
+          "key": "Q20739489",
+          "label": "nephrologist",
+          "start": 33,
+          "type": "entity"
+        },
+        {
+          "end": 113,
+          "key": "Q11190",
+          "label": "Medicine",
+          "start": 105,
+          "type": "entity"
+        },
+        {
+          "end": 157,
+          "key": "Q7914466",
+          "label": "Vanderbilt University School of Medicine",
+          "start": 117,
+          "type": "entity"
+        },
+        {
+          "end": 229,
+          "key": "Q406",
+          "label": "Istanbul",
+          "start": 221,
+          "type": "entity"
+        },
+        {
+          "end": 237,
+          "key": "Q43",
+          "label": "Turkey",
+          "start": 231,
+          "type": "entity"
+        },
+        {
+          "end": 277,
+          "key": "Q406",
+          "label": "Istanbul",
+          "start": 269,
+          "type": "entity"
+        },
+        {
+          "end": 308,
+          "key": "Q11190",
+          "label": "Medicine",
+          "start": 300,
+          "type": "entity"
+        },
+        {
+          "end": 507,
+          "key": "Q12167",
+          "label": "malnutrition",
+          "start": 495,
+          "type": "entity"
+        },
+        {
+          "end": 898,
+          "key": "Q101991",
+          "label": "inflammation",
+          "start": 886,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 120,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-40454086",
+      "mentions": [
+        {
+          "end": 48,
+          "key": "Q16957812",
+          "label": "Nicholas Rescher Prize for Systematic Philosophy",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 102,
+          "key": "Q16957812",
+          "label": "Nicholas Rescher Prize for Systematic Philosophy",
+          "start": 54,
+          "type": "entity"
+        },
+        {
+          "end": 150,
+          "key": "Q235034",
+          "label": "University of Pittsburgh",
+          "start": 126,
+          "type": "entity"
+        },
+        {
+          "end": 449,
+          "key": "Q406039",
+          "label": "gold medal",
+          "start": 439,
+          "type": "entity"
+        },
+        {
+          "end": 521,
+          "key": "Q216170",
+          "label": "Nicholas Rescher",
+          "start": 505,
+          "type": "entity"
+        },
+        {
+          "end": 571,
+          "key": "Q5891",
+          "label": "Philosophy",
+          "start": 561,
+          "type": "entity"
+        },
+        {
+          "end": 674,
+          "key": "Q1356547",
+          "label": "Ernest Sosa",
+          "start": 663,
+          "type": "entity"
+        },
+        {
+          "end": 698,
+          "key": "Q355201",
+          "label": "Alvin Plantinga",
+          "start": 683,
+          "type": "entity"
+        },
+        {
+          "end": 776,
+          "key": "Q221697",
+          "label": "Hilary Putnam",
+          "start": 763,
+          "type": "entity"
+        },
+        {
+          "end": 802,
+          "key": "Q452770",
+          "label": "Ruth Millikan",
+          "start": 789,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 452,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-15315355",
+      "mentions": [
+        {
+          "end": 9,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 20,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 11,
+          "type": "entity"
+        },
+        {
+          "end": 275,
+          "key": "Q15023366",
+          "label": "copper indium gallium selenide",
+          "start": 245,
+          "type": "entity"
+        },
+        {
+          "end": 321,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 312,
+          "type": "entity"
+        },
+        {
+          "end": 593,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 584,
+          "type": "entity"
+        },
+        {
+          "end": 856,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 847,
+          "type": "entity"
+        },
+        {
+          "end": 1041,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 1032,
+          "type": "entity"
+        },
+        {
+          "end": 1188,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 1179,
+          "type": "entity"
+        },
+        {
+          "end": 1325,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 1316,
+          "type": "entity"
+        },
+        {
+          "end": 1684,
+          "key": "Q3879074",
+          "label": "Noventi",
+          "start": 1677,
+          "type": "entity"
+        },
+        {
+          "end": 1706,
+          "key": "Q20971519",
+          "label": "Passport Capital",
+          "start": 1690,
+          "type": "entity"
+        },
+        {
+          "end": 1718,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 1709,
+          "type": "entity"
+        },
+        {
+          "end": 2111,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 2102,
+          "type": "entity"
+        },
+        {
+          "end": 2458,
+          "key": "Q11468",
+          "label": "nanotechnology",
+          "start": 2444,
+          "type": "entity"
+        },
+        {
+          "end": 2492,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 2483,
+          "type": "entity"
+        },
+        {
+          "end": 2703,
+          "key": "Q16842261",
+          "label": "HelioVolt",
+          "start": 2694,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 73,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-60096101",
+      "mentions": [
+        {
+          "end": 64,
+          "key": "Q61927936",
+          "label": "2019 European Athletics Indoor Championships – Women's 60 metres",
+          "start": 0,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 76,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-26436239",
+      "mentions": [
+        {
+          "end": 4,
+          "key": "Q5316962",
+          "label": "Dust",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 25,
+          "key": "Q4889539",
+          "label": "Benjy Davis Project",
+          "start": 6,
+          "type": "entity"
+        },
+        {
+          "end": 38,
+          "key": "Q5316962",
+          "label": "Dust",
+          "start": 34,
+          "type": "entity"
+        },
+        {
+          "end": 61,
+          "key": "Q4889539",
+          "label": "Benjy Davis Project",
+          "start": 42,
+          "type": "entity"
+        },
+        {
+          "end": 142,
+          "key": "Q4889539",
+          "label": "Benjy Davis Project",
+          "start": 123,
+          "type": "entity"
+        },
+        {
+          "end": 178,
+          "key": "Q7354646",
+          "label": "Rock Ridge Music",
+          "start": 162,
+          "type": "entity"
+        },
+        {
+          "end": 216,
+          "key": "Q5316962",
+          "label": "Dust",
+          "start": 212,
+          "type": "entity"
+        },
+        {
+          "end": 383,
+          "key": "Q1588",
+          "label": "Louisiana",
+          "start": 374,
+          "type": "entity"
+        },
+        {
+          "end": 411,
+          "key": "Q4667978",
+          "label": "Abita Brewing Company",
+          "start": 390,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 163,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-38901928",
+      "mentions": [
+        {
+          "end": 12,
+          "key": "Q16195965",
+          "label": "Phil Danaher",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 25,
+          "key": "Q5849",
+          "label": "rugby union",
+          "start": 14,
+          "type": "entity"
+        },
+        {
+          "end": 96,
+          "key": "Q5849",
+          "label": "rugby union",
+          "start": 85,
+          "type": "entity"
+        },
+        {
+          "end": 152,
+          "key": "Q7594894",
+          "label": "St Munchin's College",
+          "start": 132,
+          "type": "entity"
+        },
+        {
+          "end": 175,
+          "key": "Q584540",
+          "label": "captain",
+          "start": 168,
+          "type": "entity"
+        },
+        {
+          "end": 296,
+          "key": "Q22",
+          "label": "Scotland",
+          "start": 288,
+          "type": "entity"
+        },
+        {
+          "end": 403,
+          "key": "Q3996446",
+          "label": "1992 Ireland rugby union tour of New Zealand",
+          "start": 359,
+          "type": "entity"
+        },
+        {
+          "end": 523,
+          "key": "Q142",
+          "label": "France",
+          "start": 517,
+          "type": "entity"
+        },
+        {
+          "end": 543,
+          "key": "Q49",
+          "label": "North America",
+          "start": 530,
+          "type": "entity"
+        },
+        {
+          "end": 561,
+          "key": "Q664",
+          "label": "New Zealand",
+          "start": 550,
+          "type": "entity"
+        },
+        {
+          "end": 580,
+          "key": "Q408",
+          "label": "Australia",
+          "start": 571,
+          "type": "entity"
+        },
+        {
+          "end": 742,
+          "key": "Q11703711",
+          "label": "assistant coach",
+          "start": 727,
+          "type": "entity"
+        },
+        {
+          "end": 786,
+          "key": "Q408",
+          "label": "Australia",
+          "start": 777,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 75,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-25537354",
+      "mentions": [
+        {
+          "end": 4,
+          "key": "Q56273810",
+          "label": "Todi",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 18,
+          "key": "Q56273810",
+          "label": "Todi",
+          "start": 14,
+          "type": "entity"
+        },
+        {
+          "end": 101,
+          "key": "Q60140",
+          "label": "Indian subcontinent",
+          "start": 82,
+          "type": "entity"
+        },
+        {
+          "end": 157,
+          "key": "Q56273810",
+          "label": "Todi",
+          "start": 153,
+          "type": "entity"
+        },
+        {
+          "end": 233,
+          "key": "Q56273810",
+          "label": "Todi",
+          "start": 229,
+          "type": "entity"
+        },
+        {
+          "end": 382,
+          "key": "Q56273810",
+          "label": "Todi",
+          "start": 378,
+          "type": "entity"
+        },
+        {
+          "end": 403,
+          "key": "Q56273810",
+          "label": "Todi",
+          "start": 399,
+          "type": "entity"
+        },
+        {
+          "end": 416,
+          "key": "Q56273810",
+          "label": "Todi",
+          "start": 412,
+          "type": "entity"
+        },
+        {
+          "end": 428,
+          "key": "Q6727571",
+          "label": "Madhuvanti",
+          "start": 418,
+          "type": "entity"
+        },
+        {
+          "end": 437,
+          "key": "Q6934367",
+          "label": "Multani",
+          "start": 430,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 818,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-2091831",
+      "mentions": [
+        {
+          "end": 14,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 30,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 16,
+          "type": "entity"
+        },
+        {
+          "end": 39,
+          "key": "Q21",
+          "label": "England",
+          "start": 32,
+          "type": "entity"
+        },
+        {
+          "end": 90,
+          "key": "Q23112",
+          "label": "Cambridgeshire",
+          "start": 76,
+          "type": "entity"
+        },
+        {
+          "end": 126,
+          "key": "Q350",
+          "label": "Cambridge",
+          "start": 117,
+          "type": "entity"
+        },
+        {
+          "end": 151,
+          "key": "Q19804",
+          "label": "Royston",
+          "start": 144,
+          "type": "entity"
+        },
+        {
+          "end": 168,
+          "key": "Q3410",
+          "label": "Hertfordshire",
+          "start": 155,
+          "type": "entity"
+        },
+        {
+          "end": 234,
+          "key": "Q2361700",
+          "label": "Ashwell and Morden railway station",
+          "start": 200,
+          "type": "entity"
+        },
+        {
+          "end": 297,
+          "key": "Q1926477",
+          "label": "Steeple Morden",
+          "start": 283,
+          "type": "entity"
+        },
+        {
+          "end": 360,
+          "key": "Q1779774",
+          "label": "Abington Pigotts",
+          "start": 344,
+          "type": "entity"
+        },
+        {
+          "end": 376,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 362,
+          "type": "entity"
+        },
+        {
+          "end": 387,
+          "key": "Q2525645",
+          "label": "Tadlow",
+          "start": 381,
+          "type": "entity"
+        },
+        {
+          "end": 477,
+          "key": "Q7566485",
+          "label": "South Cambridgeshire District Council",
+          "start": 440,
+          "type": "entity"
+        },
+        {
+          "end": 526,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 512,
+          "type": "entity"
+        },
+        {
+          "end": 606,
+          "key": "Q160381",
+          "label": "western",
+          "start": 599,
+          "type": "entity"
+        },
+        {
+          "end": 631,
+          "key": "Q23112",
+          "label": "Cambridgeshire",
+          "start": 617,
+          "type": "entity"
+        },
+        {
+          "end": 658,
+          "key": "Q160381",
+          "label": "western",
+          "start": 651,
+          "type": "entity"
+        },
+        {
+          "end": 709,
+          "key": "Q944772",
+          "label": "River Cam",
+          "start": 700,
+          "type": "entity"
+        },
+        {
+          "end": 757,
+          "key": "Q1312",
+          "label": "Spring",
+          "start": 751,
+          "type": "entity"
+        },
+        {
+          "end": 800,
+          "key": "Q3410",
+          "label": "Hertfordshire",
+          "start": 787,
+          "type": "entity"
+        },
+        {
+          "end": 817,
+          "key": "Q23143",
+          "label": "Bedfordshire",
+          "start": 805,
+          "type": "entity"
+        },
+        {
+          "end": 880,
+          "key": "Q1656432",
+          "label": "Icknield Way",
+          "start": 868,
+          "type": "entity"
+        },
+        {
+          "end": 994,
+          "key": "Q1926477",
+          "label": "Steeple Morden",
+          "start": 980,
+          "type": "entity"
+        },
+        {
+          "end": 1045,
+          "key": "Q2525645",
+          "label": "Tadlow",
+          "start": 1039,
+          "type": "entity"
+        },
+        {
+          "end": 1055,
+          "key": "Q2525645",
+          "label": "Tadlow",
+          "start": 1049,
+          "type": "entity"
+        },
+        {
+          "end": 1243,
+          "key": "Q220",
+          "label": "Roman",
+          "start": 1238,
+          "type": "entity"
+        },
+        {
+          "end": 1395,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 1381,
+          "type": "entity"
+        },
+        {
+          "end": 1423,
+          "key": "Q753",
+          "label": "copper",
+          "start": 1417,
+          "type": "entity"
+        },
+        {
+          "end": 1620,
+          "key": "Q1926477",
+          "label": "Steeple Morden",
+          "start": 1606,
+          "type": "entity"
+        },
+        {
+          "end": 1735,
+          "key": "Q19804",
+          "label": "Royston",
+          "start": 1728,
+          "type": "entity"
+        },
+        {
+          "end": 1916,
+          "key": "Q23445",
+          "label": "Black",
+          "start": 1911,
+          "type": "entity"
+        },
+        {
+          "end": 1965,
+          "key": "Q1860",
+          "label": "English",
+          "start": 1958,
+          "type": "entity"
+        },
+        {
+          "end": 2213,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 2199,
+          "type": "entity"
+        },
+        {
+          "end": 2323,
+          "key": "Q2808",
+          "label": "John",
+          "start": 2319,
+          "type": "entity"
+        },
+        {
+          "end": 2462,
+          "key": "Q23112",
+          "label": "Cambridgeshire",
+          "start": 2448,
+          "type": "entity"
+        },
+        {
+          "end": 2666,
+          "key": "Q23112",
+          "label": "Cambridgeshire",
+          "start": 2652,
+          "type": "entity"
+        },
+        {
+          "end": 2807,
+          "key": "Q23112",
+          "label": "Cambridgeshire",
+          "start": 2793,
+          "type": "entity"
+        },
+        {
+          "end": 3013,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 2999,
+          "type": "entity"
+        },
+        {
+          "end": 3518,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 3504,
+          "type": "entity"
+        },
+        {
+          "end": 3543,
+          "key": "Q49",
+          "label": "north",
+          "start": 3538,
+          "type": "entity"
+        },
+        {
+          "end": 3665,
+          "key": "Q116",
+          "label": "King",
+          "start": 3661,
+          "type": "entity"
+        },
+        {
+          "end": 3787,
+          "key": "Q23051084",
+          "label": "2018",
+          "start": 3783,
+          "type": "entity"
+        },
+        {
+          "end": 3881,
+          "key": "Q116",
+          "label": "King",
+          "start": 3877,
+          "type": "entity"
+        },
+        {
+          "end": 4056,
+          "key": "Q23445",
+          "label": "Black",
+          "start": 4051,
+          "type": "entity"
+        },
+        {
+          "end": 4279,
+          "key": "Q23445",
+          "label": "Black",
+          "start": 4274,
+          "type": "entity"
+        },
+        {
+          "end": 4316,
+          "key": "Q1987694",
+          "label": "Guilden Morden",
+          "start": 4302,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 23,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-19956975",
+      "mentions": [
+        {
+          "end": 9,
+          "key": "Q7191597",
+          "label": "Piekarowo",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 20,
+          "key": "Q7191597",
+          "label": "Piekarowo",
+          "start": 11,
+          "type": "entity"
+        },
+        {
+          "end": 83,
+          "key": "Q2460337",
+          "label": "Gmina Mszczonów",
+          "start": 68,
+          "type": "entity"
+        },
+        {
+          "end": 107,
+          "key": "Q936157",
+          "label": "Żyrardów County",
+          "start": 92,
+          "type": "entity"
+        },
+        {
+          "end": 146,
+          "key": "Q27611",
+          "label": "central",
+          "start": 139,
+          "type": "entity"
+        },
+        {
+          "end": 153,
+          "key": "Q36",
+          "label": "Poland",
+          "start": 147,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 105,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-39970022",
+      "mentions": [
+        {
+          "end": 453,
+          "key": "Q2730433",
+          "label": "Cream",
+          "start": 448,
+          "type": "entity"
+        },
+        {
+          "end": 598,
+          "key": "Q1313",
+          "label": "summer",
+          "start": 592,
+          "type": "entity"
+        },
+        {
+          "end": 644,
+          "key": "Q15053489",
+          "label": "Bushman's Revenge",
+          "start": 627,
+          "type": "entity"
+        },
+        {
+          "end": 712,
+          "key": "Q6419478",
+          "label": "Kjetil Møster",
+          "start": 699,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 289,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-50284573",
+      "mentions": [
+        {
+          "end": 4,
+          "key": "Q24006244",
+          "label": "Vita",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 12,
+          "key": "Q2252262",
+          "label": "rapper",
+          "start": 6,
+          "type": "entity"
+        },
+        {
+          "end": 50,
+          "key": "Q24006244",
+          "label": "Vita",
+          "start": 46,
+          "type": "entity"
+        },
+        {
+          "end": 66,
+          "key": "Q30",
+          "label": "American",
+          "start": 58,
+          "type": "entity"
+        },
+        {
+          "end": 73,
+          "key": "Q2252262",
+          "label": "rapper",
+          "start": 67,
+          "type": "entity"
+        },
+        {
+          "end": 153,
+          "key": "Q223769",
+          "label": "DMX",
+          "start": 150,
+          "type": "entity"
+        },
+        {
+          "end": 197,
+          "key": "Q646077",
+          "label": "Belly",
+          "start": 192,
+          "type": "entity"
+        },
+        {
+          "end": 211,
+          "key": "Q2252262",
+          "label": "rapper",
+          "start": 205,
+          "type": "entity"
+        },
+        {
+          "end": 266,
+          "key": "Q3826989",
+          "label": "Lapdance",
+          "start": 258,
+          "type": "entity"
+        },
+        {
+          "end": 291,
+          "key": "Q3926010",
+          "label": "Put It on Me",
+          "start": 279,
+          "type": "entity"
+        },
+        {
+          "end": 302,
+          "key": "Q309843",
+          "label": "Ja Rule",
+          "start": 295,
+          "type": "entity"
+        },
+        {
+          "end": 316,
+          "key": "Q1995653",
+          "label": "Down 4 U",
+          "start": 308,
+          "type": "entity"
+        },
+        {
+          "end": 329,
+          "key": "Q525827",
+          "label": "Irv Gotti",
+          "start": 320,
+          "type": "entity"
+        },
+        {
+          "end": 380,
+          "key": "Q24006244",
+          "label": "Vita",
+          "start": 376,
+          "type": "entity"
+        },
+        {
+          "end": 407,
+          "key": "Q485240",
+          "label": "Billboard",
+          "start": 398,
+          "type": "entity"
+        },
+        {
+          "end": 511,
+          "key": "Q646077",
+          "label": "Belly",
+          "start": 506,
+          "type": "entity"
+        },
+        {
+          "end": 671,
+          "key": "Q298694",
+          "label": "Method Man",
+          "start": 661,
+          "type": "entity"
+        },
+        {
+          "end": 684,
+          "key": "Q933598",
+          "label": "D'Angelo",
+          "start": 676,
+          "type": "entity"
+        },
+        {
+          "end": 774,
+          "key": "Q24006244",
+          "label": "Vita",
+          "start": 770,
+          "type": "entity"
+        },
+        {
+          "end": 823,
+          "key": "Q309843",
+          "label": "Ja Rule",
+          "start": 816,
+          "type": "entity"
+        },
+        {
+          "end": 844,
+          "key": "Q4642507",
+          "label": "6 Feet Underground",
+          "start": 826,
+          "type": "entity"
+        },
+        {
+          "end": 911,
+          "key": "Q309843",
+          "label": "Ja Rule",
+          "start": 904,
+          "type": "entity"
+        },
+        {
+          "end": 926,
+          "key": "Q3786295",
+          "label": "Holla Holla",
+          "start": 915,
+          "type": "entity"
+        },
+        {
+          "end": 961,
+          "key": "Q2643890",
+          "label": "vocalist",
+          "start": 953,
+          "type": "entity"
+        },
+        {
+          "end": 1018,
+          "key": "Q1995653",
+          "label": "Down 4 U",
+          "start": 1010,
+          "type": "entity"
+        },
+        {
+          "end": 1081,
+          "key": "Q24006244",
+          "label": "Vita",
+          "start": 1077,
+          "type": "entity"
+        },
+        {
+          "end": 1180,
+          "key": "Q1744",
+          "label": "Madonna",
+          "start": 1173,
+          "type": "entity"
+        },
+        {
+          "end": 1284,
+          "key": "Q1744",
+          "label": "Madonna",
+          "start": 1277,
+          "type": "entity"
+        },
+        {
+          "end": 1370,
+          "key": "Q4120225",
+          "label": "DatPiff",
+          "start": 1363,
+          "type": "entity"
+        },
+        {
+          "end": 1593,
+          "key": "Q2252262",
+          "label": "rapper",
+          "start": 1587,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 39,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-40171989",
+      "mentions": [
+        {
+          "end": 9,
+          "key": "Q5802310",
+          "label": "Kheyrabad",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 27,
+          "key": "Q5802310",
+          "label": "Kheyrabad",
+          "start": 18,
+          "type": "entity"
+        },
+        {
+          "end": 140,
+          "key": "Q5680611",
+          "label": "Soltaniyeh Rural District",
+          "start": 115,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 1227,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-11087023",
+      "mentions": [
+        {
+          "end": 8,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 18,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 10,
+          "type": "entity"
+        },
+        {
+          "end": 79,
+          "key": "Q692",
+          "label": "William Shakespeare",
+          "start": 60,
+          "type": "entity"
+        },
+        {
+          "end": 96,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 91,
+          "type": "entity"
+        },
+        {
+          "end": 107,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 101,
+          "type": "entity"
+        },
+        {
+          "end": 209,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 204,
+          "type": "entity"
+        },
+        {
+          "end": 240,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 232,
+          "type": "entity"
+        },
+        {
+          "end": 363,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 357,
+          "type": "entity"
+        },
+        {
+          "end": 398,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 393,
+          "type": "entity"
+        },
+        {
+          "end": 429,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 421,
+          "type": "entity"
+        },
+        {
+          "end": 459,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 453,
+          "type": "entity"
+        },
+        {
+          "end": 503,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 495,
+          "type": "entity"
+        },
+        {
+          "end": 539,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 533,
+          "type": "entity"
+        },
+        {
+          "end": 563,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 558,
+          "type": "entity"
+        },
+        {
+          "end": 596,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 588,
+          "type": "entity"
+        },
+        {
+          "end": 642,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 636,
+          "type": "entity"
+        },
+        {
+          "end": 672,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 667,
+          "type": "entity"
+        },
+        {
+          "end": 683,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 677,
+          "type": "entity"
+        },
+        {
+          "end": 725,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 720,
+          "type": "entity"
+        },
+        {
+          "end": 738,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 730,
+          "type": "entity"
+        },
+        {
+          "end": 807,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 799,
+          "type": "entity"
+        },
+        {
+          "end": 847,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 842,
+          "type": "entity"
+        },
+        {
+          "end": 860,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 854,
+          "type": "entity"
+        },
+        {
+          "end": 879,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 871,
+          "type": "entity"
+        },
+        {
+          "end": 907,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 901,
+          "type": "entity"
+        },
+        {
+          "end": 1041,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 1033,
+          "type": "entity"
+        },
+        {
+          "end": 1083,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 1078,
+          "type": "entity"
+        },
+        {
+          "end": 1319,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 1311,
+          "type": "entity"
+        },
+        {
+          "end": 1385,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 1380,
+          "type": "entity"
+        },
+        {
+          "end": 1446,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 1438,
+          "type": "entity"
+        },
+        {
+          "end": 1513,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 1508,
+          "type": "entity"
+        },
+        {
+          "end": 1567,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 1562,
+          "type": "entity"
+        },
+        {
+          "end": 1579,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 1573,
+          "type": "entity"
+        },
+        {
+          "end": 1760,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 1755,
+          "type": "entity"
+        },
+        {
+          "end": 1837,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 1829,
+          "type": "entity"
+        },
+        {
+          "end": 1865,
+          "key": "Q25379",
+          "label": "play",
+          "start": 1861,
+          "type": "entity"
+        },
+        {
+          "end": 1876,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 1868,
+          "type": "entity"
+        },
+        {
+          "end": 1901,
+          "key": "Q60834955",
+          "label": "Rosalind",
+          "start": 1893,
+          "type": "entity"
+        },
+        {
+          "end": 1923,
+          "key": "Q142",
+          "label": "French",
+          "start": 1917,
+          "type": "entity"
+        },
+        {
+          "end": 2010,
+          "key": "Q1860",
+          "label": "English",
+          "start": 2003,
+          "type": "entity"
+        },
+        {
+          "end": 2046,
+          "key": "Q397",
+          "label": "Latin",
+          "start": 2041,
+          "type": "entity"
+        },
+        {
+          "end": 2082,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 2077,
+          "type": "entity"
+        },
+        {
+          "end": 2096,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 2088,
+          "type": "entity"
+        },
+        {
+          "end": 2194,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 2186,
+          "type": "entity"
+        },
+        {
+          "end": 2257,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 2252,
+          "type": "entity"
+        },
+        {
+          "end": 2276,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 2270,
+          "type": "entity"
+        },
+        {
+          "end": 2306,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 2298,
+          "type": "entity"
+        },
+        {
+          "end": 2317,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 2311,
+          "type": "entity"
+        },
+        {
+          "end": 2333,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 2325,
+          "type": "entity"
+        },
+        {
+          "end": 2401,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 2396,
+          "type": "entity"
+        },
+        {
+          "end": 2465,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 2459,
+          "type": "entity"
+        },
+        {
+          "end": 2521,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 2513,
+          "type": "entity"
+        },
+        {
+          "end": 2726,
+          "key": "Q237572",
+          "label": "As You Like It",
+          "start": 2712,
+          "type": "entity"
+        },
+        {
+          "end": 2874,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 2866,
+          "type": "entity"
+        },
+        {
+          "end": 2950,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 2945,
+          "type": "entity"
+        },
+        {
+          "end": 2961,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 2953,
+          "type": "entity"
+        },
+        {
+          "end": 3149,
+          "key": "Q30607539",
+          "label": "Dark Lady",
+          "start": 3140,
+          "type": "entity"
+        },
+        {
+          "end": 3256,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 3248,
+          "type": "entity"
+        },
+        {
+          "end": 3299,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 3294,
+          "type": "entity"
+        },
+        {
+          "end": 3357,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 3351,
+          "type": "entity"
+        },
+        {
+          "end": 3413,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 3405,
+          "type": "entity"
+        },
+        {
+          "end": 3554,
+          "key": "Q25379",
+          "label": "play",
+          "start": 3550,
+          "type": "entity"
+        },
+        {
+          "end": 3641,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 3636,
+          "type": "entity"
+        },
+        {
+          "end": 3661,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 3653,
+          "type": "entity"
+        },
+        {
+          "end": 3690,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 3684,
+          "type": "entity"
+        },
+        {
+          "end": 3706,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 3701,
+          "type": "entity"
+        },
+        {
+          "end": 3735,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 3727,
+          "type": "entity"
+        },
+        {
+          "end": 3789,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 3783,
+          "type": "entity"
+        },
+        {
+          "end": 3841,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 3836,
+          "type": "entity"
+        },
+        {
+          "end": 3959,
+          "key": "Q25379",
+          "label": "play",
+          "start": 3955,
+          "type": "entity"
+        },
+        {
+          "end": 4052,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 4047,
+          "type": "entity"
+        },
+        {
+          "end": 4076,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 4068,
+          "type": "entity"
+        },
+        {
+          "end": 4087,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 4081,
+          "type": "entity"
+        },
+        {
+          "end": 4144,
+          "key": "Q214917",
+          "label": "playwright",
+          "start": 4134,
+          "type": "entity"
+        },
+        {
+          "end": 4189,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 4181,
+          "type": "entity"
+        },
+        {
+          "end": 4233,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 4227,
+          "type": "entity"
+        },
+        {
+          "end": 4275,
+          "key": "Q25379",
+          "label": "play",
+          "start": 4271,
+          "type": "entity"
+        },
+        {
+          "end": 4294,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 4289,
+          "type": "entity"
+        },
+        {
+          "end": 4314,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 4306,
+          "type": "entity"
+        },
+        {
+          "end": 4394,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 4389,
+          "type": "entity"
+        },
+        {
+          "end": 4423,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 4415,
+          "type": "entity"
+        },
+        {
+          "end": 4455,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 4449,
+          "type": "entity"
+        },
+        {
+          "end": 4480,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 4472,
+          "type": "entity"
+        },
+        {
+          "end": 4487,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 4482,
+          "type": "entity"
+        },
+        {
+          "end": 4509,
+          "key": "Q2937718",
+          "label": "Capulets",
+          "start": 4501,
+          "type": "entity"
+        },
+        {
+          "end": 4696,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 4690,
+          "type": "entity"
+        },
+        {
+          "end": 4751,
+          "key": "Q2937718",
+          "label": "Capulets",
+          "start": 4743,
+          "type": "entity"
+        },
+        {
+          "end": 4758,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 4753,
+          "type": "entity"
+        },
+        {
+          "end": 4849,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 4841,
+          "type": "entity"
+        },
+        {
+          "end": 4960,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 4955,
+          "type": "entity"
+        },
+        {
+          "end": 4980,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 4972,
+          "type": "entity"
+        },
+        {
+          "end": 5302,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 5294,
+          "type": "entity"
+        },
+        {
+          "end": 5385,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 5380,
+          "type": "entity"
+        },
+        {
+          "end": 5403,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 5397,
+          "type": "entity"
+        },
+        {
+          "end": 5457,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 5452,
+          "type": "entity"
+        },
+        {
+          "end": 5525,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 5519,
+          "type": "entity"
+        },
+        {
+          "end": 5679,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 5671,
+          "type": "entity"
+        },
+        {
+          "end": 5777,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 5772,
+          "type": "entity"
+        },
+        {
+          "end": 5788,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 5782,
+          "type": "entity"
+        },
+        {
+          "end": 5821,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 5813,
+          "type": "entity"
+        },
+        {
+          "end": 5847,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 5841,
+          "type": "entity"
+        },
+        {
+          "end": 5960,
+          "key": "Q33999",
+          "label": "actor",
+          "start": 5955,
+          "type": "entity"
+        },
+        {
+          "end": 5981,
+          "key": "Q1162163",
+          "label": "director",
+          "start": 5973,
+          "type": "entity"
+        },
+        {
+          "end": 6034,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 6026,
+          "type": "entity"
+        },
+        {
+          "end": 6075,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 6070,
+          "type": "entity"
+        },
+        {
+          "end": 6174,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 6169,
+          "type": "entity"
+        },
+        {
+          "end": 6185,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 6179,
+          "type": "entity"
+        },
+        {
+          "end": 6193,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 6188,
+          "type": "entity"
+        },
+        {
+          "end": 6207,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 6199,
+          "type": "entity"
+        },
+        {
+          "end": 6276,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 6270,
+          "type": "entity"
+        },
+        {
+          "end": 6384,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 6376,
+          "type": "entity"
+        },
+        {
+          "end": 6484,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 6476,
+          "type": "entity"
+        },
+        {
+          "end": 6517,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 6512,
+          "type": "entity"
+        },
+        {
+          "end": 6640,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 6632,
+          "type": "entity"
+        },
+        {
+          "end": 6710,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 6702,
+          "type": "entity"
+        },
+        {
+          "end": 6761,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 6756,
+          "type": "entity"
+        },
+        {
+          "end": 6772,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 6766,
+          "type": "entity"
+        },
+        {
+          "end": 6812,
+          "key": "Q40831",
+          "label": "comedy",
+          "start": 6806,
+          "type": "entity"
+        },
+        {
+          "end": 6821,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 6815,
+          "type": "entity"
+        },
+        {
+          "end": 6851,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 6843,
+          "type": "entity"
+        },
+        {
+          "end": 6914,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 6909,
+          "type": "entity"
+        },
+        {
+          "end": 6925,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 6919,
+          "type": "entity"
+        },
+        {
+          "end": 7061,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 7053,
+          "type": "entity"
+        },
+        {
+          "end": 7091,
+          "key": "Q90",
+          "label": "Paris",
+          "start": 7086,
+          "type": "entity"
+        },
+        {
+          "end": 7180,
+          "key": "Q25379",
+          "label": "play",
+          "start": 7176,
+          "type": "entity"
+        },
+        {
+          "end": 7195,
+          "key": "Q1092632",
+          "label": "Juliet",
+          "start": 7189,
+          "type": "entity"
+        },
+        {
+          "end": 7228,
+          "key": "Q214917",
+          "label": "playwright",
+          "start": 7218,
+          "type": "entity"
+        },
+        {
+          "end": 7275,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 7267,
+          "type": "entity"
+        },
+        {
+          "end": 7287,
+          "key": "Q673361",
+          "label": "Romeo",
+          "start": 7282,
+          "type": "entity"
+        },
+        {
+          "end": 7323,
+          "key": "Q25379",
+          "label": "play",
+          "start": 7319,
+          "type": "entity"
+        },
+        {
+          "end": 7481,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 7473,
+          "type": "entity"
+        },
+        {
+          "end": 7493,
+          "key": "Q25379",
+          "label": "play",
+          "start": 7489,
+          "type": "entity"
+        },
+        {
+          "end": 7520,
+          "key": "Q63537266",
+          "label": "Rosaline",
+          "start": 7512,
+          "type": "entity"
+        },
+        {
+          "end": 7565,
+          "key": "Q30",
+          "label": "American",
+          "start": 7557,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 182,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-51975400",
+      "mentions": [
+        {
+          "end": 10,
+          "key": "Q27451900",
+          "label": "Neah Evans",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 22,
+          "key": "Q27451900",
+          "label": "Neah Evans",
+          "start": 12,
+          "type": "entity"
+        },
+        {
+          "end": 127,
+          "key": "Q22079737",
+          "label": "Podium Ambition Pro Cycling",
+          "start": 100,
+          "type": "entity"
+        },
+        {
+          "end": 189,
+          "key": "Q2146933",
+          "label": "revolution",
+          "start": 179,
+          "type": "entity"
+        },
+        {
+          "end": 242,
+          "key": "Q2146933",
+          "label": "Revolution",
+          "start": 232,
+          "type": "entity"
+        },
+        {
+          "end": 414,
+          "key": "Q272598",
+          "label": "Laura Kenny",
+          "start": 403,
+          "type": "entity"
+        },
+        {
+          "end": 444,
+          "key": "Q84",
+          "label": "London",
+          "start": 438,
+          "type": "entity"
+        },
+        {
+          "end": 459,
+          "key": "Q84",
+          "label": "London",
+          "start": 453,
+          "type": "entity"
+        },
+        {
+          "end": 562,
+          "key": "Q15623158",
+          "label": "Katie Archibald",
+          "start": 547,
+          "type": "entity"
+        },
+        {
+          "end": 903,
+          "key": "Q873364",
+          "label": "bronze medal",
+          "start": 891,
+          "type": "entity"
+        },
+        {
+          "end": 949,
+          "key": "Q873364",
+          "label": "bronze medal",
+          "start": 937,
+          "type": "entity"
+        },
+        {
+          "end": 962,
+          "key": "Q22",
+          "label": "Scotland",
+          "start": 954,
+          "type": "entity"
+        },
+        {
+          "end": 1012,
+          "key": "Q3294383",
+          "label": "2018 Commonwealth Games",
+          "start": 989,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 59,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-19104446",
+      "mentions": [
+        {
+          "end": 6,
+          "key": "Q5038893",
+          "label": "Career",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 26,
+          "key": "Q5038893",
+          "label": "Career",
+          "start": 20,
+          "type": "entity"
+        },
+        {
+          "end": 47,
+          "key": "Q130232",
+          "label": "drama film",
+          "start": 37,
+          "type": "entity"
+        },
+        {
+          "end": 71,
+          "key": "Q3229161",
+          "label": "Leigh Jason",
+          "start": 60,
+          "type": "entity"
+        },
+        {
+          "end": 97,
+          "key": "Q265021",
+          "label": "Anne Shirley",
+          "start": 85,
+          "type": "entity"
+        },
+        {
+          "end": 114,
+          "key": "Q3048506",
+          "label": "Edward Ellis",
+          "start": 102,
+          "type": "entity"
+        },
+        {
+          "end": 130,
+          "key": "Q103076",
+          "label": "screenplay",
+          "start": 120,
+          "type": "entity"
+        },
+        {
+          "end": 159,
+          "key": "Q350666",
+          "label": "Dalton Trumbo",
+          "start": 146,
+          "type": "entity"
+        },
+        {
+          "end": 175,
+          "key": "Q966656",
+          "label": "Bert Granet",
+          "start": 164,
+          "type": "entity"
+        },
+        {
+          "end": 196,
+          "key": "Q590870",
+          "label": "cinematography",
+          "start": 182,
+          "type": "entity"
+        },
+        {
+          "end": 212,
+          "key": "Q15070021",
+          "label": "Frank Redman",
+          "start": 200,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 517,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-54955774",
+      "mentions": [
+        {
+          "end": 11,
+          "key": "Q37999506",
+          "label": "S. M. Anwar",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 135,
+          "key": "Q6451128",
+          "label": "one-star rank",
+          "start": 122,
+          "type": "entity"
+        },
+        {
+          "end": 143,
+          "key": "Q132851",
+          "label": "admiral",
+          "start": 136,
+          "type": "entity"
+        },
+        {
+          "end": 164,
+          "key": "Q2258261",
+          "label": "Pakistan Navy",
+          "start": 151,
+          "type": "entity"
+        },
+        {
+          "end": 221,
+          "key": "Q1695155",
+          "label": "officer in tactical command",
+          "start": 194,
+          "type": "entity"
+        },
+        {
+          "end": 303,
+          "key": "Q817247",
+          "label": "Dwarka",
+          "start": 297,
+          "type": "entity"
+        },
+        {
+          "end": 314,
+          "key": "Q1061",
+          "label": "Gujarat",
+          "start": 307,
+          "type": "entity"
+        },
+        {
+          "end": 449,
+          "key": "Q8660",
+          "label": "Karachi",
+          "start": 442,
+          "type": "entity"
+        },
+        {
+          "end": 718,
+          "key": "Q11739",
+          "label": "Lahore",
+          "start": 712,
+          "type": "entity"
+        },
+        {
+          "end": 726,
+          "key": "Q4478",
+          "label": "Punjab",
+          "start": 720,
+          "type": "entity"
+        },
+        {
+          "end": 829,
+          "key": "Q3695416",
+          "label": "Forman Christian College",
+          "start": 805,
+          "type": "entity"
+        },
+        {
+          "end": 850,
+          "key": "Q11739",
+          "label": "Lahore",
+          "start": 844,
+          "type": "entity"
+        },
+        {
+          "end": 944,
+          "key": "Q22683250",
+          "label": "Lieutenant",
+          "start": 934,
+          "type": "entity"
+        },
+        {
+          "end": 988,
+          "key": "Q362",
+          "label": "World War II",
+          "start": 976,
+          "type": "entity"
+        },
+        {
+          "end": 1090,
+          "key": "Q843",
+          "label": "Pakistan",
+          "start": 1082,
+          "type": "entity"
+        },
+        {
+          "end": 1143,
+          "key": "Q2258261",
+          "label": "Pakistan Navy",
+          "start": 1130,
+          "type": "entity"
+        },
+        {
+          "end": 1329,
+          "key": "Q61022630",
+          "label": "officer",
+          "start": 1322,
+          "type": "entity"
+        },
+        {
+          "end": 1355,
+          "key": "Q11220",
+          "label": "United States Navy",
+          "start": 1337,
+          "type": "entity"
+        },
+        {
+          "end": 1643,
+          "key": "Q843",
+          "label": "Pakistan",
+          "start": 1635,
+          "type": "entity"
+        },
+        {
+          "end": 1684,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 1667,
+          "type": "entity"
+        },
+        {
+          "end": 1798,
+          "key": "Q843",
+          "label": "Pakistan",
+          "start": 1790,
+          "type": "entity"
+        },
+        {
+          "end": 1904,
+          "key": "Q1695155",
+          "label": "officer in tactical command",
+          "start": 1877,
+          "type": "entity"
+        },
+        {
+          "end": 2016,
+          "key": "Q817247",
+          "label": "Dwarka",
+          "start": 2010,
+          "type": "entity"
+        },
+        {
+          "end": 2025,
+          "key": "Q1061",
+          "label": "Gujarat",
+          "start": 2018,
+          "type": "entity"
+        },
+        {
+          "end": 2063,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 2046,
+          "type": "entity"
+        },
+        {
+          "end": 2178,
+          "key": "Q843",
+          "label": "Pakistan",
+          "start": 2170,
+          "type": "entity"
+        },
+        {
+          "end": 2241,
+          "key": "Q8660",
+          "label": "Karachi",
+          "start": 2234,
+          "type": "entity"
+        },
+        {
+          "end": 2421,
+          "key": "Q843",
+          "label": "Pakistan",
+          "start": 2413,
+          "type": "entity"
+        },
+        {
+          "end": 2586,
+          "key": "Q18554460",
+          "label": "unknown",
+          "start": 2579,
+          "type": "entity"
+        },
+        {
+          "end": 2906,
+          "key": "Q2258261",
+          "label": "Pakistan Navy",
+          "start": 2893,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 27,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-34603833",
+      "mentions": [
+        {
+          "end": 15,
+          "key": "Q4679995",
+          "label": "Adam Wiśniewski",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 32,
+          "key": "Q4679995",
+          "label": "Adam Wiśniewski",
+          "start": 17,
+          "type": "entity"
+        },
+        {
+          "end": 67,
+          "key": "Q36",
+          "label": "Polish",
+          "start": 61,
+          "type": "entity"
+        },
+        {
+          "end": 113,
+          "key": "Q3042256",
+          "label": "Wisła Płock",
+          "start": 102,
+          "type": "entity"
+        },
+        {
+          "end": 167,
+          "key": "Q11874157",
+          "label": "handball at the 2016 Summer Olympics",
+          "start": 131,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 556,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-16088155",
+      "mentions": [
+        {
+          "end": 47,
+          "key": "Q520837",
+          "label": "Andean Trade Promotion and Drug Eradication Act",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 100,
+          "key": "Q520837",
+          "label": "Andean Trade Promotion and Drug Eradication Act",
+          "start": 53,
+          "type": "entity"
+        },
+        {
+          "end": 165,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 148,
+          "type": "entity"
+        },
+        {
+          "end": 252,
+          "key": "Q750",
+          "label": "Bolivia",
+          "start": 245,
+          "type": "entity"
+        },
+        {
+          "end": 262,
+          "key": "Q739",
+          "label": "Colombia",
+          "start": 254,
+          "type": "entity"
+        },
+        {
+          "end": 271,
+          "key": "Q736",
+          "label": "Ecuador",
+          "start": 264,
+          "type": "entity"
+        },
+        {
+          "end": 280,
+          "key": "Q419",
+          "label": "Peru",
+          "start": 276,
+          "type": "entity"
+        },
+        {
+          "end": 533,
+          "key": "Q750",
+          "label": "Bolivia",
+          "start": 526,
+          "type": "entity"
+        },
+        {
+          "end": 668,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 651,
+          "type": "entity"
+        },
+        {
+          "end": 722,
+          "key": "Q41576",
+          "label": "cocaine",
+          "start": 715,
+          "type": "entity"
+        },
+        {
+          "end": 829,
+          "key": "Q23505",
+          "label": "George H. W. Bush",
+          "start": 812,
+          "type": "entity"
+        },
+        {
+          "end": 863,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 846,
+          "type": "entity"
+        },
+        {
+          "end": 968,
+          "key": "Q750",
+          "label": "Bolivia",
+          "start": 961,
+          "type": "entity"
+        },
+        {
+          "end": 978,
+          "key": "Q739",
+          "label": "Colombia",
+          "start": 970,
+          "type": "entity"
+        },
+        {
+          "end": 987,
+          "key": "Q736",
+          "label": "Ecuador",
+          "start": 980,
+          "type": "entity"
+        },
+        {
+          "end": 997,
+          "key": "Q419",
+          "label": "Peru",
+          "start": 993,
+          "type": "entity"
+        },
+        {
+          "end": 1191,
+          "key": "Q207",
+          "label": "George W. Bush",
+          "start": 1177,
+          "type": "entity"
+        },
+        {
+          "end": 1261,
+          "key": "Q520837",
+          "label": "Andean Trade Promotion and Drug Eradication Act",
+          "start": 1214,
+          "type": "entity"
+        },
+        {
+          "end": 1719,
+          "key": "Q1255921",
+          "label": "President",
+          "start": 1710,
+          "type": "entity"
+        },
+        {
+          "end": 1734,
+          "key": "Q207",
+          "label": "George W. Bush",
+          "start": 1720,
+          "type": "entity"
+        },
+        {
+          "end": 1767,
+          "key": "Q750",
+          "label": "Bolivia",
+          "start": 1760,
+          "type": "entity"
+        },
+        {
+          "end": 1908,
+          "key": "Q11701",
+          "label": "United States House of Representatives",
+          "start": 1870,
+          "type": "entity"
+        },
+        {
+          "end": 2079,
+          "key": "Q736",
+          "label": "Ecuador",
+          "start": 2072,
+          "type": "entity"
+        },
+        {
+          "end": 2151,
+          "key": "Q520837",
+          "label": "Andean Trade Promotion and Drug Eradication Act",
+          "start": 2104,
+          "type": "entity"
+        },
+        {
+          "end": 2214,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 2197,
+          "type": "entity"
+        },
+        {
+          "end": 2457,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 2440,
+          "type": "entity"
+        },
+        {
+          "end": 2496,
+          "key": "Q753",
+          "label": "copper",
+          "start": 2490,
+          "type": "entity"
+        },
+        {
+          "end": 2524,
+          "key": "Q208045",
+          "label": "gold",
+          "start": 2520,
+          "type": "entity"
+        },
+        {
+          "end": 2543,
+          "key": "Q28367",
+          "label": "asparagus",
+          "start": 2534,
+          "type": "entity"
+        },
+        {
+          "end": 2554,
+          "key": "Q11002",
+          "label": "sugar",
+          "start": 2549,
+          "type": "entity"
+        },
+        {
+          "end": 2611,
+          "key": "Q736",
+          "label": "Ecuador",
+          "start": 2604,
+          "type": "entity"
+        },
+        {
+          "end": 2639,
+          "key": "Q739",
+          "label": "Colombia",
+          "start": 2631,
+          "type": "entity"
+        },
+        {
+          "end": 2653,
+          "key": "Q419",
+          "label": "Peru",
+          "start": 2649,
+          "type": "entity"
+        },
+        {
+          "end": 2674,
+          "key": "Q750",
+          "label": "Bolivia",
+          "start": 2667,
+          "type": "entity"
+        },
+        {
+          "end": 2719,
+          "key": "Q10870555",
+          "label": "report",
+          "start": 2713,
+          "type": "entity"
+        },
+        {
+          "end": 2771,
+          "key": "Q839560",
+          "label": "United States International Trade Commission",
+          "start": 2727,
+          "type": "entity"
+        },
+        {
+          "end": 2965,
+          "key": "Q10870555",
+          "label": "report",
+          "start": 2959,
+          "type": "entity"
+        },
+        {
+          "end": 3006,
+          "key": "Q628807",
+          "label": "United States Department of Labor",
+          "start": 2973,
+          "type": "entity"
+        },
+        {
+          "end": 3196,
+          "key": "Q30",
+          "label": "the United States",
+          "start": 3179,
+          "type": "entity"
+        },
+        {
+          "end": 3247,
+          "key": "Q28367",
+          "label": "asparagus",
+          "start": 3238,
+          "type": "entity"
+        },
+        {
+          "end": 3295,
+          "key": "Q28367",
+          "label": "Asparagus",
+          "start": 3286,
+          "type": "entity"
+        },
+        {
+          "end": 3400,
+          "key": "Q28367",
+          "label": "asparagus",
+          "start": 3391,
+          "type": "entity"
+        },
+        {
+          "end": 3415,
+          "key": "Q5456",
+          "label": "Andes",
+          "start": 3410,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 140,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-35695532",
+      "mentions": [
+        {
+          "end": 16,
+          "key": "Q6802408",
+          "label": "McMullen problem",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 38,
+          "key": "Q6802408",
+          "label": "McMullen problem",
+          "start": 22,
+          "type": "entity"
+        },
+        {
+          "end": 473,
+          "key": "Q6802408",
+          "label": "McMullen problem",
+          "start": 457,
+          "type": "entity"
+        },
+        {
+          "end": 574,
+          "key": "Q83460",
+          "label": "general",
+          "start": 567,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 88,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-4700989",
+      "mentions": [
+        {
+          "end": 22,
+          "key": "Q1040389",
+          "label": "Seven Years: 1998–2005",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 46,
+          "key": "Q1040389",
+          "label": "Seven Years: 1998–2005",
+          "start": 24,
+          "type": "entity"
+        },
+        {
+          "end": 88,
+          "key": "Q42884",
+          "label": "German",
+          "start": 82,
+          "type": "entity"
+        },
+        {
+          "end": 102,
+          "key": "Q77002",
+          "label": "ATB",
+          "start": 99,
+          "type": "entity"
+        },
+        {
+          "end": 156,
+          "key": "Q77002",
+          "label": "ATB",
+          "start": 153,
+          "type": "entity"
+        },
+        {
+          "end": 237,
+          "key": "Q16958139",
+          "label": "Humanity",
+          "start": 229,
+          "type": "entity"
+        },
+        {
+          "end": 264,
+          "key": "Q434101",
+          "label": "Tiff Lacey",
+          "start": 254,
+          "type": "entity"
+        },
+        {
+          "end": 297,
+          "key": "Q2057907",
+          "label": "Let U Go",
+          "start": 289,
+          "type": "entity"
+        },
+        {
+          "end": 324,
+          "key": "Q12022803",
+          "label": "Jan Löchel",
+          "start": 314,
+          "type": "entity"
+        },
+        {
+          "end": 343,
+          "key": "Q4882810",
+          "label": "Believe in Me",
+          "start": 330,
+          "type": "entity"
+        },
+        {
+          "end": 484,
+          "key": "Q5976999",
+          "label": "I Don't Wanna Stop",
+          "start": 466,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 437,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-4892547",
+      "mentions": [
+        {
+          "end": 13,
+          "key": "Q6166096",
+          "label": "Jawed Siddiqi",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 28,
+          "key": "Q6166096",
+          "label": "Jawed Siddiqi",
+          "start": 15,
+          "type": "entity"
+        },
+        {
+          "end": 56,
+          "key": "Q161885",
+          "label": "British",
+          "start": 49,
+          "type": "entity"
+        },
+        {
+          "end": 187,
+          "key": "Q21",
+          "label": "England",
+          "start": 180,
+          "type": "entity"
+        },
+        {
+          "end": 208,
+          "key": "Q1255921",
+          "label": "president",
+          "start": 199,
+          "type": "entity"
+        },
+        {
+          "end": 345,
+          "key": "Q84",
+          "label": "London",
+          "start": 339,
+          "type": "entity"
+        },
+        {
+          "end": 432,
+          "key": "Q2256",
+          "label": "Birmingham",
+          "start": 422,
+          "type": "entity"
+        },
+        {
+          "end": 984,
+          "key": "Q161885",
+          "label": "British",
+          "start": 977,
+          "type": "entity"
+        },
+        {
+          "end": 1026,
+          "key": "Q161885",
+          "label": "British",
+          "start": 1019,
+          "type": "entity"
+        },
+        {
+          "end": 1237,
+          "key": "Q8461",
+          "label": "racism",
+          "start": 1231,
+          "type": "entity"
+        },
+        {
+          "end": 1318,
+          "key": "Q49",
+          "label": "North",
+          "start": 1313,
+          "type": "entity"
+        },
+        {
+          "end": 1386,
+          "key": "Q160381",
+          "label": "the West",
+          "start": 1378,
+          "type": "entity"
+        },
+        {
+          "end": 1456,
+          "key": "Q319544",
+          "label": "secretary",
+          "start": 1447,
+          "type": "entity"
+        },
+        {
+          "end": 1469,
+          "key": "Q23445",
+          "label": "Black",
+          "start": 1464,
+          "type": "entity"
+        },
+        {
+          "end": 1638,
+          "key": "Q249838",
+          "label": "vice",
+          "start": 1634,
+          "type": "entity"
+        },
+        {
+          "end": 1668,
+          "key": "Q104835300",
+          "label": "The Monitoring Group",
+          "start": 1648,
+          "type": "entity"
+        },
+        {
+          "end": 1716,
+          "key": "Q23445",
+          "label": "black",
+          "start": 1711,
+          "type": "entity"
+        },
+        {
+          "end": 1726,
+          "key": "Q727928",
+          "label": "Asian",
+          "start": 1721,
+          "type": "entity"
+        },
+        {
+          "end": 1980,
+          "key": "Q61022630",
+          "label": "officer",
+          "start": 1973,
+          "type": "entity"
+        },
+        {
+          "end": 2064,
+          "key": "Q7894986",
+          "label": "University and College Union",
+          "start": 2036,
+          "type": "entity"
+        },
+        {
+          "end": 2146,
+          "key": "Q1518641",
+          "label": "union representative",
+          "start": 2126,
+          "type": "entity"
+        },
+        {
+          "end": 2158,
+          "key": "Q380075",
+          "label": "advocate",
+          "start": 2150,
+          "type": "entity"
+        },
+        {
+          "end": 2301,
+          "key": "Q7324265",
+          "label": "Richard Bornat",
+          "start": 2287,
+          "type": "entity"
+        },
+        {
+          "end": 2325,
+          "key": "Q1760791",
+          "label": "Middlesex University",
+          "start": 2305,
+          "type": "entity"
+        },
+        {
+          "end": 2556,
+          "key": "Q11661",
+          "label": "information technology",
+          "start": 2534,
+          "type": "entity"
+        },
+        {
+          "end": 2737,
+          "key": "Q5086802",
+          "label": "Chartered Institute of Arbitrators",
+          "start": 2703,
+          "type": "entity"
+        },
+        {
+          "end": 2820,
+          "key": "Q2580491",
+          "label": "British Pakistanis",
+          "start": 2802,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 1963,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-18420178",
+      "mentions": [
+        {
+          "end": 11,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 21,
+          "key": "Q1370",
+          "label": "Virginia",
+          "start": 13,
+          "type": "entity"
+        },
+        {
+          "end": 34,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 23,
+          "type": "entity"
+        },
+        {
+          "end": 85,
+          "key": "Q495132",
+          "label": "Botetourt County",
+          "start": 69,
+          "type": "entity"
+        },
+        {
+          "end": 95,
+          "key": "Q1370",
+          "label": "Virginia",
+          "start": 87,
+          "type": "entity"
+        },
+        {
+          "end": 204,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 193,
+          "type": "entity"
+        },
+        {
+          "end": 324,
+          "key": "Q24460",
+          "label": "northeast",
+          "start": 315,
+          "type": "entity"
+        },
+        {
+          "end": 504,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 493,
+          "type": "entity"
+        },
+        {
+          "end": 538,
+          "key": "Q1370",
+          "label": "Virginia",
+          "start": 530,
+          "type": "entity"
+        },
+        {
+          "end": 647,
+          "key": "Q49",
+          "label": "north",
+          "start": 642,
+          "type": "entity"
+        },
+        {
+          "end": 711,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 700,
+          "type": "entity"
+        },
+        {
+          "end": 1031,
+          "key": "Q846570",
+          "label": "Americans",
+          "start": 1022,
+          "type": "entity"
+        },
+        {
+          "end": 1452,
+          "key": "Q495132",
+          "label": "Botetourt County",
+          "start": 1436,
+          "type": "entity"
+        },
+        {
+          "end": 1542,
+          "key": "Q495132",
+          "label": "Botetourt County",
+          "start": 1526,
+          "type": "entity"
+        },
+        {
+          "end": 1852,
+          "key": "Q1255921",
+          "label": "President",
+          "start": 1843,
+          "type": "entity"
+        },
+        {
+          "end": 1982,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 1971,
+          "type": "entity"
+        },
+        {
+          "end": 2182,
+          "key": "Q584540",
+          "label": "Captain",
+          "start": 2175,
+          "type": "entity"
+        },
+        {
+          "end": 2187,
+          "key": "Q2808",
+          "label": "John",
+          "start": 2183,
+          "type": "entity"
+        },
+        {
+          "end": 2213,
+          "key": "Q2808",
+          "label": "John",
+          "start": 2209,
+          "type": "entity"
+        },
+        {
+          "end": 2311,
+          "key": "Q49",
+          "label": "north",
+          "start": 2306,
+          "type": "entity"
+        },
+        {
+          "end": 2367,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 2356,
+          "type": "entity"
+        },
+        {
+          "end": 2513,
+          "key": "Q2808",
+          "label": "John",
+          "start": 2509,
+          "type": "entity"
+        },
+        {
+          "end": 2577,
+          "key": "Q83460",
+          "label": "General",
+          "start": 2570,
+          "type": "entity"
+        },
+        {
+          "end": 2598,
+          "key": "Q1370",
+          "label": "Virginia",
+          "start": 2590,
+          "type": "entity"
+        },
+        {
+          "end": 2894,
+          "key": "Q1397",
+          "label": "Ohio",
+          "start": 2890,
+          "type": "entity"
+        },
+        {
+          "end": 3035,
+          "key": "Q1397",
+          "label": "Ohio",
+          "start": 3031,
+          "type": "entity"
+        },
+        {
+          "end": 3349,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 3338,
+          "type": "entity"
+        },
+        {
+          "end": 3860,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 3849,
+          "type": "entity"
+        },
+        {
+          "end": 3957,
+          "key": "Q495132",
+          "label": "Botetourt County",
+          "start": 3941,
+          "type": "entity"
+        },
+        {
+          "end": 4137,
+          "key": "Q495132",
+          "label": "Botetourt County",
+          "start": 4121,
+          "type": "entity"
+        },
+        {
+          "end": 4665,
+          "key": "Q66889825",
+          "label": "superintendent",
+          "start": 4651,
+          "type": "entity"
+        },
+        {
+          "end": 4730,
+          "key": "Q527127",
+          "label": "Fincastle",
+          "start": 4721,
+          "type": "entity"
+        },
+        {
+          "end": 4802,
+          "key": "Q23445",
+          "label": "black",
+          "start": 4797,
+          "type": "entity"
+        },
+        {
+          "end": 4843,
+          "key": "Q654437",
+          "label": "executor",
+          "start": 4835,
+          "type": "entity"
+        },
+        {
+          "end": 4866,
+          "key": "Q2808",
+          "label": "John",
+          "start": 4862,
+          "type": "entity"
+        },
+        {
+          "end": 4912,
+          "key": "Q527127",
+          "label": "Fincastle",
+          "start": 4903,
+          "type": "entity"
+        },
+        {
+          "end": 5003,
+          "key": "Q49078",
+          "label": "white",
+          "start": 4998,
+          "type": "entity"
+        },
+        {
+          "end": 5427,
+          "key": "Q5325242",
+          "label": "Eagle Rock",
+          "start": 5417,
+          "type": "entity"
+        },
+        {
+          "end": 5517,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 5506,
+          "type": "entity"
+        },
+        {
+          "end": 5804,
+          "key": "Q1312",
+          "label": "Spring",
+          "start": 5798,
+          "type": "entity"
+        },
+        {
+          "end": 5829,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 5818,
+          "type": "entity"
+        },
+        {
+          "end": 5924,
+          "key": "Q5325242",
+          "label": "Eagle Rock",
+          "start": 5914,
+          "type": "entity"
+        },
+        {
+          "end": 6044,
+          "key": "Q6142157",
+          "label": "James River High School",
+          "start": 6021,
+          "type": "entity"
+        },
+        {
+          "end": 6164,
+          "key": "Q527127",
+          "label": "Fincastle",
+          "start": 6155,
+          "type": "entity"
+        },
+        {
+          "end": 6310,
+          "key": "Q170167",
+          "label": "TNT",
+          "start": 6307,
+          "type": "entity"
+        },
+        {
+          "end": 6331,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 6320,
+          "type": "entity"
+        },
+        {
+          "end": 6353,
+          "key": "Q495132",
+          "label": "Botetourt County",
+          "start": 6337,
+          "type": "entity"
+        },
+        {
+          "end": 6374,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 6363,
+          "type": "entity"
+        },
+        {
+          "end": 6498,
+          "key": "Q5325242",
+          "label": "Eagle Rock",
+          "start": 6488,
+          "type": "entity"
+        },
+        {
+          "end": 6893,
+          "key": "Q5325242",
+          "label": "Eagle Rock",
+          "start": 6883,
+          "type": "entity"
+        },
+        {
+          "end": 7027,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 7016,
+          "type": "entity"
+        },
+        {
+          "end": 7172,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 7161,
+          "type": "entity"
+        },
+        {
+          "end": 7463,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 7452,
+          "type": "entity"
+        },
+        {
+          "end": 7569,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 7558,
+          "type": "entity"
+        },
+        {
+          "end": 8402,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 8391,
+          "type": "entity"
+        },
+        {
+          "end": 8432,
+          "key": "Q16533",
+          "label": "Judge",
+          "start": 8427,
+          "type": "entity"
+        },
+        {
+          "end": 8467,
+          "key": "Q495132",
+          "label": "Botetourt County",
+          "start": 8451,
+          "type": "entity"
+        },
+        {
+          "end": 8518,
+          "key": "Q1370",
+          "label": "Virginia",
+          "start": 8510,
+          "type": "entity"
+        },
+        {
+          "end": 8833,
+          "key": "Q16533",
+          "label": "Judge",
+          "start": 8828,
+          "type": "entity"
+        },
+        {
+          "end": 8924,
+          "key": "Q170167",
+          "label": "TNT",
+          "start": 8921,
+          "type": "entity"
+        },
+        {
+          "end": 9123,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 9112,
+          "type": "entity"
+        },
+        {
+          "end": 9644,
+          "key": "Q37226",
+          "label": "teacher",
+          "start": 9637,
+          "type": "entity"
+        },
+        {
+          "end": 9884,
+          "key": "Q527127",
+          "label": "Fincastle",
+          "start": 9875,
+          "type": "entity"
+        },
+        {
+          "end": 9941,
+          "key": "Q23445",
+          "label": "black",
+          "start": 9936,
+          "type": "entity"
+        },
+        {
+          "end": 10038,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 10027,
+          "type": "entity"
+        },
+        {
+          "end": 10204,
+          "key": "Q37226",
+          "label": "teacher",
+          "start": 10197,
+          "type": "entity"
+        },
+        {
+          "end": 10276,
+          "key": "Q37226",
+          "label": "teacher",
+          "start": 10269,
+          "type": "entity"
+        },
+        {
+          "end": 10461,
+          "key": "Q23445",
+          "label": "black",
+          "start": 10456,
+          "type": "entity"
+        },
+        {
+          "end": 10633,
+          "key": "Q49078",
+          "label": "white",
+          "start": 10628,
+          "type": "entity"
+        },
+        {
+          "end": 10745,
+          "key": "Q37226",
+          "label": "teacher",
+          "start": 10738,
+          "type": "entity"
+        },
+        {
+          "end": 10799,
+          "key": "Q49078",
+          "label": "white",
+          "start": 10794,
+          "type": "entity"
+        },
+        {
+          "end": 10892,
+          "key": "Q37226",
+          "label": "teacher",
+          "start": 10885,
+          "type": "entity"
+        },
+        {
+          "end": 11133,
+          "key": "Q3400985",
+          "label": "academic",
+          "start": 11125,
+          "type": "entity"
+        },
+        {
+          "end": 11260,
+          "key": "Q5325242",
+          "label": "Eagle Rock",
+          "start": 11250,
+          "type": "entity"
+        },
+        {
+          "end": 11370,
+          "key": "Q495132",
+          "label": "Botetourt County",
+          "start": 11354,
+          "type": "entity"
+        },
+        {
+          "end": 11411,
+          "key": "Q527127",
+          "label": "Fincastle",
+          "start": 11402,
+          "type": "entity"
+        },
+        {
+          "end": 11422,
+          "key": "Q23445",
+          "label": "black",
+          "start": 11417,
+          "type": "entity"
+        },
+        {
+          "end": 11477,
+          "key": "Q5568105",
+          "label": "Glen Wilton",
+          "start": 11466,
+          "type": "entity"
+        }
+      ]
+    },
+    {
+      "cost": {
+        "estimated_tokens": 99,
+        "model_calls": 1
+      },
+      "id": "wiki-fair-v2-test-32251441",
+      "mentions": [
+        {
+          "end": 10,
+          "key": "Q6271700",
+          "label": "Jon Tucker",
+          "start": 0,
+          "type": "entity"
+        },
+        {
+          "end": 22,
+          "key": "Q6271700",
+          "label": "Jon Tucker",
+          "start": 12,
+          "type": "entity"
+        },
+        {
+          "end": 36,
+          "key": "Q16",
+          "label": "Canadian",
+          "start": 28,
+          "type": "entity"
+        },
+        {
+          "end": 49,
+          "key": "Q28389",
+          "label": "screenwriter",
+          "start": 37,
+          "type": "entity"
+        },
+        {
+          "end": 76,
+          "key": "Q1930187",
+          "label": "journalist",
+          "start": 66,
+          "type": "entity"
+        },
+        {
+          "end": 112,
+          "key": "Q1414443",
+          "label": "Filmmaker",
+          "start": 103,
+          "type": "entity"
+        },
+        {
+          "end": 137,
+          "key": "Q3322928",
+          "label": "Montreal Mirror",
+          "start": 122,
+          "type": "entity"
+        },
+        {
+          "end": 196,
+          "key": "Q2944916",
+          "label": "Canadian Film Centre",
+          "start": 176,
+          "type": "entity"
+        },
+        {
+          "end": 290,
+          "key": "Q1951167",
+          "label": "Movie Central",
+          "start": 277,
+          "type": "entity"
+        },
+        {
+          "end": 315,
+          "key": "Q28389",
+          "label": "screenwriter",
+          "start": 303,
+          "type": "entity"
+        },
+        {
+          "end": 332,
+          "key": "Q1390690",
+          "label": "Showcase",
+          "start": 324,
+          "type": "entity"
+        },
+        {
+          "end": 349,
+          "key": "Q40831",
+          "label": "comedy",
+          "start": 343,
+          "type": "entity"
+        },
+        {
+          "end": 365,
+          "key": "Q7734943",
+          "label": "The Foundation",
+          "start": 351,
+          "type": "entity"
+        },
+        {
+          "end": 439,
+          "key": "Q3322928",
+          "label": "Montreal Mirror",
+          "start": 424,
+          "type": "entity"
+        },
+        {
+          "end": 458,
+          "key": "Q249838",
+          "label": "Vice",
+          "start": 454,
+          "type": "entity"
+        },
+        {
+          "end": 502,
+          "key": "Q8261",
+          "label": "novel",
+          "start": 497,
+          "type": "entity"
+        },
+        {
+          "end": 614,
+          "key": "Q5009037",
+          "label": "CBC Radio One",
+          "start": 601,
+          "type": "entity"
+        },
+        {
+          "end": 623,
+          "key": "Q40831",
+          "label": "comedy",
+          "start": 617,
+          "type": "entity"
+        },
+        {
+          "end": 640,
+          "key": "Q8026741",
+          "label": "WireTap",
+          "start": 633,
+          "type": "entity"
+        }
+      ]
+    }
+  ],
+  "dataset": {
+    "name": "wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26",
+    "registry_sha256": "89e3fa89b5b8e14bdfa18f599f8dfee3a41560f349ecc331bcad802fc79a22de",
+    "sha256": "b909e1d6df95b59a2e49cdd8331202d5a06d67f844c61ff9fdf5941d6b9f79e2"
+  },
+  "input": "plain_text",
+  "model": {
+    "name": "scikit-learn TF-IDF character n-gram entity retriever",
+    "source": "https://github.com/scikit-learn/scikit-learn/tree/1.8.0",
+    "version": "scikit-learn==1.8.0;eat-profile-v1"
+  },
+  "runner": {
+    "command": "python scripts/run_tfidf_linker.py --training benchmark/external/wiki-fair-v2/dev.training.jsonl --input benchmark/external/wiki-fair-v2/test.inputs.jsonl --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 --runner-commit f7e3fc2a63d8e9c9e84e70f3e990f46fcd31e6d3 --output benchmark/results/wiki-fair-v2-tfidf-linker-run.json",
+    "commit": "f7e3fc2a63d8e9c9e84e70f3e990f46fcd31e6d3",
+    "parameters": {
+      "candidate_generation": "registry labels plus dev-only mention aliases",
+      "context_characters_each_side": 160,
+      "input_sha256": "6d04de8818615ac0266b2c240228fe12f3cf14da8819e662f79ec665334da886",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "training_sha256": "bb735f16e8d8b3a2962f29060bc826ba62924ed67e128961a745cfb81452b5dd",
+      "vectorizer_analyzer": "char_wb",
+      "vectorizer_norm": "l2",
+      "vectorizer_sublinear_tf": true
+    },
+    "source": "https://github.com/E-AI-MODEL/EAT-inline/blob/f7e3fc2a63d8e9c9e84e70f3e990f46fcd31e6d3/scripts/run_tfidf_linker.py"
+  },
+  "schema_version": "1.0"
+}
