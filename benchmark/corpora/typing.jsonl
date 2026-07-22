@@ -1,0 +1,16 @@
+{"id":"typing-nl-001","language":"nl","sentence":"Hans Visser schreef het rapport.","entity":"Hans Visser","expected_type":"person","expected_key":"Hans_Visser"}
+{"id":"typing-nl-002","language":"nl","sentence":"EAI Analyse & Advies publiceerde de analyse.","entity":"EAI Analyse & Advies","expected_type":"organisation","expected_key":"EAI_Analyse_Advies"}
+{"id":"typing-nl-003","language":"nl","sentence":"Het onderzoek vond plaats in Rotterdam.","entity":"Rotterdam","expected_type":"location","expected_key":"Rotterdam"}
+{"id":"typing-nl-004","language":"nl","sentence":"Lees het EAT Inline onderzoeksrapport.","entity":"EAT Inline onderzoeksrapport","expected_type":"document","expected_key":"EAT_Inline_Onderzoeksrapport"}
+{"id":"typing-nl-005","language":"nl","sentence":"Project Phoenix start volgende maand.","entity":"Project Phoenix","expected_type":"project","expected_key":"Phoenix"}
+{"id":"typing-nl-006","language":"nl","sentence":"De conferentie AI & Onderwijs begint vrijdag.","entity":"AI & Onderwijs","expected_type":"event","expected_key":"AI_Onderwijs"}
+{"id":"typing-nl-007","language":"nl","sentence":"De Gold Corpus-set bevat de testgevallen.","entity":"Gold Corpus-set","expected_type":"dataset","expected_key":"Gold_Corpus"}
+{"id":"typing-nl-008","language":"nl","sentence":"Entity resolution is het centrale begrip.","entity":"Entity resolution","expected_type":"concept","expected_key":"Entity_Resolution"}
+{"id":"typing-en-001","language":"en","sentence":"Hans Visser authored the report.","entity":"Hans Visser","expected_type":"person","expected_key":"Hans_Visser"}
+{"id":"typing-en-002","language":"en","sentence":"EAI Analyse & Advies released the study.","entity":"EAI Analyse & Advies","expected_type":"organisation","expected_key":"EAI_Analyse_Advies"}
+{"id":"typing-en-003","language":"en","sentence":"The Resolver API processed the references.","entity":"Resolver API","expected_type":"system","expected_key":"Resolver_API"}
+{"id":"typing-en-004","language":"en","sentence":"The EAT Inline parser is distributed as a product prototype.","entity":"EAT Inline parser","expected_type":"product","expected_key":"EAT_Inline_Parser"}
+{"id":"typing-en-005","language":"en","sentence":"The article appeared in AI Review.","entity":"AI Review","expected_type":"publication","expected_key":"AI_Review"}
+{"id":"typing-en-006","language":"en","sentence":"Visit the EAI Research Portal.","entity":"EAI Research Portal","expected_type":"website","expected_key":"EAI_Research_Portal"}
+{"id":"typing-en-007","language":"en","sentence":"The team used a controlled experiment.","entity":"controlled experiment","expected_type":"method","expected_key":"Controlled_Experiment"}
+{"id":"typing-en-008","language":"en","sentence":"The benchmark dataset contains synthetic cases.","entity":"benchmark dataset","expected_type":"dataset","expected_key":"Benchmark_Dataset"}
