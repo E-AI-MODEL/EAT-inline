@@ -3,11 +3,13 @@
 This module defines a small, stable interface that lets different resolution
 strategies be compared over the same gold cases under identical scoring.
 
-Two deterministic reference adapters are provided:
+Three deterministic reference adapters are provided:
 
 - ``PlainLabelMatchAdapter`` resolves entities by exact label matching over the
   registry, with no author-supplied type or key. This is the plain-text
   baseline condition.
+- ``LinkerAdapter`` wraps the offline ``GazetteerLinker``, which detects
+  complete registry labels in plain text and abstains on unresolved ambiguity.
 - ``EatResolverAdapter`` parses author-written ``@@EAT type:key@@`` references
   and resolves them by ``(type, key)``. This is the EAT Inline condition.
 
@@ -28,6 +30,7 @@ never as a pass/fail gate.
 
 from __future__ import annotations
 
+import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Iterable
@@ -56,17 +59,31 @@ class Case:
         )
 
 
+@dataclass(frozen=True)
+class Candidate:
+    """One registry entry that a label could refer to."""
+
+    type: str
+    key: str
+    canonical_id: str
+
+
 class ResolverRegistry:
     """Storage-neutral view over registry entries used by the adapters."""
 
     def __init__(self, entries: Iterable[dict[str, object]]) -> None:
         self.by_typed_key: dict[tuple[str, str], str] = {}
         self.by_label: dict[str, list[str]] = {}
+        self.candidates_by_label: dict[str, list["Candidate"]] = {}
         for entry in entries:
+            type_name = str(entry["type"])
+            key = str(entry["key"])
             canonical_id = str(entry["canonical_id"])
-            self.by_typed_key[(str(entry["type"]), str(entry["key"]))] = canonical_id
-            self.by_label.setdefault(str(entry["label"]).casefold(), []).append(
-                canonical_id
+            label = str(entry["label"])
+            self.by_typed_key[(type_name, key)] = canonical_id
+            self.by_label.setdefault(label.casefold(), []).append(canonical_id)
+            self.candidates_by_label.setdefault(label.casefold(), []).append(
+                Candidate(type=type_name, key=key, canonical_id=canonical_id)
             )
 
     def resolve_typed(self, type_name: str, key: str) -> str | None:
@@ -209,6 +226,215 @@ class EatResolverAdapter(BaselineAdapter):
         )
 
 
+@dataclass(frozen=True)
+class LinkedMention:
+    """A mention a linker found in text, optionally resolved to a type and key.
+
+    ``type`` and ``key`` are ``None`` when the linker detected a mention but
+    could not commit to a single entity (an abstention). ``candidate_count``
+    records how many registry candidates the label had.
+    """
+
+    label: str
+    start: int
+    end: int
+    type: str | None
+    key: str | None
+    candidate_count: int
+
+
+@dataclass
+class LinkOutput:
+    mentions: list[LinkedMention]
+    cost: Cost = field(default_factory=Cost)
+
+
+class EntityLinker(ABC):
+    """Contract for a component that finds and links entity mentions in text.
+
+    This is the plug-in point for real models. A named-entity recogniser, an
+    entity linker or an LLM resolver implements :meth:`link` and sets
+    ``requires_model = True``; :class:`LinkerAdapter` turns any linker into a
+    scored benchmark condition. The bundled :class:`GazetteerLinker` is offline
+    and deterministic (``requires_model = False``) so it can run in CI.
+    """
+
+    name: str
+    requires_model: bool = False
+
+    @abstractmethod
+    def link(self, text: str, registry: ResolverRegistry) -> LinkOutput:
+        """Return the mentions found in ``text`` with any committed type/key."""
+
+
+_TOKEN_RE = re.compile(r"\w+", re.UNICODE)
+
+
+def _label_pattern(label: str) -> re.Pattern[str]:
+    """Match a label without accepting it inside a longer word."""
+
+    left_boundary = r"(?<!\w)" if label[0].isalnum() or label[0] == "_" else ""
+    right_boundary = r"(?!\w)" if label[-1].isalnum() or label[-1] == "_" else ""
+    return re.compile(left_boundary + re.escape(label) + right_boundary, re.IGNORECASE)
+
+
+class GazetteerLinker(EntityLinker):
+    """A deterministic, offline linker.
+
+    Detection uses complete registry labels as a gazetteer. Overlapping labels
+    use longest-match-first semantics, so a registry containing both ``York``
+    and ``New York`` emits only the latter for the text ``New York``. Linking:
+
+    - a label with a single candidate links to it;
+    - a label with several candidates is disambiguated only when a candidate's
+      ``type`` word appears within :attr:`context_window` tokens of the mention
+      (for example ``project`` near ``Phoenix``);
+    - otherwise the linker abstains rather than guessing.
+
+    Abstention is deliberate: committing to an arbitrary candidate would inject
+    accuracy that reflects a coin toss, not the method. A committing variant is
+    intentionally not provided here.
+    """
+
+    name = "Offline gazetteer entity linker"
+    requires_model = False
+    context_window = 3
+
+    def link(self, text: str, registry: ResolverRegistry) -> LinkOutput:
+        tokens = [
+            (match.group(0).casefold(), match.start(), match.end())
+            for match in _TOKEN_RE.finditer(text)
+        ]
+        cost = Cost(estimated_tokens=len(text.split()))
+        detected: list[tuple[int, int, str, list[Candidate]]] = []
+        for label, candidates in registry.candidates_by_label.items():
+            cost.label_scans += 1
+            for match in _label_pattern(label).finditer(text):
+                detected.append((match.start(), match.end(), label, candidates))
+
+        # Select the longest label for every overlapping span. This policy is
+        # independent of registry insertion order and prevents double linking.
+        selected: list[tuple[int, int, str, list[Candidate]]] = []
+        for item in sorted(
+            detected,
+            key=lambda value: (-(value[1] - value[0]), value[0], value[2]),
+        ):
+            start, end, _, _ = item
+            overlaps = any(
+                start < chosen_end and end > chosen_start
+                for chosen_start, chosen_end, _, _ in selected
+            )
+            if overlaps:
+                continue
+            selected.append(item)
+
+        mentions: list[LinkedMention] = []
+        for start, end, label, candidates in sorted(selected):
+            cost.registry_lookups += 1
+            if len(candidates) == 1:
+                only = candidates[0]
+                mentions.append(
+                    LinkedMention(label, start, end, only.type, only.key, 1)
+                )
+            else:
+                chosen = self._disambiguate(candidates, tokens, start, end)
+                mentions.append(
+                    LinkedMention(
+                        label,
+                        start,
+                        end,
+                        chosen.type if chosen else None,
+                        chosen.key if chosen else None,
+                        len(candidates),
+                    )
+                )
+        return LinkOutput(mentions=mentions, cost=cost)
+
+    def _disambiguate(
+        self,
+        candidates: list[Candidate],
+        tokens: list[tuple[str, int, int]],
+        start: int,
+        end: int,
+    ) -> Candidate | None:
+        before = [
+            token for token, _, token_end in tokens if token_end <= start
+        ][-self.context_window :]
+        after = [
+            token for token, token_start, _ in tokens if token_start >= end
+        ][: self.context_window]
+        nearby = [
+            (token, distance)
+            for distance, token in enumerate(reversed(before), start=1)
+        ] + [
+            (token, distance)
+            for distance, token in enumerate(after, start=1)
+        ]
+
+        distances: dict[Candidate, int] = {}
+        for candidate in candidates:
+            matches = [
+                distance
+                for token, distance in nearby
+                if token == candidate.type.casefold()
+            ]
+            if matches:
+                distances[candidate] = min(matches)
+
+        if distances:
+            nearest = min(distances.values())
+            matched = [
+                candidate
+                for candidate, distance in distances.items()
+                if distance == nearest
+            ]
+            if len(matched) == 1:
+                return matched[0]
+        return None
+
+
+class LinkerAdapter(BaselineAdapter):
+    """Score any :class:`EntityLinker` as a benchmark condition.
+
+    The linker must place its own mentions on the plain text; it never receives
+    the author-written references. This isolates the effect of the EAT Inline
+    notation from the effect of perfect author annotation.
+    """
+
+    def __init__(self, linker: EntityLinker, condition: str = "linker") -> None:
+        self.linker = linker
+        self.name = linker.name
+        self.condition = condition
+        self.requires_model = linker.requires_model
+
+    def predict(self, case: Case, registry: ResolverRegistry) -> AdapterResult:
+        output = self.linker.link(case.plain_text, registry)
+        predicted: set[str] = set()
+        abstained: list[str] = []
+        unresolved: list[str] = []
+        linked_mentions = 0
+        for mention in output.mentions:
+            if mention.type is None or mention.key is None:
+                abstained.append(mention.label)
+                continue
+            output.cost.registry_lookups += 1
+            canonical_id = registry.resolve_typed(mention.type, mention.key)
+            if canonical_id:
+                predicted.add(canonical_id)
+                linked_mentions += 1
+            else:
+                unresolved.append(f"{mention.type}:{mention.key}")
+        return AdapterResult(
+            predicted_ids=predicted,
+            diagnostics={
+                "linked": linked_mentions,
+                "abstained_ambiguous": abstained,
+                "unresolved_predictions": unresolved,
+            },
+            cost=output.cost,
+        )
+
+
 _REGISTRY: dict[str, BaselineAdapter] = {}
 
 
@@ -234,10 +460,15 @@ def registered_conditions() -> list[str]:
 
 
 def default_adapters() -> list[BaselineAdapter]:
-    """Return the deterministic adapters that run in CI, in report order."""
+    """Return the deterministic adapters that run in CI, in report order.
 
-    return [get_adapter("plain"), get_adapter("eat_inline")]
+    The order is intentional: no entity information, automatic linking, then
+    explicit author-supplied references.
+    """
+
+    return [get_adapter("plain"), get_adapter("linker"), get_adapter("eat_inline")]
 
 
 register_adapter(PlainLabelMatchAdapter())
+register_adapter(LinkerAdapter(GazetteerLinker()))
 register_adapter(EatResolverAdapter())
