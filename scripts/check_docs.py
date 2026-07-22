@@ -16,6 +16,7 @@ REQUIRED_FILES = (
     ROOT / "GOVERNANCE.md",
     ROOT / "CHANGELOG.md",
     ROOT / "schemas" / "registry-entry.schema.json",
+    ROOT / "schemas" / "linker-run.schema.json",
 )
 FORBIDDEN = (
     "Nick Milo",
