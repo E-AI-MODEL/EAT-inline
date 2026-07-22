@@ -1,28 +1,26 @@
 # EAT Inline
 
-**A minimal inline language for explicit, readable and machine-processable references.**
+**A minimal writing format for explicit, readable and machine-processable references.**
 
 [![CI](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/ci.yml/badge.svg)](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/ci.yml)
 [![Conformance](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/conformance.yml/badge.svg)](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/conformance.yml)
 [![Benchmark](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/benchmark.yml/badge.svg)](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/benchmark.yml)
 [![Docs](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/docs.yml/badge.svg)](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/docs.yml)
 
-EAT Inline adds compact semantic references to ordinary text without turning the document into a full markup language.
+EAT Inline lets a person or AI write a typed reference without knowing an internal database ID.
 
 ```text
 Het rapport is geschreven door @@EAT person:Hans_Visser@@
 voor @@EAT organisation:EAI_Analyse_Advies@@.
 ```
 
-The tag identifies **what an entity is** and **which entity is meant**. The surrounding sentence expresses the relationship.
+The tag makes the intended entity visible. The surrounding sentence keeps the relationship in natural language.
 
-> **Status:** version `0.3.1` is a research baseline, not a production standard.
+> **Status:** version `0.3.2` is an experimental candidate. It is usable for testing, but it is not a proven or frozen standard.
 
-## Language
+## Core syntax
 
-EAT Inline currently has two constructs.
-
-### Reference
+EAT Inline has one construct:
 
 ```text
 @@EAT type:key@@
@@ -36,38 +34,57 @@ Examples:
 @@EAT project:EAT_Inline@@
 ```
 
-Identifiers use:
+`type` and `key` use:
 
 ```text
 [A-Za-z_][A-Za-z0-9_]*
 ```
 
-### TLDR block
-
-```text
-@@EAT tldr:
-EAT Inline adds explicit references to ordinary prose.
-@@
-```
-
-The `tldr` block is the only content-level construct in the current language.
-
-## Design rule
+The core design rule is:
 
 > **References identify entities. Natural language expresses relations.**
 
-EAT Inline does not attempt to encode complete sentences as data structures. Parsing, validation and entity resolution remain separate operations.
+EAT Inline does not define special blocks for summaries or other document structure. Use the conventions of the host format, such as Markdown headings and paragraphs.
+
+## Writing format, not storage format
+
+EAT Inline is primarily an authoring format. A resolver may map a written reference to an internal ID and store both:
+
+```json
+{
+  "source_reference": "@@EAT person:Hans_Visser@@",
+  "canonical_id": "person-10492",
+  "resolution_status": "resolved"
+}
+```
+
+The source reference records author intent. The canonical ID records the system's resolved entity. Resolution metadata belongs to the consuming system, not to the EAT Inline syntax.
+
+## Minimal implementation
+
+A basic implementation only needs a regular expression:
+
+```python
+import re
+
+REFERENCE_RE = re.compile(
+    r"@@EAT (?P<type>[A-Za-z_][A-Za-z0-9_]*):"
+    r"(?P<key>[A-Za-z_][A-Za-z0-9_]*)@@"
+)
+```
+
+A type list, database resolver, governance process or gateway can be added when a use case needs it. None is required to parse or start using the notation.
 
 ## Automated verification
 
-The repository includes four GitHub Actions workflows:
+The repository contains four GitHub Actions workflows:
 
 | Workflow | Purpose |
 |---|---|
-| `CI` | Runs unit tests on supported Python versions |
-| `Conformance` | Tests the implementation against the versioned corpus |
-| `Benchmark` | Runs a deterministic parser smoke benchmark and uploads results |
-| `Docs` | Detects version drift, retired terminology and naming inconsistencies |
+| `CI` | Runs the unit tests on supported Python versions |
+| `Conformance` | Checks the reference implementation against the versioned examples |
+| `Benchmark` | Measures parser throughput and visible character overhead |
+| `Docs` | Detects version drift and retired names or syntax |
 
 Run the same checks locally:
 
@@ -79,45 +96,36 @@ python scripts/run_benchmark.py
 python scripts/check_docs.py
 ```
 
-The benchmark is deliberately limited. Parser throughput alone does not prove improved retrieval, entity resolution or RAG quality. Those claims require controlled comparative experiments.
+Conformance protects compatibility between implementations. It does not make optional resolver architecture part of the language.
+
+## Evidence boundary
+
+Version `0.3.2` establishes:
+
+- one compact reference syntax;
+- a small Python reference parser;
+- versioned examples and automated checks;
+- a reproducible parser and syntax-overhead benchmark.
+
+It does not yet prove:
+
+- acceptable writing friction in every context;
+- improved retrieval, entity resolution or RAG results;
+- universal model compatibility;
+- production readiness.
+
+Those claims require comparative experiments with people, models and real resolver systems.
 
 ## Repository map
 
 ```text
-.github/workflows/       GitHub Actions
+.github/workflows/       automated checks
 benchmark/results/       generated benchmark artifacts
-scripts/                 conformance, benchmark and documentation checks
+scripts/                 verification and benchmark scripts
 src/eat_inline.py        minimal reference implementation
-tests/                   unit tests and conformance corpus
+tests/                   unit tests and conformance examples
 pyproject.toml           package metadata
 ```
-
-Planned research materials belong under:
-
-```text
-spec/                    normative language specification
-benchmark/corpora/       comparative benchmark datasets
-docs/                    readable project documentation
-research/                protocols, reports and evidence
-```
-
-## Current scope
-
-Version `0.3.1` establishes:
-
-- reference and TLDR syntax;
-- identifier rules;
-- a minimal parser and validator;
-- a versioned conformance corpus;
-- automated GitHub Actions checks;
-- a reproducible benchmark harness.
-
-It does **not** yet establish:
-
-- universal model compatibility;
-- improved retrieval or RAG performance;
-- production readiness;
-- verified identity resolution from a syntactically valid key.
 
 ## Stewardship
 
