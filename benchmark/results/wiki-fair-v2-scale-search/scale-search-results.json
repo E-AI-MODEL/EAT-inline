@@ -1,0 +1,109 @@
+{
+  "benchmark": "wiki-fair-v2-eat-scale-search-v1",
+  "inputs": {
+    "oracle_dataset": "benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl",
+    "oracle_dataset_sha256": "d447ef6661c9a958cf481466a8c62e4a8853017489158d76ef7f847bdbf967ba",
+    "registry": "benchmark/external/wiki-fair-v2/entity-registry.jsonl",
+    "registry_sha256": "89e3fa89b5b8e14bdfa18f599f8dfee3a41560f349ecc331bcad802fc79a22de"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "logical_cpu_count": 9
+  },
+  "command": "python scripts/run_scale_search_benchmark.py --oracle-dataset benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl --documents 100000 --query-repetitions 100 --query-rounds 20 --output-dir benchmark/results/wiki-fair-v2-scale-search",
+  "result": {
+    "workload": {
+      "generated_documents": 100000,
+      "different_source_documents": 40,
+      "generation_method": "repeat the 40 source documents in deterministic order and assign each workload copy a distinct integer document ID",
+      "different_entities": 434,
+      "plain_text_bytes": 259910000,
+      "eat_text_bytes": 276752500,
+      "eat_references": 1672500,
+      "document_entity_pairs": 1110000,
+      "eat_markup_extra_bytes": 16842500
+    },
+    "index": {
+      "entity_keys": 434,
+      "postings": 1110000,
+      "postings_payload_bytes": 4440000,
+      "postings_integer_bits": 32,
+      "fingerprint_sha256": "569dca4c699de95064735337f2b7d09777a7b4dbabe54b91baca290c0146f73d",
+      "indexes_identical": true
+    },
+    "index_build": {
+      "metadata_control_seconds": 0.050861,
+      "eat_inline_seconds": 2.328733,
+      "eat_documents_per_second": 42941.8,
+      "eat_megabytes_per_second": 118.84,
+      "eat_extra_seconds": 2.277872
+    },
+    "entity_lookup": {
+      "definition": "given one canonical entity ID, return the indexed workload document ordinals that contain it",
+      "index_lookup_only": {
+        "metadata_control": {
+          "queries": 434,
+          "rounds": 20,
+          "repetitions_per_query": 100,
+          "lookup_operations": 868000,
+          "elapsed_seconds": 0.16943,
+          "p50_microseconds": 0.1924,
+          "p95_microseconds": 0.1984,
+          "p99_microseconds": 0.3094,
+          "operations_per_second": 5123074.0,
+          "checksum": 89021498000
+        },
+        "eat_inline": {
+          "queries": 434,
+          "rounds": 20,
+          "repetitions_per_query": 100,
+          "lookup_operations": 868000,
+          "elapsed_seconds": 0.166101,
+          "p50_microseconds": 0.189,
+          "p95_microseconds": 0.1948,
+          "p99_microseconds": 0.2937,
+          "operations_per_second": 5225723.53,
+          "checksum": 89021498000
+        },
+        "p50_difference_microseconds": -0.0034
+      },
+      "lookup_and_read_all_results": {
+        "metadata_control": {
+          "queries": 434,
+          "rounds": 20,
+          "searches": 8680,
+          "document_ids_read": 22200000,
+          "elapsed_seconds": 0.276101,
+          "p50_microseconds": 30.496,
+          "p95_microseconds": 36.524,
+          "p99_microseconds": 61.001,
+          "document_ids_per_second": 80405354.54,
+          "checksum": 1110041700000
+        },
+        "eat_inline": {
+          "queries": 434,
+          "rounds": 20,
+          "searches": 8680,
+          "document_ids_read": 22200000,
+          "elapsed_seconds": 0.275804,
+          "p50_microseconds": 30.485,
+          "p95_microseconds": 36.425,
+          "p99_microseconds": 60.951,
+          "document_ids_per_second": 80491915.25,
+          "checksum": 1110041700000
+        },
+        "p50_difference_microseconds": -0.011
+      }
+    }
+  },
+  "limitations": [
+    "The 100,000 workload documents repeat 40 different source documents.",
+    "Timings are machine-dependent and are not CI pass/fail thresholds.",
+    "The control receives the same correct entity IDs as separate metadata.",
+    "The benchmark measures canonical-entity lookup and result traversal after indexing.",
+    "It does not measure keyword, full-text, semantic or vector search.",
+    "It does not test Word, PDF, Excel, Markdown or HTML round trips."
+  ]
+}

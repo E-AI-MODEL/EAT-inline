@@ -118,6 +118,77 @@ recorded-run format. A run records:
 Validation rejects missing or duplicate cases, changed inputs, invalid spans,
 unknown typed keys and leaked fields such as `gold_ids` or `eat_text`.
 
+## 100,000-document scale-search test
+
+This separate benchmark measures representation overhead and indexed entity
+lookup. It does not rerun the TF-IDF model.
+
+### Workload
+
+- 40 complete Wikipedia source pages are repeated in deterministic order.
+- Every copy receives a distinct 32-bit integer document ID.
+- The final workload contains 100,000 generated documents.
+- Every one of the 1,672,500 scored text positions has an EAT reference.
+- The resulting index contains 1,110,000 document-entity pairs for 434
+  different entities.
+
+The plain-text workload is 259.9 MB. Inline EAT adds 16.8 MB, or 6.5%, for a
+total of 276.8 MB. The 32-bit postings payload is 4.44 MB. That payload number
+does not include Python dictionary and array-object overhead.
+
+The repeated source text keeps the workload public and exactly checkable. It
+does not provide the diversity of 100,000 different documents.
+
+### Compared routes
+
+The metadata control receives the correct entity IDs as separate structured
+metadata. The EAT route parses the same IDs from the full inline-EAT text.
+Both routes build an in-memory mapping from canonical entity ID to matching
+document IDs.
+
+The benchmark rejects the run unless both indexes have the same SHA-256
+fingerprint and every search checksum matches.
+
+### Recorded result
+
+Environment: Python `3.12.13`, Linux `6.12.13`, AMD EPYC 9V74, 9 logical CPUs
+visible to the container.
+
+| Index build | Seconds | Documents/second | MB/second |
+|---|---:|---:|---:|
+| Correct IDs as separate metadata | 0.050861 | not comparable | not comparable |
+| IDs parsed from inline EAT | 2.328733 | 42,941.80 | 118.84 |
+
+The search test queried 434 entities over twenty rounds. The result-scan timing
+includes looking up the postings list and reading every matching document ID,
+for 22,200,000 document IDs in total.
+
+| Index source | p50 | p95 | p99 | Document IDs read/second |
+|---|---:|---:|---:|---:|
+| Separate metadata | 30.496 µs | 36.524 µs | 61.001 µs | 80,405,355 |
+| Inline EAT | 30.485 µs | 36.425 µs | 60.951 µs | 80,491,915 |
+
+The 0.011-microsecond p50 difference is inside measurement noise. It is not a
+claim that one route is faster. EAT affects index construction; after that,
+both searches use identical postings.
+
+This benchmark does not cover keyword search, full-text search, semantic
+search, vector search, ranking, network transfer or result serialization.
+Timings are informational and machine-dependent. CI checks correctness and
+completion, not a fixed speed threshold.
+
+### Reproduce the scale-search test
+
+```bash
+python scripts/run_scale_search_benchmark.py \
+  --oracle-dataset benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --documents 100000 \
+  --query-repetitions 100 \
+  --query-rounds 20 \
+  --output-dir /tmp/wiki-fair-v2-scale-search
+```
+
 ## Reproduce the public experiment
 
 ```bash
@@ -165,4 +236,8 @@ wiki-fair-v2-eat-assistance/eat-assistance-results.json
 wiki-fair-v2-eat-assistance/eat-assistance-summary.md
 wiki-fair-v2-eat-assistance/coverage-by-level.svg
 wiki-fair-v2-eat-assistance/performance-by-level.svg
+wiki-fair-v2-scale-search/scale-search-results.json
+wiki-fair-v2-scale-search/scale-search-summary.md
+wiki-fair-v2-scale-search/scale-overview.svg
+wiki-fair-v2-scale-search/search-latency.svg
 ```

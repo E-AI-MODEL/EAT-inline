@@ -38,6 +38,9 @@ The project follows semantic versioning for the reference implementation and spe
   and explicit non-human-annotation limitations.
 - Clear public-test scope reporting, coverage and performance charts, and a
   shorter README with the detailed benchmark method moved to `BENCHMARKS.md`.
+- A machine-recorded 100,000-document scale-search workload with full EAT
+  coverage, identical metadata-control and EAT-derived indexes, index-build
+  throughput, entity-search latency, checksums, charts and CI execution.
 
 ### Policy
 
