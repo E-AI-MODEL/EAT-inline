@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 import unittest
 
+from eat_inline import parse_references
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "benchmark" / "external" / "wiki-fair-v2"
@@ -19,6 +21,7 @@ class WikiFairCorpusTests(unittest.TestCase):
             "training": "training_articles",
             "inputs": "test_input_articles",
             "test": "test_articles",
+            "oracle": "oracle_test_articles",
             "registry": "registry_entities",
         }
         for name, count_name in expected_counts.items():
@@ -51,6 +54,29 @@ class WikiFairCorpusTests(unittest.TestCase):
         self.assertEqual(len({item["key"] for item in registry}), len(registry))
         self.assertTrue(all(item["type"] == "entity" for item in registry))
         self.assertTrue(all(item["key"].startswith("Q") for item in registry))
+
+    def test_oracle_eat_references_cover_every_gold_id(self):
+        oracle = load_jsonl(CORPUS / "test.oracle-eat.jsonl")
+        annotation_count = 0
+        for item in oracle:
+            annotations = item["annotations"]
+            annotation_count += len(annotations)
+            self.assertEqual(
+                {annotation["key"] for annotation in annotations},
+                set(item["gold_ids"]),
+            )
+            self.assertEqual(
+                {reference.key for reference in parse_references(item["eat_text"])},
+                set(item["gold_ids"]),
+            )
+            spans = sorted(
+                (annotation["start"], annotation["end"])
+                for annotation in annotations
+            )
+            self.assertTrue(
+                all(left[1] <= right[0] for left, right in zip(spans, spans[1:]))
+            )
+        self.assertEqual(annotation_count, 669)
 
 
 if __name__ == "__main__":

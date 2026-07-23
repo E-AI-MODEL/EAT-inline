@@ -32,6 +32,10 @@ The project follows semantic versioning for the reference implementation and spe
   no-coreference dev/test split, including pinned source data, a closed
   Wikidata candidate registry, complete recorded predictions, shared scoring
   and CI reproduction.
+- Controlled oracle EAT-assistance curve over the same frozen Wiki-Fair model
+  run. Gold-derived EAT references override overlapping model predictions at
+  0%, 25%, 50%, 75% and 100% mention coverage, with an EAT-only upper bound
+  and explicit non-human-annotation limitations.
 
 ### Policy
 
