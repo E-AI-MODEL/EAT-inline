@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img">
+  <title>Example document without EAT Inline</title>
+  <desc>A generic document editor showing ordinary names without machine-readable entity identities.</desc>
+  <style>
+    .app { fill: #e8edf3; }
+    .bar { fill: #ffffff; stroke: #cbd5e1; }
+    .page { fill: #ffffff; stroke: #cbd5e1; }
+    .filename { font: 600 15px system-ui, sans-serif; fill: #334155; }
+    .pill { fill: #e2e8f0; }
+    .pill-text { font: 700 11px system-ui, sans-serif; fill: #475569; letter-spacing: 1px; }
+    .heading { font: 700 29px Georgia, serif; fill: #0f172a; }
+    .body { font: 19px Georgia, serif; fill: #1e293b; }
+    .entity { font: 700 19px Georgia, serif; fill: #1e293b; }
+    .note { font: 14px system-ui, sans-serif; fill: #64748b; }
+  </style>
+  <rect class="app" width="800" height="520" rx="18"/>
+  <rect class="bar" x="20" y="20" width="760" height="54" rx="10"/>
+  <circle cx="48" cy="47" r="7" fill="#ef4444"/>
+  <circle cx="70" cy="47" r="7" fill="#f59e0b"/>
+  <circle cx="92" cy="47" r="7" fill="#22c55e"/>
+  <text class="filename" x="122" y="52">project-update.md</text>
+  <rect class="page" x="85" y="94" width="630" height="388" rx="5"/>
+  <rect class="pill" x="125" y="126" width="105" height="24" rx="12"/>
+  <text class="pill-text" x="142" y="143">PLAIN TEXT</text>
+  <text class="heading" x="125" y="200">Project update</text>
+  <text class="body" x="125" y="252">The report was written by <tspan class="entity">Hans Visser.</tspan></text>
+  <text class="body" x="125" y="295">It describes the <tspan class="entity">EAT Inline</tspan> test at</text>
+  <text class="entity" x="125" y="329">EAI Analyse &amp; Advies.</text>
+  <line x1="125" y1="363" x2="675" y2="363" stroke="#e2e8f0"/>
+  <text class="note" x="125" y="401">A reader sees the names, but software must guess which identities they mean.</text>
+</svg>

@@ -45,6 +45,8 @@ The project follows semantic versioning for the reference implementation and spe
   reference per document, 434 source-page questions, ordinary lexical,
   EAT-filtered and hybrid routes, grounded source-answer scoring, charts and
   full CI execution.
+- Two SVG document examples showing the same source text with and without EAT,
+  plus a README order that introduces the format before the benchmark details.
 
 ### Policy
 

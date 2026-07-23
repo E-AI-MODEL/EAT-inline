@@ -33,19 +33,78 @@ only identifies the entity.
 > Version `0.3.2` is experimental. It can be tested, but it is not yet a proven
 > or frozen standard.
 
+## See it in a document
+
+These two mock document screenshots show the same text before and after the
+writer adds EAT references.
+
+| Without EAT | With EAT in the source text |
+|---|---|
+| ![Document without EAT Inline](docs/images/document-without-eat.svg) | ![The same document with EAT Inline references](docs/images/document-with-eat.svg) |
+
+The right-hand document shows the literal stored text. An editor could display
+the references differently, but the source still contains
+`@@EAT type:key@@`. These generic screenshots do not claim compatibility with
+Word, PDF or another file format.
+
+## Using the format
+
+Examples:
+
+```text
+@@EAT person:Hans_Visser@@
+@@EAT organisation:EAI_Analyse_Advies@@
+@@EAT project:EAT_Inline@@
+```
+
+Both `type` and `key` use:
+
+```text
+[A-Za-z_][A-Za-z0-9_]*
+```
+
+A minimal parser needs only a regular expression:
+
+```python
+import re
+
+REFERENCE_RE = re.compile(
+    r"@@EAT (?P<type>[A-Za-z_][A-Za-z0-9_]*):"
+    r"(?P<key>[A-Za-z_][A-Za-z0-9_]*)@@"
+)
+```
+
+A resolver can map the written reference to an internal ID:
+
+```json
+{
+  "source_reference": "@@EAT person:Hans_Visser@@",
+  "canonical_id": "person-10492",
+  "resolution_status": "resolved"
+}
+```
+
+EAT Inline is the writing format. Databases, registries and resolution metadata
+belong to the system using it.
+
 ## What has actually been tested?
 
-The repository contains two separate test groups:
+The repository now contains four separate test groups. They answer different
+questions:
 
 | Test group | Size | What it checks |
 |---|---:|---|
-| Small synthetic tests | 76 records | Syntax, typing, resolution, generation and controlled comparisons |
-| Small public-text test | 40 Wikipedia pages | Entity linking with one frozen TF-IDF model |
+| Syntax and resolution | 76 records | Does the format parse and resolve correctly? |
+| Public entity-linking test | 40 Wikipedia pages | What changes when correct EAT identities assist one frozen TF-IDF model? |
+| Full-coverage scale test | 100,000 generated documents | Can 1,672,500 inline references be parsed, indexed and searched? |
+| One-tag retrieval test | 100,000 generated documents | What changes in passage retrieval when every document has exactly one tag? |
 
-The graphs below describe only the 40-page test. This is enough for a
-controlled correctness check. It is not a large-scale or speed test.
+The two 100,000-document workloads repeat public source material. They test
+processing volume, not the variety of 100,000 different articles.
 
-### Size of the public test
+## Public 40-page entity-linking test
+
+### Test size
 
 - **40 test documents**, each copied from one complete English Wikipedia page
 - **669 marked places in the text** where a person, place, organisation or
@@ -57,7 +116,7 @@ The test stores those 40 documents as 40 records in one JSONL file. JSONL is
 only the test container. It makes the input easy to hash, replay and score. It
 is not a required EAT Inline document format.
 
-### One document with and without EAT
+### Actual test excerpt with and without EAT
 
 This excerpt comes from one of the 40 Wikipedia pages.
 
@@ -218,7 +277,7 @@ can infer the ID correctly. The test has no vector embeddings or language
 model, so it measures RAG retrieval and source selection, not free-form answer
 quality.
 
-### File formats
+## File formats
 
 This experiment scores extracted plain text. It does not yet test whether EAT
 references survive opening, editing, exporting and reading:
@@ -231,46 +290,6 @@ references survive opening, editing, exporting and reading:
 
 Each format needs its own import and export test. PDF needs extra attention
 because it is a page-layout format, not a reliable source-text format.
-
-## Using the format
-
-Examples:
-
-```text
-@@EAT person:Hans_Visser@@
-@@EAT organisation:EAI_Analyse_Advies@@
-@@EAT project:EAT_Inline@@
-```
-
-Both `type` and `key` use:
-
-```text
-[A-Za-z_][A-Za-z0-9_]*
-```
-
-A minimal parser needs only a regular expression:
-
-```python
-import re
-
-REFERENCE_RE = re.compile(
-    r"@@EAT (?P<type>[A-Za-z_][A-Za-z0-9_]*):"
-    r"(?P<key>[A-Za-z_][A-Za-z0-9_]*)@@"
-)
-```
-
-A resolver can map the written reference to an internal ID:
-
-```json
-{
-  "source_reference": "@@EAT person:Hans_Visser@@",
-  "canonical_id": "person-10492",
-  "resolution_status": "resolved"
-}
-```
-
-EAT Inline is the writing format. Databases, registries and resolution metadata
-belong to the system using it.
 
 ## Documentation and reproduction
 
@@ -305,7 +324,7 @@ The repository does not yet show:
 - how much writing time EAT adds;
 - reliable round trips through Word, PDF, Excel, Markdown or HTML;
 - performance against a strong NER, entity-linking or LLM baseline;
-- improved retrieval or RAG results;
+- retrieval gains when a system must infer the query identity itself;
 - production readiness.
 
 Those questions need new tests with people, stronger models and larger public
