@@ -1,4 +1,5 @@
 from pathlib import Path
+from tempfile import TemporaryDirectory
 import unittest
 
 from eat_baselines import Case, ResolverRegistry
@@ -8,6 +9,7 @@ from scripts.run_eat_assistance_benchmark import (
     evaluate,
     load_jsonl,
     load_oracle_cases,
+    write_outputs,
 )
 
 
@@ -48,8 +50,10 @@ class EatAssistanceBenchmarkTests(unittest.TestCase):
             result["model_with_oracle_eat"]["0%"],
             {
                 **result["model_baseline"],
-                "annotated_mentions": 0,
-                "assisted_entity_cases": 0,
+                "eat_text_positions": 0,
+                "plain_text_positions": 669,
+                "documents_with_eat": 0,
+                "document_entity_pairs_with_eat": 0,
                 "f1_delta_vs_model": 0.0,
                 "false_positives_removed_vs_model": 0,
                 "false_negatives_removed_vs_model": 0,
@@ -64,7 +68,9 @@ class EatAssistanceBenchmarkTests(unittest.TestCase):
         full = result["model_with_oracle_eat"]["100%"]
         self.assertEqual(full["recall"], 1.0)
         self.assertEqual(full["false_negatives"], 0)
-        self.assertEqual(full["annotated_mentions"], 669)
+        self.assertEqual(full["eat_text_positions"], 669)
+        self.assertEqual(full["plain_text_positions"], 0)
+        self.assertEqual(full["documents_with_eat"], 40)
         self.assertEqual(
             result["eat_only_oracle"],
             {
@@ -89,6 +95,74 @@ class EatAssistanceBenchmarkTests(unittest.TestCase):
         ]
 
         self.assertEqual(f1_values, sorted(f1_values))
+
+    def test_scope_and_coverage_counts_are_explicit(self):
+        result, _ = evaluate(
+            self.recorded_run, self.oracle_cases, self.registry
+        )
+
+        self.assertEqual(
+            result["test_scope"],
+            {
+                "documents": 40,
+                "scored_text_positions": 669,
+                "document_entity_pairs": 444,
+                "unique_entities": 434,
+            },
+        )
+        conditions = result["model_with_oracle_eat"]
+        self.assertEqual(
+            {
+                coverage: (
+                    condition["eat_text_positions"],
+                    condition["plain_text_positions"],
+                    condition["documents_with_eat"],
+                )
+                for coverage, condition in conditions.items()
+            },
+            {
+                "0%": (0, 669, 0),
+                "25%": (167, 502, 36),
+                "50%": (335, 334, 37),
+                "75%": (502, 167, 39),
+                "100%": (669, 0, 40),
+            },
+        )
+
+    def test_generated_summary_and_charts_explain_the_scale(self):
+        result, rows = evaluate(
+            self.recorded_run, self.oracle_cases, self.registry
+        )
+        model_dataset = CORPUS / "test.comparison.jsonl"
+        oracle_dataset = CORPUS / "test.oracle-eat.jsonl"
+        registry_path = CORPUS / "entity-registry.jsonl"
+
+        with TemporaryDirectory() as directory:
+            output = Path(directory)
+            write_outputs(
+                output,
+                run=self.recorded_run,
+                model_dataset=model_dataset,
+                oracle_dataset=oracle_dataset,
+                registry_path=registry_path,
+                evaluation=result,
+                cases=rows,
+            )
+            summary = (output / "eat-assistance-summary.md").read_text()
+            coverage_chart = (output / "coverage-by-level.svg").read_text()
+            performance_chart = (
+                output / "performance-by-level.svg"
+            ).read_text()
+
+        self.assertIn("40 test documents", summary)
+        self.assertIn("669 scored text positions", summary)
+        self.assertIn("It is not the share of documents or files", summary)
+        self.assertIn(
+            "| Model + EAT (50%) | `335` | `334` | `37 of 40` |",
+            summary,
+        )
+        self.assertIn("335 EAT + 334 plain · 37/40 documents", coverage_chart)
+        self.assertIn("F1 rises from 0.7089 to 0.9043", performance_chart)
 
 
 if __name__ == "__main__":

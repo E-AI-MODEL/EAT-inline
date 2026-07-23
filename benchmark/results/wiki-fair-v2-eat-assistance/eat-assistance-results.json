@@ -30,8 +30,10 @@
           "true_positives": 308,
           "false_positives": 117,
           "false_negatives": 136,
-          "annotated_mentions": 0,
-          "assisted_entity_cases": 0,
+          "eat_text_positions": 0,
+          "plain_text_positions": 669,
+          "documents_with_eat": 0,
+          "document_entity_pairs_with_eat": 0,
           "f1_delta_vs_model": 0.0,
           "false_positives_removed_vs_model": 0,
           "false_negatives_removed_vs_model": 0
@@ -44,8 +46,10 @@
           "true_positives": 334,
           "false_positives": 113,
           "false_negatives": 110,
-          "annotated_mentions": 167,
-          "assisted_entity_cases": 134,
+          "eat_text_positions": 167,
+          "plain_text_positions": 502,
+          "documents_with_eat": 36,
+          "document_entity_pairs_with_eat": 134,
           "f1_delta_vs_model": 0.0408,
           "false_positives_removed_vs_model": 4,
           "false_negatives_removed_vs_model": 26
@@ -58,8 +62,10 @@
           "true_positives": 380,
           "false_positives": 106,
           "false_negatives": 64,
-          "annotated_mentions": 335,
-          "assisted_entity_cases": 258,
+          "eat_text_positions": 335,
+          "plain_text_positions": 334,
+          "documents_with_eat": 37,
+          "document_entity_pairs_with_eat": 258,
           "f1_delta_vs_model": 0.1083,
           "false_positives_removed_vs_model": 11,
           "false_negatives_removed_vs_model": 72
@@ -72,8 +78,10 @@
           "true_positives": 411,
           "false_positives": 101,
           "false_negatives": 33,
-          "annotated_mentions": 502,
-          "assisted_entity_cases": 363,
+          "eat_text_positions": 502,
+          "plain_text_positions": 167,
+          "documents_with_eat": 39,
+          "document_entity_pairs_with_eat": 363,
           "f1_delta_vs_model": 0.1509,
           "false_positives_removed_vs_model": 16,
           "false_negatives_removed_vs_model": 103
@@ -86,8 +94,10 @@
           "true_positives": 444,
           "false_positives": 94,
           "false_negatives": 0,
-          "annotated_mentions": 669,
-          "assisted_entity_cases": 444,
+          "eat_text_positions": 669,
+          "plain_text_positions": 0,
+          "documents_with_eat": 40,
+          "document_entity_pairs_with_eat": 444,
           "f1_delta_vs_model": 0.1954,
           "false_positives_removed_vs_model": 23,
           "false_negatives_removed_vs_model": 136
@@ -102,7 +112,13 @@
         "false_positives": 0,
         "false_negatives": 0
       },
-      "oracle_annotations": 669
+      "scored_text_positions": 669,
+      "test_scope": {
+        "documents": 40,
+        "scored_text_positions": 669,
+        "document_entity_pairs": 444,
+        "unique_entities": 434
+      }
     },
     "limitations": [
       "EAT annotations are generated from public test gold labels.",

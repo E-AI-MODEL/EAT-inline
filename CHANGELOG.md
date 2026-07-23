@@ -36,6 +36,8 @@ The project follows semantic versioning for the reference implementation and spe
   run. Gold-derived EAT references override overlapping model predictions at
   0%, 25%, 50%, 75% and 100% mention coverage, with an EAT-only upper bound
   and explicit non-human-annotation limitations.
+- Clear public-test scope reporting, coverage and performance charts, and a
+  shorter README with the detailed benchmark method moved to `BENCHMARKS.md`.
 
 ### Policy
 

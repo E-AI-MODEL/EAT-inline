@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img">
+  <title>Model performance by EAT coverage</title>
+  <desc>F1 rises from 0.7089 to 0.9043 and recall from 0.6937 to 1.0 as correct EAT coverage rises.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font: 700 26px system-ui, sans-serif; fill: #111827; }
+    .subtitle { font: 15px system-ui, sans-serif; fill: #4b5563; }
+    .grid { stroke: #e5e7eb; stroke-width: 1; }
+    .axis { font: 13px system-ui, sans-serif; fill: #4b5563; text-anchor: end; }
+    .axis.x { text-anchor: middle; }
+    .value { font: 12px ui-monospace, monospace; fill: #111827; text-anchor: middle; }
+    .f1 { fill: #ea580c; stroke: #ea580c; stroke-width: 3; fill-opacity: 1; }
+    .recall { fill: #2563eb; stroke: #2563eb; stroke-width: 3; fill-opacity: 1; }
+    polyline { fill: none !important; stroke-linejoin: round; stroke-linecap: round; }
+    .legend { font: 14px system-ui, sans-serif; fill: #374151; }
+  </style>
+  <rect class="bg" width="1000" height="520"/>
+  <text class="title" x="40" y="48">Same frozen model, more correct EAT references</text>
+  <text class="subtitle" x="40" y="78">Scores over the same 40 documents; only EAT coverage changes</text>
+  <line class="grid" x1="90" y1="420.0" x2="880" y2="420.0"/><text class="axis" x="76" y="425.0">0.0</text><line class="grid" x1="90" y1="356.0" x2="880" y2="356.0"/><text class="axis" x="76" y="361.0">0.2</text><line class="grid" x1="90" y1="292.0" x2="880" y2="292.0"/><text class="axis" x="76" y="297.0">0.4</text><line class="grid" x1="90" y1="228.0" x2="880" y2="228.0"/><text class="axis" x="76" y="233.0">0.6</text><line class="grid" x1="90" y1="164.0" x2="880" y2="164.0"/><text class="axis" x="76" y="169.0">0.8</text><line class="grid" x1="90" y1="100.0" x2="880" y2="100.0"/><text class="axis" x="76" y="105.0">1.0</text>
+  <text class="axis x" x="120" y="452">0%</text><text class="axis x" x="300" y="452">25%</text><text class="axis x" x="480" y="452">50%</text><text class="axis x" x="660" y="452">75%</text><text class="axis x" x="840" y="452">100%</text>
+  <polyline class="f1" points="120,193.2 300,180.1 480,158.5 660,144.9 840,130.6"/><circle class="f1" cx="120" cy="193.2" r="5"/><text class="value" x="120" y="213.2">0.7089</text><circle class="f1" cx="300" cy="180.1" r="5"/><text class="value" x="300" y="200.1">0.7497</text><circle class="f1" cx="480" cy="158.5" r="5"/><text class="value" x="480" y="178.5">0.8172</text><circle class="f1" cx="660" cy="144.9" r="5"/><text class="value" x="660" y="164.9">0.8598</text><circle class="f1" cx="840" cy="130.6" r="5"/><text class="value" x="840" y="150.6">0.9043</text>
+  <polyline class="recall" points="120,198.0 300,179.3 480,146.1 660,123.8 840,100.0"/><circle class="recall" cx="120" cy="198.0" r="5"/><text class="value" x="120" y="186.0">0.6937</text><circle class="recall" cx="300" cy="179.3" r="5"/><text class="value" x="300" y="167.3">0.7523</text><circle class="recall" cx="480" cy="146.1" r="5"/><text class="value" x="480" y="134.1">0.8559</text><circle class="recall" cx="660" cy="123.8" r="5"/><text class="value" x="660" y="111.8">0.9257</text><circle class="recall" cx="840" cy="100.0" r="5"/><text class="value" x="840" y="88.0">1.0000</text>
+  <line class="f1" x1="350" y1="490" x2="385" y2="490"/>
+  <text class="legend" x="395" y="495">F1</text>
+  <line class="recall" x1="500" y1="490" x2="535" y2="490"/>
+  <text class="legend" x="545" y="495">Recall</text>
+</svg>
