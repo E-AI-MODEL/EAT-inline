@@ -53,7 +53,7 @@ class OneTagRagBenchmarkTests(unittest.TestCase):
             all(item.entity_id in item.context_entity_ids for item in prototypes)
         )
 
-    def test_small_workload_runs_all_three_retrieval_routes(self):
+    def test_small_workload_runs_all_four_retrieval_routes(self):
         result = run_benchmark(
             source_records=self.source_records,
             registry_records=self.registry_records,
@@ -73,8 +73,21 @@ class OneTagRagBenchmarkTests(unittest.TestCase):
         )
         self.assertEqual(workload["eat_references_per_document"], 1.0)
         self.assertEqual(result["questions"]["count"], 434)
+        self.assertEqual(
+            set(quality),
+            {
+                "ordinary_lexical",
+                "inferred_eat",
+                "eat_filtered",
+                "hybrid",
+            },
+        )
         self.assertLess(
             quality["ordinary_lexical"]["hit_at_1"],
+            quality["inferred_eat"]["hit_at_1"],
+        )
+        self.assertLessEqual(
+            quality["inferred_eat"]["hit_at_1"],
             quality["eat_filtered"]["hit_at_1"],
         )
         self.assertEqual(quality["eat_filtered"]["hit_at_1"], 1.0)
@@ -87,6 +100,15 @@ class OneTagRagBenchmarkTests(unittest.TestCase):
             quality["hybrid"]["source_answer_exact_match"],
             1.0,
         )
+        resolution = result["questions"]["query_identity_resolution"]
+        self.assertEqual(resolution["unique"], 427)
+        self.assertEqual(resolution["ambiguous"], 7)
+        self.assertEqual(resolution["unresolved"], 0)
+        self.assertEqual(resolution["correct"], 427)
+        self.assertEqual(resolution["incorrect"], 0)
+        self.assertEqual(resolution["lexical_fallbacks"], 7)
+        self.assertEqual(resolution["coverage"], 0.9839)
+        self.assertEqual(resolution["accuracy_when_resolved"], 1.0)
 
     def test_invalid_workload_and_search_sizes_are_rejected(self):
         with self.assertRaisesRegex(ValueError, "document_count"):
@@ -142,10 +164,11 @@ class OneTagRagBenchmarkTests(unittest.TestCase):
             )
 
         self.assertEqual(artifact["benchmark"], BENCHMARK_NAME)
-        self.assertIn("correct canonical entity ID", summary)
+        self.assertIn("Matching a name without the answer ID", summary)
+        self.assertIn("427 of 434 labels resolved uniquely", summary)
         self.assertIn("does not run embeddings", summary)
         self.assertIn("one EAT tag each", quality_chart)
-        self.assertIn("Hybrid includes lexical", latency_chart)
+        self.assertIn("Name match includes the registry lookup", latency_chart)
 
     def test_committed_result_records_the_full_workload(self):
         artifact = json.loads(RECORDED_RESULT.read_text(encoding="utf-8"))
@@ -164,6 +187,22 @@ class OneTagRagBenchmarkTests(unittest.TestCase):
         self.assertEqual(workload["different_passage_prototypes"], 669)
         self.assertEqual(workload["different_source_documents"], 40)
         self.assertEqual(workload["different_entities"], 434)
+        self.assertEqual(
+            result["questions"]["query_identity_resolution"]["unique"],
+            427,
+        )
+        self.assertEqual(
+            result["questions"]["query_identity_resolution"]["ambiguous"],
+            7,
+        )
+        self.assertEqual(
+            result["questions"]["query_identity_resolution"]["incorrect"],
+            0,
+        )
+        self.assertGreater(
+            quality["inferred_eat"]["hit_at_1"],
+            quality["ordinary_lexical"]["hit_at_1"],
+        )
         self.assertEqual(quality["eat_filtered"]["hit_at_1"], 1.0)
         self.assertEqual(quality["hybrid"]["hit_at_1"], 1.0)
         self.assertLess(quality["ordinary_lexical"]["hit_at_1"], 1.0)

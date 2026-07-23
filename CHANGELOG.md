@@ -43,10 +43,14 @@ The project follows semantic versioning for the reference implementation and spe
   throughput, entity-search latency, checksums, charts and CI execution.
 - A separate 100,000-document RAG retrieval workload with exactly one EAT
   reference per document, 434 source-page questions, ordinary lexical,
-  EAT-filtered and hybrid routes, grounded source-answer scoring, charts and
-  full CI execution.
+  inferred-EAT, oracle EAT-filtered and hybrid routes, grounded source-answer
+  scoring, charts and full CI execution. The inferred route resolves 427 exact
+  registry labels without the answer ID, abstains on seven ambiguous questions
+  and raises grounded source answers from 336 to 429 out of 434.
 - Two SVG document examples showing the same source text with and without EAT,
   plus a README order that introduces the format before the benchmark details.
+- A complete README description of all five tasks in the 76-record synthetic
+  corpus: syntax, typing, resolution, generation and controlled comparison.
 
 ### Policy
 

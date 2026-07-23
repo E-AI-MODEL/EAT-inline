@@ -24,7 +24,7 @@ from eat_inline import parse_references
 from eat_recorded_runs import sha256_file
 
 
-BENCHMARK_NAME = "wiki-fair-v2-one-tag-rag-retrieval-v1"
+BENCHMARK_NAME = "wiki-fair-v2-one-tag-rag-retrieval-v2"
 DEFAULT_DOCUMENTS = 100_000
 DEFAULT_TOP_K = 10
 DEFAULT_QUERY_ROUNDS = 3
@@ -55,6 +55,9 @@ class Query:
     question: str
     terms: tuple[str, ...]
     gold_source_titles: tuple[str, ...]
+    inferred_entity_id: str | None
+    inference_status: str
+    inference_candidates: tuple[str, ...]
 
 
 @dataclass
@@ -205,7 +208,16 @@ def build_prototypes(
     return prototypes
 
 
-def build_queries(prototypes: list[PassagePrototype]) -> list[Query]:
+def build_queries(
+    prototypes: list[PassagePrototype],
+    registry_records: list[dict[str, object]],
+) -> list[Query]:
+    entity_ids_by_label: dict[str, set[str]] = defaultdict(set)
+    for record in registry_records:
+        entity_ids_by_label[str(record["label"]).casefold()].add(
+            str(record["canonical_id"])
+        )
+
     grouped: dict[str, list[PassagePrototype]] = defaultdict(list)
     for prototype in prototypes:
         grouped[prototype.entity_id].append(prototype)
@@ -218,6 +230,18 @@ def build_queries(prototypes: list[PassagePrototype]) -> list[Query]:
         terms = tuple(sorted(tokenize(label)))
         if not terms:
             raise ValueError(f"entity {entity_id} has no searchable label terms")
+        inference_candidates = tuple(
+            sorted(entity_ids_by_label.get(label.casefold(), set()))
+        )
+        if len(inference_candidates) == 1:
+            inferred_entity_id = inference_candidates[0]
+            inference_status = "unique"
+        elif inference_candidates:
+            inferred_entity_id = None
+            inference_status = "ambiguous"
+        else:
+            inferred_entity_id = None
+            inference_status = "unresolved"
         queries.append(
             Query(
                 entity_id=entity_id,
@@ -227,6 +251,9 @@ def build_queries(prototypes: list[PassagePrototype]) -> list[Query]:
                 gold_source_titles=tuple(
                     sorted({match.source_title for match in matches})
                 ),
+                inferred_entity_id=inferred_entity_id,
+                inference_status=inference_status,
+                inference_candidates=inference_candidates,
             )
         )
     return queries
@@ -337,12 +364,30 @@ def retrieve_eat_filtered(
     query: Query,
     *,
     top_k: int,
+    entity_id: str | None = None,
 ) -> list[int]:
+    resolved_entity_id = entity_id or query.entity_id
     scores = {
         document_id: score_document(index, query, document_id)
-        for document_id in index.entity_postings[query.entity_id]
+        for document_id in index.entity_postings[resolved_entity_id]
     }
     return rank_scores(scores, top_k)
+
+
+def retrieve_inferred_eat(
+    index: WorkloadIndex,
+    query: Query,
+    *,
+    top_k: int,
+) -> list[int]:
+    if query.inferred_entity_id is None:
+        return retrieve_lexical(index, query, top_k=top_k)
+    return retrieve_eat_filtered(
+        index,
+        query,
+        top_k=top_k,
+        entity_id=query.inferred_entity_id,
+    )
 
 
 def retrieve_hybrid(
@@ -491,6 +536,11 @@ def run_retrieval(
             query,
             top_k=top_k,
         ),
+        "inferred_eat": lambda query: retrieve_inferred_eat(
+            index,
+            query,
+            top_k=top_k,
+        ),
         "eat_filtered": lambda query: retrieve_eat_filtered(
             index,
             query,
@@ -561,7 +611,7 @@ def run_benchmark(
 ) -> dict[str, object]:
     registry = ResolverRegistry(registry_records)
     prototypes = build_prototypes(source_records, registry_records)
-    queries = build_queries(prototypes)
+    queries = build_queries(prototypes, registry_records)
     index = build_workload_index(
         prototypes,
         registry,
@@ -589,6 +639,28 @@ def run_benchmark(
     entity_postings = sum(
         len(postings) for postings in index.entity_postings.values()
     )
+    unique_inferences = [
+        query for query in queries if query.inference_status == "unique"
+    ]
+    ambiguous_inferences = [
+        query for query in queries if query.inference_status == "ambiguous"
+    ]
+    unresolved_inferences = [
+        query for query in queries if query.inference_status == "unresolved"
+    ]
+    correct_inferences = [
+        query
+        for query in unique_inferences
+        if query.inferred_entity_id == query.entity_id
+    ]
+    incorrect_inferences = [
+        query
+        for query in unique_inferences
+        if query.inferred_entity_id != query.entity_id
+    ]
+    ambiguous_labels: dict[str, tuple[str, ...]] = {}
+    for query in ambiguous_inferences:
+        ambiguous_labels[query.label] = query.inference_candidates
     example_entity_ids = [
         str(item["entity_id"])
         for item in details["ordinary_lexical"]
@@ -615,6 +687,18 @@ def run_benchmark(
                 "label": ordinary["label"],
                 "question": ordinary["question"],
                 "gold_source_titles": ordinary["gold_source_titles"],
+                "query_identity_resolution": {
+                    "status": next(
+                        query.inference_status
+                        for query in queries
+                        if query.entity_id == entity_id
+                    ),
+                    "inferred_entity_id": next(
+                        query.inferred_entity_id
+                        for query in queries
+                        if query.entity_id == entity_id
+                    ),
+                },
                 "routes": {
                     route: {
                         "document_ids": route_details[entity_id]["document_ids"],
@@ -672,11 +756,42 @@ def run_benchmark(
             "ordinary_input": "the registry label as plain query text",
             "eat_input": (
                 "the gold canonical entity ID supplied directly to the "
-                "retrieval route"
+                "oracle retrieval routes"
+            ),
+            "inferred_eat_input": (
+                "the registry label only; use EAT when that exact "
+                "case-insensitive label identifies one registry entity, "
+                "otherwise fall back to ordinary lexical retrieval"
             ),
             "answer_step": (
                 "return the source-page title from the top-ranked passage"
             ),
+            "query_identity_resolution": {
+                "method": (
+                    "exact case-insensitive registry-label lookup with "
+                    "abstention on zero or multiple matches"
+                ),
+                "unique": len(unique_inferences),
+                "ambiguous": len(ambiguous_inferences),
+                "unresolved": len(unresolved_inferences),
+                "correct": len(correct_inferences),
+                "incorrect": len(incorrect_inferences),
+                "coverage": round(len(unique_inferences) / len(queries), 4),
+                "accuracy_when_resolved": round(
+                    len(correct_inferences) / len(unique_inferences),
+                    4,
+                ),
+                "lexical_fallbacks": (
+                    len(ambiguous_inferences) + len(unresolved_inferences)
+                ),
+                "ambiguous_labels": [
+                    {
+                        "label": label,
+                        "candidate_entity_ids": list(candidates),
+                    }
+                    for label, candidates in sorted(ambiguous_labels.items())
+                ],
+            },
         },
         "retrieval": {
             "top_k": top_k,
@@ -684,6 +799,11 @@ def run_benchmark(
             "hybrid_lexical_candidate_count": hybrid_candidates,
             "ordinary_lexical": (
                 "IDF-weighted lexical retrieval over all plain passages"
+            ),
+            "inferred_eat": (
+                "infer a canonical entity ID from a unique exact registry "
+                "label and filter on its EAT postings; ambiguous or unresolved "
+                "labels fall back to ordinary lexical retrieval"
             ),
             "eat_filtered": (
                 "filter by the one parsed EAT entity ID, then rank matching "
@@ -702,43 +822,44 @@ def run_benchmark(
 def write_quality_chart(path: Path, result: dict[str, object]) -> None:
     quality = result["retrieval"]["quality"]
     routes = [
-        ("ordinary_lexical", "Ordinary lexical", "#9ca3af"),
-        ("eat_filtered", "EAT filtered", "#2563eb"),
-        ("hybrid", "Hybrid", "#16a34a"),
+        ("ordinary_lexical", "Name search", "#9ca3af"),
+        ("inferred_eat", "EAT: name match", "#7c3aed"),
+        ("eat_filtered", "EAT: answer ID", "#2563eb"),
+        ("hybrid", "Combined: answer ID", "#16a34a"),
     ]
     metrics = [
         ("source_answer_exact_match", "Source answer"),
-        ("hit_at_10", "Entity hit@10"),
-        ("mrr_at_10", "MRR@10"),
+        ("hit_at_10", "At least one correct in top 10"),
+        ("precision_at_10", "Correct share of top 10"),
     ]
     rows: list[str] = []
     for metric_index, (metric_key, metric_label) in enumerate(metrics):
-        y = 150 + metric_index * 120
+        y = 145 + metric_index * 125
         rows.append(
-            f'<text class="metric" x="150" y="{y + 38}">'
+            f'<text class="metric" x="265" y="{y + 52}">'
             f"{escape(metric_label)}</text>"
         )
         for route_index, (route_key, _, color) in enumerate(routes):
             value = float(quality[route_key][metric_key])
             bar_y = y + route_index * 28
-            width = round(value * 650)
+            width = round(value * 550)
             rows.append(
-                f'<rect x="190" y="{bar_y}" width="{width}" height="20" '
+                f'<rect x="300" y="{bar_y}" width="{width}" height="20" '
                 f'rx="3" fill="{color}"/>'
-                f'<text class="value" x="{205 + width}" y="{bar_y + 15}">'
+                f'<text class="value" x="{315 + width}" y="{bar_y + 15}">'
                 f"{value * 100:.1f}%</text>"
             )
     legend: list[str] = []
     for index, (_, label, color) in enumerate(routes):
-        x = 190 + index * 210
+        x = 120 + index * 225
         legend.append(
             f'<rect x="{x}" y="92" width="16" height="12" rx="2" '
             f'fill="{color}"/>'
             f'<text class="legend" x="{x + 24}" y="103">{escape(label)}</text>'
         )
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="560" viewBox="0 0 1050 560" role="img">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="600" viewBox="0 0 1050 600" role="img">
   <title>One-tag RAG retrieval quality</title>
-  <desc>Source-answer accuracy, entity hit at ten and mean reciprocal rank at ten for ordinary lexical, EAT-filtered and hybrid retrieval.</desc>
+  <desc>Source-answer accuracy, questions with a correct text result in the top ten, and the correct share of those ten results for name search, EAT after a name match, EAT with the answer ID, and combined search with the answer ID.</desc>
   <style>
     .bg {{ fill: #ffffff; }}
     .title {{ font: 700 27px system-ui, sans-serif; fill: #111827; }}
@@ -747,12 +868,12 @@ def write_quality_chart(path: Path, result: dict[str, object]) -> None:
     .value {{ font: 13px ui-monospace, monospace; fill: #111827; }}
     .legend {{ font: 13px system-ui, sans-serif; fill: #4b5563; }}
   </style>
-  <rect class="bg" width="1050" height="560"/>
+  <rect class="bg" width="1050" height="600"/>
   <text class="title" x="40" y="48">100,000 documents, one EAT tag each</text>
-  <text class="subtitle" x="40" y="76">434 source-page questions; top 10 passages available to the answer step</text>
+  <text class="subtitle" x="40" y="76">434 source-page questions; the answer uses the first text result</text>
   {''.join(legend)}
   {''.join(rows)}
-  <text class="subtitle" x="40" y="530">The EAT routes receive the correct query entity ID; this is an oracle retrieval test.</text>
+  <text class="subtitle" x="40" y="565">Name match gets only the visible name. The two “answer ID” methods receive the correct ID.</text>
 </svg>
 """
     path.write_text(svg, encoding="utf-8")
@@ -761,9 +882,10 @@ def write_quality_chart(path: Path, result: dict[str, object]) -> None:
 def write_latency_chart(path: Path, result: dict[str, object]) -> None:
     latency = result["retrieval"]["latency"]
     routes = [
-        ("ordinary_lexical", "Ordinary lexical", "#9ca3af"),
-        ("eat_filtered", "EAT filtered", "#2563eb"),
-        ("hybrid", "Hybrid", "#16a34a"),
+        ("ordinary_lexical", "Name search", "#9ca3af"),
+        ("inferred_eat", "EAT: name match", "#7c3aed"),
+        ("eat_filtered", "EAT: answer ID", "#2563eb"),
+        ("hybrid", "Combined: answer ID", "#16a34a"),
     ]
     maximum = max(
         float(latency[route]["p95_microseconds"])
@@ -771,25 +893,25 @@ def write_latency_chart(path: Path, result: dict[str, object]) -> None:
     )
     rows: list[str] = []
     for index, (route, label, color) in enumerate(routes):
-        y = 145 + index * 100
+        y = 135 + index * 95
         p50 = float(latency[route]["p50_microseconds"])
         p95 = float(latency[route]["p95_microseconds"])
         p50_width = round(620 * p50 / maximum)
         p95_width = round(620 * p95 / maximum)
         rows.append(
-            f'<text class="route" x="170" y="{y + 28}">{escape(label)}</text>'
-            f'<rect x="210" y="{y}" width="{p50_width}" height="24" '
+            f'<text class="route" x="200" y="{y + 28}">{escape(label)}</text>'
+            f'<rect x="240" y="{y}" width="{p50_width}" height="24" '
             f'rx="3" fill="{color}" opacity="0.65"/>'
-            f'<text class="value" x="{225 + p50_width}" y="{y + 17}">'
+            f'<text class="value" x="{255 + p50_width}" y="{y + 17}">'
             f"p50 {p50:.1f} µs</text>"
-            f'<rect x="210" y="{y + 34}" width="{p95_width}" height="24" '
+            f'<rect x="240" y="{y + 34}" width="{p95_width}" height="24" '
             f'rx="3" fill="{color}"/>'
-            f'<text class="value" x="{225 + p95_width}" y="{y + 51}">'
+            f'<text class="value" x="{255 + p95_width}" y="{y + 51}">'
             f"p95 {p95:.1f} µs</text>"
         )
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="500" viewBox="0 0 1050 500" role="img">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="560" viewBox="0 0 1050 560" role="img">
   <title>One-tag RAG retrieval latency</title>
-  <desc>Median and 95th percentile query latency for ordinary lexical, EAT-filtered and hybrid retrieval.</desc>
+  <desc>Median and 95th percentile search time for name search, EAT after a name match, EAT with the answer ID, and combined search with the answer ID.</desc>
   <style>
     .bg {{ fill: #ffffff; }}
     .title {{ font: 700 27px system-ui, sans-serif; fill: #111827; }}
@@ -797,11 +919,11 @@ def write_latency_chart(path: Path, result: dict[str, object]) -> None:
     .route {{ font: 700 14px system-ui, sans-serif; fill: #111827; text-anchor: end; }}
     .value {{ font: 13px ui-monospace, monospace; fill: #111827; }}
   </style>
-  <rect class="bg" width="1050" height="500"/>
-  <text class="title" x="40" y="48">Retrieval time per question</text>
-  <text class="subtitle" x="40" y="76">Machine-dependent timing; quality is checked separately</text>
+  <rect class="bg" width="1050" height="560"/>
+  <text class="title" x="40" y="48">Search time per question</text>
+  <text class="subtitle" x="40" y="76">p50: half finish within this time. p95: 95% finish within this time.</text>
   {''.join(rows)}
-  <text class="subtitle" x="40" y="470">Hybrid includes lexical candidate retrieval plus the exact EAT entity boost.</text>
+  <text class="subtitle" x="40" y="530">Name match includes the registry lookup. Combined search also runs ordinary name search.</text>
 </svg>
 """
     path.write_text(svg, encoding="utf-8")
@@ -817,6 +939,7 @@ def write_outputs(
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     workload = result["workload"]
+    resolution = result["questions"]["query_identity_resolution"]
     artifact = {
         "benchmark": BENCHMARK_NAME,
         "inputs": {
@@ -844,8 +967,13 @@ def write_outputs(
                 "entity ID from the benchmark answers."
             ),
             (
-                "The ordinary route receives the registry label as plain query "
-                "text; query entity-linking accuracy is not measured."
+                "The inferred-EAT route receives the exact canonical registry "
+                "label, not the gold entity ID. It abstains and uses lexical "
+                "retrieval when that label is ambiguous or missing."
+            ),
+            (
+                "The inferred-EAT route does not test aliases, paraphrases or "
+                "entity linking from a full natural-language question."
             ),
             (
                 "The answer step extracts a source-page title. No language "
@@ -862,21 +990,26 @@ def write_outputs(
     quality = result["retrieval"]["quality"]
     latency = result["retrieval"]["latency"]
     route_labels = {
-        "ordinary_lexical": "Ordinary lexical",
-        "eat_filtered": "EAT filtered",
-        "hybrid": "Hybrid",
+        "ordinary_lexical": "Name search",
+        "inferred_eat": "EAT after a unique name match",
+        "eat_filtered": "EAT with the answer ID",
+        "hybrid": "Combined search with the answer ID",
     }
     quality_rows = []
     latency_rows = []
-    for route in ("ordinary_lexical", "eat_filtered", "hybrid"):
+    for route in (
+        "ordinary_lexical",
+        "inferred_eat",
+        "eat_filtered",
+        "hybrid",
+    ):
         route_quality = quality[route]
         route_latency = latency[route]
         quality_rows.append(
             f"| {route_labels[route]} | "
             f"{route_quality['source_answer_exact_match']:.4f} | "
             f"{route_quality['hit_at_1']:.4f} | "
-            f"{route_quality['hit_at_10']:.4f} | "
-            f"{route_quality['mrr_at_10']:.4f} |"
+            f"{route_quality['hit_at_10']:.4f} |"
         )
         latency_rows.append(
             f"| {route_labels[route]} | "
@@ -885,31 +1018,40 @@ def write_outputs(
             f"{route_latency['p99_microseconds']} µs |"
         )
     (output_dir / "one-tag-rag-summary.md").write_text(
-        f"# {workload['generated_documents']:,}-document one-tag RAG retrieval benchmark\n\n"
+        f"# {workload['generated_documents']:,}-document search test with one EAT tag\n\n"
         "## What ran\n\n"
         f"- {workload['generated_documents']:,} generated workload documents\n"
-        f"- {workload['different_passage_prototypes']:,} annotated passage prototypes "
+        f"- {workload['different_passage_prototypes']:,} annotated text excerpts "
         f"from {workload['different_source_documents']} Wikipedia pages\n"
         f"- {workload['eat_references']:,} EAT references: exactly one per document\n"
         f"- {workload['different_entities']:,} entity questions\n"
-        "- ordinary lexical, EAT-filtered and hybrid retrieval\n"
+        "- name search, EAT after a name match, and two answer-ID controls\n"
         "- a deterministic answer step that returns the selected source-page title\n\n"
-        "The question asks which source page mentions a registry label. The "
-        "ordinary route searches that label as plain text. The EAT routes "
-        "receive the correct canonical entity ID directly. That makes this an "
-        "oracle test of the retrieval layer, not a query-linking or LLM test.\n\n"
+        "The question asks which source page mentions a registry name. Name "
+        "search uses it as ordinary text. EAT after a unique name match gets "
+        "only that name and uses the tag when the registry has exactly one "
+        "matching ID. Two control methods receive the correct ID directly from "
+        "the test answers. The technical name for that known answer is the "
+        "gold ID.\n\n"
+        "## Matching a name without the answer ID\n\n"
+        f"- {resolution['unique']} of {result['questions']['count']} labels "
+        f"resolved uniquely ({resolution['coverage'] * 100:.1f}%)\n"
+        f"- {resolution['ambiguous']} labels were ambiguous and fell back to "
+        "ordinary name search\n"
+        f"- {resolution['incorrect']} wrong entity-ID guesses\n\n"
+        "The system does not guess when a name is ambiguous. This tests exact "
+        "registry names, not aliases or names hidden inside a longer question.\n\n"
         "![Retrieval quality](retrieval-quality.svg)\n\n"
-        "## Retrieval and source-answer quality\n\n"
-        "| Route | Source answer exact match | Hit@1 | Hit@10 | MRR@10 |\n"
-        "|---|---:|---:|---:|---:|\n"
+        "## Search and source-answer results\n\n"
+        "| Search method | Correct source answer | Correct text first | Correct text in top 10 |\n"
+        "|---|---:|---:|---:|\n"
         + "\n".join(quality_rows)
         + "\n\n"
-        "A hit means that the requested entity has a known annotation inside "
-        "the retrieved passage. Source-answer exact match also requires that "
-        "the top passage provides that evidence before its page title counts "
-        "as a correct answer.\n\n"
-        "## Query time\n\n"
-        "| Route | p50 | p95 | p99 |\n"
+        "A text result is correct when the requested identity is known to occur "
+        "inside it. A source answer counts only when the first text result "
+        "contains that evidence before its page title is returned.\n\n"
+        "## Search time\n\n"
+        "| Search method | p50 | p95 | p99 |\n"
         "|---|---:|---:|---:|\n"
         + "\n".join(latency_rows)
         + "\n\n"
@@ -917,10 +1059,12 @@ def write_outputs(
         "Timings depend on the machine. CI checks the complete workload, exact "
         "tag count and recorded quality invariants, not a fixed speed limit.\n\n"
         "## Boundary\n\n"
-        "This is the retrieval and source-selection part of a RAG pipeline. It "
-        "does not run embeddings, a vector database or a language model. The "
-        "100,000 documents repeat 669 passages from 40 source pages, so they "
-        "are not 100,000 different source documents.\n",
+        "Finding source text and selecting its page are the first part of a RAG "
+        "pipeline. This test does not run embeddings, a vector database or a "
+        "language model. The 100,000 documents repeat 669 text excerpts from "
+        "40 source pages, so they are not 100,000 different source documents. "
+        "The two answer-ID methods receive the correct ID from the test "
+        "answers; EAT after a unique name match does not.\n",
         encoding="utf-8",
     )
     write_quality_chart(output_dir / "retrieval-quality.svg", result)

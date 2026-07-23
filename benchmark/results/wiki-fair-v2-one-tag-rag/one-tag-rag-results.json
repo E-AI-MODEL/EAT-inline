@@ -1,5 +1,5 @@
 {
-  "benchmark": "wiki-fair-v2-one-tag-rag-retrieval-v1",
+  "benchmark": "wiki-fair-v2-one-tag-rag-retrieval-v2",
   "inputs": {
     "oracle_dataset": "benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl",
     "oracle_dataset_sha256": "d447ef6661c9a958cf481466a8c62e4a8853017489158d76ef7f847bdbf967ba",
@@ -28,8 +28,8 @@
       "eat_markup_extra_bytes": 1006784
     },
     "index": {
-      "build_seconds": 3.613591,
-      "documents_per_second": 27673.3,
+      "build_seconds": 3.431493,
+      "documents_per_second": 29141.84,
       "lexical_terms": 2838,
       "lexical_postings": 5483278,
       "entity_keys": 434,
@@ -40,14 +40,64 @@
       "count": 434,
       "form": "Which source page mentions <registry label>?",
       "ordinary_input": "the registry label as plain query text",
-      "eat_input": "the gold canonical entity ID supplied directly to the retrieval route",
-      "answer_step": "return the source-page title from the top-ranked passage"
+      "eat_input": "the gold canonical entity ID supplied directly to the oracle retrieval routes",
+      "inferred_eat_input": "the registry label only; use EAT when that exact case-insensitive label identifies one registry entity, otherwise fall back to ordinary lexical retrieval",
+      "answer_step": "return the source-page title from the top-ranked passage",
+      "query_identity_resolution": {
+        "method": "exact case-insensitive registry-label lookup with abstention on zero or multiple matches",
+        "unique": 427,
+        "ambiguous": 7,
+        "unresolved": 0,
+        "correct": 427,
+        "incorrect": 0,
+        "coverage": 0.9839,
+        "accuracy_when_resolved": 1.0,
+        "lexical_fallbacks": 7,
+        "ambiguous_labels": [
+          {
+            "label": "Cambridge",
+            "candidate_entity_ids": [
+              "Q350",
+              "Q49111"
+            ]
+          },
+          {
+            "label": "Rosaline",
+            "candidate_entity_ids": [
+              "Q63537266",
+              "Q7367264"
+            ]
+          },
+          {
+            "label": "captain",
+            "candidate_entity_ids": [
+              "Q19100",
+              "Q584540"
+            ]
+          },
+          {
+            "label": "gold",
+            "candidate_entity_ids": [
+              "Q208045",
+              "Q897"
+            ]
+          },
+          {
+            "label": "secretary",
+            "candidate_entity_ids": [
+              "Q319544",
+              "Q80687"
+            ]
+          }
+        ]
+      }
     },
     "retrieval": {
       "top_k": 10,
       "query_rounds": 3,
       "hybrid_lexical_candidate_count": 100,
       "ordinary_lexical": "IDF-weighted lexical retrieval over all plain passages",
+      "inferred_eat": "infer a canonical entity ID from a unique exact registry label and filter on its EAT postings; ambiguous or unresolved labels fall back to ordinary lexical retrieval",
       "eat_filtered": "filter by the one parsed EAT entity ID, then rank matching passages by the same lexical score",
       "hybrid": "combine lexical candidates with an exact EAT entity boost",
       "quality": {
@@ -64,6 +114,20 @@
           "source_answers_correct": 336,
           "retrieved_context_words_at_10": 286611,
           "ranking_sha256": "6be361f93338dc3bfce00a01f3051a4d5bc57c62322ad6f038577927ade11a53"
+        },
+        "inferred_eat": {
+          "route": "inferred_eat",
+          "questions": 434,
+          "top_k": 10,
+          "hit_at_1": 0.9885,
+          "hit_at_5": 0.9931,
+          "hit_at_10": 0.9977,
+          "precision_at_10": 0.9942,
+          "mrr_at_10": 0.9911,
+          "source_answer_exact_match": 0.9885,
+          "source_answers_correct": 429,
+          "retrieved_context_words_at_10": 312801,
+          "ranking_sha256": "963e797f3c25d52592ce451d69f0db62bb8fde0937daba3444273d9217ca8641"
         },
         "eat_filtered": {
           "route": "eat_filtered",
@@ -98,23 +162,30 @@
         "ordinary_lexical": {
           "samples": 1302,
           "query_rounds": 3,
-          "p50_microseconds": 523.169,
-          "p95_microseconds": 18220.464,
-          "p99_microseconds": 29334.083
+          "p50_microseconds": 546.493,
+          "p95_microseconds": 19950.143,
+          "p99_microseconds": 32507.424
+        },
+        "inferred_eat": {
+          "samples": 1302,
+          "query_rounds": 3,
+          "p50_microseconds": 93.063,
+          "p95_microseconds": 371.172,
+          "p99_microseconds": 1257.259
         },
         "eat_filtered": {
           "samples": 1302,
           "query_rounds": 3,
-          "p50_microseconds": 90.404,
-          "p95_microseconds": 319.425,
-          "p99_microseconds": 573.624
+          "p50_microseconds": 89.042,
+          "p95_microseconds": 328.979,
+          "p99_microseconds": 617.629
         },
         "hybrid": {
           "samples": 1302,
           "query_rounds": 3,
-          "p50_microseconds": 692.586,
-          "p95_microseconds": 19038.451,
-          "p99_microseconds": 30634.05
+          "p50_microseconds": 731.052,
+          "p95_microseconds": 20697.574,
+          "p99_microseconds": 33963.118
         }
       }
     },
@@ -126,6 +197,10 @@
         "gold_source_titles": [
           "Rosaline"
         ],
+        "query_identity_resolution": {
+          "status": "unique",
+          "inferred_entity_id": "Q1092632"
+        },
         "routes": {
           "ordinary_lexical": {
             "document_ids": [
@@ -154,6 +229,34 @@
             ],
             "answer": "Rosaline",
             "answer_correct": false
+          },
+          "inferred_eat": {
+            "document_ids": [
+              414,
+              420,
+              423,
+              430,
+              435,
+              1083,
+              1089,
+              1092,
+              1099,
+              1104
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Rosaline",
+            "answer_correct": true
           },
           "eat_filtered": {
             "document_ids": [
@@ -220,12 +323,44 @@
         "gold_source_titles": [
           "Jawed Siddiqi"
         ],
+        "query_identity_resolution": {
+          "status": "unique",
+          "inferred_entity_id": "Q1127270"
+        },
         "routes": {
           "ordinary_lexical": {
             "document_ids": [],
             "context_relevant": [],
             "answer": null,
             "answer_correct": false
+          },
+          "inferred_eat": {
+            "document_ids": [
+              586,
+              1255,
+              1924,
+              2593,
+              3262,
+              3931,
+              4600,
+              5269,
+              5938,
+              6607
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Jawed Siddiqi",
+            "answer_correct": true
           },
           "eat_filtered": {
             "document_ids": [
@@ -292,6 +427,10 @@
         "gold_source_titles": [
           "SKIF Nizhny Novgorod"
         ],
+        "query_identity_resolution": {
+          "status": "unique",
+          "inferred_entity_id": "Q1146447"
+        },
         "routes": {
           "ordinary_lexical": {
             "document_ids": [
@@ -320,6 +459,34 @@
             ],
             "answer": "Archaeological Museum of Asturias",
             "answer_correct": false
+          },
+          "inferred_eat": {
+            "document_ids": [
+              50,
+              719,
+              1388,
+              2057,
+              2726,
+              3395,
+              4064,
+              4733,
+              5402,
+              6071
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "SKIF Nizhny Novgorod",
+            "answer_correct": true
           },
           "eat_filtered": {
             "document_ids": [
@@ -386,6 +553,10 @@
         "gold_source_titles": [
           "Brian Bowsher"
         ],
+        "query_identity_resolution": {
+          "status": "unique",
+          "inferred_entity_id": "Q1162163"
+        },
         "routes": {
           "ordinary_lexical": {
             "document_ids": [
@@ -414,6 +585,34 @@
             ],
             "answer": "Brian Bowsher",
             "answer_correct": false
+          },
+          "inferred_eat": {
+            "document_ids": [
+              213,
+              882,
+              1551,
+              2220,
+              2889,
+              3558,
+              4227,
+              4896,
+              5565,
+              6234
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Brian Bowsher",
+            "answer_correct": true
           },
           "eat_filtered": {
             "document_ids": [
@@ -480,12 +679,44 @@
         "gold_source_titles": [
           "Sameli Ventelä"
         ],
+        "query_identity_resolution": {
+          "status": "unique",
+          "inferred_entity_id": "Q11864051"
+        },
         "routes": {
           "ordinary_lexical": {
             "document_ids": [],
             "context_relevant": [],
             "answer": null,
             "answer_correct": false
+          },
+          "inferred_eat": {
+            "document_ids": [
+              8,
+              677,
+              1346,
+              2015,
+              2684,
+              3353,
+              4022,
+              4691,
+              5360,
+              6029
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Sameli Ventelä",
+            "answer_correct": true
           },
           "eat_filtered": {
             "document_ids": [
@@ -551,7 +782,8 @@
     "The 100,000 workload documents repeat 669 passage prototypes extracted from 40 source pages.",
     "Every workload document contains exactly one generated EAT reference.",
     "The EAT-filtered and hybrid routes receive the correct query entity ID from the benchmark answers.",
-    "The ordinary route receives the registry label as plain query text; query entity-linking accuracy is not measured.",
+    "The inferred-EAT route receives the exact canonical registry label, not the gold entity ID. It abstains and uses lexical retrieval when that label is ambiguous or missing.",
+    "The inferred-EAT route does not test aliases, paraphrases or entity linking from a full natural-language question.",
     "The answer step extracts a source-page title. No language model, vector embedding or free-form answer generation runs.",
     "Wall-clock timings are machine-dependent and are not pass thresholds."
   ]
