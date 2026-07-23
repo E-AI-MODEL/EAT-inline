@@ -218,9 +218,21 @@ There is one question for each of the 434 entities:
 Which source page mentions <registry label>?
 ```
 
-The ordinary route receives the registry label as plain query text. The
-EAT-filtered and hybrid routes receive the correct canonical entity ID from the
-benchmark answers. Query entity linking is outside this test.
+The ordinary and inferred-EAT routes receive the registry label as plain query
+text. Inferred EAT performs a case-insensitive exact lookup in the registry. It
+uses the matching EAT postings only when the label has exactly one possible
+canonical ID. It abstains and falls back to ordinary lexical retrieval when
+the label is ambiguous or missing.
+
+This resolves 427 of 434 questions uniquely, with 427 correct IDs and no wrong
+ID guesses. Seven questions have ambiguous labels and use the fallback. There
+are five distinct ambiguous labels: `Cambridge`, `Rosaline`, `captain`, `gold`
+and `secretary`.
+
+The EAT-filtered and hybrid routes still receive the correct canonical entity
+ID from the benchmark answers. This known correct answer is also called the
+gold ID. They are oracle ceilings: they measure retrieval after identity is
+already known, not the system's ability to discover that identity.
 
 A retrieved passage is relevant when the requested entity has a known
 annotation inside its context window. The deterministic answer step returns
@@ -228,13 +240,17 @@ the source-page title from the top-ranked passage. The answer counts only when
 that first passage contains the requested entity, so a correct title without
 supporting passage evidence does not pass.
 
+Hit@1 is the share of questions with a relevant first passage. Hit@10 is the
+share with at least one relevant passage among the first ten results.
+
 ### Compared routes
 
 | Route | Retrieval method |
 |---|---|
 | Ordinary lexical | IDF-weighted lexical retrieval over every plain passage |
-| EAT filtered | Exact entity filter followed by the same lexical score |
-| Hybrid | Top 100 lexical candidates plus an exact EAT entity boost |
+| Inferred EAT | Unique exact registry-label lookup followed by an EAT entity filter; lexical fallback on ambiguity |
+| Oracle EAT filter | Gold entity filter followed by the same lexical score |
+| Hybrid oracle | Top 100 lexical candidates plus a gold EAT entity boost |
 
 All ranking ties use the lowest document ID. The benchmark records every top-10
 ranking and a SHA-256 digest for each route.
@@ -244,12 +260,13 @@ ranking and a SHA-256 digest for each route.
 | Route | Source answer exact match | Hit@1 | Hit@10 | Precision@10 | MRR@10 |
 |---|---:|---:|---:|---:|---:|
 | Ordinary lexical | 0.7742 | 0.7742 | 0.8272 | 0.7908 | 0.7888 |
-| EAT filtered | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
-| Hybrid | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Inferred EAT | 0.9885 | 0.9885 | 0.9977 | 0.9942 | 0.9911 |
+| Oracle EAT filter | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Hybrid oracle | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 
 The ordinary route produced 336 correct grounded source answers out of 434.
-Both EAT routes produced 434. This is an oracle result because both receive the
-known correct query entity ID.
+Inferred EAT produced 429 without receiving the answer ID. Both oracle routes
+produced 434.
 
 ### Recorded timing
 
@@ -258,21 +275,29 @@ visible to the container.
 
 | Route | p50 | p95 | p99 |
 |---|---:|---:|---:|
-| Ordinary lexical | 523.169 µs | 18,220.464 µs | 29,334.083 µs |
-| EAT filtered | 90.404 µs | 319.425 µs | 573.624 µs |
-| Hybrid | 692.586 µs | 19,038.451 µs | 30,634.050 µs |
+| Ordinary lexical | 496.615 µs | 17,215.162 µs | 27,810.049 µs |
+| Inferred EAT | 86.462 µs | 353.117 µs | 1,184.569 µs |
+| Oracle EAT filter | 81.712 µs | 318.175 µs | 622.903 µs |
+| Hybrid oracle | 670.155 µs | 17,475.795 µs | 29,339.335 µs |
 
-The EAT filter examines a much smaller postings list. The hybrid route still
-runs lexical candidate retrieval, so it does not have the filter-only latency
-advantage. Timings are machine-dependent and are not CI thresholds.
+P50 means half of the measured questions finished within that time. P95 means
+95% finished within that time; p99 means 99%.
+
+The inferred-EAT timing includes case folding the query label, the exact
+registry-label lookup, the ambiguity check and retrieval. The EAT filter
+examines a much smaller postings list. The hybrid route still runs lexical
+candidate retrieval, so it does not have the filter-only latency advantage.
+Timings are machine-dependent and are not CI thresholds.
 
 ### Boundary
 
 This test covers the retrieval and source-selection part of a RAG pipeline. It
 does not run a vector database, embeddings or a language model. It cannot
-measure free-form answer quality, hallucinations or query entity-linking
-accuracy. Its perfect EAT result is the expected upper bound when the correct
-query ID and correct document tags are already known.
+measure free-form answer quality or hallucinations. The inferred route measures
+only exact canonical-label lookup; aliases, paraphrases and entity linking from
+full natural-language questions remain untested. The perfect oracle results are
+the expected upper bound when the correct query ID and document tags are
+already known.
 
 ### Reproduce the one-tag RAG retrieval test
 

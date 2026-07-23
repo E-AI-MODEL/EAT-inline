@@ -94,10 +94,10 @@ questions:
 
 | Test group | Size | What it checks |
 |---|---:|---|
-| Syntax and resolution | 76 records | Does the format parse and resolve correctly? |
+| Synthetic implementation checks | 76 records | Do syntax, typing, resolution, generation and controlled comparison behave as specified? |
 | Public entity-linking test | 40 Wikipedia pages | What changes when correct EAT identities assist one frozen TF-IDF model? |
 | Full-coverage scale test | 100,000 generated documents | Can 1,672,500 inline references be parsed, indexed and searched? |
-| One-tag retrieval test | 100,000 generated documents | What changes in passage retrieval when every document has exactly one tag? |
+| One-tag search test | 100,000 generated documents | What changes in text search when every document has exactly one tag? |
 
 The two 100,000-document workloads repeat public source material. They test
 processing volume, not the variety of 100,000 different articles.
@@ -239,7 +239,7 @@ This proves that the reference implementation can parse and index this
 metadata control in this test. It does not represent 100,000 different source
 documents or a production search engine. Timings depend on the machine.
 
-## 100,000-document one-tag RAG retrieval test
+## 100,000-document search test with one EAT tag
 
 This is a different test. Each generated document contains exactly one EAT
 reference. The test asks 434 questions such as:
@@ -248,34 +248,66 @@ reference. The test asks 434 questions such as:
 Which source page mentions University of Southampton?
 ```
 
-It compares three ways to find passages before an answer is produced:
+It compares four ways to find matching text before an answer is produced:
 
-| Route | What it receives |
+| Search method | What it receives |
 |---|---|
-| Ordinary lexical | The visible entity name as plain query text |
-| EAT filtered | The correct entity ID and only documents tagged with that ID |
-| Hybrid | Lexical candidates plus an exact EAT entity boost |
+| Name search | The visible name as ordinary search text |
+| EAT after a unique name match | The same visible name; EAT is used only when the registry links that name to one ID |
+| EAT with the answer ID | The correct ID from the test answers |
+| Combined search with the answer ID | Ordinary name search plus the correct ID from the test answers |
 
-The answer step returns the source-page title from the first passage. It counts
-only when that passage contains known evidence for the requested entity.
+Here is how that connects to EAT Inline:
 
-![One-tag RAG retrieval quality](benchmark/results/wiki-fair-v2-one-tag-rag/retrieval-quality.svg)
+```text
+Document text:  ... @@EAT entity:Q123@@ ...
+Visible query:  Which source page mentions Example name?
+Lookup match:   Example name -> Q123
+EAT search:     keep only text results tagged entity:Q123
+```
 
-| Route | Correct source answers | Relevant passage first | Relevant passage in top 10 |
+A **gold ID** is the technical name for the known correct ID in the test answer
+sheet, such as `Q123` in this example. This README calls it the **answer ID**.
+Two methods receive that answer directly. “EAT after a unique name match” does
+not: it receives only the visible name and must find one unambiguous registry
+match before it can use the EAT tag.
+
+The name-match method is the important comparison because it does not receive
+the answer ID. Of the 434 visible names, 427 identify exactly one registry
+entity. Seven names, including `Cambridge` and `gold`, identify more than one
+entity. The system does not guess those IDs; it falls back to ordinary name
+search.
+
+The answer step returns the source-page title from the first text result. It
+counts only when that result contains known evidence for the requested entity.
+
+![One-tag search quality](benchmark/results/wiki-fair-v2-one-tag-rag/retrieval-quality.svg)
+
+| Search method | Correct source answers | Correct text first | Correct text in top 10 |
 |---|---:|---:|---:|
-| Ordinary lexical | 336 of 434 (77.42%) | 77.42% | 82.72% |
-| EAT filtered | 434 of 434 (100%) | 100% | 100% |
-| Hybrid | 434 of 434 (100%) | 100% | 100% |
+| Name search | 336 of 434 (77.42%) | 77.42% | 82.72% |
+| EAT after a unique name match | 429 of 434 (98.85%) | 98.85% | 99.77% |
+| EAT with the answer ID | 434 of 434 (100%) | 100% | 100% |
+| Combined search with the answer ID | 434 of 434 (100%) | 100% | 100% |
+
+**Hit@10** is the percentage of questions for which at least one correct
+text result appears among the first ten search results. Hit@1 asks the same
+question about only the first result. The table spells those metrics out as
+“Correct text in top 10” and “Correct text first”.
 
 The workload contains 100,000 document IDs and 100,000 EAT references. It
-repeats 669 passages taken from the same 40 Wikipedia pages used by the public
-test. It is not a test over 100,000 different source documents.
+repeats 669 text excerpts taken from the same 40 Wikipedia pages used by the
+public test. It is not a test over 100,000 different source documents.
 
-The EAT routes receive the correct query entity ID from the test answers. This
-isolates what that ID changes during retrieval. It does not show that a model
-can infer the ID correctly. The test has no vector embeddings or language
-model, so it measures RAG retrieval and source selection, not free-form answer
-quality.
+“EAT after a unique name match” receives no ID from the test answers. It shows
+what happens when an exact visible name can be linked safely through the
+registry. It does not test aliases, paraphrases or identity matching from a full
+natural-language question. The two answer-ID methods still receive the correct
+ID.
+
+Finding the source text and selecting its page are the first part of a RAG
+pipeline. This test has no vector embeddings or language model, so it does not
+measure free-form answer quality.
 
 ## File formats
 
@@ -324,7 +356,7 @@ The repository does not yet show:
 - how much writing time EAT adds;
 - reliable round trips through Word, PDF, Excel, Markdown or HTML;
 - performance against a strong NER, entity-linking or LLM baseline;
-- retrieval gains when a system must infer the query identity itself;
+- query identity from aliases, paraphrases or full natural-language questions;
 - production readiness.
 
 Those questions need new tests with people, stronger models and larger public
