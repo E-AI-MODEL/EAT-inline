@@ -275,17 +275,19 @@ visible to the container.
 
 | Route | p50 | p95 | p99 |
 |---|---:|---:|---:|
-| Ordinary lexical | 546.493 µs | 19,950.143 µs | 32,507.424 µs |
-| Inferred EAT | 93.063 µs | 371.172 µs | 1,257.259 µs |
-| Oracle EAT filter | 89.042 µs | 328.979 µs | 617.629 µs |
-| Hybrid oracle | 731.052 µs | 20,697.574 µs | 33,963.118 µs |
+| Ordinary lexical | 496.615 µs | 17,215.162 µs | 27,810.049 µs |
+| Inferred EAT | 86.462 µs | 353.117 µs | 1,184.569 µs |
+| Oracle EAT filter | 81.712 µs | 318.175 µs | 622.903 µs |
+| Hybrid oracle | 670.155 µs | 17,475.795 µs | 29,339.335 µs |
 
 P50 means half of the measured questions finished within that time. P95 means
 95% finished within that time; p99 means 99%.
 
-The EAT filter examines a much smaller postings list. The hybrid route still
-runs lexical candidate retrieval, so it does not have the filter-only latency
-advantage. Timings are machine-dependent and are not CI thresholds.
+The inferred-EAT timing includes case folding the query label, the exact
+registry-label lookup, the ambiguity check and retrieval. The EAT filter
+examines a much smaller postings list. The hybrid route still runs lexical
+candidate retrieval, so it does not have the filter-only latency advantage.
+Timings are machine-dependent and are not CI thresholds.
 
 ### Boundary
 

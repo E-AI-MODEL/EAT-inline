@@ -36,10 +36,10 @@ A text result is correct when the requested identity is known to occur inside it
 
 | Search method | p50 | p95 | p99 |
 |---|---:|---:|---:|
-| Name search | 546.493 µs | 19950.143 µs | 32507.424 µs |
-| EAT after a unique name match | 93.063 µs | 371.172 µs | 1257.259 µs |
-| EAT with the answer ID | 89.042 µs | 328.979 µs | 617.629 µs |
-| Combined search with the answer ID | 731.052 µs | 20697.574 µs | 33963.118 µs |
+| Name search | 496.615 µs | 17215.162 µs | 27810.049 µs |
+| EAT after a unique name match | 86.462 µs | 353.117 µs | 1184.569 µs |
+| EAT with the answer ID | 81.712 µs | 318.175 µs | 622.903 µs |
+| Combined search with the answer ID | 670.155 µs | 17475.795 µs | 29339.335 µs |
 
 ![Retrieval latency](retrieval-latency.svg)
 

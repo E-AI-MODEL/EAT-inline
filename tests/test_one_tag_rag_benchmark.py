@@ -110,6 +110,54 @@ class OneTagRagBenchmarkTests(unittest.TestCase):
         self.assertEqual(resolution["coverage"], 0.9839)
         self.assertEqual(resolution["accuracy_when_resolved"], 1.0)
 
+    def test_all_ambiguous_labels_report_zero_coverage(self):
+        source_records = [
+            {
+                "id": "all-ambiguous",
+                "plain_text": "Alpha page\nAlpha appears here.",
+                "annotations": [
+                    {
+                        "start": 11,
+                        "end": 16,
+                        "type": "entity",
+                        "key": "Q900001",
+                    }
+                ],
+            }
+        ]
+        registry_records = [
+            {
+                "canonical_id": "Q900001",
+                "key": "Q900001",
+                "label": "Alpha",
+                "same_as": [],
+                "type": "entity",
+            },
+            {
+                "canonical_id": "Q900002",
+                "key": "Q900002",
+                "label": "Alpha",
+                "same_as": [],
+                "type": "entity",
+            },
+        ]
+
+        result = run_benchmark(
+            source_records=source_records,
+            registry_records=registry_records,
+            document_count=1,
+            top_k=1,
+            query_rounds=1,
+            hybrid_candidates=1,
+        )
+
+        resolution = result["questions"]["query_identity_resolution"]
+        self.assertEqual(resolution["unique"], 0)
+        self.assertEqual(resolution["ambiguous"], 1)
+        self.assertEqual(resolution["coverage"], 0.0)
+        self.assertIsNone(resolution["accuracy_when_resolved"])
+        self.assertEqual(resolution["lexical_fallbacks"], 1)
+
     def test_invalid_workload_and_search_sizes_are_rejected(self):
         with self.assertRaisesRegex(ValueError, "document_count"):
             run_benchmark(

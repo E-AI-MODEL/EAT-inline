@@ -55,7 +55,6 @@ class Query:
     question: str
     terms: tuple[str, ...]
     gold_source_titles: tuple[str, ...]
-    inferred_entity_id: str | None
     inference_status: str
     inference_candidates: tuple[str, ...]
 
@@ -208,16 +207,24 @@ def build_prototypes(
     return prototypes
 
 
-def build_queries(
-    prototypes: list[PassagePrototype],
+def build_registry_label_index(
     registry_records: list[dict[str, object]],
-) -> list[Query]:
+) -> dict[str, tuple[str, ...]]:
     entity_ids_by_label: dict[str, set[str]] = defaultdict(set)
     for record in registry_records:
         entity_ids_by_label[str(record["label"]).casefold()].add(
             str(record["canonical_id"])
         )
+    return {
+        label: tuple(sorted(entity_ids))
+        for label, entity_ids in entity_ids_by_label.items()
+    }
 
+
+def build_queries(
+    prototypes: list[PassagePrototype],
+    registry_label_index: dict[str, tuple[str, ...]],
+) -> list[Query]:
     grouped: dict[str, list[PassagePrototype]] = defaultdict(list)
     for prototype in prototypes:
         grouped[prototype.entity_id].append(prototype)
@@ -230,17 +237,12 @@ def build_queries(
         terms = tuple(sorted(tokenize(label)))
         if not terms:
             raise ValueError(f"entity {entity_id} has no searchable label terms")
-        inference_candidates = tuple(
-            sorted(entity_ids_by_label.get(label.casefold(), set()))
-        )
+        inference_candidates = registry_label_index.get(label.casefold(), ())
         if len(inference_candidates) == 1:
-            inferred_entity_id = inference_candidates[0]
             inference_status = "unique"
         elif inference_candidates:
-            inferred_entity_id = None
             inference_status = "ambiguous"
         else:
-            inferred_entity_id = None
             inference_status = "unresolved"
         queries.append(
             Query(
@@ -251,7 +253,6 @@ def build_queries(
                 gold_source_titles=tuple(
                     sorted({match.source_title for match in matches})
                 ),
-                inferred_entity_id=inferred_entity_id,
                 inference_status=inference_status,
                 inference_candidates=inference_candidates,
             )
@@ -377,16 +378,18 @@ def retrieve_eat_filtered(
 def retrieve_inferred_eat(
     index: WorkloadIndex,
     query: Query,
+    registry_label_index: dict[str, tuple[str, ...]],
     *,
     top_k: int,
 ) -> list[int]:
-    if query.inferred_entity_id is None:
+    candidates = registry_label_index.get(query.label.casefold(), ())
+    if len(candidates) != 1:
         return retrieve_lexical(index, query, top_k=top_k)
     return retrieve_eat_filtered(
         index,
         query,
         top_k=top_k,
-        entity_id=query.inferred_entity_id,
+        entity_id=candidates[0],
     )
 
 
@@ -514,6 +517,7 @@ def route_metrics(
 def run_retrieval(
     index: WorkloadIndex,
     queries: list[Query],
+    registry_label_index: dict[str, tuple[str, ...]],
     *,
     top_k: int,
     query_rounds: int,
@@ -539,6 +543,7 @@ def run_retrieval(
         "inferred_eat": lambda query: retrieve_inferred_eat(
             index,
             query,
+            registry_label_index,
             top_k=top_k,
         ),
         "eat_filtered": lambda query: retrieve_eat_filtered(
@@ -611,7 +616,8 @@ def run_benchmark(
 ) -> dict[str, object]:
     registry = ResolverRegistry(registry_records)
     prototypes = build_prototypes(source_records, registry_records)
-    queries = build_queries(prototypes, registry_records)
+    registry_label_index = build_registry_label_index(registry_records)
+    queries = build_queries(prototypes, registry_label_index)
     index = build_workload_index(
         prototypes,
         registry,
@@ -620,6 +626,7 @@ def run_benchmark(
     metrics, details, timings = run_retrieval(
         index,
         queries,
+        registry_label_index,
         top_k=top_k,
         query_rounds=query_rounds,
         hybrid_candidates=hybrid_candidates,
@@ -651,12 +658,12 @@ def run_benchmark(
     correct_inferences = [
         query
         for query in unique_inferences
-        if query.inferred_entity_id == query.entity_id
+        if query.inference_candidates[0] == query.entity_id
     ]
     incorrect_inferences = [
         query
         for query in unique_inferences
-        if query.inferred_entity_id != query.entity_id
+        if query.inference_candidates[0] != query.entity_id
     ]
     ambiguous_labels: dict[str, tuple[str, ...]] = {}
     for query in ambiguous_inferences:
@@ -694,7 +701,11 @@ def run_benchmark(
                         if query.entity_id == entity_id
                     ),
                     "inferred_entity_id": next(
-                        query.inferred_entity_id
+                        (
+                            query.inference_candidates[0]
+                            if query.inference_status == "unique"
+                            else None
+                        )
                         for query in queries
                         if query.entity_id == entity_id
                     ),
@@ -777,9 +788,13 @@ def run_benchmark(
                 "correct": len(correct_inferences),
                 "incorrect": len(incorrect_inferences),
                 "coverage": round(len(unique_inferences) / len(queries), 4),
-                "accuracy_when_resolved": round(
-                    len(correct_inferences) / len(unique_inferences),
-                    4,
+                "accuracy_when_resolved": (
+                    round(
+                        len(correct_inferences) / len(unique_inferences),
+                        4,
+                    )
+                    if unique_inferences
+                    else None
                 ),
                 "lexical_fallbacks": (
                     len(ambiguous_inferences) + len(unresolved_inferences)
@@ -797,6 +812,10 @@ def run_benchmark(
             "top_k": top_k,
             "query_rounds": query_rounds,
             "hybrid_lexical_candidate_count": hybrid_candidates,
+            "inferred_eat_latency_includes": (
+                "query label case folding, exact registry-label lookup, "
+                "ambiguity check and retrieval"
+            ),
             "ordinary_lexical": (
                 "IDF-weighted lexical retrieval over all plain passages"
             ),

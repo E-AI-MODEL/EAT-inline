@@ -9,7 +9,7 @@
   "environment": {
     "python": "3.12.13",
     "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
-    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
     "logical_cpu_count": 9
   },
   "command": "python scripts/run_one_tag_rag_benchmark.py --oracle-dataset benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl --documents 100000 --top-k 10 --query-rounds 3 --hybrid-candidates 100 --output-dir benchmark/results/wiki-fair-v2-one-tag-rag",
@@ -28,8 +28,8 @@
       "eat_markup_extra_bytes": 1006784
     },
     "index": {
-      "build_seconds": 3.431493,
-      "documents_per_second": 29141.84,
+      "build_seconds": 4.189675,
+      "documents_per_second": 23868.2,
       "lexical_terms": 2838,
       "lexical_postings": 5483278,
       "entity_keys": 434,
@@ -96,6 +96,7 @@
       "top_k": 10,
       "query_rounds": 3,
       "hybrid_lexical_candidate_count": 100,
+      "inferred_eat_latency_includes": "query label case folding, exact registry-label lookup, ambiguity check and retrieval",
       "ordinary_lexical": "IDF-weighted lexical retrieval over all plain passages",
       "inferred_eat": "infer a canonical entity ID from a unique exact registry label and filter on its EAT postings; ambiguous or unresolved labels fall back to ordinary lexical retrieval",
       "eat_filtered": "filter by the one parsed EAT entity ID, then rank matching passages by the same lexical score",
@@ -162,30 +163,30 @@
         "ordinary_lexical": {
           "samples": 1302,
           "query_rounds": 3,
-          "p50_microseconds": 546.493,
-          "p95_microseconds": 19950.143,
-          "p99_microseconds": 32507.424
+          "p50_microseconds": 496.615,
+          "p95_microseconds": 17215.162,
+          "p99_microseconds": 27810.049
         },
         "inferred_eat": {
           "samples": 1302,
           "query_rounds": 3,
-          "p50_microseconds": 93.063,
-          "p95_microseconds": 371.172,
-          "p99_microseconds": 1257.259
+          "p50_microseconds": 86.462,
+          "p95_microseconds": 353.117,
+          "p99_microseconds": 1184.569
         },
         "eat_filtered": {
           "samples": 1302,
           "query_rounds": 3,
-          "p50_microseconds": 89.042,
-          "p95_microseconds": 328.979,
-          "p99_microseconds": 617.629
+          "p50_microseconds": 81.712,
+          "p95_microseconds": 318.175,
+          "p99_microseconds": 622.903
         },
         "hybrid": {
           "samples": 1302,
           "query_rounds": 3,
-          "p50_microseconds": 731.052,
-          "p95_microseconds": 20697.574,
-          "p99_microseconds": 33963.118
+          "p50_microseconds": 670.155,
+          "p95_microseconds": 17475.795,
+          "p99_microseconds": 29339.335
         }
       }
     },
