@@ -38,6 +38,12 @@ The project follows semantic versioning for the reference implementation and spe
   development split. The model runs once outside CI; the committed artifact is
   replayed and scored through the existing recorded-run path, with the benchmark
   workflow and a model-free test activating automatically once it is committed.
+- Provider-agnostic LLM entity-linker producer (`scripts/run_llm_linker.py`) for
+  any OpenAI-compatible endpoint (DeepSeek, GLM/Zhipu, OpenAI). The model selects
+  registry links from the closed candidate set; the script grounds every returned
+  surface to a verbatim, resolvable, non-overlapping span, so invalid model output
+  is dropped rather than corrupting the artifact. Recorded once outside CI and
+  replayed through the same validation, scoring, workflow and model-free test.
 - Controlled oracle EAT-assistance curve over the same frozen Wiki-Fair model
   run. Gold-derived EAT references override overlapping model predictions at
   0%, 25%, 50%, 75% and 100% mention coverage, with an EAT-only upper bound

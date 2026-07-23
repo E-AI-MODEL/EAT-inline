@@ -70,6 +70,22 @@ jobs:
             echo "spaCy recorded run not committed yet; skipping model-free replay."
           fi
 
+      - name: Replay and score the LLM recorded model run (if present)
+        shell: bash
+        run: |
+          RUN=benchmark/results/wiki-fair-v2-llm-linker-run.json
+          if [ -f "$RUN" ]; then
+            python scripts/run_recorded_linker_benchmark.py "$RUN" \
+              --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+              --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+              --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
+              --output-dir /tmp/wiki-fair-v2-llm
+            cmp benchmark/results/wiki-fair-v2-llm/recorded-linker-results.json /tmp/wiki-fair-v2-llm/recorded-linker-results.json
+            cmp benchmark/results/wiki-fair-v2-llm/recorded-linker-summary.md /tmp/wiki-fair-v2-llm/recorded-linker-summary.md
+          else
+            echo "LLM recorded run not committed yet; skipping model-free replay."
+          fi
+
       - name: Reproduce the oracle EAT-assistance curve
         run: |
           python scripts/run_eat_assistance_benchmark.py \

@@ -168,6 +168,49 @@ state-of-the-art entity linker, is not multilingual, and does not measure human
 authoring. The result must be read alongside these limits, whatever value it
 reaches relative to the TF-IDF run or the plain baseline.
 
+### Real LLM entity-linker run
+
+[`scripts/run_llm_linker.py`](scripts/run_llm_linker.py) uses a large language
+model as the entity linker through any OpenAI-compatible chat-completions
+endpoint (for example DeepSeek, GLM/Zhipu or OpenAI). For each document it sends
+the plain text and the closed-registry candidates that appear in it, and asks the
+model to return, for each mention, an exact surface substring and a registry
+`type`/`key`. The model only decides the linking: the script grounds every
+returned surface to a verbatim, word-bounded, non-overlapping span and to a
+registry entry, so anything the model invents or mis-formats is dropped rather
+than making the artifact invalid. Candidates come only from the registry and the
+development split.
+
+The endpoint runs outside CI. Provide the provider through arguments and the key
+through an environment variable:
+
+```bash
+export LLM_API_KEY=...        # your provider key
+python scripts/run_llm_linker.py \
+  --training benchmark/external/wiki-fair-v2/dev.training.jsonl \
+  --input benchmark/external/wiki-fair-v2/test.inputs.jsonl \
+  --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
+  --base-url https://api.deepseek.com --model deepseek-chat \
+  --runner-commit "$(git rev-parse HEAD)" \
+  --output benchmark/results/wiki-fair-v2-llm-linker-run.json
+python scripts/run_recorded_linker_benchmark.py \
+  benchmark/results/wiki-fair-v2-llm-linker-run.json \
+  --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
+  --output-dir benchmark/results/wiki-fair-v2-llm
+```
+
+Commit `wiki-fair-v2-llm-linker-run.json` and the `wiki-fair-v2-llm/` results; the
+benchmark workflow and the model-free test in `tests/test_llm_linker.py` then
+validate and score them. A recorded LLM run is a single sampled run at
+`temperature=0`; the model name, version and temperature are stored in the
+artifact, and CI replays the committed predictions deterministically. It shares
+the same closed-registry, set-level, English-only boundaries as the spaCy run and
+is not a state-of-the-art or multilingual entity linker.
+
 ## 100,000-document scale-search test
 
 This separate benchmark measures representation overhead and indexed entity
