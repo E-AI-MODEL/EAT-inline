@@ -118,6 +118,56 @@ recorded-run format. A run records:
 Validation rejects missing or duplicate cases, changed inputs, invalid spans,
 unknown typed keys and leaked fields such as `gold_ids` or `eat_text`.
 
+### Real NER and entity-linker run (spaCy)
+
+The TF-IDF run is handed candidate spans by a registry gazetteer. A second
+recorded run uses a real statistical model that detects its own spans:
+[`scripts/run_spacy_linker.py`](scripts/run_spacy_linker.py) runs the spaCy
+`en_core_web_md` named-entity recognizer over `plain_text`, then links each
+detected span to the closed registry by averaged word-vector cosine similarity.
+Candidate aliases and profiles come only from the registry and the development
+split; the model never sees the gold fields or the author's EAT text. Detection
+therefore stands on the model, not on a gazetteer.
+
+The model weights are hosted outside the standard package index, so this run is
+produced once on a machine that can install the model, then committed and
+replayed. It does not run inside CI; CI only replays the committed artifact
+through the same validation and scoring path as the TF-IDF run.
+
+To generate and score it:
+
+```bash
+pip install -e '.[spacy]'
+python -m spacy download en_core_web_md   # en_core_web_md 3.8.0
+python scripts/run_spacy_linker.py \
+  --training benchmark/external/wiki-fair-v2/dev.training.jsonl \
+  --input benchmark/external/wiki-fair-v2/test.inputs.jsonl \
+  --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
+  --runner-commit "$(git rev-parse HEAD)" \
+  --output benchmark/results/wiki-fair-v2-spacy-linker-run.json
+python scripts/run_recorded_linker_benchmark.py \
+  benchmark/results/wiki-fair-v2-spacy-linker-run.json \
+  --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
+  --output-dir benchmark/results/wiki-fair-v2-spacy
+```
+
+Commit the resulting `wiki-fair-v2-spacy-linker-run.json` and the
+`wiki-fair-v2-spacy/` results. The scored precision, recall, F1 and exact-match
+rate against the plain baseline are then recorded in
+`benchmark/results/wiki-fair-v2-spacy/recorded-linker-summary.md`, and the
+model-free replay test in `tests/test_spacy_linker.py` activates automatically.
+
+Boundaries: this is a real, non-oracle NER and entity-linker over a closed
+registry of 1,063 entities on 40 English Wikipedia test documents, scored as
+canonical-ID sets per article, in a single deterministic run. It is not a
+state-of-the-art entity linker, is not multilingual, and does not measure human
+authoring. The result must be read alongside these limits, whatever value it
+reaches relative to the TF-IDF run or the plain baseline.
+
 ## 100,000-document scale-search test
 
 This separate benchmark measures representation overhead and indexed entity

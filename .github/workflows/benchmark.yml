@@ -54,6 +54,22 @@ jobs:
           cmp benchmark/results/wiki-fair-v2-tfidf/recorded-linker-results.json /tmp/wiki-fair-v2-results/recorded-linker-results.json
           cmp benchmark/results/wiki-fair-v2-tfidf/recorded-linker-summary.md /tmp/wiki-fair-v2-results/recorded-linker-summary.md
 
+      - name: Replay and score the spaCy recorded model run (if present)
+        shell: bash
+        run: |
+          RUN=benchmark/results/wiki-fair-v2-spacy-linker-run.json
+          if [ -f "$RUN" ]; then
+            python scripts/run_recorded_linker_benchmark.py "$RUN" \
+              --dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+              --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+              --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
+              --output-dir /tmp/wiki-fair-v2-spacy
+            cmp benchmark/results/wiki-fair-v2-spacy/recorded-linker-results.json /tmp/wiki-fair-v2-spacy/recorded-linker-results.json
+            cmp benchmark/results/wiki-fair-v2-spacy/recorded-linker-summary.md /tmp/wiki-fair-v2-spacy/recorded-linker-summary.md
+          else
+            echo "spaCy recorded run not committed yet; skipping model-free replay."
+          fi
+
       - name: Reproduce the oracle EAT-assistance curve
         run: |
           python scripts/run_eat_assistance_benchmark.py \
