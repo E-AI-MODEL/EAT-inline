@@ -77,6 +77,17 @@ jobs:
             --query-rounds 20 \
             --output-dir benchmark/results/wiki-fair-v2-scale-search-ci
 
+      - name: Run the 100,000-document one-tag RAG retrieval test
+        run: |
+          python scripts/run_one_tag_rag_benchmark.py \
+            --oracle-dataset benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl \
+            --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+            --documents 100000 \
+            --top-k 10 \
+            --query-rounds 3 \
+            --hybrid-candidates 100 \
+            --output-dir benchmark/results/wiki-fair-v2-one-tag-rag-ci
+
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:

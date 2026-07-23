@@ -189,6 +189,104 @@ python scripts/run_scale_search_benchmark.py \
   --output-dir /tmp/wiki-fair-v2-scale-search
 ```
 
+## 100,000-document one-tag RAG retrieval test
+
+This benchmark measures passage retrieval and a small extractive answer step.
+It is separate from the full-coverage scale-search test.
+
+### Workload
+
+- The 669 annotated text positions in the 40 Wiki-Fair test pages become 669
+  passage prototypes.
+- Each prototype contains a 220-character context on both sides of one target
+  mention.
+- Only that target mention is replaced by an EAT reference.
+- The prototypes repeat in deterministic order until the workload contains
+  100,000 documents with distinct 32-bit integer IDs.
+- Every document is parsed and rejected unless it contains exactly one
+  resolvable EAT reference.
+
+The final workload contains 100,000 EAT references, 45.1 MB of plain passage
+text and 46.1 MB of EAT text. The text comes from 40 source pages; the 100,000
+document IDs do not represent 100,000 different source documents.
+
+### Questions and answers
+
+There is one question for each of the 434 entities:
+
+```text
+Which source page mentions <registry label>?
+```
+
+The ordinary route receives the registry label as plain query text. The
+EAT-filtered and hybrid routes receive the correct canonical entity ID from the
+benchmark answers. Query entity linking is outside this test.
+
+A retrieved passage is relevant when the requested entity has a known
+annotation inside its context window. The deterministic answer step returns
+the source-page title from the top-ranked passage. The answer counts only when
+that first passage contains the requested entity, so a correct title without
+supporting passage evidence does not pass.
+
+### Compared routes
+
+| Route | Retrieval method |
+|---|---|
+| Ordinary lexical | IDF-weighted lexical retrieval over every plain passage |
+| EAT filtered | Exact entity filter followed by the same lexical score |
+| Hybrid | Top 100 lexical candidates plus an exact EAT entity boost |
+
+All ranking ties use the lowest document ID. The benchmark records every top-10
+ranking and a SHA-256 digest for each route.
+
+### Recorded quality
+
+| Route | Source answer exact match | Hit@1 | Hit@10 | Precision@10 | MRR@10 |
+|---|---:|---:|---:|---:|---:|
+| Ordinary lexical | 0.7742 | 0.7742 | 0.8272 | 0.7908 | 0.7888 |
+| EAT filtered | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| Hybrid | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+
+The ordinary route produced 336 correct grounded source answers out of 434.
+Both EAT routes produced 434. This is an oracle result because both receive the
+known correct query entity ID.
+
+### Recorded timing
+
+Environment: Python `3.12.13`, Linux `6.12.13`, AMD EPYC 9V74, 9 logical CPUs
+visible to the container.
+
+| Route | p50 | p95 | p99 |
+|---|---:|---:|---:|
+| Ordinary lexical | 523.169 µs | 18,220.464 µs | 29,334.083 µs |
+| EAT filtered | 90.404 µs | 319.425 µs | 573.624 µs |
+| Hybrid | 692.586 µs | 19,038.451 µs | 30,634.050 µs |
+
+The EAT filter examines a much smaller postings list. The hybrid route still
+runs lexical candidate retrieval, so it does not have the filter-only latency
+advantage. Timings are machine-dependent and are not CI thresholds.
+
+### Boundary
+
+This test covers the retrieval and source-selection part of a RAG pipeline. It
+does not run a vector database, embeddings or a language model. It cannot
+measure free-form answer quality, hallucinations or query entity-linking
+accuracy. Its perfect EAT result is the expected upper bound when the correct
+query ID and correct document tags are already known.
+
+### Reproduce the one-tag RAG retrieval test
+
+```bash
+python scripts/run_one_tag_rag_benchmark.py \
+  --oracle-dataset benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --documents 100000 \
+  --top-k 10 \
+  --query-rounds 3 \
+  --hybrid-candidates 100 \
+  --output-dir /tmp/wiki-fair-v2-one-tag-rag
+```
+
 ## Reproduce the public experiment
 
 ```bash
@@ -240,4 +338,8 @@ wiki-fair-v2-scale-search/scale-search-results.json
 wiki-fair-v2-scale-search/scale-search-summary.md
 wiki-fair-v2-scale-search/scale-overview.svg
 wiki-fair-v2-scale-search/search-latency.svg
+wiki-fair-v2-one-tag-rag/one-tag-rag-results.json
+wiki-fair-v2-one-tag-rag/one-tag-rag-summary.md
+wiki-fair-v2-one-tag-rag/retrieval-quality.svg
+wiki-fair-v2-one-tag-rag/retrieval-latency.svg
 ```

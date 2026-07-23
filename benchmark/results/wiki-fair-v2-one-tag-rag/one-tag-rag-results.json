@@ -1,0 +1,558 @@
+{
+  "benchmark": "wiki-fair-v2-one-tag-rag-retrieval-v1",
+  "inputs": {
+    "oracle_dataset": "benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl",
+    "oracle_dataset_sha256": "d447ef6661c9a958cf481466a8c62e4a8853017489158d76ef7f847bdbf967ba",
+    "registry": "benchmark/external/wiki-fair-v2/entity-registry.jsonl",
+    "registry_sha256": "89e3fa89b5b8e14bdfa18f599f8dfee3a41560f349ecc331bcad802fc79a22de"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "Linux-6.12.13-x86_64-with-glibc2.39",
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "logical_cpu_count": 9
+  },
+  "command": "python scripts/run_one_tag_rag_benchmark.py --oracle-dataset benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl --documents 100000 --top-k 10 --query-rounds 3 --hybrid-candidates 100 --output-dir benchmark/results/wiki-fair-v2-one-tag-rag",
+  "result": {
+    "workload": {
+      "generated_documents": 100000,
+      "different_source_documents": 40,
+      "different_passage_prototypes": 669,
+      "generation_method": "repeat 669 annotated Wiki-Fair passages in deterministic order and assign every copy a distinct integer document ID",
+      "eat_references": 100000,
+      "eat_references_per_document": 1.0,
+      "documents_with_exactly_one_eat_reference": 100000,
+      "different_entities": 434,
+      "plain_text_bytes": 45068571,
+      "eat_text_bytes": 46075355,
+      "eat_markup_extra_bytes": 1006784
+    },
+    "index": {
+      "build_seconds": 3.613591,
+      "documents_per_second": 27673.3,
+      "lexical_terms": 2838,
+      "lexical_postings": 5483278,
+      "entity_keys": 434,
+      "entity_postings": 100000,
+      "entity_postings_integer_bits": 32
+    },
+    "questions": {
+      "count": 434,
+      "form": "Which source page mentions <registry label>?",
+      "ordinary_input": "the registry label as plain query text",
+      "eat_input": "the gold canonical entity ID supplied directly to the retrieval route",
+      "answer_step": "return the source-page title from the top-ranked passage"
+    },
+    "retrieval": {
+      "top_k": 10,
+      "query_rounds": 3,
+      "hybrid_lexical_candidate_count": 100,
+      "ordinary_lexical": "IDF-weighted lexical retrieval over all plain passages",
+      "eat_filtered": "filter by the one parsed EAT entity ID, then rank matching passages by the same lexical score",
+      "hybrid": "combine lexical candidates with an exact EAT entity boost",
+      "quality": {
+        "ordinary_lexical": {
+          "route": "ordinary_lexical",
+          "questions": 434,
+          "top_k": 10,
+          "hit_at_1": 0.7742,
+          "hit_at_5": 0.8065,
+          "hit_at_10": 0.8272,
+          "precision_at_10": 0.7908,
+          "mrr_at_10": 0.7888,
+          "source_answer_exact_match": 0.7742,
+          "source_answers_correct": 336,
+          "retrieved_context_words_at_10": 286611,
+          "ranking_sha256": "6be361f93338dc3bfce00a01f3051a4d5bc57c62322ad6f038577927ade11a53"
+        },
+        "eat_filtered": {
+          "route": "eat_filtered",
+          "questions": 434,
+          "top_k": 10,
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 1.0,
+          "mrr_at_10": 1.0,
+          "source_answer_exact_match": 1.0,
+          "source_answers_correct": 434,
+          "retrieved_context_words_at_10": 312825,
+          "ranking_sha256": "6d615133631954a9f7c953ac239b2bd4ea14eab75eb2b7df3c24404fcf2ac75d"
+        },
+        "hybrid": {
+          "route": "hybrid",
+          "questions": 434,
+          "top_k": 10,
+          "hit_at_1": 1.0,
+          "hit_at_5": 1.0,
+          "hit_at_10": 1.0,
+          "precision_at_10": 1.0,
+          "mrr_at_10": 1.0,
+          "source_answer_exact_match": 1.0,
+          "source_answers_correct": 434,
+          "retrieved_context_words_at_10": 312825,
+          "ranking_sha256": "6d615133631954a9f7c953ac239b2bd4ea14eab75eb2b7df3c24404fcf2ac75d"
+        }
+      },
+      "latency": {
+        "ordinary_lexical": {
+          "samples": 1302,
+          "query_rounds": 3,
+          "p50_microseconds": 523.169,
+          "p95_microseconds": 18220.464,
+          "p99_microseconds": 29334.083
+        },
+        "eat_filtered": {
+          "samples": 1302,
+          "query_rounds": 3,
+          "p50_microseconds": 90.404,
+          "p95_microseconds": 319.425,
+          "p99_microseconds": 573.624
+        },
+        "hybrid": {
+          "samples": 1302,
+          "query_rounds": 3,
+          "p50_microseconds": 692.586,
+          "p95_microseconds": 19038.451,
+          "p99_microseconds": 30634.05
+        }
+      }
+    },
+    "query_result_examples": [
+      {
+        "entity_id": "Q1092632",
+        "label": "Juliet",
+        "question": "Which source page mentions Juliet?",
+        "gold_source_titles": [
+          "Rosaline"
+        ],
+        "routes": {
+          "ordinary_lexical": {
+            "document_ids": [
+              398,
+              399,
+              400,
+              408,
+              409,
+              410,
+              411,
+              412,
+              413,
+              414
+            ],
+            "context_relevant": [
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Rosaline",
+            "answer_correct": false
+          },
+          "eat_filtered": {
+            "document_ids": [
+              414,
+              420,
+              423,
+              430,
+              435,
+              1083,
+              1089,
+              1092,
+              1099,
+              1104
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Rosaline",
+            "answer_correct": true
+          },
+          "hybrid": {
+            "document_ids": [
+              414,
+              420,
+              423,
+              430,
+              435,
+              1083,
+              1089,
+              1092,
+              1099,
+              1104
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Rosaline",
+            "answer_correct": true
+          }
+        }
+      },
+      {
+        "entity_id": "Q1127270",
+        "label": "deputy chairperson",
+        "question": "Which source page mentions deputy chairperson?",
+        "gold_source_titles": [
+          "Jawed Siddiqi"
+        ],
+        "routes": {
+          "ordinary_lexical": {
+            "document_ids": [],
+            "context_relevant": [],
+            "answer": null,
+            "answer_correct": false
+          },
+          "eat_filtered": {
+            "document_ids": [
+              586,
+              1255,
+              1924,
+              2593,
+              3262,
+              3931,
+              4600,
+              5269,
+              5938,
+              6607
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Jawed Siddiqi",
+            "answer_correct": true
+          },
+          "hybrid": {
+            "document_ids": [
+              586,
+              1255,
+              1924,
+              2593,
+              3262,
+              3931,
+              4600,
+              5269,
+              5938,
+              6607
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Jawed Siddiqi",
+            "answer_correct": true
+          }
+        }
+      },
+      {
+        "entity_id": "Q1146447",
+        "label": "Culture and Entertainment Complex Nagorny",
+        "question": "Which source page mentions Culture and Entertainment Complex Nagorny?",
+        "gold_source_titles": [
+          "SKIF Nizhny Novgorod"
+        ],
+        "routes": {
+          "ordinary_lexical": {
+            "document_ids": [
+              182,
+              183,
+              184,
+              185,
+              851,
+              852,
+              853,
+              854,
+              1520,
+              1521
+            ],
+            "context_relevant": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "answer": "Archaeological Museum of Asturias",
+            "answer_correct": false
+          },
+          "eat_filtered": {
+            "document_ids": [
+              50,
+              719,
+              1388,
+              2057,
+              2726,
+              3395,
+              4064,
+              4733,
+              5402,
+              6071
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "SKIF Nizhny Novgorod",
+            "answer_correct": true
+          },
+          "hybrid": {
+            "document_ids": [
+              50,
+              719,
+              1388,
+              2057,
+              2726,
+              3395,
+              4064,
+              4733,
+              5402,
+              6071
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "SKIF Nizhny Novgorod",
+            "answer_correct": true
+          }
+        }
+      },
+      {
+        "entity_id": "Q1162163",
+        "label": "director",
+        "question": "Which source page mentions director?",
+        "gold_source_titles": [
+          "Brian Bowsher"
+        ],
+        "routes": {
+          "ordinary_lexical": {
+            "document_ids": [
+              202,
+              203,
+              204,
+              205,
+              206,
+              207,
+              208,
+              209,
+              210,
+              211
+            ],
+            "context_relevant": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Brian Bowsher",
+            "answer_correct": false
+          },
+          "eat_filtered": {
+            "document_ids": [
+              213,
+              882,
+              1551,
+              2220,
+              2889,
+              3558,
+              4227,
+              4896,
+              5565,
+              6234
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Brian Bowsher",
+            "answer_correct": true
+          },
+          "hybrid": {
+            "document_ids": [
+              213,
+              882,
+              1551,
+              2220,
+              2889,
+              3558,
+              4227,
+              4896,
+              5565,
+              6234
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Brian Bowsher",
+            "answer_correct": true
+          }
+        }
+      },
+      {
+        "entity_id": "Q11864051",
+        "label": "Hämeenlinnan Pallokerho",
+        "question": "Which source page mentions Hämeenlinnan Pallokerho?",
+        "gold_source_titles": [
+          "Sameli Ventelä"
+        ],
+        "routes": {
+          "ordinary_lexical": {
+            "document_ids": [],
+            "context_relevant": [],
+            "answer": null,
+            "answer_correct": false
+          },
+          "eat_filtered": {
+            "document_ids": [
+              8,
+              677,
+              1346,
+              2015,
+              2684,
+              3353,
+              4022,
+              4691,
+              5360,
+              6029
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Sameli Ventelä",
+            "answer_correct": true
+          },
+          "hybrid": {
+            "document_ids": [
+              8,
+              677,
+              1346,
+              2015,
+              2684,
+              3353,
+              4022,
+              4691,
+              5360,
+              6029
+            ],
+            "context_relevant": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "answer": "Sameli Ventelä",
+            "answer_correct": true
+          }
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "The 100,000 workload documents repeat 669 passage prototypes extracted from 40 source pages.",
+    "Every workload document contains exactly one generated EAT reference.",
+    "The EAT-filtered and hybrid routes receive the correct query entity ID from the benchmark answers.",
+    "The ordinary route receives the registry label as plain query text; query entity-linking accuracy is not measured.",
+    "The answer step extracts a source-page title. No language model, vector embedding or free-form answer generation runs.",
+    "Wall-clock timings are machine-dependent and are not pass thresholds."
+  ]
+}

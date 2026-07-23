@@ -41,6 +41,10 @@ The project follows semantic versioning for the reference implementation and spe
 - A machine-recorded 100,000-document scale-search workload with full EAT
   coverage, identical metadata-control and EAT-derived indexes, index-build
   throughput, entity-search latency, checksums, charts and CI execution.
+- A separate 100,000-document RAG retrieval workload with exactly one EAT
+  reference per document, 434 source-page questions, ordinary lexical,
+  EAT-filtered and hybrid routes, grounded source-answer scoring, charts and
+  full CI execution.
 
 ### Policy
 

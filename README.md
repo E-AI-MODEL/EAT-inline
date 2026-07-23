@@ -180,6 +180,44 @@ This proves that the reference implementation can parse and index this
 metadata control in this test. It does not represent 100,000 different source
 documents or a production search engine. Timings depend on the machine.
 
+## 100,000-document one-tag RAG retrieval test
+
+This is a different test. Each generated document contains exactly one EAT
+reference. The test asks 434 questions such as:
+
+```text
+Which source page mentions University of Southampton?
+```
+
+It compares three ways to find passages before an answer is produced:
+
+| Route | What it receives |
+|---|---|
+| Ordinary lexical | The visible entity name as plain query text |
+| EAT filtered | The correct entity ID and only documents tagged with that ID |
+| Hybrid | Lexical candidates plus an exact EAT entity boost |
+
+The answer step returns the source-page title from the first passage. It counts
+only when that passage contains known evidence for the requested entity.
+
+![One-tag RAG retrieval quality](benchmark/results/wiki-fair-v2-one-tag-rag/retrieval-quality.svg)
+
+| Route | Correct source answers | Relevant passage first | Relevant passage in top 10 |
+|---|---:|---:|---:|
+| Ordinary lexical | 336 of 434 (77.42%) | 77.42% | 82.72% |
+| EAT filtered | 434 of 434 (100%) | 100% | 100% |
+| Hybrid | 434 of 434 (100%) | 100% | 100% |
+
+The workload contains 100,000 document IDs and 100,000 EAT references. It
+repeats 669 passages taken from the same 40 Wikipedia pages used by the public
+test. It is not a test over 100,000 different source documents.
+
+The EAT routes receive the correct query entity ID from the test answers. This
+isolates what that ID changes during retrieval. It does not show that a model
+can infer the ID correctly. The test has no vector embeddings or language
+model, so it measures RAG retrieval and source selection, not free-form answer
+quality.
+
 ### File formats
 
 This experiment scores extracted plain text. It does not yet test whether EAT
@@ -261,7 +299,8 @@ python scripts/check_docs.py
 The repository does not yet show:
 
 - behaviour over 100,000 different source documents;
-- keyword, full-text, semantic or vector-search performance;
+- semantic or vector-search performance;
+- free-form RAG answer quality from a language model;
 - how accurately people write EAT references;
 - how much writing time EAT adds;
 - reliable round trips through Word, PDF, Excel, Markdown or HTML;
