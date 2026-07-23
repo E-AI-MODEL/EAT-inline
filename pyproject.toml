@@ -21,6 +21,7 @@ classifiers = [
 
 [project.optional-dependencies]
 model = ["scikit-learn==1.8.0"]
+spacy = ["spacy==3.8.14"]
 
 [tool.setuptools]
 py-modules = ["eat_inline", "eat_baselines", "eat_recorded_runs"]

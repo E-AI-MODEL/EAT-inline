@@ -32,6 +32,12 @@ The project follows semantic versioning for the reference implementation and spe
   no-coreference dev/test split, including pinned source data, a closed
   Wikidata candidate registry, complete recorded predictions, shared scoring
   and CI reproduction.
+- Producer for a real NER and entity-linker run (`scripts/run_spacy_linker.py`,
+  spaCy `en_core_web_md`): the model detects its own spans and links them to the
+  closed registry by word-vector similarity, using only the registry and the
+  development split. The model runs once outside CI; the committed artifact is
+  replayed and scored through the existing recorded-run path, with the benchmark
+  workflow and a model-free test activating automatically once it is committed.
 - Controlled oracle EAT-assistance curve over the same frozen Wiki-Fair model
   run. Gold-derived EAT references override overlapping model predictions at
   0%, 25%, 50%, 75% and 100% mention coverage, with an EAT-only upper bound
