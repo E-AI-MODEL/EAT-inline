@@ -1,15 +1,16 @@
 # EAT Inline
 
-**A small tag that tells software exactly which person, place or thing a sentence refers to.**
+**A small plain-text tag that tells software exactly which person, place or
+thing a sentence refers to.**
 
 [![CI](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/ci.yml/badge.svg)](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/ci.yml)
 [![Conformance](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/conformance.yml/badge.svg)](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/conformance.yml)
 [![Benchmark](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/benchmark.yml/badge.svg)](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/benchmark.yml)
 [![Docs](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/docs.yml/badge.svg)](https://github.com/E-AI-MODEL/EAT-inline/actions/workflows/docs.yml)
 
-## The whole idea
+## The idea in one minute
 
-Plain text can leave a name open to interpretation:
+A name in ordinary text can point to several people or things:
 
 ```text
 The report was written by Hans Visser.
@@ -27,237 +28,133 @@ EAT Inline has one construct:
 @@EAT type:key@@
 ```
 
-The surrounding sentence still describes the relationship. The EAT reference
-only identifies the entity.
+The sentence describes the relationship. The tag identifies the subject.
 
 > Version `0.3.2` is experimental. It can be tested, but it is not yet a proven
 > or frozen standard.
 
+## The problem and the proposed solution
+
+| Problem | EAT Inline approach |
+|---|---|
+| The same name can refer to different identities. | Store an explicit type and key, such as `person:Hans_Visser`. |
+| Identity metadata stored elsewhere can become separated from the sentence. | Keep the identity reference inside the source text. |
+| Rich markup often belongs to one document format or application. | Use one plain-text form that a small parser can read. |
+| A link usually says where to go. It does not always say what type of identity it represents. | Separate the entity type from the key. |
+
+EAT Inline still needs a registry that knows what each key means. It does not
+solve name matching by itself, and file-format round trips have not yet been
+tested.
+
+## How it differs from other inline forms
+
+These alternatives are useful for other jobs. The last column describes the
+tradeoff when the job is exact identity.
+
+| Inline form | Example | Useful for | Tradeoff for exact identity |
+|---|---|---|---|
+| Markdown link | `[Hans](https://example/Q123)` | Clickable text | The identity depends on the chosen URL, and the link syntax has no separate entity type. |
+| HTML data attribute | `<span data-entity="Q123">Hans</span>` | Metadata inside HTML | It only works as structured HTML and adds opening and closing markup. |
+| XML element | `<entity id="Q123">Hans</entity>` | Rich structured documents | It needs XML parsing, nesting rules and a closing element. |
+| Hashtag | `#HansVisser` | Loose grouping and discovery | It does not by itself separate a type, key and visible label. |
+| EAT Inline | `@@EAT person:Hans_Visser@@` | A typed identity in plain text | The raw tag is visible, needs a registry and currently carries no separate display label. |
+
+EAT Inline is smaller than the HTML and XML examples and more explicit than a
+free-form hashtag. A Markdown link can also use a stable identity URL. EAT
+chooses a typed key instead of making the destination URL part of the core
+syntax.
+
 ## See it in a document
 
-These two mock document screenshots show the same text before and after the
-writer adds EAT references.
+The two mock screenshots show the same text before and after adding EAT
+references.
 
 | Without EAT | With EAT in the source text |
 |---|---|
 | ![Document without EAT Inline](docs/images/document-without-eat.svg) | ![The same document with EAT Inline references](docs/images/document-with-eat.svg) |
 
-The right-hand document shows the literal stored text. An editor could display
-the references differently, but the source still contains
-`@@EAT type:key@@`. These generic screenshots do not claim compatibility with
-Word, PDF or another file format.
+The right-hand image shows the literal stored text. An editor could display the
+tag differently. These images do not claim tested support for Word, PDF or
+another file format.
 
-## Using the format
+## What has been tested?
 
-Examples:
+The repository contains four different test groups:
 
-```text
-@@EAT person:Hans_Visser@@
-@@EAT organisation:EAI_Analyse_Advies@@
-@@EAT project:EAT_Inline@@
-```
-
-Both `type` and `key` use:
-
-```text
-[A-Za-z_][A-Za-z0-9_]*
-```
-
-A minimal parser needs only a regular expression:
-
-```python
-import re
-
-REFERENCE_RE = re.compile(
-    r"@@EAT (?P<type>[A-Za-z_][A-Za-z0-9_]*):"
-    r"(?P<key>[A-Za-z_][A-Za-z0-9_]*)@@"
-)
-```
-
-A resolver can map the written reference to an internal ID:
-
-```json
-{
-  "source_reference": "@@EAT person:Hans_Visser@@",
-  "canonical_id": "person-10492",
-  "resolution_status": "resolved"
-}
-```
-
-EAT Inline is the writing format. Databases, registries and resolution metadata
-belong to the system using it.
-
-## What has actually been tested?
-
-The repository now contains four separate test groups. They answer different
-questions:
-
-| Test group | Size | What it checks |
+| Test | Size | Question |
 |---|---:|---|
-| Synthetic implementation checks | 76 records | Do syntax, typing, resolution, generation and controlled comparison behave as specified? |
-| Public entity-linking test | 40 Wikipedia pages | What changes when correct EAT identities assist one frozen TF-IDF model? |
-| Full-coverage scale test | 100,000 generated documents | Can 1,672,500 inline references be parsed, indexed and searched? |
-| One-tag search test | 100,000 generated documents | What changes in text search when every document has exactly one tag? |
+| Format checks | 76 records | Does parsing, typing, lookup and text generation behave as specified? |
+| Public name-to-ID test | 40 Wikipedia pages | What changes when correct EAT identities assist one fixed text model? |
+| Full-tag volume test | 100,000 generated documents | Can 1,672,500 inline references be parsed, indexed and searched? |
+| One-tag search test | 100,000 generated documents | What changes in search when every document has exactly one EAT tag? |
 
-The two 100,000-document workloads repeat public source material. They test
+The 100,000-document tests repeat public source material. They measure
 processing volume, not the variety of 100,000 different articles.
 
-## Public 40-page entity-linking test
+### Public test on 40 Wikipedia pages
 
-### Test size
+The public test contains:
 
-- **40 test documents**, each copied from one complete English Wikipedia page
-- **669 marked places in the text** where a person, place, organisation or
-  another Wikidata item appears
-- **434 different Wikidata items**
-- **1,063 possible entities** in the closed lookup registry
+- 40 complete test pages;
+- 669 marked text positions;
+- 434 different Wikidata identities;
+- 1,063 possible identities in the lookup list.
 
-The test stores those 40 documents as 40 records in one JSONL file. JSONL is
-only the test container. It makes the input easy to hash, replay and score. It
-is not a required EAT Inline document format.
+Coverage counts marked text positions, not files. At 50% coverage, 335 of the
+669 positions contain an EAT reference. The other 334 stay as ordinary text.
 
-### Actual test excerpt with and without EAT
+![EAT coverage across the 669 tested positions](benchmark/results/wiki-fair-v2-eat-assistance/coverage-by-level.svg)
 
-This excerpt comes from one of the 40 Wikipedia pages.
+| EAT coverage | Requested identities found | Missed identities |
+|---:|---:|---:|
+| 0% | 69.37% | 136 |
+| 50% | 85.59% | 64 |
+| 100% | 100% | 0 |
 
-Without EAT:
+“Requested identities found” is recall: the share of known identities that the
+test found. Full coverage removed all 136 misses. It still left 94 incorrect
+extra predictions from the text model outside the tagged positions.
 
-```text
-Sameli Ventelä is a Finnish professional ice hockey defenceman.
-```
+The test generated EAT references from the known answers. People did not write
+them, and the model did not discover them. The result shows the best case after
+correct identities are supplied.
 
-With EAT on every scored item in the excerpt:
+### Volume test with 100,000 generated documents
 
-```text
-@@EAT entity:Q26720335@@ is a @@EAT entity:Q33@@ professional
-@@EAT entity:Q41466@@ defenceman.
-```
-
-The `Q` numbers are stable Wikidata IDs used by this public test. A different
-resolver can use readable keys such as `person:Hans_Visser`.
-
-### What does 50% EAT coverage mean?
-
-Coverage counts the 669 marked text positions, not documents or files.
-
-- `0%` means 0 of the 669 positions have an EAT reference.
-- `50%` means 335 positions have an EAT reference. The other 334 stay as plain
-  text.
-- `100%` means all 669 positions have an EAT reference.
-
-At 50% coverage, the selected positions occur in 37 of the 40 documents. At
-100%, all 40 documents contain EAT references.
-
-![EAT coverage across the 669 tested mentions](benchmark/results/wiki-fair-v2-eat-assistance/coverage-by-level.svg)
-
-| Coverage | Text positions with EAT | Text positions left plain | Documents containing EAT |
-|---:|---:|---:|---:|
-| 0% | 0 | 669 | 0 of 40 |
-| 25% | 167 | 502 | 36 of 40 |
-| 50% | 335 | 334 | 37 of 40 |
-| 75% | 502 | 167 | 39 of 40 |
-| 100% | 669 | 0 | 40 of 40 |
-
-The same model predictions are reused at every level. A correct EAT reference
-replaces the model prediction only at that selected text span.
-
-### What happened to the model score?
-
-![F1 and recall as EAT coverage increases](benchmark/results/wiki-fair-v2-eat-assistance/performance-by-level.svg)
-
-| EAT coverage | Precision | Recall | F1 | Missed entities |
-|---:|---:|---:|---:|---:|
-| 0% | 0.7247 | 0.6937 | 0.7089 | 136 |
-| 25% | 0.7472 | 0.7523 | 0.7497 | 110 |
-| 50% | 0.7819 | 0.8559 | 0.8172 | 64 |
-| 75% | 0.8027 | 0.9257 | 0.8598 | 33 |
-| 100% | 0.8253 | 1.0000 | 0.9043 | 0 |
-
-In this test:
-
-- Half coverage removed 72 of the model's 136 missed entities.
-- Full coverage removed all 136 missed entities.
-- Full coverage still left 94 false positives from model predictions outside
-  the EAT-tagged spans.
-
-### What this result does and does not show
-
-The test shows what happens when correct entity identities are supplied to the
-same frozen model pipeline.
-
-The EAT references were generated from the known test answers. People did not
-write them, and the model did not discover them. The result is an upper bound,
-not proof that authors can add EAT references accurately or quickly.
-
-The EAT-only score is `1.0` because it reads those known correct identities
-directly. That number is a resolver check, not a model achievement.
-
-## 100,000-document scale test
-
-The scale test creates 100,000 workload documents by repeating the 40 source
-pages and assigning every copy a different document ID. Every scored text
-position has EAT.
-
-![100,000-document workload](benchmark/results/wiki-fair-v2-scale-search/scale-overview.svg)
-
-The run processed:
+This test repeated the 40 public pages and assigned every copy a different
+document ID. It processed:
 
 - 100,000 generated documents;
 - 1,672,500 EAT references;
-- 1,110,000 document-entity pairs;
-- 276.8 MB of EAT text.
+- 276.8 MB of EAT text;
+- 42,942 documents per second while parsing and building the index.
 
-The inline references added 16.8 MB, or 6.5%, to the 259.9 MB plain-text
-workload. The 32-bit postings payload was 4.44 MB, excluding Python container
-overhead.
+The index built from inline EAT contained exactly the same document-identity
+pairs as a control that received the correct IDs as separate data.
 
-The control stores the same correct entity IDs as separate metadata. The EAT
-route parses those IDs from the inline references. Both routes produced exactly
-the same entity-to-document index.
+This proves that the reference implementation handled this workload. It does
+not represent 100,000 different source documents or a production search
+engine. Timing depends on the machine.
 
-| Index build | Time | Throughput |
-|---|---:|---:|
-| Correct IDs supplied as separate metadata | 0.051 s | not comparable |
-| Correct IDs parsed from inline EAT | 2.329 s | 42,942 documents/second |
+### Search test with one EAT tag per document
 
-The search test queried all 434 entities twenty times and read 22,200,000
-matching document IDs.
-
-![Entity search time after indexing](benchmark/results/wiki-fair-v2-scale-search/search-latency.svg)
-
-| Search route | p50 | p95 | p99 |
-|---|---:|---:|---:|
-| Index built from separate metadata | 30.496 µs | 36.524 µs | 61.001 µs |
-| Index built from inline EAT | 30.485 µs | 36.425 µs | 60.951 µs |
-
-The p50 difference was 0.011 microseconds. That is inside measurement noise,
-not evidence that either route is faster. Once indexing is complete, both
-searches use the same index and EAT is no longer in the query path.
-
-This proves that the reference implementation can parse and index this
-100,000-document workload, and that the resulting index behaves like the
-metadata control in this test. It does not represent 100,000 different source
-documents or a production search engine. Timings depend on the machine.
-
-## 100,000-document search test with one EAT tag
-
-This is a different test. Each generated document contains exactly one EAT
-reference. The test asks 434 questions such as:
+This separate test generated 100,000 document IDs with exactly one EAT
+reference each. It asked 434 questions such as:
 
 ```text
 Which source page mentions University of Southampton?
 ```
 
-It compares four ways to find matching text before an answer is produced:
+Four search methods received different information:
 
 | Search method | What it receives |
 |---|---|
 | Name search | The visible name as ordinary search text |
-| EAT after a unique name match | The same visible name; EAT is used only when the registry links that name to one ID |
+| EAT after a unique name match | The same visible name; EAT is used only when the lookup list links that name to one ID |
 | EAT with the answer ID | The correct ID from the test answers |
 | Combined search with the answer ID | Ordinary name search plus the correct ID from the test answers |
 
-Here is how that connects to EAT Inline:
+The connection to the inline tag looks like this:
 
 ```text
 Document text:  ... @@EAT entity:Q123@@ ...
@@ -266,20 +163,13 @@ Lookup match:   Example name -> Q123
 EAT search:     keep only text results tagged entity:Q123
 ```
 
-A **gold ID** is the technical name for the known correct ID in the test answer
-sheet, such as `Q123` in this example. This README calls it the **answer ID**.
-Two methods receive that answer directly. “EAT after a unique name match” does
-not: it receives only the visible name and must find one unambiguous registry
-match before it can use the EAT tag.
+A **gold ID** is the technical term for the known correct ID in the test answer
+sheet. This README calls it the **answer ID**. The name-match method does not
+receive that answer. It must find one unambiguous match before it can use EAT.
 
-The name-match method is the important comparison because it does not receive
-the answer ID. Of the 434 visible names, 427 identify exactly one registry
-entity. Seven names, including `Cambridge` and `gold`, identify more than one
-entity. The system does not guess those IDs; it falls back to ordinary name
-search.
-
-The answer step returns the source-page title from the first text result. It
-counts only when that result contains known evidence for the requested entity.
+Of 434 visible names, 427 matched one identity. Seven names, including
+`Cambridge` and `gold`, matched more than one. The system did not guess those
+IDs. It used ordinary name search for them.
 
 ![One-tag search quality](benchmark/results/wiki-fair-v2-one-tag-rag/retrieval-quality.svg)
 
@@ -290,44 +180,39 @@ counts only when that result contains known evidence for the requested entity.
 | EAT with the answer ID | 434 of 434 (100%) | 100% | 100% |
 | Combined search with the answer ID | 434 of 434 (100%) | 100% | 100% |
 
-**Hit@10** is the percentage of questions for which at least one correct
-text result appears among the first ten search results. Hit@1 asks the same
-question about only the first result. The table spells those metrics out as
-“Correct text in top 10” and “Correct text first”.
+“Correct text in top 10” means that at least one correct text result appeared
+among the first ten search results. The technical metric name is Hit@10.
 
-The workload contains 100,000 document IDs and 100,000 EAT references. It
-repeats 669 text excerpts taken from the same 40 Wikipedia pages used by the
-public test. It is not a test over 100,000 different source documents.
+This test covers finding source text and selecting its page. It does not use a
+language model to write an answer. The two answer-ID methods are controls that
+receive the correct ID from the test answers.
 
-“EAT after a unique name match” receives no ID from the test answers. It shows
-what happens when an exact visible name can be linked safely through the
-registry. It does not test aliases, paraphrases or identity matching from a full
-natural-language question. The two answer-ID methods still receive the correct
-ID.
+## What has not been tested?
 
-Finding the source text and selecting its page are the first part of a RAG
-pipeline. This test has no vector embeddings or language model, so it does not
-measure free-form answer quality.
+The repository does not yet show:
 
-## File formats
+- behaviour over 100,000 different source documents;
+- identity matching from aliases, paraphrases or complete natural-language
+  questions;
+- answers written by a language model;
+- how accurately or quickly people write EAT references;
+- reliable round trips through Word, PDF, Excel, Markdown or HTML;
+- production readiness.
 
-This experiment scores extracted plain text. It does not yet test whether EAT
-references survive opening, editing, exporting and reading:
+## For implementers
 
-- Word documents;
-- PDFs;
-- Excel workbooks;
-- Markdown files;
-- HTML pages or HTML metadata.
+Both `type` and `key` use:
 
-Each format needs its own import and export test. PDF needs extra attention
-because it is a page-layout format, not a reliable source-text format.
+```text
+[A-Za-z_][A-Za-z0-9_]*
+```
 
-## Documentation and reproduction
+A parser can extract every `@@EAT type:key@@` reference with a regular
+expression. A resolver then maps the written type and key to an internal ID.
 
 - [`SPEC.md`](SPEC.md) defines the grammar and compatibility rules.
-- [`BENCHMARKS.md`](BENCHMARKS.md) explains every test condition, metric,
-  limitation and reproduction command.
+- [`BENCHMARKS.md`](BENCHMARKS.md) contains the full methods, metrics, timing
+  tables, limits and reproduction commands.
 - [`schemas/registry-entry.schema.json`](schemas/registry-entry.schema.json)
   defines a registry record.
 - [`GOVERNANCE.md`](GOVERNANCE.md) describes change control.
@@ -344,23 +229,6 @@ python scripts/run_benchmark.py
 python scripts/run_comparative_benchmark.py
 python scripts/check_docs.py
 ```
-
-## Current limits
-
-The repository does not yet show:
-
-- behaviour over 100,000 different source documents;
-- semantic or vector-search performance;
-- free-form RAG answer quality from a language model;
-- how accurately people write EAT references;
-- how much writing time EAT adds;
-- reliable round trips through Word, PDF, Excel, Markdown or HTML;
-- performance against a strong NER, entity-linking or LLM baseline;
-- query identity from aliases, paraphrases or full natural-language questions;
-- production readiness.
-
-Those questions need new tests with people, stronger models and larger public
-datasets.
 
 ## Stewardship and license
 
