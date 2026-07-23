@@ -50,10 +50,10 @@ class EatAssistanceBenchmarkTests(unittest.TestCase):
             result["model_with_oracle_eat"]["0%"],
             {
                 **result["model_baseline"],
-                "annotated_mentions": 0,
-                "unannotated_mentions": 669,
-                "assisted_documents": 0,
-                "assisted_document_entity_pairs": 0,
+                "eat_text_positions": 0,
+                "plain_text_positions": 669,
+                "documents_with_eat": 0,
+                "document_entity_pairs_with_eat": 0,
                 "f1_delta_vs_model": 0.0,
                 "false_positives_removed_vs_model": 0,
                 "false_negatives_removed_vs_model": 0,
@@ -68,9 +68,9 @@ class EatAssistanceBenchmarkTests(unittest.TestCase):
         full = result["model_with_oracle_eat"]["100%"]
         self.assertEqual(full["recall"], 1.0)
         self.assertEqual(full["false_negatives"], 0)
-        self.assertEqual(full["annotated_mentions"], 669)
-        self.assertEqual(full["unannotated_mentions"], 0)
-        self.assertEqual(full["assisted_documents"], 40)
+        self.assertEqual(full["eat_text_positions"], 669)
+        self.assertEqual(full["plain_text_positions"], 0)
+        self.assertEqual(full["documents_with_eat"], 40)
         self.assertEqual(
             result["eat_only_oracle"],
             {
@@ -105,7 +105,7 @@ class EatAssistanceBenchmarkTests(unittest.TestCase):
             result["test_scope"],
             {
                 "documents": 40,
-                "mention_annotations": 669,
+                "scored_text_positions": 669,
                 "document_entity_pairs": 444,
                 "unique_entities": 434,
             },
@@ -114,9 +114,9 @@ class EatAssistanceBenchmarkTests(unittest.TestCase):
         self.assertEqual(
             {
                 coverage: (
-                    condition["annotated_mentions"],
-                    condition["unannotated_mentions"],
-                    condition["assisted_documents"],
+                    condition["eat_text_positions"],
+                    condition["plain_text_positions"],
+                    condition["documents_with_eat"],
                 )
                 for coverage, condition in conditions.items()
             },
@@ -154,14 +154,14 @@ class EatAssistanceBenchmarkTests(unittest.TestCase):
                 output / "performance-by-level.svg"
             ).read_text()
 
-        self.assertIn("40 Wikipedia articles", summary)
-        self.assertIn("669 entity mentions", summary)
-        self.assertIn("It is not the share of files", summary)
+        self.assertIn("40 test documents", summary)
+        self.assertIn("669 scored text positions", summary)
+        self.assertIn("It is not the share of documents or files", summary)
         self.assertIn(
             "| Model + EAT (50%) | `335` | `334` | `37 of 40` |",
             summary,
         )
-        self.assertIn("335 EAT + 334 plain · 37/40 articles", coverage_chart)
+        self.assertIn("335 EAT + 334 plain · 37/40 documents", coverage_chart)
         self.assertIn("F1 rises from 0.7089 to 0.9043", performance_chart)
 
 

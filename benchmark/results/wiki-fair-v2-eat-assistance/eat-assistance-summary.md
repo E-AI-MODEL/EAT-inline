@@ -2,12 +2,12 @@
 
 ## What was tested
 
-- 40 Wikipedia articles, stored as 40 records in one JSONL file
-- 669 entity mentions
-- 434 unique Wikidata entities
+- 40 test documents copied from complete Wikipedia pages
+- 669 scored text positions
+- 434 different Wikidata items
 - the same frozen model predictions at every coverage level
 
-Coverage is the share of the 669 mention positions replaced by a correct EAT reference. It is not the share of files.
+Coverage is the share of the 669 scored text positions replaced by a correct EAT reference. It is not the share of documents or files.
 
 ![EAT coverage](coverage-by-level.svg)
 
@@ -18,10 +18,10 @@ Coverage is the share of the 669 mention positions replaced by a correct EAT ref
 - Model: `scikit-learn TF-IDF character n-gram entity retriever`
 - Version: `scikit-learn==1.8.0;eat-profile-v1`
 - Dataset: `wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26`
-- Test articles: `40`
-- Oracle mention annotations: `669`
+- Test documents: `40`
+- Scored text positions: `669`
 
-| Condition | Mentions with EAT | Mentions left plain | Articles with EAT | Precision | Recall | F1 | Exact match |
+| Condition | Text positions with EAT | Text positions left plain | Documents with EAT | Precision | Recall | F1 | Exact match |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Model + EAT (0%) | `0` | `669` | `0 of 40` | `0.7247` | `0.6937` | `0.7089` | `0.125` |
 | Model + EAT (25%) | `167` | `502` | `36 of 40` | `0.7472` | `0.7523` | `0.7497` | `0.15` |

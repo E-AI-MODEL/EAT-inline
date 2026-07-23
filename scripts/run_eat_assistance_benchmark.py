@@ -217,7 +217,7 @@ def evaluate(
     baseline = condition_metrics(baseline_predictions, oracle_cases)
     test_scope = {
         "documents": len(oracle_cases),
-        "mention_annotations": len(ranked),
+        "scored_text_positions": len(ranked),
         "document_entity_pairs": sum(
             len(oracle_case.case.gold_ids) for oracle_case in oracle_cases
         ),
@@ -274,10 +274,10 @@ def evaluate(
         measured = condition_metrics(predictions, oracle_cases)
         measured.update(
             {
-                "annotated_mentions": selected_count,
-                "unannotated_mentions": len(ranked) - selected_count,
-                "assisted_documents": len(selected_by_case),
-                "assisted_document_entity_pairs": len(explicit_entity_cases),
+                "eat_text_positions": selected_count,
+                "plain_text_positions": len(ranked) - selected_count,
+                "documents_with_eat": len(selected_by_case),
+                "document_entity_pairs_with_eat": len(explicit_entity_cases),
                 "f1_delta_vs_model": round(
                     float(measured["f1"]) - float(baseline["f1"]), 4
                 ),
@@ -307,7 +307,7 @@ def evaluate(
             "model_baseline": baseline,
             "model_with_oracle_eat": conditions,
             "eat_only_oracle": eat_only,
-            "oracle_annotations": len(ranked),
+            "scored_text_positions": len(ranked),
             "test_scope": test_scope,
         },
         list(case_rows.values()),
@@ -320,29 +320,29 @@ def write_coverage_chart(
 ) -> None:
     """Write a dependency-free SVG that explains what coverage counts."""
 
-    total = int(evaluation["oracle_annotations"])
+    total = int(evaluation["scored_text_positions"])
     conditions = evaluation["model_with_oracle_eat"]
     rows = []
     for index, coverage in enumerate(("0%", "25%", "50%", "75%", "100%")):
         condition = conditions[coverage]
-        eat_mentions = int(condition["annotated_mentions"])
-        plain_mentions = int(condition["unannotated_mentions"])
-        documents = int(condition["assisted_documents"])
+        eat_positions = int(condition["eat_text_positions"])
+        plain_positions = int(condition["plain_text_positions"])
+        documents = int(condition["documents_with_eat"])
         y = 145 + index * 62
-        eat_width = round(560 * eat_mentions / total)
+        eat_width = round(510 * eat_positions / total)
         rows.append(
             f'<text class="level" x="82" y="{y + 20}">{coverage}</text>'
-            f'<rect class="plain" x="150" y="{y}" width="560" height="28" rx="5"/>'
+            f'<rect class="plain" x="150" y="{y}" width="510" height="28" rx="5"/>'
             f'<rect class="eat" x="150" y="{y}" width="{eat_width}" '
             f'height="28" rx="5"/>'
-            f'<text class="detail" x="730" y="{y + 20}">'
-            f'{eat_mentions} EAT + {plain_mentions} plain · '
-            f'{documents}/40 articles</text>'
+            f'<text class="detail" x="680" y="{y + 20}">'
+            f'{eat_positions} EAT + {plain_positions} plain · '
+            f'{documents}/40 documents</text>'
         )
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500" viewBox="0 0 1120 500" role="img">
   <title>EAT coverage in the Wiki-Fair test</title>
-  <desc>Five coverage levels over 669 entity mentions in 40 Wikipedia articles.</desc>
+  <desc>Five coverage levels over 669 scored text positions in 40 test documents.</desc>
   <style>
     .bg {{ fill: #ffffff; }}
     .title {{ font: 700 26px system-ui, sans-serif; fill: #111827; }}
@@ -353,15 +353,15 @@ def write_coverage_chart(
     .eat {{ fill: #2563eb; }}
     .plain {{ fill: #d1d5db; }}
   </style>
-  <rect class="bg" width="1000" height="500"/>
+  <rect class="bg" width="1120" height="500"/>
   <text class="title" x="40" y="48">How much of the test text received EAT?</text>
-  <text class="subtitle" x="40" y="78">40 articles · 669 entity mentions · coverage counts mentions, not files</text>
+  <text class="subtitle" x="40" y="78">40 test documents · 669 scored text positions · coverage counts positions, not files</text>
   <rect class="eat" x="150" y="100" width="18" height="12" rx="2"/>
-  <text class="legend" x="176" y="111">mention replaced by an EAT reference</text>
-  <rect class="plain" x="435" y="100" width="18" height="12" rx="2"/>
-  <text class="legend" x="461" y="111">mention left as plain text</text>
+  <text class="legend" x="176" y="111">scored position replaced by an EAT reference</text>
+  <rect class="plain" x="540" y="100" width="18" height="12" rx="2"/>
+  <text class="legend" x="566" y="111">scored position left as plain text</text>
   {''.join(rows)}
-  <text class="subtitle" x="150" y="472">“37/40 articles” means 37 articles contain at least one selected EAT reference.</text>
+  <text class="subtitle" x="150" y="472">“37/40 documents” means 37 documents contain at least one selected EAT reference.</text>
 </svg>
 """
     path.write_text(svg, encoding="utf-8")
@@ -429,7 +429,7 @@ def write_performance_chart(
   </style>
   <rect class="bg" width="1000" height="520"/>
   <text class="title" x="40" y="48">Same frozen model, more correct EAT references</text>
-  <text class="subtitle" x="40" y="78">Scores over the same 40 articles; only EAT coverage changes</text>
+  <text class="subtitle" x="40" y="78">Scores over the same 40 documents; only EAT coverage changes</text>
   {''.join(grid)}
   {ticks}
   {series('f1', 'f1', 20)}
@@ -488,15 +488,15 @@ def write_outputs(
     for coverage in ("0%", "25%", "50%", "75%", "100%"):
         condition = evaluation["model_with_oracle_eat"][coverage]
         rows.append(
-            f"| Model + EAT ({coverage}) | `{condition['annotated_mentions']}` | "
-            f"`{condition['unannotated_mentions']}` | "
-            f"`{condition['assisted_documents']} of 40` | "
+            f"| Model + EAT ({coverage}) | `{condition['eat_text_positions']}` | "
+            f"`{condition['plain_text_positions']}` | "
+            f"`{condition['documents_with_eat']} of 40` | "
             f"`{condition['precision']}` | `{condition['recall']}` | "
             f"`{condition['f1']}` | `{condition['exact_match_rate']}` |"
         )
     eat_only = evaluation["eat_only_oracle"]
     rows.append(
-        f"| EAT-only oracle | `{evaluation['oracle_annotations']}` | "
+        f"| EAT-only oracle | `{evaluation['scored_text_positions']}` | "
         f"`0` | `40 of 40` | "
         f"`{eat_only['precision']}` | `{eat_only['recall']}` | "
         f"`{eat_only['f1']}` | `{eat_only['exact_match_rate']}` |"
@@ -504,22 +504,22 @@ def write_outputs(
     (output_dir / "eat-assistance-summary.md").write_text(
         "# Wiki-Fair oracle EAT-assistance benchmark\n\n"
         "## What was tested\n\n"
-        "- 40 Wikipedia articles, stored as 40 records in one JSONL file\n"
-        "- 669 entity mentions\n"
-        "- 434 unique Wikidata entities\n"
+        "- 40 test documents copied from complete Wikipedia pages\n"
+        "- 669 scored text positions\n"
+        "- 434 different Wikidata items\n"
         "- the same frozen model predictions at every coverage level\n\n"
-        "Coverage is the share of the 669 mention positions replaced by a "
-        "correct EAT reference. It is not the share of files.\n\n"
+        "Coverage is the share of the 669 scored text positions replaced by "
+        "a correct EAT reference. It is not the share of documents or files.\n\n"
         "![EAT coverage](coverage-by-level.svg)\n\n"
         "![Model performance](performance-by-level.svg)\n\n"
         "## Results\n\n"
         f"- Model: `{run.model_name}`\n"
         f"- Version: `{run.model_version}`\n"
         f"- Dataset: `{DATASET_NAME}`\n"
-        f"- Test articles: `{len(cases)}`\n"
-        f"- Oracle mention annotations: `{evaluation['oracle_annotations']}`\n\n"
-        "| Condition | Mentions with EAT | Mentions left plain | "
-        "Articles with EAT | Precision | Recall | F1 | Exact match |\n"
+        f"- Test documents: `{len(cases)}`\n"
+        f"- Scored text positions: `{evaluation['scored_text_positions']}`\n\n"
+        "| Condition | Text positions with EAT | Text positions left plain | "
+        "Documents with EAT | Precision | Recall | F1 | Exact match |\n"
         "|---|---:|---:|---:|---:|---:|---:|---:|\n"
         + "\n".join(rows)
         + "\n\n"

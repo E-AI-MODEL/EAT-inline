@@ -39,15 +39,16 @@ commit `c9a3fe9c4933888d756d702fdb9ff607fc36aa26`.
 
 | Material | Count |
 |---|---:|
-| Development articles used for profiles and aliases | 80 |
-| Separate test articles | 40 |
-| Entity mentions in the test articles | 669 |
+| Development documents from Wikipedia pages | 80 |
+| Separate test documents from complete Wikipedia pages | 40 |
+| Scored text positions in the test documents | 669 |
 | Unique test entities | 434 |
 | Article-entity pairs used by set-level scoring | 444 |
 | Entities in the closed candidate registry | 1,063 |
 
-The 40 test articles are 40 JSONL records. They are stored together, not as
-40 physical files.
+The 40 test documents are 40 JSONL records. JSONL is the benchmark container,
+not a required EAT Inline authoring format. The experiment does not currently
+test Word, PDF, Excel, Markdown or HTML import and export.
 
 ### Frozen model run
 
@@ -73,7 +74,7 @@ The public gold spans are ranked deterministically. The first 0%, 25%, 50%,
 selected EAT reference overrides an overlapping model prediction. Model
 predictions outside selected spans remain unchanged.
 
-| Coverage | EAT mentions | Plain mentions | Articles containing EAT |
+| Coverage | EAT text positions | Plain text positions | Documents containing EAT |
 |---:|---:|---:|---:|
 | 0% | 0 | 669 | 0 of 40 |
 | 25% | 167 | 502 | 36 of 40 |

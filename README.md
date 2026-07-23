@@ -40,35 +40,58 @@ The repository contains two separate test groups:
 | Test group | Size | What it checks |
 |---|---:|---|
 | Small synthetic tests | 76 records | Syntax, typing, resolution, generation and controlled comparisons |
-| Public Wikipedia test | 40 articles | Entity linking with one frozen TF-IDF model |
+| Small public-text test | 40 Wikipedia pages | Entity linking with one frozen TF-IDF model |
 
-The graphs below describe only the public Wikipedia test.
+The graphs below describe only the 40-page test. This is enough for a
+controlled correctness check. It is not a large-scale or speed test.
 
 ### Size of the public test
 
-- **40 Wikipedia articles**
-- **669 entity mentions** inside those articles
-- **434 unique Wikidata entities**
+- **40 test documents**, each copied from one complete English Wikipedia page
+- **669 marked places in the text** where a person, place, organisation or
+  another Wikidata item appears
+- **434 different Wikidata items**
 - **1,063 possible entities** in the closed lookup registry
 
-The 40 articles are stored as 40 records in one JSONL file. They are not 40
-separate files.
+The test stores those 40 documents as 40 records in one JSONL file. JSONL is
+only the test container. It makes the input easy to hash, replay and score. It
+is not a required EAT Inline document format.
+
+### One document with and without EAT
+
+This excerpt comes from one of the 40 Wikipedia pages.
+
+Without EAT:
+
+```text
+Sameli Ventelä is a Finnish professional ice hockey defenceman.
+```
+
+With EAT on every scored item in the excerpt:
+
+```text
+@@EAT entity:Q26720335@@ is a @@EAT entity:Q33@@ professional
+@@EAT entity:Q41466@@ defenceman.
+```
+
+The `Q` numbers are stable Wikidata IDs used by this public test. A different
+resolver can use readable keys such as `person:Hans_Visser`.
 
 ### What does 50% EAT coverage mean?
 
-Coverage counts entity mentions, not articles or files.
+Coverage counts the 669 marked text positions, not documents or files.
 
-- `0%` means 0 of the 669 mentions have an EAT reference.
-- `50%` means 335 of the 669 mentions have an EAT reference. The other 334 stay
-  as plain text.
-- `100%` means all 669 mentions have an EAT reference.
+- `0%` means 0 of the 669 positions have an EAT reference.
+- `50%` means 335 positions have an EAT reference. The other 334 stay as plain
+  text.
+- `100%` means all 669 positions have an EAT reference.
 
-At 50% coverage, the selected mentions happen to occur in 37 of the 40
-articles. At 100%, all 40 articles contain EAT references.
+At 50% coverage, the selected positions occur in 37 of the 40 documents. At
+100%, all 40 documents contain EAT references.
 
 ![EAT coverage across the 669 tested mentions](benchmark/results/wiki-fair-v2-eat-assistance/coverage-by-level.svg)
 
-| Coverage | Mentions with EAT | Mentions left plain | Articles with at least one EAT reference |
+| Coverage | Text positions with EAT | Text positions left plain | Documents containing EAT |
 |---:|---:|---:|---:|
 | 0% | 0 | 669 | 0 of 40 |
 | 25% | 167 | 502 | 36 of 40 |
@@ -109,6 +132,20 @@ not proof that authors can add EAT references accurately or quickly.
 
 The EAT-only score is `1.0` because it reads those known correct identities
 directly. That number is a resolver check, not a model achievement.
+
+### File formats
+
+This experiment scores extracted plain text. It does not yet test whether EAT
+references survive opening, editing, exporting and reading:
+
+- Word documents;
+- PDFs;
+- Excel workbooks;
+- Markdown files;
+- HTML pages or HTML metadata.
+
+Each format needs its own import and export test. PDF needs extra attention
+because it is a page-layout format, not a reliable source-text format.
 
 ## Using the format
 
@@ -176,8 +213,10 @@ python scripts/check_docs.py
 
 The repository does not yet show:
 
+- behaviour or search speed over 100,000 documents;
 - how accurately people write EAT references;
 - how much writing time EAT adds;
+- reliable round trips through Word, PDF, Excel, Markdown or HTML;
 - performance against a strong NER, entity-linking or LLM baseline;
 - improved retrieval or RAG results;
 - production readiness.
