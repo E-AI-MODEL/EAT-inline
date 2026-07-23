@@ -51,6 +51,9 @@ The project follows semantic versioning for the reference implementation and spe
   plus a README order that introduces the format before the benchmark details.
 - A complete README description of all five tasks in the 76-record synthetic
   corpus: syntax, typing, resolution, generation and controlled comparison.
+- A shorter reader-first README with a problem-and-solution explanation,
+  headline benchmark results in plain language, and an honest comparison with
+  Markdown links, HTML data attributes, XML elements and hashtags.
 
 ### Policy
 
