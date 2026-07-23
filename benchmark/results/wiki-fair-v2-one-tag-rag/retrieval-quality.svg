@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="560" viewBox="0 0 1050 560" role="img">
+  <title>One-tag RAG retrieval quality</title>
+  <desc>Source-answer accuracy, entity hit at ten and mean reciprocal rank at ten for ordinary lexical, EAT-filtered and hybrid retrieval.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font: 700 27px system-ui, sans-serif; fill: #111827; }
+    .subtitle { font: 15px system-ui, sans-serif; fill: #4b5563; }
+    .metric { font: 700 15px system-ui, sans-serif; fill: #111827; text-anchor: end; }
+    .value { font: 13px ui-monospace, monospace; fill: #111827; }
+    .legend { font: 13px system-ui, sans-serif; fill: #4b5563; }
+  </style>
+  <rect class="bg" width="1050" height="560"/>
+  <text class="title" x="40" y="48">100,000 documents, one EAT tag each</text>
+  <text class="subtitle" x="40" y="76">434 source-page questions; top 10 passages available to the answer step</text>
+  <rect x="190" y="92" width="16" height="12" rx="2" fill="#9ca3af"/><text class="legend" x="214" y="103">Ordinary lexical</text><rect x="400" y="92" width="16" height="12" rx="2" fill="#2563eb"/><text class="legend" x="424" y="103">EAT filtered</text><rect x="610" y="92" width="16" height="12" rx="2" fill="#16a34a"/><text class="legend" x="634" y="103">Hybrid</text>
+  <text class="metric" x="150" y="188">Source answer</text><rect x="190" y="150" width="503" height="20" rx="3" fill="#9ca3af"/><text class="value" x="708" y="165">77.4%</text><rect x="190" y="178" width="650" height="20" rx="3" fill="#2563eb"/><text class="value" x="855" y="193">100.0%</text><rect x="190" y="206" width="650" height="20" rx="3" fill="#16a34a"/><text class="value" x="855" y="221">100.0%</text><text class="metric" x="150" y="308">Entity hit@10</text><rect x="190" y="270" width="538" height="20" rx="3" fill="#9ca3af"/><text class="value" x="743" y="285">82.7%</text><rect x="190" y="298" width="650" height="20" rx="3" fill="#2563eb"/><text class="value" x="855" y="313">100.0%</text><rect x="190" y="326" width="650" height="20" rx="3" fill="#16a34a"/><text class="value" x="855" y="341">100.0%</text><text class="metric" x="150" y="428">MRR@10</text><rect x="190" y="390" width="513" height="20" rx="3" fill="#9ca3af"/><text class="value" x="718" y="405">78.9%</text><rect x="190" y="418" width="650" height="20" rx="3" fill="#2563eb"/><text class="value" x="855" y="433">100.0%</text><rect x="190" y="446" width="650" height="20" rx="3" fill="#16a34a"/><text class="value" x="855" y="461">100.0%</text>
+  <text class="subtitle" x="40" y="530">The EAT routes receive the correct query entity ID; this is an oracle retrieval test.</text>
+</svg>

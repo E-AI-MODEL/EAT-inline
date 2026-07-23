@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="500" viewBox="0 0 1050 500" role="img">
+  <title>One-tag RAG retrieval latency</title>
+  <desc>Median and 95th percentile query latency for ordinary lexical, EAT-filtered and hybrid retrieval.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font: 700 27px system-ui, sans-serif; fill: #111827; }
+    .subtitle { font: 15px system-ui, sans-serif; fill: #4b5563; }
+    .route { font: 700 14px system-ui, sans-serif; fill: #111827; text-anchor: end; }
+    .value { font: 13px ui-monospace, monospace; fill: #111827; }
+  </style>
+  <rect class="bg" width="1050" height="500"/>
+  <text class="title" x="40" y="48">Retrieval time per question</text>
+  <text class="subtitle" x="40" y="76">Machine-dependent timing; quality is checked separately</text>
+  <text class="route" x="170" y="173">Ordinary lexical</text><rect x="210" y="145" width="17" height="24" rx="3" fill="#9ca3af" opacity="0.65"/><text class="value" x="242" y="162">p50 523.2 µs</text><rect x="210" y="179" width="593" height="24" rx="3" fill="#9ca3af"/><text class="value" x="818" y="196">p95 18220.5 µs</text><text class="route" x="170" y="273">EAT filtered</text><rect x="210" y="245" width="3" height="24" rx="3" fill="#2563eb" opacity="0.65"/><text class="value" x="228" y="262">p50 90.4 µs</text><rect x="210" y="279" width="10" height="24" rx="3" fill="#2563eb"/><text class="value" x="235" y="296">p95 319.4 µs</text><text class="route" x="170" y="373">Hybrid</text><rect x="210" y="345" width="23" height="24" rx="3" fill="#16a34a" opacity="0.65"/><text class="value" x="248" y="362">p50 692.6 µs</text><rect x="210" y="379" width="620" height="24" rx="3" fill="#16a34a"/><text class="value" x="845" y="396">p95 19038.5 µs</text>
+  <text class="subtitle" x="40" y="470">Hybrid includes lexical candidate retrieval plus the exact EAT entity boost.</text>
+</svg>
