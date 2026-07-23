@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470" role="img">
+  <title>Scale-search workload size</title>
+  <desc>100,000 generated documents containing 1,672,500 EAT references and 1,110,000 document-entity pairs.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font: 700 27px system-ui, sans-serif; fill: #111827; }
+    .subtitle { font: 15px system-ui, sans-serif; fill: #4b5563; }
+    .label { font: 15px system-ui, sans-serif; fill: #374151; }
+    .value { font: 700 15px ui-monospace, monospace; fill: #111827; }
+    .bar { fill: #2563eb; }
+  </style>
+  <rect class="bg" width="1100" height="470"/>
+  <text class="title" x="40" y="48">100,000-document EAT scale workload</text>
+  <text class="subtitle" x="40" y="78">Generated from 40 different Wikipedia source pages; every scored position has EAT</text>
+  <text class="label" x="40" y="169">Generated documents</text><rect class="bar" x="260" y="145" width="39" height="34" rx="5"/><text class="value" x="309" y="169">100,000</text><text class="label" x="40" y="254">EAT references parsed</text><rect class="bar" x="260" y="230" width="650" height="34" rx="5"/><text class="value" x="920" y="254">1,672,500</text><text class="label" x="40" y="339">Document-entity pairs</text><rect class="bar" x="260" y="315" width="431" height="34" rx="5"/><text class="value" x="701" y="339">1,110,000</text>
+  <text class="subtitle" x="40" y="430">The document copies have distinct IDs, but the underlying source text repeats.</text>
+</svg>

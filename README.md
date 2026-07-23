@@ -133,6 +133,53 @@ not proof that authors can add EAT references accurately or quickly.
 The EAT-only score is `1.0` because it reads those known correct identities
 directly. That number is a resolver check, not a model achievement.
 
+## 100,000-document scale test
+
+The scale test creates 100,000 workload documents by repeating the 40 source
+pages and assigning every copy a different document ID. Every scored text
+position has EAT.
+
+![100,000-document workload](benchmark/results/wiki-fair-v2-scale-search/scale-overview.svg)
+
+The run processed:
+
+- 100,000 generated documents;
+- 1,672,500 EAT references;
+- 1,110,000 document-entity pairs;
+- 276.8 MB of EAT text.
+
+The inline references added 16.8 MB, or 6.5%, to the 259.9 MB plain-text
+workload. The 32-bit postings payload was 4.44 MB, excluding Python container
+overhead.
+
+The control stores the same correct entity IDs as separate metadata. The EAT
+route parses those IDs from the inline references. Both routes produced exactly
+the same entity-to-document index.
+
+| Index build | Time | Throughput |
+|---|---:|---:|
+| Correct IDs supplied as separate metadata | 0.051 s | not comparable |
+| Correct IDs parsed from inline EAT | 2.329 s | 42,942 documents/second |
+
+The search test queried all 434 entities twenty times and read 22,200,000
+matching document IDs.
+
+![Entity search time after indexing](benchmark/results/wiki-fair-v2-scale-search/search-latency.svg)
+
+| Search route | p50 | p95 | p99 |
+|---|---:|---:|---:|
+| Index built from separate metadata | 30.496 µs | 36.524 µs | 61.001 µs |
+| Index built from inline EAT | 30.485 µs | 36.425 µs | 60.951 µs |
+
+The p50 difference was 0.011 microseconds. That is inside measurement noise,
+not evidence that either route is faster. Once indexing is complete, both
+searches use the same index and EAT is no longer in the query path.
+
+This proves that the reference implementation can parse and index this
+100,000-document workload, and that the resulting index behaves like the
+metadata control in this test. It does not represent 100,000 different source
+documents or a production search engine. Timings depend on the machine.
+
 ### File formats
 
 This experiment scores extracted plain text. It does not yet test whether EAT
@@ -213,7 +260,8 @@ python scripts/check_docs.py
 
 The repository does not yet show:
 
-- behaviour or search speed over 100,000 documents;
+- behaviour over 100,000 different source documents;
+- keyword, full-text, semantic or vector-search performance;
 - how accurately people write EAT references;
 - how much writing time EAT adds;
 - reliable round trips through Word, PDF, Excel, Markdown or HTML;

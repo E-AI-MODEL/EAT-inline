@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="520" viewBox="0 0 1050 520" role="img">
+  <title>Entity search latency after indexing</title>
+  <desc>p50, p95 and p99 latency for lookup plus reading every matching document ID from identical indexes.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font: 700 27px system-ui, sans-serif; fill: #111827; }
+    .subtitle { font: 15px system-ui, sans-serif; fill: #4b5563; }
+    .metric { font: 700 15px system-ui, sans-serif; fill: #111827; text-anchor: end; }
+    .value { font: 13px ui-monospace, monospace; fill: #111827; }
+    .legend { font: 13px system-ui, sans-serif; fill: #4b5563; }
+    .control { fill: #9ca3af; }
+    .eat { fill: #2563eb; }
+  </style>
+  <rect class="bg" width="1050" height="520"/>
+  <text class="title" x="40" y="48">Entity search time after indexing</text>
+  <text class="subtitle" x="40" y="78">Same query and identical postings; lookup plus reading every matching document ID</text>
+  <rect class="control" x="130" y="100" width="18" height="12" rx="2"/>
+  <text class="legend" x="156" y="111">IDs stored as separate metadata</text>
+  <rect class="eat" x="410" y="100" width="18" height="12" rx="2"/>
+  <text class="legend" x="436" y="111">IDs parsed from inline EAT</text>
+  <text class="metric" x="75" y="184">p50</text><rect class="control" x="130" y="150" width="290" height="26" rx="4"/><text class="value" x="435" y="169">30.4960 µs</text><rect class="eat" x="130" y="184" width="290" height="26" rx="4"/><text class="value" x="435" y="203">30.4850 µs</text><text class="metric" x="75" y="279">p95</text><rect class="control" x="130" y="245" width="347" height="26" rx="4"/><text class="value" x="492" y="264">36.5240 µs</text><rect class="eat" x="130" y="279" width="346" height="26" rx="4"/><text class="value" x="491" y="298">36.4250 µs</text><text class="metric" x="75" y="374">p99</text><rect class="control" x="130" y="340" width="580" height="26" rx="4"/><text class="value" x="725" y="359">61.0010 µs</text><rect class="eat" x="130" y="374" width="580" height="26" rx="4"/><text class="value" x="725" y="393">60.9510 µs</text>
+  <text class="subtitle" x="40" y="485">This is canonical-entity lookup, not keyword, full-text or vector search.</text>
+</svg>

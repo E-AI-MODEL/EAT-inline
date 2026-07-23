@@ -67,6 +67,16 @@ jobs:
           cmp benchmark/results/wiki-fair-v2-eat-assistance/coverage-by-level.svg /tmp/wiki-fair-v2-eat-assistance/coverage-by-level.svg
           cmp benchmark/results/wiki-fair-v2-eat-assistance/performance-by-level.svg /tmp/wiki-fair-v2-eat-assistance/performance-by-level.svg
 
+      - name: Run the 100,000-document scale-search test
+        run: |
+          python scripts/run_scale_search_benchmark.py \
+            --oracle-dataset benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl \
+            --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+            --documents 100000 \
+            --query-repetitions 100 \
+            --query-rounds 20 \
+            --output-dir benchmark/results/wiki-fair-v2-scale-search-ci
+
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
