@@ -31,7 +31,9 @@
           "false_positives": 117,
           "false_negatives": 136,
           "annotated_mentions": 0,
-          "assisted_entity_cases": 0,
+          "unannotated_mentions": 669,
+          "assisted_documents": 0,
+          "assisted_document_entity_pairs": 0,
           "f1_delta_vs_model": 0.0,
           "false_positives_removed_vs_model": 0,
           "false_negatives_removed_vs_model": 0
@@ -45,7 +47,9 @@
           "false_positives": 113,
           "false_negatives": 110,
           "annotated_mentions": 167,
-          "assisted_entity_cases": 134,
+          "unannotated_mentions": 502,
+          "assisted_documents": 36,
+          "assisted_document_entity_pairs": 134,
           "f1_delta_vs_model": 0.0408,
           "false_positives_removed_vs_model": 4,
           "false_negatives_removed_vs_model": 26
@@ -59,7 +63,9 @@
           "false_positives": 106,
           "false_negatives": 64,
           "annotated_mentions": 335,
-          "assisted_entity_cases": 258,
+          "unannotated_mentions": 334,
+          "assisted_documents": 37,
+          "assisted_document_entity_pairs": 258,
           "f1_delta_vs_model": 0.1083,
           "false_positives_removed_vs_model": 11,
           "false_negatives_removed_vs_model": 72
@@ -73,7 +79,9 @@
           "false_positives": 101,
           "false_negatives": 33,
           "annotated_mentions": 502,
-          "assisted_entity_cases": 363,
+          "unannotated_mentions": 167,
+          "assisted_documents": 39,
+          "assisted_document_entity_pairs": 363,
           "f1_delta_vs_model": 0.1509,
           "false_positives_removed_vs_model": 16,
           "false_negatives_removed_vs_model": 103
@@ -87,7 +95,9 @@
           "false_positives": 94,
           "false_negatives": 0,
           "annotated_mentions": 669,
-          "assisted_entity_cases": 444,
+          "unannotated_mentions": 0,
+          "assisted_documents": 40,
+          "assisted_document_entity_pairs": 444,
           "f1_delta_vs_model": 0.1954,
           "false_positives_removed_vs_model": 23,
           "false_negatives_removed_vs_model": 136
@@ -102,7 +112,13 @@
         "false_positives": 0,
         "false_negatives": 0
       },
-      "oracle_annotations": 669
+      "oracle_annotations": 669,
+      "test_scope": {
+        "documents": 40,
+        "mention_annotations": 669,
+        "document_entity_pairs": 444,
+        "unique_entities": 434
+      }
     },
     "limitations": [
       "EAT annotations are generated from public test gold labels.",

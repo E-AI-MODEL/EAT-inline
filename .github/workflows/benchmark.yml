@@ -64,6 +64,8 @@ jobs:
             --output-dir /tmp/wiki-fair-v2-eat-assistance
           cmp benchmark/results/wiki-fair-v2-eat-assistance/eat-assistance-results.json /tmp/wiki-fair-v2-eat-assistance/eat-assistance-results.json
           cmp benchmark/results/wiki-fair-v2-eat-assistance/eat-assistance-summary.md /tmp/wiki-fair-v2-eat-assistance/eat-assistance-summary.md
+          cmp benchmark/results/wiki-fair-v2-eat-assistance/coverage-by-level.svg /tmp/wiki-fair-v2-eat-assistance/coverage-by-level.svg
+          cmp benchmark/results/wiki-fair-v2-eat-assistance/performance-by-level.svg /tmp/wiki-fair-v2-eat-assistance/performance-by-level.svg
 
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4

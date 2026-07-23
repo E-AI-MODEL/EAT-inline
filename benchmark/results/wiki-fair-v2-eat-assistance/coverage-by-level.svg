@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img">
+  <title>EAT coverage in the Wiki-Fair test</title>
+  <desc>Five coverage levels over 669 entity mentions in 40 Wikipedia articles.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    .title { font: 700 26px system-ui, sans-serif; fill: #111827; }
+    .subtitle { font: 15px system-ui, sans-serif; fill: #4b5563; }
+    .level { font: 700 16px system-ui, sans-serif; fill: #111827; text-anchor: end; }
+    .detail { font: 14px system-ui, sans-serif; fill: #374151; }
+    .legend { font: 13px system-ui, sans-serif; fill: #4b5563; }
+    .eat { fill: #2563eb; }
+    .plain { fill: #d1d5db; }
+  </style>
+  <rect class="bg" width="1000" height="500"/>
+  <text class="title" x="40" y="48">How much of the test text received EAT?</text>
+  <text class="subtitle" x="40" y="78">40 articles · 669 entity mentions · coverage counts mentions, not files</text>
+  <rect class="eat" x="150" y="100" width="18" height="12" rx="2"/>
+  <text class="legend" x="176" y="111">mention replaced by an EAT reference</text>
+  <rect class="plain" x="435" y="100" width="18" height="12" rx="2"/>
+  <text class="legend" x="461" y="111">mention left as plain text</text>
+  <text class="level" x="82" y="165">0%</text><rect class="plain" x="150" y="145" width="560" height="28" rx="5"/><rect class="eat" x="150" y="145" width="0" height="28" rx="5"/><text class="detail" x="730" y="165">0 EAT + 669 plain · 0/40 articles</text><text class="level" x="82" y="227">25%</text><rect class="plain" x="150" y="207" width="560" height="28" rx="5"/><rect class="eat" x="150" y="207" width="140" height="28" rx="5"/><text class="detail" x="730" y="227">167 EAT + 502 plain · 36/40 articles</text><text class="level" x="82" y="289">50%</text><rect class="plain" x="150" y="269" width="560" height="28" rx="5"/><rect class="eat" x="150" y="269" width="280" height="28" rx="5"/><text class="detail" x="730" y="289">335 EAT + 334 plain · 37/40 articles</text><text class="level" x="82" y="351">75%</text><rect class="plain" x="150" y="331" width="560" height="28" rx="5"/><rect class="eat" x="150" y="331" width="420" height="28" rx="5"/><text class="detail" x="730" y="351">502 EAT + 167 plain · 39/40 articles</text><text class="level" x="82" y="413">100%</text><rect class="plain" x="150" y="393" width="560" height="28" rx="5"/><rect class="eat" x="150" y="393" width="560" height="28" rx="5"/><text class="detail" x="730" y="413">669 EAT + 0 plain · 40/40 articles</text>
+  <text class="subtitle" x="150" y="472">“37/40 articles” means 37 articles contain at least one selected EAT reference.</text>
+</svg>
