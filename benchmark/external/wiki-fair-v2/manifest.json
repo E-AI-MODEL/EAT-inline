@@ -5,6 +5,10 @@
       "path": "test.inputs.jsonl",
       "sha256": "6d04de8818615ac0266b2c240228fe12f3cf14da8819e662f79ec665334da886"
     },
+    "oracle": {
+      "path": "test.oracle-eat.jsonl",
+      "sha256": "d447ef6661c9a958cf481466a8c62e4a8853017489158d76ef7f847bdbf967ba"
+    },
     "registry": {
       "path": "entity-registry.jsonl",
       "sha256": "89e3fa89b5b8e14bdfa18f599f8dfee3a41560f349ecc331bcad802fc79a22de"
@@ -19,6 +23,8 @@
     }
   },
   "records": {
+    "oracle_annotations": 669,
+    "oracle_test_articles": 40,
     "registry_entities": 1063,
     "test_articles": 40,
     "test_input_articles": 40,
@@ -43,6 +49,7 @@
       "nested labels with a parent field",
       "non-Wikidata identifiers such as DATETIME, QUANTITY and <NIL>"
     ],
+    "oracle_assistance": "gold-derived EAT references for a controlled upper bound; not model input and not human-authored",
     "test_input_fields": [
       "id",
       "plain_text"

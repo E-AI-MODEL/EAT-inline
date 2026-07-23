@@ -180,8 +180,34 @@ The model run improves F1 by `0.0226` over the label baseline on this setup,
 mainly by reducing false positives. This is real non-synthetic linker evidence,
 but it is deliberately narrow. Candidate names are constructed from entities
 annotated in the dev and test splits rather than all of Wikidata, alias learning
-uses dev only, and no EAT-annotated condition exists for this public corpus.
-The result therefore does not establish that EAT Inline beats the model.
+uses dev only.
+
+### Oracle EAT assistance on the same model
+
+A second experiment freezes the model predictions above and adds correct EAT
+references at a deterministic 0%, 25%, 50%, 75% or 100% of the 669 public test
+mentions. At an assisted span, the EAT reference overrides an overlapping model
+prediction; the same model output remains active everywhere else.
+
+| Condition | EAT mentions | Precision | Recall | F1 | Exact match |
+|---|---:|---:|---:|---:|---:|
+| Model + EAT (0%) | `0` | `0.7247` | `0.6937` | `0.7089` | `0.125` |
+| Model + EAT (25%) | `167` | `0.7472` | `0.7523` | `0.7497` | `0.15` |
+| Model + EAT (50%) | `335` | `0.7819` | `0.8559` | `0.8172` | `0.225` |
+| Model + EAT (75%) | `502` | `0.8027` | `0.9257` | `0.8598` | `0.275` |
+| Model + EAT (100%) | `669` | `0.8253` | `1.0` | `0.9043` | `0.525` |
+| EAT-only oracle | `669` | `1.0` | `1.0` | `1.0` | `1.0` |
+
+In this controlled setup, complete EAT assistance removes all 136 false
+negatives and raises model-pipeline F1 by `0.1954`. The remaining 94 false
+positives come from model predictions outside annotated entity spans; an
+EAT-only resolver does not make those predictions.
+
+This is an oracle upper bound. The EAT references are generated from the public
+test gold labels, not written by people and not inferred by the model. The
+experiment therefore measures what correct explicit identity does to the same
+pipeline. It does not show that authors can create those references accurately,
+quickly or without assistance.
 
 Reproduce the frozen run and replay its score:
 
@@ -202,6 +228,12 @@ python scripts/run_recorded_linker_benchmark.py \
   --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
   --dataset-name wiki-fair-v2/test-no-coref@c9a3fe9c4933888d756d702fdb9ff607fc36aa26 \
   --output-dir /tmp/wiki-fair-v2-results
+python scripts/run_eat_assistance_benchmark.py \
+  --run benchmark/results/wiki-fair-v2-tfidf-linker-run.json \
+  --model-dataset benchmark/external/wiki-fair-v2/test.comparison.jsonl \
+  --oracle-dataset benchmark/external/wiki-fair-v2/test.oracle-eat.jsonl \
+  --registry benchmark/external/wiki-fair-v2/entity-registry.jsonl \
+  --output-dir /tmp/wiki-fair-v2-eat-assistance
 ```
 
 Source checksums, transformation rules, attribution and data terms are in
@@ -213,7 +245,7 @@ Source checksums, transformation rules, attribution and data terms are in
 |---|---|
 | `CI` | Runs unit tests on supported Python versions |
 | `Conformance` | Checks the implementation against versioned examples |
-| `Benchmark` | Validates the corpora, runs the deterministic benchmarks and reproduces the recorded Wiki-Fair model run |
+| `Benchmark` | Validates the corpora and reproduces the Wiki-Fair model run and oracle EAT-assistance curve |
 | `Docs` | Detects version drift, invalid JSON, missing foundation files and retired names or syntax |
 
 Run the same checks locally:
@@ -239,6 +271,7 @@ dataset-validation.json
 recorded-linker-results.json       # only after replaying an external run
 recorded-linker-summary.md         # only after replaying an external run
 wiki-fair-v2-tfidf-linker-run.json # complete public-corpus predictions
+wiki-fair-v2-eat-assistance/       # same-model oracle assistance curve
 ```
 
 ## Project foundation
@@ -255,13 +288,13 @@ The core grammar is intentionally conservative. New entity types do not require 
 
 Version `0.3.2` establishes a testable notation, reference implementation,
 gold corpus, paired benchmark harness and one independent public-corpus model
-run.
+run plus a controlled oracle EAT-assistance curve.
 
 It does not yet prove:
 
 - acceptable writing friction in every context;
 - improved performance against strong NER or LLM baselines;
-- superiority over the included TF-IDF model on the same public corpus;
+- gains from naturally human-authored EAT references on a public corpus;
 - improved retrieval or RAG outcomes;
 - universal model compatibility;
 - production readiness.
@@ -281,6 +314,7 @@ src/eat_inline.py        minimal reference implementation
 src/eat_baselines.py     benchmark adapter and scoring framework
 src/eat_recorded_runs.py recorded model-run validation and replay
 scripts/run_tfidf_linker.py reproducible Wiki-Fair model runner
+scripts/run_eat_assistance_benchmark.py oracle assistance scorer
 tests/                   unit tests and conformance examples
 SPEC.md                  normative experimental specification
 GOVERNANCE.md            change and contribution policy

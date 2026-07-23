@@ -3,7 +3,9 @@
 
 The source repository and input bytes are pinned below. The transformation
 writes separate inference and scorer files. The inference file contains only
-``id`` and ``plain_text``; the scorer file keeps the test gold IDs.
+``id`` and ``plain_text``; the scorer file keeps the test gold IDs. A separate
+oracle-assistance file encodes those public annotations as EAT references for
+controlled upper-bound experiments.
 """
 
 from __future__ import annotations
@@ -81,6 +83,26 @@ def write_jsonl(path: Path, records: list[dict[str, object]]) -> None:
     )
 
 
+def render_eat_text(
+    plain_text: str, annotations: list[dict[str, object]]
+) -> str:
+    """Replace non-overlapping annotated spans with typed EAT references."""
+
+    chunks: list[str] = []
+    cursor = 0
+    for annotation in sorted(
+        annotations, key=lambda item: (int(item["start"]), int(item["end"]))
+    ):
+        start, end = int(annotation["start"]), int(annotation["end"])
+        if start < cursor or end <= start or end > len(plain_text):
+            raise ValueError(f"invalid or overlapping oracle span {start}:{end}")
+        chunks.append(plain_text[cursor:start])
+        chunks.append(f"@@EAT {annotation['type']}:{annotation['key']}@@")
+        cursor = end
+    chunks.append(plain_text[cursor:])
+    return "".join(chunks)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("upstream", type=Path, help="pinned wiki-entity-linker checkout")
@@ -112,8 +134,22 @@ def main(argv: list[str] | None = None) -> int:
 
     inputs: list[dict[str, object]] = []
     comparison: list[dict[str, object]] = []
+    oracle: list[dict[str, object]] = []
+    oracle_annotations = 0
     for record in test:
         case_id = f"wiki-fair-v2-test-{record['id']}"
+        labels = entity_labels(record)
+        annotations = [
+            {
+                "end": int(label["span"][1]),
+                "key": str(label["entity_id"]),
+                "start": int(label["span"][0]),
+                "type": "entity",
+            }
+            for label in labels
+        ]
+        oracle_annotations += len(annotations)
+        gold_ids = sorted({str(label["entity_id"]) for label in labels})
         inputs.append(
             {
                 "id": case_id,
@@ -122,9 +158,18 @@ def main(argv: list[str] | None = None) -> int:
         )
         comparison.append(
             {
-                "gold_ids": sorted(
-                    {str(label["entity_id"]) for label in entity_labels(record)}
-                ),
+                "gold_ids": gold_ids,
+                "id": case_id,
+                "language": "en",
+                "plain_text": str(record["text"]),
+                "source_url": str(record["url"]),
+            }
+        )
+        oracle.append(
+            {
+                "annotations": annotations,
+                "eat_text": render_eat_text(str(record["text"]), annotations),
+                "gold_ids": gold_ids,
                 "id": case_id,
                 "language": "en",
                 "plain_text": str(record["text"]),
@@ -148,11 +193,13 @@ def main(argv: list[str] | None = None) -> int:
         "training": args.output / "dev.training.jsonl",
         "inputs": args.output / "test.inputs.jsonl",
         "test": args.output / "test.comparison.jsonl",
+        "oracle": args.output / "test.oracle-eat.jsonl",
         "registry": args.output / "entity-registry.jsonl",
     }
     write_jsonl(paths["training"], training)
     write_jsonl(paths["inputs"], inputs)
     write_jsonl(paths["test"], comparison)
+    write_jsonl(paths["oracle"], oracle)
     write_jsonl(paths["registry"], registry)
 
     manifest = {
@@ -163,6 +210,8 @@ def main(argv: list[str] | None = None) -> int:
         },
         "records": {
             "registry_entities": len(registry),
+            "oracle_annotations": oracle_annotations,
+            "oracle_test_articles": len(oracle),
             "test_articles": len(comparison),
             "test_input_articles": len(inputs),
             "training_articles": len(training),
@@ -181,6 +230,10 @@ def main(argv: list[str] | None = None) -> int:
                 "non-Wikidata identifiers such as DATETIME, QUANTITY and <NIL>",
             ],
             "test_input_fields": ["id", "plain_text"],
+            "oracle_assistance": (
+                "gold-derived EAT references for a controlled upper bound; "
+                "not model input and not human-authored"
+            ),
             "type": "entity",
         },
     }

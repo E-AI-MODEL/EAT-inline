@@ -20,9 +20,12 @@ EAT Inline changed the source material by:
 - separating the upstream dev records into model-training records;
 - separating the upstream test records into gold-free inference records and
   scorer-only records;
+- generating a separate oracle-assistance file that replaces public gold spans
+  with `@@EAT entity:QID@@` references for a controlled upper-bound test;
 - constructing a closed candidate registry from canonical label names; and
 - serialising the transformed records as deterministic JSON Lines.
 
 The exact source and derived-file checksums are recorded in `manifest.json`.
 No claim is made that this closed candidate registry represents full-Wikidata
-entity linking.
+entity linking. The oracle EAT references are derived from test labels; they
+are not human-authored annotations and must not be presented as such.
